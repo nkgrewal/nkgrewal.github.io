@@ -68,6 +68,12 @@ body{
 p{ line-height:1.5em; text-align:left; }
 .left{ float:left;}
 li.first, ul.skills li.first{ border-left:none; margin-left:0; }
+video {
+  width: 100%;
+  max-width:640px;
+  height: auto;
+}
+.center{ text-align: center }
 
 
 /*PRELOADER*/
@@ -83,7 +89,6 @@ li.first, ul.skills li.first{ border-left:none; margin-left:0; }
   width:193px;
   margin:250px auto;
 }
-
 
 
 /* LAYOUT BLOCKS */
@@ -105,21 +110,19 @@ li.first, ul.skills li.first{ border-left:none; margin-left:0; }
 .subContainer{ text-align:left; margin:0 auto; }
 .main{
 	width:100%;
-	min-height:60px;
 	text-align:center;
 }
-header.main, footer.main .subContainer{
+footer.main .subContainer{
 	color:#879196;
-	font-size:1em;
+	font-size:1.2em;
 	background:url(../img/topbg.png) repeat;
 	background-color:rgba(0,0,0,0.25);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000cc', endColorstr='#000000cc',GradientType=0 );
-	height:6em;
 }
 header.main{
 	position: relative;
 	height:8em;
-	border-bottom:1px solid #374c52;
+	background:url(../img/cornerDec-top.png) top left no-repeat;
 }
 header.main div.subContainer{
 	width:95%;
@@ -128,12 +131,9 @@ header.main div.subContainer{
 	top:0;
 	left:0;
 }
-div.main{
-	background:url(../img/cornerDec-top.png) top left no-repeat;
-}
 div.main .subContainer{
 	background:url(../img/cornerDec-bottom.png) bottom right no-repeat;
-	margin-bottom:8em;
+	margin-bottom:3.5em;
 }
 footer.main{
 	position: fixed;
@@ -144,7 +144,7 @@ footer.main{
 }
 footer.main div.subContainer{ text-align:right; }
 .about a{ color:#c9e98c; }
-.about{ padding-top:0.8em; margin-right:2em;  }
+.about{ padding:0.8em 0; margin-right:2em;  }
 .about li{ display:inline; margin-left:1em; }
 .about .selected{ border-top:2px solid #fff; }
 .about li.first{ margin-left:0; }
@@ -211,11 +211,17 @@ article.current{
 	opacity: 1;
 }
 .title h1, .title h2, .title h3 { font-weight:normal; }
-.title h1{
+.title h1 {
 	font: 4.6em 'jellyka_cake';
 	color:#c9e98c;
 	float:left;
 	max-width:46%;
+	white-space: nowrap;
+}
+.title2{
+	font: 3em 'jellyka_cake';
+	margin-top:-0.2em;
+	color:#c9e98c;
 	white-space: nowrap;
 }
 .title hgroup.left{ margin: 1.4em 0 0 4%; max-width:50%; }
@@ -268,7 +274,7 @@ article.current{
 
 /*CONTENT SECTION*/
 section.details{
-	padding-top:0.2em;
+	padding:2em 7% 0.5em 7%;
 	font-size:1.25em;
 }
 .summary{ color:#838d92; margin-bottom:2.5em;}
@@ -299,11 +305,10 @@ ul.skills .cap{
 	position:relative; 
 	top:1px;
 }
+
 section.details .info1{
-	padding: 2em 2em 0 2em;
+	padding: 2em 2em 1em; 2em;
 	margin:0 2em 1em 0;
-	float:left;
-	width:28%;
 	color:#999999;
 	background: -moz-linear-gradient(top,  rgba(117,193,216,0.15) 0%, rgba(117,193,216,0.15) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(117,193,216,0.2)), color-stop(100%,rgba(117,193,216,0.2))); /* Chrome,Safari4+ */
@@ -315,7 +320,6 @@ section.details .info1{
 }
 section.details h3{ padding:0.15em 0; }
 section.details p{ margin-bottom:2em; }
-section.details .info2{ width:80%; }
 section.details .info2 ul{
 	margin:0; 
 	position:relative; 
@@ -324,6 +328,7 @@ section.details .info2 ul{
 section.details .info2{ margin-top:-1.5em; }
 section.details .info2 h3{ padding-top:2em; }
 section.details em{ margin-right:0.2em; }
+
 
 /* ABOUT ME */
 .wildcard { text-align: left; margin:10em 18px 0 8px; }
@@ -445,15 +450,6 @@ ul#slideRef li.slideCount{display:none;}
 	    clear: both;
 	    visibility: hidden;
 	}
-	section.details{
-		width:84%;
-		margin:auto 8%;
-	}
-	section.details .info1, section.details .info2{
-		float:none;
-		width:86%;
-		padding:2em 7% 0.5em 7%;
-	}
 	.intro{ margin-top:90px;}
 	.intro h2{ font-size:3em; color:#c0e0e9; }
 	.intro p {	font-size:1.5em; }
@@ -464,6 +460,15 @@ ul#slideRef li.slideCount{display:none;}
 @media only screen and (min-width: 1200px) {
 	.imgCase, section.details, .title{max-width:1000px; margin:0 auto;}
 	.imgCase {margin-top:2em;}
+	section.details{
+		width:84%;
+		margin:auto 8%;
+	}
+	section.details .info1, section.details .info2{
+		float:left;
+		width:28%;
+		padding:2em 7% 0.5em 7%;
+	}
 }
 
 

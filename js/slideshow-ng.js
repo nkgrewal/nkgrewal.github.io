@@ -23,7 +23,6 @@ var articles = $('article');
 var anim = 800;
 
 var slideCase = $('section.imgCase');
-var extraDetails = $('div.subDetails');
 var multiImgHolder = $('div.mainImg');
 var iconHolder = $('div.icons');
 
@@ -31,7 +30,8 @@ var navHolder = $('.container');
 
 var nextControl = $('.goNext');
 var backControl = $('.goBack');
-var detailsBtn = $('a.detailsBtn');
+//var extraDetails = $('div.subDetails');
+//var detailsBtn = $('a.detailsBtn');
 var currSlide = 0;
 
 
@@ -88,7 +88,7 @@ var MySlideShow = {
     this.jumpToSlide(window.location.hash.substring(1));
 
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
-    extraDetails.hide();
+    //extraDetails.hide();
     multiImgHolder.children().hide();
     multiImgHolder.children(':first-child').show();
 
@@ -112,19 +112,20 @@ var MySlideShow = {
       MySlideShow.slideEnd();
     });
   },
-  moreInfo : function(jqArticle){
+  /*moreInfo : function(jqArticle){
     $(jqArticle).find(extraDetails).slideToggle('fast', function(){
       imgPane.animate({ height : articles.eq(currSlide).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
     });
     $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
-  },
+  },*/
   nextSlide : function(moveBlock,slideWidth){
     this.removeControls();
     if(currSlide<articles.length-1){
       moveBlock.animate({ left: '-='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
       });
-      $('nav.slideNav ul').slideUp();
+      $('nav.slideNav ul')
+      .slideUp();
     } else {
       moveBlock.animate({ left: 0 - imgPane.offset().left +'px'}, anim*2, function() {
         MySlideShow.slideEnd();
@@ -193,9 +194,9 @@ var MySlideShow = {
       $(this).parents('article').find(multiImgHolder).children().hide();
       $(this).parents('article').find(multiImgHolder).children().eq(linkNum).show();
     });
-    detailsBtn.on('click', function(e){
+    /*detailsBtn.on('click', function(e){
       MySlideShow.moreInfo($(this).parents('article'));
-    });
+    });*/
     backControl.on('click', function(e){
       MySlideShow.prevSlide(holder, articles.outerWidth(true) );
     });
@@ -221,7 +222,7 @@ var MySlideShow = {
   },
   removeControls : function(){
     iconHolder.children().off('mouseover');
-    detailsBtn.off('click');
+    //detailsBtn.off('click');
     nextControl.off('click');
     backControl.off('click');
     $(document).off('keydown');
