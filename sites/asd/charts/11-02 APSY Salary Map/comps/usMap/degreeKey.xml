@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<degrees>
+	<degree id="0" name="Diploma" months="6" />
+	<degree id="1" name="Certificate" months="12" />
+	<degree id="2" name="Associate's" months="24" />
+	<degree id="3" name="Bachelor's" months="48" />
+	<degree id="4" name="Master's" months="" />
+	<degree id="7" name="MBA" months="" />
+</degrees>

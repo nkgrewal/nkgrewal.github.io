@@ -1,3 +1,5 @@
+@import 'normalize.css';
+
 /* CROSS BROWSER FONT SUPPORT */
 @font-face {
     font-family: 'Comfortaa';
@@ -295,7 +297,7 @@ ul.skills {
 ul.skills li{
 	list-style-type: none;
 	display:inline;
-	padding:0 .8em;
+	padding:0 .6em 0 .9em;
 	border-left:1px solid #589fb4;
 }
 ul.skills .cap{
@@ -303,7 +305,7 @@ ul.skills .cap{
 	padding:0;
 	font-size:1.4em;
 	position:relative; 
-	top:1px;
+	top:2px;
 }
 
 section.details .info1{
@@ -320,7 +322,7 @@ section.details .info1{
 }
 section.details h3{ padding:0.15em 0; }
 section.details p{ margin-bottom:2em; }
-section.details .info2 ul{
+section.details .info2 ul {
 	margin:0; 
 	position:relative; 
 	left:1em;
@@ -463,6 +465,7 @@ ul#slideRef li.slideCount{display:none;}
 	section.details{
 		width:84%;
 		margin:auto 8%;
+		font-size:1.25em;
 	}
 	section.details .info1, section.details .info2{
 		float:left;
