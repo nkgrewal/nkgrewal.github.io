@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+  <link rel='stylesheet' href='../../css/mainStyle.css' type="text/css" />
+  <style type="text/css">
+    body{
+      background:none;
+      font:100%/1.5em 'Open Sans', Helvetica, Arial, sans-serif;
+      font-weight:300;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Comfortaa';
+      margin-bottom:1em;
+    }
+    img{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      max-height:750px;
+      margin:0 auto;
+      vertical-align:text-top;
+      display:block;
+    }
+    section.details{padding-top:5em;padding-bottom:5em;}
+    section.details p{margin:1.5em 0;}
+    .details p:first-child{ margin-top:0; }
+    .hero img{ 
+      border-left:none;
+      border-right:none;
+    }
+    .mock{
+      border: 1px solid #ccc;
+      max-width:380px;
+      max-height:none;
+    }
+    figure{margin:2em auto;}
+    figcaption{ font-size:.7em;}
+    .two{border-top:10px dotted rgba(0,0,0,.05);border-bottom:10px dotted rgba(0,0,0,.05);}
+    img.border{border:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.15);}
+    ul,ol{
+      margin:0;
+      position: relative;
+      line-height: 1.8em;
+      left:1.4em;
+    }
+    .hero img{margin:0;}
+    .hero, .hero2, .control{position:relative;}
+    .variation{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    }
+    .hero2 .variation{
+      opacity:1;
+      animation: hero-fade 5s;
+    }
+    .hero .variation{
+      height:100%;
+      overflow:hidden;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      box-shadow: 0 0 0 6px rgba(0,0,0, .2),
+                  0 0 10px rgba(0,0,0, .6), 
+                  inset 0 1px 0 rgba(255,255,255, .3);
+    }
+    .hero .variation img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      width: auto;
+      max-width: none;
+    }
+    
+    .hero .variation {
+      width: 50%;
+      animation: cd-bounce-in 1s;
+    }
+    .hero .label{
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      padding:20px;
+    }
+    .hero .slider {
+      position: absolute;
+      height:40px;
+      width: 40px;
+      /* center the element */
+      left: 50%;
+      top: 50%;
+      margin-left: -20px;
+      margin-top: -20px;
+      border-radius: 50%;
+      background-color: #555;
+      cursor: move;
+      box-shadow: 0 0 0 6px rgba(#000, .2), 0 0 10px rgba(#000, .6), inset 0 1px 0 rgba(#fff, .3);
+      opacity: 1;
+      animation: slider-bounce-in 1s;
+    }
+    .hero .slider:after{
+      content:'\2194';
+      color:#aaa;
+      font-weight:100;
+      position: relative;
+      left:10px;
+      top:6px;
+    }
+    .hero .variation:after {
+      content:'';
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      /* center the element */
+      right: 0;
+      top: 0;
+      background-color: #999;
+      cursor: move;
+    }
+    .is-visible & {
+      opacity: 1;
+      -webkit-transition: -webkit-transform .3s .7s, opacity 0s .7s;
+      -moz-transition: -moz-transform .3s .7s, opacity 0s .7s;
+      transition: transform .3s .7s, opacity 0s .7s;
+    }
+    .draggable {
+      /* change slider color when element is active */
+      background-color: #445b7c;
+    }
+    @keyframes hero-fade {
+      0% {
+        opacity:0;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes cd-bounce-in {
+      0% {
+        width: 0;
+      }
+      60% {
+        width: 65%;
+      }
+      100% {
+        width: 45%;
+      }
+    }
+    @keyframes slider-bounce-in {
+      0% {
+        left: 0;
+      }
+      60% {
+        left: 65%;
+      }
+      100% {
+        left: 45%;
+      }
+    }
+  }
+  </style>
+  </head>
+  <body>
+    <main>
+      <section class="details">
+        <h1>Core Site UX Upgrades</h1>
+        <ul class="skills">
+          <li class="cap">(</li>
+          <li class="first">Reverse address section</li>
+          <li>Sticky navigation</li>
+          <li>Rebranding work</li>
+          <li>Homepage redesign</li>
+          <li>Fun with error messaging</li>
+          <li class="cap">)</li>
+        </ul>
+      </section>
+
+      <article>
+        <section class="details">
+          <h3>Homepage</h3>
+          <figure class="hero">
+            <div class="control">
+              <img src="img/old/wp-home.png" alt="Whitepages Old Home"/>
+              <span class="label" data-type="original">Original</span>
+            </div>
+            <div class="variation">
+              <img class="border" src="img/final/coded-homepage-1.png" alt="Whitepages Home Design"/>
+              <span class="label" data-type="modified">Variation</span>
+            </div>
+            <span class="slider"></span> 
+          </figure>
+          <p>The need to rethink our homepage became apparent in our design challenges as we tried to incorporate the new navigation onto it. Our team played with concepts earlier that year in an exercise to modernize the site and get it in line with our brand guidelines. This felt like the perfect opportunity to test those explorations.</p>
+          <figure class="hero2">
+            <div class="control">
+              <img src="img/old/wp-home.png" alt="Whitepages Old Home"/>
+              <span class="label" data-type="original">Original</span>
+            </div>
+            <div class="variation">
+              <img class="border" src="img/final/coded-homepage-1.png" alt="Whitepages Home Design"/>
+              <span class="label" data-type="modified">Variation</span>
+            </div>
+            <span class="slider"></span> 
+          </figure>
+        </section>
+
+        <section class="details two">
+          <p>With our early concepts already available, we started by bringing together stakeholders to make our case and discuss goals and feasabile opportunities on the page.</p>
+          <figure><img class="border" src="img/old/wp-home.png" alt="Whitepages Old Home"/></figure>
+          <p>We asked ourselves a few questions as we began to think of what should belong on the homepage. Rather than place content for the sake of having, we discussed pros and cons of adding or removing information. We decided to focus on these areas to shape our decisions:</p>
+          <ul>
+            <li>Clear call to action for search</li>
+            <li>Download/awareness of other services like mobile apps</li>
+            <li>Incremental to rebrand that was already under way</li>
+          </ul>
+          <p>This was a rather large change that was counter to our usual end metric of revenue. With brand and UX focused changes, the metric tend to be harder to collect and more subjective. We settled for better page stats like engagement and bounce rate.</p>
+        </section>
+
+        <section class="details">
+          <p>With these points in mind, I worked with another designer to try a few iterations. Between ourselves, we wittled our ideas down to one idea each and gave feedback to each other on our direction. Once we were satisfied with the presentability, we met with key stakeholders again.</p>
+          <figure><img class="border" src="img/process/1-1.jpg" alt=""/></figure>
+          <figure><img class="border" src="img/process/1-2.jpg" alt=""/></figure>
+          <figure><img class="border" src="img/process/1-6.png" alt=""/></figure>
+        </section>
+
+        <section class="details two">
+          <p>The top concern was that ever-present tradeoff between a strong and authoratative brand and ad revenue. In our iterations, we designed with that in mind. For testing, we had the option to go all-in, but to calculate revenue trade-offs, we developed designs that stepped through the company's tolerance for removing ads.</p>
+          <figure><img class="border" src="img/process/3b.jpg" alt="Calum Home Design"/></figure>
+        </section>
+
+        <section class="details">
+          <p>As we closed in on the final design and figured out where we needed to make compromises, our front-end developer created a version to split test.</p> 
+          <figure><img class="border" src="img/final/finalhome.png" alt="Whitepages Home Design"/></figure>
+          <p>We started testing the variation at a lower than usual percentage since this was such a drastic change, and we collected data over the course of a month. Bounce rate dropped and time on page increased compared to our control. Longer term, subjective benefits wouldn't become apparent until much later on.</p>
+          <p><a href="http://www.whitepages.com/">Post-rebrand homepage is currently live</a></p>
+        </section>
+      </article>
+
+      <article>
+        <section class="details">
+          <h3>Sticky Nav</h3>
+          <figure class="hero">
+            <img class="border" src="img/final/new-nav-1.png" alt="Whitepages Sticky Nav"/>
+            <figcaption>[Final]</figcaption>
+          </figure>
+        </section>
+
+        <section class="details two">
+          <p>Old version</p>
+          <figure><img class="border" src="img/old/original-nav-1.png" alt="Whitepages Old Home"/></figure>
+        </section>
+      </article>
+
+      <article>
+        <section class="details">
+          <h3>Rebrand</h3>
+          <p>All of these upgrades worked in tandem with the rebrand that was under way. <a href="http://www.t-3.com/">T-3</a> worked with key members of the Whitepages team to undertake the effort to get the Whitepages brand, culture, and all its products in line.</p>
+        </section>
+      </article>
+    </main>
+    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+    <script>
+    jQuery(document).ready(function($){
+    //function to check if the .cd-image-container is in the viewport here
+    // ...
+    
+    //make the .cd-handle element draggable and modify .cd-resize-img width according to its position
+    $('.hero').each(function(){
+        var actual = $(this);
+        drags(actual.find('.slider'), actual.find('.variation'), actual);
+    });
+ 
+    //function to upadate images label visibility here
+    // ...
+    });
+     
+    //draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+    function drags(dragElement, resizeElement, container) {
+        dragElement.on("mousedown vmousedown", function(e) {
+            dragElement.addClass('draggable');
+            resizeElement.addClass('resizable');
+     
+            var dragWidth = dragElement.outerWidth(),
+                xPosition = dragElement.offset().left + dragWidth - e.pageX,
+                containerOffset = container.offset().left,
+                containerWidth = container.outerWidth(),
+                minLeft = containerOffset - dragWidth/2 + 2,
+                maxLeft = containerOffset + containerWidth - dragWidth/2 - 2;
+            
+            dragElement.parents().on("mousemove vmousemove", function(e) {
+                leftValue = e.pageX + xPosition - dragWidth;
+                
+                //constrain the draggable element to move inside its container
+                if(leftValue < minLeft ) {
+                    leftValue = minLeft;
+                } else if ( leftValue > maxLeft) {
+                    leftValue = maxLeft;
+                }
+     
+                widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
+                
+                $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
+                    $(this).removeClass('draggable');
+                    resizeElement.removeClass('resizable');
+                });
+     
+                $('.resizable').css('width', widthValue); 
+     
+                //function to upadate images label visibility here
+                // ...
+                console.log(containerWidth);
+                
+            }).on("mouseup vmouseup", function(e){
+                dragElement.removeClass('draggable');
+                resizeElement.removeClass('resizable');
+            });
+            e.preventDefault();
+        }).on("mouseup vmouseup", function(e) {
+            dragElement.removeClass('draggable');
+            resizeElement.removeClass('resizable');
+        });
+    }
+    </script>
+  </body>
+</html>

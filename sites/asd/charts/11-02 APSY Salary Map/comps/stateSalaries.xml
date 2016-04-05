@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<salary>
+	<stateinfo name="ak">
+		<city></city>
+		<psych>64,654</psych>
+		<couns>64,164</couns>
+	</stateinfo>
+	<stateinfo name="al">
+		<psych>64,654</psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ar">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="az">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ca">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="co">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ct">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="dc">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="de">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="flo">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ga">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="hi">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ia">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="id">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="il">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ind">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ks">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ky">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="la">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ma">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="md">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="me">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="mi">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="mn">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="mo">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ms">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="mt">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="nc">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="nd">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="neb">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="nh">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="nj">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="nm">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="nv">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ny">
+		<city>New York</city>
+		<psych>96,430</psych>
+		<couns>44,410</couns>
+	</stateinfo>
+	<stateinfo name="oh">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ok">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ore">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="pa">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ri">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="sc">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="sd">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="tn">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="tx">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="ut">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="va">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="vt">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="wa">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="wi">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="wv">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+	<stateinfo name="wy">
+		<city></city>
+		<psych></psych>
+		<couns></couns>
+	</stateinfo>
+</salary>

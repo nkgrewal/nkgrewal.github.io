@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+  <link rel='stylesheet' href='../../css/mainStyle.css' type="text/css" />
+  <style type="text/css">
+    body{
+      background:none;
+      font:100%/1.5em 'Open Sans', Helvetica, Arial, sans-serif;
+      font-weight:300;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Comfortaa'
+    }
+    img{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      max-height:550px;
+      margin:0 auto;
+      vertical-align:text-top;
+    }
+    .mock{
+      border: 1px solid #ccc;
+      max-width:380px;
+      max-height:none;
+    }
+    .caption{
+      font-size:.7em;
+    }
+    .two{background-color:#fff;}
+    ul,ol{
+      margin:0;
+      position: relative;
+      line-height: 1.8em;
+      left:1.4em;
+    }
+  </style>
+  </head>
+  <body>
+    <section class="details">
+      <h1>But how can we API harder?</h1>
+        <!--<ul class="skills">
+          <li class="cap">(</li>
+          <li class="first">Study Users</li>
+          <li>Identify Issues</li>
+          <li>Streamline Registration</li>
+          <li>Prototype</li>
+          <li class="cap">)</li>
+        </ul>
+        The Whitepages Pro team pooled resources to focus on increasing the usage, value, and communication of our products. 
+        -->
+        <p>We found that developers were experiencing a good deal of friction signing up for our services. The API products themselves were developing with the business, as well, so we needed a better way to update them throughout the system.</p>
+        </section>
+
+        <section class="details two">
+        <h3>Origin story</h3>
+        <p>An example of the original sign-up flow we were working with was as follows: </p>
+        <a href="img/old1.jpg"><img src="img/old1.jpg" /></a>
+        <ol class="caption">
+          <li>Request API key via a landing page / API section of Pro site, depending on channel of arrival.</li>
+          <li>Create an account to ensure our data isn't abused.</li>
+          <li>Verify email for account access.</li>
+          <li>Log in to the Developer Dashboard to test and run queries.</li>
+        </ol>
+        </section>
+
+        <section class="details">
+        <h3>How do we even</h3>
+        <p>We narrowed our focus to areas with the most payoff :</p>
+        <ul>
+          <li>Simplify initial info we request of users.</li>
+          <li>Make the Developer Dashboard more approachable for new users.</li>
+          <li>Create a template to communicate API products more effectively.</li>
+        </ul>
+        </section>
+
+        <section class="details two">
+        <h3>Creeping on users</h3>
+        <p>All of us had our assumptions about leaky points in the sign-up flow. The best way to vet them out was to check in with users. We utilized <a href="https://www.fullstory.com/">Full Story</a> to watch where users would drop off during sign-up and talked to a handful of customers that went through the process. We also ran the current sign-up flow past a few of our internal developers, most which hadn't used our API service until then, to confirm suspected pain points.</p>
+
+        <p>The conclusion was that there was quite bit of friction over the information required to start, the length of the first form, verifying email, and not really knowing where to start testing out the API once they hit the dashboard. Product put together a Google doc going over goals, areas of focus, cost, benefit, and etcetera pros/cons for the team to collaborate over.</p>
+        </section>
+
+        <section class="details">
+        <h3>Charting the wild seas of registration</h3>
+        <p>Whitepages instated SSO for all its products earlier in the year to centralize user accounts across consumer and B2B. It added a level of complexity for this project, as we only had so much control over what we asked of users. Certain info requirements for account creation were inflexible or would cost too much to change.</p>
+        <img src="img/1-sketch.jpg" />
+
+        <p>For Pro itself, we already had a multitude of people signing up under different paths, including free API trial, paid API service, Pro Web trial, paid Pro Web service, and a Pro Web viral sign-up campaign. Each path shared a lot of the same elements but with different treatments. To help the product and engineering team step back and conceptualize the entire registration UX, we created a set of diagrams per path (5 total) for the teams.</p> 
+
+        <p>I started with the ideal flow for each user based on our research. The product and engineering teams brought in feedback and ideas to better modulate it. We settled on 2 iterations for each path to deal with the amount of info buy-in we asked from users. One version had all the form elements in one step, and the other version broke it into a step-by-step progression. We would test the two against each other.</p>
+        <img src="img/1-diagram.png" />
+        </section>
+
+        <section class="details two">
+        <h3>I'm too lazy to build all this in Illustrator</h3>
+        <p>To flesh out the building blocks we would need as quickly as possible, I sketched out a prototype of pages, which product uploaded and wired up in the <a href="http://www.invisionapp.com/">InVision prototyping app</a> for us to navigate. This helped the product and engineering teams get a better sense of what the real flow would feel like to users clicking through, including elements and messaging, while having the ability to toy with the flow and leave comments. It also made it easier to garner critical feedback before investing too much time in higher fidelity mockups.</p>
+        <img src="img/2-sketches.jpg" />
+        </section>
+
+        <section class="details">
+        <h3>Fine, whatever, I'll build it but imma do it in Sketch</h3>
+        <p>The next step was creating more detailed mockups to refine with the product and maketing teams. Key pages were given a few variations to convey the potential pros and cons with different approaches while staying within the Whitepages branding guidelines.</p>
+
+        <h4>Landing Page</h4>
+        <img class="mock" src="img/3-lp.png" />
+
+        <h4>Dashboard</h4>
+        <img class="mock" src="img/3-dash1.png" />
+        <img class="mock" src="img/3-dash3.png" />
+        <img class="mock" src="img/3-dash4.png" />
+        <img class="mock" src="img/3-dash5.png" />
+
+        <h4>API Selection</h4>
+        <img class="mock" src="img/3-select1.png" />
+        </section>
+
+        <section class="details two">
+        <h3>From Seattle With Love</h3>
+        <p>Finally, I built out the final mockups to handoff to the engineering team that detailed different scanrios and walked through the interactions for users as they go through the registration process, the trial usage process, and the purchase process. Each were adjusted across cases and flows to make sure they were modular yet still sensical enough to work for their own situations.</p>
+        <h4>Registration</h4>
+        <img class="mock" src="img/4-1.png" />
+        <img class="mock" src="img/4-2.png" />
+        <img class="mock" src="img/4-3.png" />
+        <img class="mock" src="img/4-4.png" />
+        <img class="mock" src="img/4-5.png" />
+
+        <h4>Dashboard</h4>
+        <img class="mock" src="img/4-6.png" />
+        <img class="mock" src="img/4-7.png" />
+        <img class="mock" src="img/4-8.png" />
+        <img class="mock" src="img/4-9.png" />
+
+        <h4>Upgrade</h4>
+        <img class="mock" src="img/4-10.png" />
+        <img class="mock" src="img/4-11.png" />
+    </section>
+  </body>
+</html>

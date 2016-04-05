@@ -1,0 +1,830 @@
+schoolID,institution,campus,state,focusID
+2705,American InterContinental University Online,online,online,0
+2705,American InterContinental University Online,online,online,3
+499,Apollo College,Mesa,AZ,0
+499,Apollo College,Mesa,AZ,1
+499,Apollo College,Mesa,AZ,2
+499,Apollo College,Mesa,AZ,4
+499,Apollo College,Mesa,AZ,5
+499,Apollo College,Mesa,AZ,6
+498,Apollo College,Phoenix,AZ,1
+498,Apollo College,Phoenix,AZ,2
+498,Apollo College,Phoenix,AZ,4
+498,Apollo College,Phoenix,AZ,5
+498,Apollo College,Phoenix,AZ,6
+500,Apollo College,Tucson,AZ,0
+500,Apollo College,Tucson,AZ,1
+500,Apollo College,Tucson,AZ,2
+500,Apollo College,Tucson,AZ,4
+500,Apollo College,Tucson,AZ,5
+500,Apollo College,Tucson,AZ,6
+142,Apollo College,Boise,ID,0
+142,Apollo College,Boise,ID,1
+142,Apollo College,Boise,ID,2
+142,Apollo College,Boise,ID,5
+1651,Apollo College,Albuquerque,NM,0
+1651,Apollo College,Albuquerque,NM,1
+1651,Apollo College,Albuquerque,NM,2
+1651,Apollo College,Albuquerque,NM,4
+1651,Apollo College,Albuquerque,NM,5
+496,Apollo College,Portland,OR,0
+496,Apollo College,Portland,OR,1
+496,Apollo College,Portland,OR,2
+496,Apollo College,Portland,OR,5
+496,Apollo College,Portland,OR,6
+497,Apollo College,Spokane,WA,0
+497,Apollo College,Spokane,WA,1
+497,Apollo College,Spokane,WA,4
+497,Apollo College,Spokane,WA,5
+4658,Argosy University,Online,online,3
+2,Argosy University,Twin Cities,MN,1
+2,Argosy University,Twin Cities,MN,3
+2,Argosy University,Twin Cities,MN,5
+2,Argosy University,Twin Cities,MN,6
+2,Argosy University,Twin Cities,MN,7
+4488,Ashford University,Online,online,3
+4506,ATI Career Training Center,Fort Lauderdale,FL,1
+4506,ATI Career Training Center,Fort Lauderdale,FL,4
+4508,ATI Career Training Center,Miami,FL,1
+4508,ATI Career Training Center,Miami,FL,4
+4522,ATI Career Training Center,Albuquerque,NM,1
+4518,ATI Career Training Center,Oklahoma City,OK,1
+4518,ATI Career Training Center,Oklahoma City,OK,2
+4518,ATI Career Training Center,Oklahoma City,OK,5
+4505,ATI Career Training Center,Dallas,TX,1
+4505,ATI Career Training Center,Dallas,TX,5
+4507,ATI Career Training Center,North Richland Hills,TX,1
+4507,ATI Career Training Center,North Richland Hills,TX,5
+4519,ATI Career Training Center,Richardson,TX,1
+4519,ATI Career Training Center,Richardson,TX,5
+4936,ATI Career Training Center,Stemmons,TX,1
+4936,ATI Career Training Center,Stemmons,TX,5
+5038,ATI Career Training Center,Waco,TX,1
+5038,ATI Career Training Center,Waco,TX,5
+4348,Brookstone College of Business,Charlotte,NC,1
+4348,Brookstone College of Business,Charlotte,NC,2
+4348,Brookstone College of Business,Charlotte,NC,4
+4349,Brookstone College of Business,Greensboro,NC,1
+4349,Brookstone College of Business,Greensboro,NC,2
+4349,Brookstone College of Business,Greensboro,NC,4
+5035,Brown Mackie College,Phoenix,AZ,1
+5035,Brown Mackie College,Phoenix,AZ,3
+2199,Brown Mackie College,Kansas City,KS,0
+2199,Brown Mackie College,Kansas City,KS,1
+2199,Brown Mackie College,Kansas City,KS,3
+2199,Brown Mackie College,Kansas City,KS,4
+2194,Brown Mackie College,Akron,OH,0
+2194,Brown Mackie College,Akron,OH,1
+2194,Brown Mackie College,Akron,OH,2
+2194,Brown Mackie College,Akron,OH,3
+2196,Brown Mackie College,North Canton,OH,1
+2196,Brown Mackie College,North Canton,OH,2
+2196,Brown Mackie College,North Canton,OH,3
+4841,Brown Mackie College,Tulsa,OK,1
+4841,Brown Mackie College,Tulsa,OK,3
+2531,Colorado Technical University Online,online,online,0
+2531,Colorado Technical University Online,online,online,3
+2997,Eastwick College,Ramsey,NJ,0
+2997,Eastwick College,Ramsey,NJ,1
+1031,Everest College,Phoenix,AZ,0
+1031,Everest College,Phoenix,AZ,1
+507,Everest College,Alhambra,CA,0
+507,Everest College,Alhambra,CA,1
+507,Everest College,Alhambra,CA,2
+507,Everest College,Alhambra,CA,4
+507,Everest College,Alhambra,CA,5
+506,Everest College,Anaheim,CA,0
+506,Everest College,Anaheim,CA,1
+506,Everest College,Anaheim,CA,5
+515,Everest College,City of Industry,CA,0
+515,Everest College,City of Industry,CA,1
+515,Everest College,City of Industry,CA,2
+515,Everest College,City of Industry,CA,5
+508,Everest College,Gardena,CA,0
+508,Everest College,Gardena,CA,1
+508,Everest College,Gardena,CA,5
+807,Everest College,Hayward,CA,0
+807,Everest College,Hayward,CA,1
+807,Everest College,Hayward,CA,4
+511,Everest College,Ontario,CA,0
+511,Everest College,Ontario,CA,1
+511,Everest College,Ontario,CA,2
+511,Everest College,Ontario,CA,4
+511,Everest College,Ontario,CA,5
+512,Everest College,Reseda,CA,0
+512,Everest College,Reseda,CA,1
+512,Everest College,Reseda,CA,2
+512,Everest College,Reseda,CA,4
+512,Everest College,Reseda,CA,5
+836,Everest College,San Bernardino,CA,1
+836,Everest College,San Bernardino,CA,4
+836,Everest College,San Bernardino,CA,5
+513,Everest College,San Francisco,CA,1
+513,Everest College,San Francisco,CA,2
+513,Everest College,San Francisco,CA,5
+514,Everest College,San Jose North,CA,0
+514,Everest College,San Jose North,CA,1
+514,Everest College,San Jose North,CA,4
+514,Everest College,San Jose North,CA,5
+590,Everest College,Torrance,CA,1
+590,Everest College,Torrance,CA,2
+510,Everest College,West Los Angeles,CA,0
+510,Everest College,West Los Angeles,CA,1
+510,Everest College,West Los Angeles,CA,2
+510,Everest College,West Los Angeles,CA,4
+510,Everest College,West Los Angeles,CA,5
+834,Everest College,Colorado Springs,CO,0
+834,Everest College,Colorado Springs,CO,1
+834,Everest College,Colorado Springs,CO,4
+829,Everest College,Denver North (Thornton),CO,0
+829,Everest College,Denver North (Thornton),CO,1
+829,Everest College,Denver North (Thornton),CO,4
+830,Everest College,Denver South (Aurora),CO,0
+830,Everest College,Denver South (Aurora),CO,1
+830,Everest College,Denver South (Aurora),CO,2
+830,Everest College,Denver South (Aurora),CO,4
+847,Everest College,Burr Ridge,IL,0
+847,Everest College,Burr Ridge,IL,1
+847,Everest College,Burr Ridge,IL,4
+847,Everest College,Burr Ridge,IL,5
+1744,Everest College,Chicago,IL,0
+1744,Everest College,Chicago,IL,1
+1744,Everest College,Chicago,IL,2
+1744,Everest College,Chicago,IL,4
+1744,Everest College,Chicago,IL,5
+3558,Everest College,Merrionette Park,IL,0
+3558,Everest College,Merrionette Park,IL,1
+3558,Everest College,Merrionette Park,IL,2
+2346,Everest College,North Aurora,IL,0
+2346,Everest College,North Aurora,IL,1
+2346,Everest College,North Aurora,IL,4
+846,Everest College,Skokie,IL,0
+846,Everest College,Skokie,IL,1
+846,Everest College,Skokie,IL,2
+846,Everest College,Skokie,IL,4
+846,Everest College,Skokie,IL,5
+554,Everest College,Merrillville,IN,0
+554,Everest College,Merrillville,IN,1
+554,Everest College,Merrillville,IN,4
+554,Everest College,Merrillville,IN,5
+832,Everest College,Springfield,MO,1
+832,Everest College,Springfield,MO,4
+832,Everest College,Springfield,MO,5
+2462,Everest College,St. Louis,MO,0
+2462,Everest College,St. Louis,MO,1
+772,Everest College,Portland,OR,0
+772,Everest College,Portland,OR,1
+772,Everest College,Portland,OR,2
+772,Everest College,Portland,OR,4
+2065,Everest College,Dallas,TX,0
+2065,Everest College,Dallas,TX,1
+2067,Everest College,Ft. Worth,TX,0
+2067,Everest College,Ft. Worth,TX,1
+2067,Everest College,Ft. Worth,TX,2
+2067,Everest College,Ft. Worth,TX,4
+2067,Everest College,Ft. Worth,TX,5
+2064,Everest College,Mid-Cities,TX,0
+2064,Everest College,Mid-Cities,TX,1
+2064,Everest College,Mid-Cities,TX,2
+826,Everest College,Salt Lake City,UT,0
+826,Everest College,Salt Lake City,UT,1
+826,Everest College,Salt Lake City,UT,2
+826,Everest College,Salt Lake City,UT,4
+3557,Everest College,Arlington,VA,1
+539,Everest College,Chesapeake,VA,0
+539,Everest College,Chesapeake,VA,1
+539,Everest College,Chesapeake,VA,4
+539,Everest College,Chesapeake,VA,5
+839,Everest College,Newport News,VA,0
+839,Everest College,Newport News,VA,1
+839,Everest College,Newport News,VA,4
+1774,Everest College,Tyson's Corner,VA,0
+1774,Everest College,Tyson's Corner,VA,1
+528,Everest College,Bremerton,WA,0
+528,Everest College,Bremerton,WA,1
+528,Everest College,Bremerton,WA,2
+528,Everest College,Bremerton,WA,5
+526,Everest College,Everett,WA,0
+526,Everest College,Everett,WA,1
+526,Everest College,Everett,WA,2
+526,Everest College,Everett,WA,5
+517,Everest College,Renton,WA,0
+517,Everest College,Renton,WA,1
+517,Everest College,Renton,WA,2
+517,Everest College,Renton,WA,4
+517,Everest College,Renton,WA,5
+2056,Everest College,Seattle,WA,0
+2056,Everest College,Seattle,WA,1
+1615,Everest College,Tacoma,WA,0
+1615,Everest College,Tacoma,WA,1
+1615,Everest College,Tacoma,WA,2
+1615,Everest College,Tacoma,WA,5
+833,Everest College,Vancouver,WA,0
+833,Everest College,Vancouver,WA,1
+833,Everest College,Vancouver,WA,4
+1677,Everest Institute,Fort Lauderdale,FL,0
+1677,Everest Institute,Fort Lauderdale,FL,1
+1677,Everest Institute,Fort Lauderdale,FL,2
+827,Everest Institute,Hialeah,FL,0
+827,Everest Institute,Hialeah,FL,1
+827,Everest Institute,Hialeah,FL,2
+640,Everest Institute,North Miami,FL,0
+640,Everest Institute,North Miami,FL,1
+640,Everest Institute,North Miami,FL,2
+591,Everest Institute,Decatur,GA,0
+591,Everest Institute,Decatur,GA,1
+591,Everest Institute,Decatur,GA,4
+838,Everest Institute,Jonesboro,GA,0
+838,Everest Institute,Jonesboro,GA,1
+838,Everest Institute,Jonesboro,GA,2
+838,Everest Institute,Jonesboro,GA,4
+810,Everest Institute,Marietta,GA,0
+810,Everest Institute,Marietta,GA,1
+810,Everest Institute,Marietta,GA,4
+1387,Everest Institute,Norcross,GA,0
+1387,Everest Institute,Norcross,GA,1
+1387,Everest Institute,Norcross,GA,4
+1387,Everest Institute,Norcross,GA,5
+518,Everest Institute,Brighton,MA,1
+518,Everest Institute,Brighton,MA,4
+518,Everest Institute,Brighton,MA,5
+1712,Everest Institute,Chelsea,MA,0
+1712,Everest Institute,Chelsea,MA,1
+2285,Everest Institute,Silver Spring,MD,1
+841,Everest Institute,Dearborn,MI,0
+841,Everest Institute,Dearborn,MI,1
+841,Everest Institute,Dearborn,MI,4
+841,Everest Institute,Dearborn,MI,5
+1742,Everest Institute,Detroit,MI,1
+1742,Everest Institute,Detroit,MI,2
+1742,Everest Institute,Detroit,MI,4
+553,Everest Institute,Grand Rapids,MI,0
+553,Everest Institute,Grand Rapids,MI,1
+553,Everest Institute,Grand Rapids,MI,4
+553,Everest Institute,Grand Rapids,MI,5
+828,Everest Institute,Kalamazoo,MI,1
+828,Everest Institute,Kalamazoo,MI,2
+828,Everest Institute,Kalamazoo,MI,4
+828,Everest Institute,Kalamazoo,MI,5
+845,Everest Institute,Southfield,MI,0
+845,Everest Institute,Southfield,MI,1
+845,Everest Institute,Southfield,MI,4
+1778,Everest Institute,Eagan,MN,0
+1778,Everest Institute,Eagan,MN,1
+1778,Everest Institute,Eagan,MN,2
+1778,Everest Institute,Eagan,MN,4
+2630,Everest Institute,South Plainfield,NJ,0
+2630,Everest Institute,South Plainfield,NJ,1
+2630,Everest Institute,South Plainfield,NJ,2
+848,Everest Institute,Rochester,NY,0
+848,Everest Institute,Rochester,NY,1
+2113,Everest Institute,Columbus,OH,0
+2113,Everest Institute,Columbus,OH,1
+2113,Everest Institute,Columbus,OH,2
+2113,Everest Institute,Columbus,OH,4
+2060,Everest Institute,Portland - Tigard,OR,0
+2060,Everest Institute,Portland - Tigard,OR,1
+837,Everest Institute,Pittsburgh,PA,1
+837,Everest Institute,Pittsburgh,PA,2
+837,Everest Institute,Pittsburgh,PA,4
+548,Everest Institute,Austin,TX,0
+548,Everest Institute,Austin,TX,1
+548,Everest Institute,Austin,TX,4
+548,Everest Institute,Austin,TX,5
+2017,Everest Institute,Bissonnet,TX,0
+2017,Everest Institute,Bissonnet,TX,1
+2017,Everest Institute,Bissonnet,TX,2
+549,Everest Institute,Houston-Greenspoint,TX,1
+549,Everest Institute,Houston-Greenspoint,TX,4
+549,Everest Institute,Houston-Greenspoint,TX,5
+843,Everest Institute,Houston-Hobby,TX,0
+843,Everest Institute,Houston-Hobby,TX,1
+843,Everest Institute,Houston-Hobby,TX,2
+844,Everest Institute,San Antonio,TX,0
+844,Everest Institute,San Antonio,TX,1
+844,Everest Institute,San Antonio,TX,4
+800,Everest Institute,Cross Lanes,WV,0
+800,Everest Institute,Cross Lanes,WV,1
+800,Everest Institute,Cross Lanes,WV,4
+809,Everest University,Brandon,FL,0
+809,Everest University,Brandon,FL,1
+809,Everest University,Brandon,FL,2
+809,Everest University,Brandon,FL,7
+822,Everest University,Jacksonville,FL,0
+822,Everest University,Jacksonville,FL,1
+822,Everest University,Jacksonville,FL,2
+822,Everest University,Jacksonville,FL,5
+823,Everest University,Lakeland,FL,0
+823,Everest University,Lakeland,FL,1
+823,Everest University,Lakeland,FL,2
+823,Everest University,Lakeland,FL,4
+614,Everest University,Melbourne,FL,0
+614,Everest University,Melbourne,FL,1
+614,Everest University,Melbourne,FL,2
+614,Everest University,Melbourne,FL,3
+1688,Everest University,Orange Park,FL,0
+1688,Everest University,Orange Park,FL,1
+1688,Everest University,Orange Park,FL,4
+615,Everest University,Orlando North,FL,0
+615,Everest University,Orlando North,FL,1
+615,Everest University,Orlando North,FL,2
+615,Everest University,Orlando North,FL,3
+615,Everest University,Orlando North,FL,4
+819,Everest University,Pinellas,FL,0
+819,Everest University,Pinellas,FL,1
+819,Everest University,Pinellas,FL,2
+819,Everest University,Pinellas,FL,3
+819,Everest University,Pinellas,FL,5
+824,Everest University,Pompano Beach,FL,0
+824,Everest University,Pompano Beach,FL,1
+824,Everest University,Pompano Beach,FL,2
+825,Everest University,South Orlando,FL,0
+825,Everest University,South Orlando,FL,1
+825,Everest University,South Orlando,FL,2
+825,Everest University,South Orlando,FL,3
+820,Everest University,Tampa,FL,0
+820,Everest University,Tampa,FL,1
+820,Everest University,Tampa,FL,2
+820,Everest University,Tampa,FL,3
+820,Everest University,Tampa,FL,4
+1660,Fox College,Midway Campus,IL,1
+4976,Fox College,Tinley Park Campus,IL,6
+4633,Fox Institute of Business,Clifton,NJ,1
+4634,Fox Institute of Business,West Hartford,CT,0
+4635,Fox Institute of Business,West Hartford,CT,1
+3613,Globe University,Woodbury,MN,1
+3613,Globe University,Woodbury,MN,3
+3613,Globe University,Woodbury,MN,4
+3613,Globe University,Woodbury,MN,6
+4787,Globe University,Eau Claire,WI,1
+4787,Globe University,Eau Claire,WI,3
+4787,Globe University,Eau Claire,WI,4
+4787,Globe University,Eau Claire,WI,6
+4842,Globe University,Sioux Falls,SD,1
+4842,Globe University,Sioux Falls,SD,3
+4842,Globe University,Sioux Falls,SD,4
+4842,Globe University,Sioux Falls,SD,6
+5016,Globe University,Eau Claire,WI,1
+5016,Globe University,Eau Claire,WI,3
+5016,Globe University,Eau Claire,WI,4
+5016,Globe University,Eau Claire,WI,6
+5017,Globe University,Minneapolis,MN,3
+5018,Globe University,Sioux Falls,SD,1
+5018,Globe University,Sioux Falls,SD,3
+5018,Globe University,Sioux Falls,SD,4
+5018,Globe University,Sioux Falls,SD,6
+5019,Globe University,Woodbury,MN,1
+5019,Globe University,Woodbury,MN,3
+5019,Globe University,Woodbury,MN,4
+5019,Globe University,Woodbury,MN,6
+5032,Globe University,Richfield,MN,3
+2243,Indiana Business College,Indianapolis - Medical Division,IN,1
+2243,Indiana Business College,Indianapolis - Medical Division,IN,4
+2707,Indiana Business College,Muncie,IN,1
+2707,Indiana Business College,Muncie,IN,3
+2707,Indiana Business College,Muncie,IN,4
+4212,Indiana Business College,Indianapolis - Northwest,IN,1
+4212,Indiana Business College,Indianapolis - Northwest,IN,3
+4212,Indiana Business College,Indianapolis - Northwest,IN,4
+4526,Indiana Business College,Anderson,IN,1
+4526,Indiana Business College,Anderson,IN,4
+4527,Indiana Business College,Columbus,IN,1
+4528,Indiana Business College,Evansville,IN,1
+4528,Indiana Business College,Evansville,IN,3
+4528,Indiana Business College,Evansville,IN,4
+4529,Indiana Business College,Fort Wayne,IN,1
+4529,Indiana Business College,Fort Wayne,IN,3
+4529,Indiana Business College,Fort Wayne,IN,4
+4530,Indiana Business College,Lafayette,IN,1
+4530,Indiana Business College,Lafayette,IN,4
+4532,Indiana Business College,Terre Haute,IN,1
+4532,Indiana Business College,Terre Haute,IN,3
+4532,Indiana Business College,Terre Haute,IN,4
+5012,Indiana Business College,Indianapolis - Northwest,IN,6
+674,Indiana Business College,Indianapolis - Downtown,IN,1
+674,Indiana Business College,Indianapolis - Downtown,IN,3
+674,Indiana Business College,Indianapolis - Downtown,IN,4
+674,Indiana Business College,Indianapolis - Downtown,IN,6
+4585,Keiser University,Daytona Beach,FL,1
+4585,Keiser University,Daytona Beach,FL,3
+4585,Keiser University,Daytona Beach,FL,7
+959,Keiser University,eCampus,FL,1
+959,Keiser University,eCampus,FL,3
+4586,Keiser University,Fort Lauderdale,FL,1
+4586,Keiser University,Fort Lauderdale,FL,3
+4586,Keiser University,Fort Lauderdale,FL,7
+4587,Keiser University,Jacksonville,FL,1
+4587,Keiser University,Jacksonville,FL,3
+4587,Keiser University,Jacksonville,FL,7
+4588,Keiser University,Kendall,FL,1
+4588,Keiser University,Kendall,FL,3
+4588,Keiser University,Kendall,FL,7
+4589,Keiser University,Lakeland,FL,1
+4589,Keiser University,Lakeland,FL,3
+4589,Keiser University,Lakeland,FL,7
+4590,Keiser University,Melbourne,FL,1
+4590,Keiser University,Melbourne,FL,3
+4590,Keiser University,Melbourne,FL,7
+4591,Keiser University,Orlando,FL,1
+4591,Keiser University,Orlando,FL,3
+4591,Keiser University,Orlando,FL,7
+4592,Keiser University,Pembroke Pines,FL,1
+4592,Keiser University,Pembroke Pines,FL,3
+4593,Keiser University,Port St. Lucie,FL,1
+4593,Keiser University,Port St. Lucie,FL,3
+4593,Keiser University,Port St. Lucie,FL,7
+4594,Keiser University,Sarasota,FL,1
+4594,Keiser University,Sarasota,FL,3
+4594,Keiser University,Sarasota,FL,7
+4560,Keiser University,Tallahassee,FL,1
+4560,Keiser University,Tallahassee,FL,3
+4560,Keiser University,Tallahassee,FL,7
+4595,Keiser University,Tampa,FL,1
+4595,Keiser University,Tampa,FL,3
+4595,Keiser University,Tampa,FL,7
+4596,Keiser University,West Palm Beach,FL,1
+4596,Keiser University,West Palm Beach,FL,3
+4596,Keiser University,West Palm Beach,FL,7
+2899,McCann School of Business & Technology,Pottsville,PA,0
+2899,McCann School of Business & Technology,Pottsville,PA,1
+2899,McCann School of Business & Technology,Pottsville,PA,4
+2900,McCann School of Business & Technology,Hazleton,PA,0
+2900,McCann School of Business & Technology,Hazleton,PA,1
+2900,McCann School of Business & Technology,Hazleton,PA,4
+2901,McCann School of Business & Technology,Sunbury,PA,0
+2901,McCann School of Business & Technology,Sunbury,PA,1
+2901,McCann School of Business & Technology,Sunbury,PA,4
+2902,McCann School of Business & Technology,Scranton,PA,0
+2902,McCann School of Business & Technology,Scranton,PA,1
+2902,McCann School of Business & Technology,Scranton,PA,4
+4993,MedVance Institute,Ft. Lauderdale,FL,0
+4993,MedVance Institute,Ft. Lauderdale,FL,1
+4993,MedVance Institute,Ft. Lauderdale,FL,2
+4993,MedVance Institute,Ft. Lauderdale,FL,4
+4993,MedVance Institute,Ft. Lauderdale,FL,7
+4995,MedVance Institute,Miami,FL,0
+4995,MedVance Institute,Miami,FL,1
+4995,MedVance Institute,Miami,FL,2
+4995,MedVance Institute,Miami,FL,4
+4995,MedVance Institute,Miami,FL,7
+4997,MedVance Institute,Stuart,FL,0
+4997,MedVance Institute,Stuart,FL,1
+4997,MedVance Institute,Stuart,FL,4
+4998,MedVance Institute,West Palm Beach,FL,0
+4998,MedVance Institute,West Palm Beach,FL,1
+4998,MedVance Institute,West Palm Beach,FL,2
+4998,MedVance Institute,West Palm Beach,FL,4
+4998,MedVance Institute,West Palm Beach,FL,7
+4991,MedVance Institute,Baton Rouge,LA,0
+4991,MedVance Institute,Baton Rouge,LA,1
+4991,MedVance Institute,Baton Rouge,LA,2
+4991,MedVance Institute,Baton Rouge,LA,4
+4991,MedVance Institute,Baton Rouge,LA,7
+4992,MedVance Institute,Cookeville,TN,0
+4992,MedVance Institute,Cookeville,TN,1
+4992,MedVance Institute,Cookeville,TN,2
+4992,MedVance Institute,Cookeville,TN,4
+4992,MedVance Institute,Cookeville,TN,7
+4996,MedVance Institute,Nashville,TN,0
+4996,MedVance Institute,Nashville,TN,1
+4996,MedVance Institute,Nashville,TN,4
+4996,MedVance Institute,Nashville,TN,7
+4999,MedVance Institute,Grand Prairie,TX,0
+4999,MedVance Institute,Grand Prairie,TX,1
+4994,MedVance Institute,Houston,TX,0
+4994,MedVance Institute,Houston,TX,1
+5000,MedVance Institute,Houston North,TX,0
+5000,MedVance Institute,Houston North,TX,1
+4954,Pima Medical Institute,East Valley,AZ,0
+4954,Pima Medical Institute,East Valley,AZ,1
+4954,Pima Medical Institute,East Valley,AZ,6
+555,Pima Medical Institute,Mesa,AZ,0
+555,Pima Medical Institute,Mesa,AZ,1
+555,Pima Medical Institute,Mesa,AZ,2
+555,Pima Medical Institute,Mesa,AZ,5
+555,Pima Medical Institute,Mesa,AZ,6
+3731,Pima Medical Institute,Online,online,7
+556,Pima Medical Institute,Tucson,AZ,0
+556,Pima Medical Institute,Tucson,AZ,1
+556,Pima Medical Institute,Tucson,AZ,2
+556,Pima Medical Institute,Tucson,AZ,5
+556,Pima Medical Institute,Tucson,AZ,6
+556,Pima Medical Institute,Tucson,AZ,7
+789,Pima Medical Institute,Chula Vista,CA,1
+789,Pima Medical Institute,Chula Vista,CA,2
+789,Pima Medical Institute,Chula Vista,CA,4
+789,Pima Medical Institute,Chula Vista,CA,5
+789,Pima Medical Institute,Chula Vista,CA,6
+1409,Pima Medical Institute,Colorado Springs,CO,1
+1409,Pima Medical Institute,Colorado Springs,CO,2
+1409,Pima Medical Institute,Colorado Springs,CO,4
+1409,Pima Medical Institute,Colorado Springs,CO,5
+1409,Pima Medical Institute,Colorado Springs,CO,6
+2165,Pima Medical Institute,Denver,CO,0
+2165,Pima Medical Institute,Denver,CO,1
+2165,Pima Medical Institute,Denver,CO,2
+2165,Pima Medical Institute,Denver,CO,4
+2165,Pima Medical Institute,Denver,CO,5
+2165,Pima Medical Institute,Denver,CO,6
+463,Pima Medical Institute,Albuquerque,NM,0
+463,Pima Medical Institute,Albuquerque,NM,1
+463,Pima Medical Institute,Albuquerque,NM,2
+463,Pima Medical Institute,Albuquerque,NM,5
+463,Pima Medical Institute,Albuquerque,NM,6
+818,Pima Medical Institute,Las Vegas,NV,1
+818,Pima Medical Institute,Las Vegas,NV,2
+818,Pima Medical Institute,Las Vegas,NV,4
+818,Pima Medical Institute,Las Vegas,NV,5
+818,Pima Medical Institute,Las Vegas,NV,6
+2114,Pima Medical Institute,Renton,WA,0
+2114,Pima Medical Institute,Renton,WA,1
+2114,Pima Medical Institute,Renton,WA,2
+2114,Pima Medical Institute,Renton,WA,5
+2114,Pima Medical Institute,Renton,WA,6
+558,Pima Medical Institute,Seattle,WA,0
+558,Pima Medical Institute,Seattle,WA,1
+558,Pima Medical Institute,Seattle,WA,2
+558,Pima Medical Institute,Seattle,WA,5
+558,Pima Medical Institute,Seattle,WA,6
+3983,Rasmussen College,Rockford,IL,0
+3983,Rasmussen College,Rockford,IL,2
+2524,Rasmussen College,Brooklyn Park,MN,1
+2524,Rasmussen College,Brooklyn Park,MN,3
+2524,Rasmussen College,Brooklyn Park,MN,4
+1991,Rasmussen College,Eagan,MN,1
+1991,Rasmussen College,Eagan,MN,2
+1991,Rasmussen College,Eagan,MN,4
+1967,Rasmussen College,Eden Prairie,MN,1
+1967,Rasmussen College,Eden Prairie,MN,3
+1967,Rasmussen College,Eden Prairie,MN,4
+4378,Rasmussen College,Lake Elmo/Woodbury,MN,1
+4378,Rasmussen College,Lake Elmo/Woodbury,MN,3
+4378,Rasmussen College,Lake Elmo/Woodbury,MN,4
+1993,Rasmussen College,Mankato,MN,0
+1993,Rasmussen College,Mankato,MN,1
+1993,Rasmussen College,Mankato,MN,2
+1993,Rasmussen College,Mankato,MN,3
+1993,Rasmussen College,Mankato,MN,4
+4649,Rasmussen College,Moorhead,MN,0
+4649,Rasmussen College,Moorhead,MN,3
+4649,Rasmussen College,Moorhead,MN,4
+4214,Rasmussen College,Online,online,3
+4214,Rasmussen College,Online,online,4
+1992,Rasmussen College,St. Cloud,MN,0
+1992,Rasmussen College,St. Cloud,MN,1
+1992,Rasmussen College,St. Cloud,MN,2
+1992,Rasmussen College,St. Cloud,MN,3
+1992,Rasmussen College,St. Cloud,MN,4
+1987,Rasmussen College,Bismarck,ND,0
+1987,Rasmussen College,Bismarck,ND,4
+1966,Rasmussen College,Fargo,ND,0
+1966,Rasmussen College,Fargo,ND,4
+4473,Rasmussen College,Green Bay,WI,0
+4473,Rasmussen College,Green Bay,WI,1
+4473,Rasmussen College,Green Bay,WI,2
+4473,Rasmussen College,Green Bay,WI,3
+4473,Rasmussen College,Green Bay,WI,4
+4061,Remington College,Mobile,AL,1
+4061,Remington College,Mobile,AL,2
+4059,Remington College,Little Rock,AR,0
+4059,Remington College,Little Rock,AR,1
+4059,Remington College,Little Rock,AR,2
+4050,Remington College,Colorado Springs,CO,1
+4050,Remington College,Colorado Springs,CO,2
+4066,Remington College,Tampa,FL,1
+4054,Remington College,Honolulu,HI,1
+4047,Remington College,Baton Rouge,LA,0
+4047,Remington College,Baton Rouge,LA,1
+4047,Remington College,Baton Rouge,LA,2
+4057,Remington College,Lafayette,LA,0
+4057,Remington College,Lafayette,LA,1
+4653,Remington College,Shreveport,LA,0
+4653,Remington College,Shreveport,LA,1
+4048,Remington College,Cleveland,OH,0
+4048,Remington College,Cleveland,OH,1
+4048,Remington College,Cleveland,OH,2
+4049,Remington College,Cleveland West,OH,0
+4049,Remington College,Cleveland West,OH,1
+4049,Remington College,Cleveland West,OH,2
+4049,Remington College,Cleveland West,OH,5
+4071,Remington College,Memphis,TN,0
+4071,Remington College,Memphis,TN,1
+4071,Remington College,Memphis,TN,2
+4062,Remington College,Nashville,TN,1
+4062,Remington College,Nashville,TN,5
+4051,Remington College,Dallas,TX,1
+4051,Remington College,Dallas,TX,2
+4053,Remington College,Fort Worth,TX,1
+4053,Remington College,Fort Worth,TX,2
+4055,Remington College,Houston,TX,0
+4055,Remington College,Houston,TX,1
+4055,Remington College,Houston,TX,2
+4694,Remington College,Houston Southeast,TX,0
+4694,Remington College,Houston Southeast,TX,1
+4064,Remington College,North Houston,TX,0
+4064,Remington College,North Houston,TX,1
+4064,Remington College,North Houston,TX,2
+797,South University,Montgomery,AL,1
+797,South University,Montgomery,AL,3
+798,South University,West Palm Beach,FL,3
+2144,South University,online,online,3
+799,South University,Savannah,GA,1
+799,South University,Savannah,GA,3
+1644,South University,Columbia,SC,1
+1644,South University,Columbia,SC,3
+464,Spencerian College,Louisville,KY,0
+464,Spencerian College,Louisville,KY,1
+464,Spencerian College,Louisville,KY,4
+464,Spencerian College,Louisville,KY,7
+4482,University of Phoenix,Birmingham,AL,0
+4482,University of Phoenix,Birmingham,AL,2
+4482,University of Phoenix,Birmingham,AL,3
+3671,University of Phoenix,online,online,0
+3671,University of Phoenix,online,online,2
+3671,University of Phoenix,online,online,3
+3907,University of Phoenix,Phoenix,AZ,0
+3907,University of Phoenix,Phoenix,AZ,2
+3907,University of Phoenix,Phoenix,AZ,3
+3912,University of Phoenix,Southern Arizona,AZ,0
+3912,University of Phoenix,Southern Arizona,AZ,2
+3912,University of Phoenix,Southern Arizona,AZ,3
+3902,University of Phoenix,Bay Area,CA,0
+3902,University of Phoenix,Bay Area,CA,2
+3902,University of Phoenix,Bay Area,CA,3
+3903,University of Phoenix,Central Valley,CA,0
+3903,University of Phoenix,Central Valley,CA,2
+3903,University of Phoenix,Central Valley,CA,3
+3909,University of Phoenix,Sacramento,CA,0
+3909,University of Phoenix,Sacramento,CA,2
+3909,University of Phoenix,Sacramento,CA,3
+3911,University of Phoenix,San Diego,CA,0
+3911,University of Phoenix,San Diego,CA,2
+3911,University of Phoenix,San Diego,CA,3
+3913,University of Phoenix,Southern California,CA,0
+3913,University of Phoenix,Southern California,CA,2
+3913,University of Phoenix,Southern California,CA,3
+3886,University of Phoenix,Colorado,CO,0
+3886,University of Phoenix,Colorado,CO,2
+3886,University of Phoenix,Colorado,CO,3
+3914,University of Phoenix,Southern Colorado,CO,0
+3914,University of Phoenix,Southern Colorado,CO,2
+3914,University of Phoenix,Southern Colorado,CO,3
+3889,University of Phoenix,Ft. Lauderdale,FL,0
+3889,University of Phoenix,Ft. Lauderdale,FL,2
+3889,University of Phoenix,Ft. Lauderdale,FL,3
+3893,University of Phoenix,Jacksonville,FL,0
+3893,University of Phoenix,Jacksonville,FL,2
+3893,University of Phoenix,Jacksonville,FL,3
+3906,University of Phoenix,Orlando,FL,0
+3906,University of Phoenix,Orlando,FL,2
+3906,University of Phoenix,Orlando,FL,3
+3916,University of Phoenix,Tampa,FL,0
+3916,University of Phoenix,Tampa,FL,2
+3916,University of Phoenix,Tampa,FL,3
+3881,University of Phoenix,Atlanta,GA,0
+3881,University of Phoenix,Atlanta,GA,2
+3881,University of Phoenix,Atlanta,GA,3
+4409,University of Phoenix,Augusta,GA,0
+4409,University of Phoenix,Augusta,GA,2
+4409,University of Phoenix,Augusta,GA,3
+3887,University of Phoenix,Columbus,GA,0
+3887,University of Phoenix,Columbus,GA,2
+3887,University of Phoenix,Columbus,GA,3
+5003,University of Phoenix,Savannah,GA,0
+5003,University of Phoenix,Savannah,GA,2
+5003,University of Phoenix,Savannah,GA,3
+3890,University of Phoenix,Hawaii,HI,0
+3890,University of Phoenix,Hawaii,HI,2
+3890,University of Phoenix,Hawaii,HI,3
+3883,University of Phoenix,Idaho,ID,0
+3883,University of Phoenix,Idaho,ID,2
+3883,University of Phoenix,Idaho,ID,3
+4209,University of Phoenix,Chicago,IL,0
+4209,University of Phoenix,Chicago,IL,2
+4209,University of Phoenix,Chicago,IL,3
+3892,University of Phoenix,Indianapolis,IN,0
+3892,University of Phoenix,Indianapolis,IN,2
+3892,University of Phoenix,Indianapolis,IN,3
+4167,University of Phoenix,NW Indiana,IN,0
+4167,University of Phoenix,NW Indiana,IN,2
+4167,University of Phoenix,NW Indiana,IN,3
+3894,University of Phoenix,Kansas City,KS,0
+3894,University of Phoenix,Kansas City,KS,2
+3894,University of Phoenix,Kansas City,KS,3
+3896,University of Phoenix,Louisville,KY,0
+3896,University of Phoenix,Louisville,KY,2
+3896,University of Phoenix,Louisville,KY,3
+3895,University of Phoenix,Louisiana,LA,0
+3895,University of Phoenix,Louisiana,LA,2
+3895,University of Phoenix,Louisiana,LA,3
+3898,University of Phoenix,Detroit,MI,0
+3898,University of Phoenix,Detroit,MI,2
+3898,University of Phoenix,Detroit,MI,3
+3920,University of Phoenix,West Michigan,MI,0
+3920,University of Phoenix,West Michigan,MI,2
+3920,University of Phoenix,West Michigan,MI,3
+3915,University of Phoenix,Springfield,MO,0
+3915,University of Phoenix,Springfield,MO,2
+3915,University of Phoenix,Springfield,MO,3
+5074,University of Phoenix,St. Louis,MO,0
+5074,University of Phoenix,St. Louis,MO,2
+5074,University of Phoenix,St. Louis,MO,3
+3901,University of Phoenix,New Mexico,NM,0
+3901,University of Phoenix,New Mexico,NM,2
+3901,University of Phoenix,New Mexico,NM,3
+4168,University of Phoenix,Las Vegas,NV,0
+4168,University of Phoenix,Las Vegas,NV,2
+4168,University of Phoenix,Las Vegas,NV,3
+3900,University of Phoenix,Nevada,NV,0
+3900,University of Phoenix,Nevada,NV,2
+3900,University of Phoenix,Nevada,NV,3
+5094,University of Phoenix,Cincinnati,OH,0
+5094,University of Phoenix,Cincinnati,OH,2
+5094,University of Phoenix,Cincinnati,OH,3
+3885,University of Phoenix,Cleveland,OH,0
+3885,University of Phoenix,Cleveland,OH,2
+3885,University of Phoenix,Cleveland,OH,3
+3904,University of Phoenix,Oklahoma City,OK,0
+3904,University of Phoenix,Oklahoma City,OK,2
+3904,University of Phoenix,Oklahoma City,OK,3
+3917,University of Phoenix,Tulsa,OK,0
+3917,University of Phoenix,Tulsa,OK,2
+3917,University of Phoenix,Tulsa,OK,3
+3905,University of Phoenix,Oregon,OR,0
+3905,University of Phoenix,Oregon,OR,2
+3905,University of Phoenix,Oregon,OR,3
+4166,University of Phoenix,Philadelphia,PA,0
+4166,University of Phoenix,Philadelphia,PA,2
+4166,University of Phoenix,Philadelphia,PA,3
+4165,University of Phoenix,Pittsburgh,PA,0
+4165,University of Phoenix,Pittsburgh,PA,2
+4165,University of Phoenix,Pittsburgh,PA,3
+4156,University of Phoenix,Chattanooga,TN,0
+4156,University of Phoenix,Chattanooga,TN,2
+4156,University of Phoenix,Chattanooga,TN,3
+3897,University of Phoenix,Memphis,TN,0
+3897,University of Phoenix,Memphis,TN,2
+3897,University of Phoenix,Memphis,TN,3
+3899,University of Phoenix,Nashville,TN,0
+3899,University of Phoenix,Nashville,TN,2
+3899,University of Phoenix,Nashville,TN,3
+3882,University of Phoenix,Austin,TX,0
+3882,University of Phoenix,Austin,TX,2
+3882,University of Phoenix,Austin,TX,3
+3888,University of Phoenix,Dallas,TX,0
+3888,University of Phoenix,Dallas,TX,2
+3888,University of Phoenix,Dallas,TX,3
+3891,University of Phoenix,Houston,TX,0
+3891,University of Phoenix,Houston,TX,2
+3891,University of Phoenix,Houston,TX,3
+3910,University of Phoenix,San Antonio,TX,0
+3910,University of Phoenix,San Antonio,TX,2
+3910,University of Phoenix,San Antonio,TX,3
+3918,University of Phoenix,Utah,UT,0
+3918,University of Phoenix,Utah,UT,2
+3918,University of Phoenix,Utah,UT,3
+4412,University of Phoenix,Northern Virginia,VA,0
+4412,University of Phoenix,Northern Virginia,VA,2
+4412,University of Phoenix,Northern Virginia,VA,3
+4164,University of Phoenix,Richmond,VA,0
+4164,University of Phoenix,Richmond,VA,2
+4164,University of Phoenix,Richmond,VA,3
+3919,University of Phoenix,Western Washington,WA,0
+3919,University of Phoenix,Western Washington,WA,2
+3919,University of Phoenix,Western Washington,WA,3
+4708,University of Phoenix,Madison,WI,0
+4708,University of Phoenix,Madison,WI,2
+4708,University of Phoenix,Madison,WI,3
+4647,University of Phoenix,Milwaukee,WI,0
+4647,University of Phoenix,Milwaukee,WI,2
+4647,University of Phoenix,Milwaukee,WI,3
+344,Vet Tech Institute,Pittsburgh,PA,6
+1629,Western Career College,Pleasant Hill,CA,1
+1629,Western Career College,Pleasant Hill,CA,2
+1629,Western Career College,Pleasant Hill,CA,3
+1629,Western Career College,Pleasant Hill,CA,5
+1629,Western Career College,Pleasant Hill,CA,6
+1630,Western Career College,Sacramento,CA,0
+1630,Western Career College,Sacramento,CA,1
+1630,Western Career College,Sacramento,CA,2
+1630,Western Career College,Sacramento,CA,3
+1630,Western Career College,Sacramento,CA,5
+1630,Western Career College,Sacramento,CA,6
+1631,Western Career College,San Leandro,CA,0
+1631,Western Career College,San Leandro,CA,1
+1631,Western Career College,San Leandro,CA,2
+1631,Western Career College,San Leandro,CA,5
+1631,Western Career College,San Leandro,CA,6
+2371,Western Career College,Stockton,CA,1
+2371,Western Career College,Stockton,CA,2
+2371,Western Career College,Stockton,CA,3
+2371,Western Career College,Stockton,CA,5
+2371,Western Career College,Stockton,CA,6
+2372,Western Career College,Citrus Heights,CA,1
+2372,Western Career College,Citrus Heights,CA,2
+2372,Western Career College,Citrus Heights,CA,3
+2372,Western Career College,Citrus Heights,CA,5
+2372,Western Career College,Citrus Heights,CA,6
+3293,Western Career College,Antioch,CA,1
+3293,Western Career College,Antioch,CA,2
+3293,Western Career College,Antioch,CA,5
