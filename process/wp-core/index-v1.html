@@ -16,6 +16,7 @@
       width:auto;
       max-width:100%;
       height:auto;
+      max-height:750px;
       margin:0 auto;
       vertical-align:text-top;
       display:block;
@@ -32,13 +33,7 @@
       max-width:380px;
       max-height:none;
     }
-    figure{
-      margin:2em auto; 
-      text-align: center;
-      overflow:hidden;
-      max-height:750px;
-      border-bottom:1px solid #555;
-    }
+    figure{margin:2em auto; text-align: center;}
     figcaption{ font-size:.7em;}
     .two{border-top:10px dotted rgba(0,0,0,.05);border-bottom:10px dotted rgba(0,0,0,.05);}
     img.border{border:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.15);}
@@ -51,14 +46,14 @@
     .browser{
       display: inline-block;
       margin:0 auto;
-      padding: 20px 1px 1px 1px;
+      padding: 20px 1px 1px;
       border-radius: 5px;
-      border:1px solid #ddd;
+      border-left:1px solid rgba(0,0,0,.1);
+      border-right:1px solid rgba(0,0,0,.1);
       border-bottom: 1px solid #ccc;
       background: #ddd;
       position: relative;
       line-height: 0;
-      box-shadow: 0px .2em .45em rgba(0,0,0,0.65);
     }
     .browser .frame {
         display: block;
@@ -66,10 +61,6 @@
         position: absolute;
         top: 5px;
         left: 1px;
-    }
-    .browser img{
-      border:1px solid rgba(0,0,0,.1);
-      margin-left:-1px;
     }
 
     .frame span {
@@ -206,51 +197,57 @@
         left: 45%;
       }
     }
-
+  }
   </style>
   </head>
   <body>
     <main>
+      <section class="details">
+        <h1>Core Site UX Upgrades</h1>
+        <ul class="skills">
+          <li class="cap">(</li>
+          <li class="first">Reverse address section</li>
+          <li>Sticky navigation</li>
+          <li>Rebranding work</li>
+          <li>Homepage redesign</li>
+          <li>Fun with error messaging</li>
+          <li class="cap">)</li>
+        </ul>
+      </section>
 
       <article>
         <section class="details">
-          <h1>Core Site UX Upgrades</h1>
           <h3>Homepage</h3>
-          <figure>
-            <div>
-              <img src="img/v2/old-home.png" alt="Whitepages Old Home"/>
-            </div>
-            <div>
-              <img src="img/v2/new-home.png" alt="Whitepages Old Home"/>
-            </div>
-          </figure>
-          <h3>Navigation</h3>
-          <figure>
-            <div>
-              <img src="img/v2/old-details.png" alt="Whitepages Old Home"/>
-            </div>
-            <div>
-              <img src="img/v2/new-nav.png" alt="Whitepages Old Home"/>
+          <figure class="hero">
+            <div class="browser">
+              <div class="control">
+                <img src="img/old/wp-home.png" alt="Whitepages Old Home"/>
+                <span class="label" data-type="original">Original</span>
+              </div>
+              <div class="variation">
+                <img src="img/final/coded-homepage-1.png" alt="Whitepages Home Design"/>
+                <span class="label" data-type="modified">Variation</span>
+              </div>
+              <span class="slider"></span> 
             </div>
           </figure>
-          <h3>Address search</h3>
-          <figure>
-            <div>
-              <img src="img/v2/old-addresssearch2.png" alt="Whitepages Old Home"/>
+          <p>The need to rethink our homepage became apparent in our design challenges as we tried to incorporate the new navigation onto it. Our team played with concepts earlier that year in an exercise to modernize the site and get it in line with our brand guidelines. This felt like the perfect opportunity to test those explorations.</p>
+          <figure class="hero2">
+            <div class="control">
+              <img src="img/old/wp-home.png" alt="Whitepages Old Home"/>
+              <span class="label" data-type="original">Original</span>
             </div>
-            <div>
-              <img src="img/v2/new-address.png" alt="Whitepages Old Home"/>
-            </div>            
+            <div class="variation">
+              <img class="border" src="img/final/coded-homepage-1.png" alt="Whitepages Home Design"/>
+              <span class="label" data-type="modified">Variation</span>
+            </div>
+            <span class="slider"></span> 
           </figure>
-          <p>Working across teams on Whitepages.com, we accomplished massive changes that included an overhaul of the code base, a section-by-section upgrade to responsive and touch design standards, and a company-wide rebrand.</p>
-          
         </section>
 
         <section class="details two">
-          <h3>Case study: Homepage</h3>
-          <p>The need to rethink our homepage became apparent in our design challenges as we tried to incorporate the new navigation onto it. Our team played with concepts earlier that year in an exercise to modernize the site and get it in line with our brand guidelines. This felt like the perfect opportunity to test those explorations.</p>
           <p>With our early concepts already available, we started by bringing together stakeholders to make our case and discuss goals and feasabile opportunities on the page.</p>
-          <figure><img src="img/v2/old-home.png" alt="Whitepages Old Home"/></figure>
+          <figure><img class="border" src="img/old/wp-home.png" alt="Whitepages Old Home"/></figure>
           <p>We asked ourselves a few questions as we began to think of what should belong on the homepage. Rather than place content for the sake of having, we discussed pros and cons of adding or removing information. We decided to focus on these areas to shape our decisions:</p>
           <ul>
             <li>Clear call to action for search</li>
@@ -262,26 +259,19 @@
 
         <section class="details">
           <p>With these points in mind, I worked with another designer to try a few iterations. Between ourselves, we wittled our ideas down to one idea each and gave feedback to each other on our direction. Once we were satisfied with the presentability, we met with key stakeholders again.</p>
-          <figure><img src="img/v2/process-1.jpg" alt=""/></figure>
-          <figure><img src="img/v2/process-2.jpg" alt=""/></figure>
-          <figure><img src="img/v2/process-3.png" alt=""/></figure>
-          <figure><img src="img/v2/process-4.png" alt=""/></figure>
-          <figure><img src="img/v2/process-5.png" alt=""/></figure>
+          <figure><img class="border" src="img/process/1-1.jpg" alt=""/></figure>
+          <figure><img class="border" src="img/process/1-2.jpg" alt=""/></figure>
+          <figure><img class="border" src="img/process/1-6.png" alt=""/></figure>
         </section>
 
         <section class="details two">
           <p>The top concern was that ever-present tradeoff between a strong and authoratative brand and ad revenue. In our iterations, we designed with that in mind. For testing, we had the option to go all-in, but to calculate revenue trade-offs, we developed designs that stepped through the company's tolerance for removing ads.</p>
-          <figure><img src="img/v2/process-6.png" alt=""/></figure>
-          <figure><img src="img/v2/process-7.png" alt=""/></figure>
-          <figure><img src="img/v2/process-8.jpg" alt=""/></figure>
-          <figure><img src="img/v2/process-9.jpg" alt=""/></figure>
-          <figure><img src="img/v2/process-11.png" alt=""/></figure>
-          <figure><img src="img/v2/process-12.png" alt=""/></figure>
-          <figure><img src="img/v2/process-13.png" alt=""/></figure>
-          <p>We worked together to refine one direction and incorporate the possibilities of ads in a more careful manner.</p>
-          <figure><img src="img/v2/process-adv1.png" alt=""/></figure>
-          <figure><img src="img/v2/process-adv3.png" alt=""/></figure>
-          <figure><img src="img/v2/process-adv4.png" alt=""/></figure>
+          <figure>
+            <div class="browser">
+              <div class="frame"><span></span><span></span><span></span></div>
+              <img class="border" src="img/process/3b.jpg" alt="Calum Home Design"/>
+            </div>
+          </figure>
         </section>
 
         <section class="details">
@@ -289,17 +279,98 @@
           <figure>
             <div class="browser">
               <div class="frame"><span></span><span></span><span></span></div>
-              <img src="img/v2/new-home1.png" alt="Whitepages Home Design"/>
+              <img src="img/final/finalhome.png" alt="Whitepages Home Design"/>
             </div>
           </figure>
-          <figure><img src="img/v2/new-home2.png" alt="Whitepages Home Design"/></figure>
-          <figure><img src="img/v2/new-home3.png" alt="Whitepages Home Design"/></figure>
-          <figure><img src="img/v2/new-home4.png" alt="Whitepages Home Design"/></figure>
           <p>We started testing the variation at a lower than usual percentage since this was such a drastic change, and we collected data over the course of a month. Bounce rate dropped and time on page increased compared to our control. Longer term, subjective benefits wouldn't become apparent until much later on.</p>
           <p><a href="http://www.whitepages.com/">Post-rebrand homepage is currently live</a></p>
-          <p>[Include decisions and logic behind them e.g. scrolling and focus on search]</p>
+        </section>
+      </article>
+
+      <article>
+        <section class="details">
+          <h3>Sticky Nav</h3>
+          <figure class="hero">
+            <img src="img/final/new-nav-1.png" alt="Whitepages Sticky Nav"/>
+            <figcaption>[Final]</figcaption>
+          </figure>
+        </section>
+
+        <section class="details two">
+          <p>Old version</p>
+          <figure><img class="border" src="img/old/original-nav-1.png" alt="Whitepages Old Home"/></figure>
+        </section>
+      </article>
+
+      <article>
+        <section class="details">
+          <h3>Rebrand</h3>
+          <p>All of these upgrades worked in tandem with the rebrand that was under way. <a href="http://www.t-3.com/">T-3</a> worked with key members of the Whitepages team to undertake the effort to get the Whitepages brand, culture, and all its products in line.</p>
         </section>
       </article>
     </main>
+    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+    <script>
+    jQuery(document).ready(function($){
+    //function to check if the .cd-image-container is in the viewport here
+    // ...
+    
+    //make the .cd-handle element draggable and modify .cd-resize-img width according to its position
+    $('.hero').each(function(){
+        var actual = $(this);
+        drags(actual.find('.slider'), actual.find('.variation'), actual);
+    });
+ 
+    //function to upadate images label visibility here
+    // ...
+    });
+     
+    //draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+    function drags(dragElement, resizeElement, container) {
+        dragElement.on("mousedown vmousedown", function(e) {
+            dragElement.addClass('draggable');
+            resizeElement.addClass('resizable');
+     
+            var dragWidth = dragElement.outerWidth(),
+                xPosition = dragElement.offset().left + dragWidth - e.pageX,
+                containerOffset = container.offset().left,
+                containerWidth = container.outerWidth(),
+                minLeft = containerOffset - dragWidth/2 + 2,
+                maxLeft = containerOffset + containerWidth - dragWidth/2 - 2;
+            
+            dragElement.parents().on("mousemove vmousemove", function(e) {
+                leftValue = e.pageX + xPosition - dragWidth;
+                
+                //constrain the draggable element to move inside its container
+                if(leftValue < minLeft ) {
+                    leftValue = minLeft;
+                } else if ( leftValue > maxLeft) {
+                    leftValue = maxLeft;
+                }
+     
+                widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
+                
+                $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
+                    $(this).removeClass('draggable');
+                    resizeElement.removeClass('resizable');
+                });
+     
+                $('.resizable').css('width', widthValue); 
+     
+                //function to upadate images label visibility here
+                // ...
+                console.log(containerWidth);
+                
+            }).on("mouseup vmouseup", function(e){
+                dragElement.removeClass('draggable');
+                resizeElement.removeClass('resizable');
+            });
+            e.preventDefault();
+        }).on("mouseup vmouseup", function(e) {
+            dragElement.removeClass('draggable');
+            resizeElement.removeClass('resizable');
+        });
+    }
+    </script>
   </body>
 </html>
