@@ -9,46 +9,166 @@
       font-weight:300;
     }
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Comfortaa'
+      font-family: 'Comfortaa';
+      margin-bottom:1em;
     }
     img{
       width:auto;
       max-width:100%;
       height:auto;
-      max-height:550px;
       margin:0 auto;
       vertical-align:text-top;
+      display:block;
+    }
+    section {padding:5em 0;}
+    p, h1, h3, ul, ol {padding-left: 7%;padding-right: 7%;}
+    section p{margin:1.5em auto;}
+    section p:first-child{ margin-top:0; }
+    .hero img{ 
+      border-left:none;
+      border-right:none;
     }
     .mock{
       border: 1px solid #ccc;
       max-width:380px;
       max-height:none;
     }
+    figure{
+      margin:2em auto; 
+      text-align: center;
+      overflow:hidden;
+      max-height:750px;
+      border-bottom:1px solid #555;
+    }
+    figcaption{ font-size:.7em;}
+    .two{border-top:10px dotted rgba(0,0,0,.05);border-bottom:10px dotted rgba(0,0,0,.05);}
+    img.border{border:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.15);}
+    ul,ol{
+      margin:0;
+      position: relative;
+      line-height: 1.8em;
+      left:1.4em;
+    }
   </style>
   </head>
   <body>
-  <section class="details">
-    <h1>You want accounts to do what now?</h1>
-    <p>What started out as, "This customer needs a way to manage their changing teams and view usage," unveiled itself as a need to evolve the "My Account" section across the board. Our customer base and product suite had matured past the current setup, which was still based on single user accounts.</p>
-    <p>As larger organizations leveraged Whitepages Pro, we saw (and had a few customers vocalize) a need for role stratification and advanced usage info in order to reflect their team's structure and workflow. This impression was further confirmed in face-to-face interviews and observations with customers.</p> 
+    <main>
 
-    <h3>Origin story</h3>
- 
+      <article>
+        <section>
+          <h1>Pro Admin &amp; API</h1>
+          <p>This project was quite process intensive. Although only part of it made it to final mockups, it was one of the Pro product's most clearly thought-out and massiv UX change.</p>
+          <ul>
+            <li>Process</li>
+            <li>Failed attempt at redesign</li>
+            <li>Research</li>
+            <li>Refine requirements through mapping and user flows</li>
+            <li>Team exploration</li>
+            <li>Rough prototype</li>
+            <li>Wireframe prototype</li>
+            <li>Wireframing key pages</li>
+          </ul>
+          <h3>Original</h3>
+          <p>Although these screenshots are from before our rebrand, the functionality of our account management was essentially the same.</p>
+          <figure><img src="img/old/old-0.png" alt=""/></figure>
+          <figure><img src="img/old/old-1.png" alt=""/></figure>
+          <figure><img src="img/old/old-2.png" alt=""/></figure>
+          <figure><img src="img/old/old-3.png" alt=""/></figure>
+          <figure><img src="img/old/old-4.png" alt=""/></figure>
+          <figure><img src="img/old/old-5.png" alt=""/></figure>
+          <p>The newly created Pro API Developer portal was clean and approachable, but enough thought wasn't given into showing usability and how it would integrate with the rest of our services overall.</p>
+          <figure><img src="img/old/old-7.png" alt=""/></figure>
+        </section>
 
-    <h3>Creeping on users</h3>
+        <section class="two">
+          <p>Initial attempt to give the account settings page a facelift, before we discovered deeper usability issues. Important existential questions came up like "Who is going to be using this stuff? Who manages users? Why? What do users do in account settings? What do first time users expect to do when they go into it? What don't they use in it?"</p>
+          [link out to invision flows?]
+          <figure><img src="img/v1/1.png" alt=""/></figure>
+          <figure><img src="img/v1/2.png" alt=""/></figure>
+          <figure><img src="img/v1/5.png" alt=""/></figure>
+          <figure><img src="img/v1/7.png" alt=""/></figure>
+          <figure><img src="img/v1/12.png" alt=""/></figure>
+          <figure><img src="img/v1/15.png" alt=""/></figure>
+          <figure><img src="img/v1/17.png" alt=""/></figure>
+        </section>
 
+        <section>
+          <p>Interviews with customers and internal users of Pro revealed areas in the accounts structure that could benefit from further analysis. I tagged along to meetings to ask specific usability questions and watch users interact with the tool overall. Between product and development, we had a few collaborative discussions to suss out goals for rethinking the account structure and what the effort might look like for that. With that info, I began to map out our collective research and conclusions to see what would make sense for users.</p>
+          <p>Survey: positive for tool, desire to see better account management and search capability, more knowledge of which industries use Pro and how.</p>
+          <p>In-person interviews revealed more nuanced info. Two major areas we needed to do better for our customers was helping them manage their users/teams and see their usage of Pro. We figured out that we needed a tiered system with roles and permissions, and make usage stats more accessible. Uncovered basic structure that would work well for accounts (owner, more hands off; team lead, does actual acct management; agent, does actual searches in tool.</p>
+          <p>Building profiles</p>
+          <figure><img src="img/sketches1/1.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/2.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/3.png" alt=""/></figure>
+          <figure><img src="img/sketches1/4.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/5.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/6.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/7.png" alt=""/></figure>
+          <figure><img src="img/sketches1/8.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/9.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/10.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/11.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/12.jpg" alt=""/></figure>
+          <figure><img src="img/sketches1/13.jpg" alt=""/></figure>
+        </section>
 
-    <h3>Charting the wild seas of registration</h3>
- 
+        <section class="two">
+          <p>This was a large undertaking that would ultimately affect every level of the Pro team, from sales to product to marketing. To get ahead of any issues that might crop up due to lack of information or communication, we decided to try a page out of the <a href="http://www.gv.com/sprint/">Google Design Spring</a> and include the larger team in brainstorming. While mapping out flows and requirements, we also held a session with the Seattle team and later the Budapest team.</p>
+          <figure><img src="img/unpack/1.jpg" alt=""/></figure>
+          <figure><img src="img/unpack/2.jpg" alt=""/></figure>
+          <figure><img src="img/unpack/3.jpg" alt=""/></figure>
+          <figure><img src="img/unpack/4.jpg" alt=""/></figure>
+          <figure><img src="img/unpack/5.jpg" alt=""/></figure>
+          <figure><img src="img/unpack/6.jpg" alt=""/></figure>
+          <figure><img src="img/unpack/7.jpg" alt=""/></figure>
+        </section>
 
-    <h3>I'm too lazy to build all this in Illustrator</h3>
+        <section>
+          <p>From the sketches, I began to build prototypes for InVision and flesh out profiles.</p>
+          <h5>Owner</h5>
+          <figure><img src="img/sketches2/1.png" alt=""/></figure>
+          <figure><img src="img/sketches2/2.png" alt=""/></figure>
+          <figure><img src="img/sketches2/3.png" alt=""/></figure>
+          <figure><img src="img/sketches2/4.png" alt=""/></figure>
+          <h5>Team Lead</h5>
+          <figure><img src="img/sketches2/8.png" alt=""/></figure>
+          <figure><img src="img/sketches2/9.png" alt=""/></figure>
+          <figure><img src="img/sketches2/10.png" alt=""/></figure>
+          <figure><img src="img/sketches2/11.png" alt=""/></figure>
+          <figure><img src="img/sketches2/12.png" alt=""/></figure>
+          <figure><img src="img/sketches2/13.png" alt=""/></figure>
+          <figure><img src="img/sketches2/14.png" alt=""/></figure>
+          <h5>Agent</h5>
+          <figure><img src="img/sketches2/17.png" alt=""/></figure>
+          <figure><img src="img/sketches2/18.png" alt=""/></figure>
+        </section>
 
-
-    <h3>Fine, whatever, I'll build it</h3>
-
-
-    <h3>From Seattle With Love</h3>
-
-
+        <section class="two">
+          <p>Mapping key items</p>
+          <figure><img src="img/wf/1.png" alt=""/></figure>
+          <figure><img src="img/wf/2.png" alt=""/></figure>
+          <figure><img src="img/wf/3.png" alt=""/></figure>
+          <figure><img src="img/wf/4.png" alt=""/></figure>
+          <figure><img src="img/wf/5.png" alt=""/></figure>
+          <figure><img src="img/wf/6.png" alt=""/></figure>
+          <figure><img src="img/wf/7.png" alt=""/></figure>
+          <figure><img src="img/wf/8.png" alt=""/></figure>
+          <figure><img src="img/wf/10.png" alt=""/></figure>
+          <figure><img src="img/wf/11.png" alt=""/></figure>
+          <figure><img src="img/wf/12.png" alt=""/></figure>
+          <figure><img src="img/wf/15.png" alt=""/></figure>
+          <figure><img src="img/wf/16.png" alt=""/></figure>
+          <figure><img src="img/wf/17.png" alt=""/></figure>
+          <figure><img src="img/wf/18.png" alt=""/></figure>
+          <figure><img src="img/wf/19.png" alt=""/></figure>
+        </section>
+        <section>
+          <p>More refined wireframes</p>
+        </section>
+        <section class="two">
+          <p>Execution on API, then other properties from there.</p>
+        </section>
+      </article>
+    </main>
   </body>
 </html>
