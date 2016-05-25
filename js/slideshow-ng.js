@@ -56,11 +56,11 @@ var MySlideShow = {
     //set icon hovers
     var imgParent = $('.ng-slidePane .imgCase');
     var icons = $('.ng-slidePane .icons').children();
-    var img = $('.ng-slidePane .mainImg').children();
+    var img = $('.ng-slidePane .mainImg').children('img');
 
     img.hide();
     img.eq(0).show();
-    icons.on('mouseover', function(){
+    icons.on('click mouseover', function(){
       var linkNum = $(this).index();
       $(this).parents(imgParent).find(img).hide();
       $(this).parents(imgParent).find(img).eq(linkNum).show();

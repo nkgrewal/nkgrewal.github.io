@@ -18,7 +18,7 @@
 			<div class="wrap">
 				<ul>
 					<li><a class="aboutMe" href="#wildcard">Navreen Grewal</a></li>
-					<li><a href="navreengrewal.pdf">her resume</a></li>
+					<li><a href="navreengrewal.pdf">resume</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -40,8 +40,8 @@
 
 							<p class="caption">If you're an old pro on a keyboard, hit the <strong>left and right arrow keys</strong> for speedier viewing.</p>
 						</div>
-					</article>           
-						
+					</article>
+
 					<!-- GalaxySuite -->
 					<article class="piece">
 						<header>
@@ -92,6 +92,71 @@
 						</section>
 					</article>
 
+					<!-- WP CORE -->
+					<article class="piece">
+						<header>
+							<h2>Whitepages.com</h2>
+							<hgroup>
+								<h3>Homepage, navigation, rebrand</h3>
+							</hgroup>
+						</header>
+						<section class="imgCase floatBox">
+						<div class="browser">
+							<div class="frame"><span></span><span></span><span></span></div>
+							<div class="control jsHide">
+                <img src="img/pieces/wp-home-old.png" border="0" alt="Whitepages Old Home"/>
+                <span class="label" data-type="original">Original</span>
+              </div>
+              <div class="variation">
+                <img src="img/pieces/wp-home.png" alt="Whitepages Home Design"/>
+                <span class="label" data-type="modified">Redesign</span>
+              </div>
+              <span class="slider"></span> 
+						</div>
+						</section>
+					</article>
+
+					<!-- Erica's Site -->
+					<article class="piece">
+						<header>
+							<h2>Erica Jorgensen</h2>
+							<hgroup>
+								<h3>Writer's portfolio website</h3>
+							</hgroup>
+						</header>
+						<section class="imgCase floatBox">
+						<div class="browser">
+							<div class="frame"><span></span><span></span><span></span></div>
+							<img src="img/pieces/ericas-site.png" alt="Whitepages Home Design"/>
+						</div>
+						</section>
+					</article>
+
+					<!-- WP Pro Viral -->
+					<article class="piece">
+						<header>
+							<h2>Whitepages Pro</h2>
+							<hgroup>
+								<h3>Viral sign-up campaign</h3>
+							</hgroup>
+						</header>
+						<section class="imgCase floatBox">
+							<div class="mainImg">
+								<div class="browser">
+									<div class="frame"><span></span><span></span><span></span></div>
+									<img src="img/pieces/wp-upsell.png" alt="Whitepages Home Design"/>
+								</div>
+								<img src="img/galaxySuite-5a.png" border="0" alt="Brochure Ad" />
+								<img src="img/galaxySuite-3a.jpg" border="0" alt="Booth" />
+							</div>
+							<div class="icons">
+								<div><img src="img/galaxySuite-4b.jpg" border="0" alt="" /></div>
+								<div><img src="img/galaxySuite-5b.jpg" border="0" alt="" /></div>
+								<div><img src="img/galaxySuite-3b.jpg" border="0" alt="" /></div>
+							</div>
+						</section>
+					</article>
+
 					<!--ALL STAR's CORP SITE -->
 					<article class="piece">
 						<header>
@@ -105,7 +170,7 @@
 							<a href="http://allstardirectories.com" target="_blank">
 								<img src="img/asdCorp2.png" alt="All Star's Corporate Site" />
 							</a>
-							<span><a href="http://allstardirectories.com" target="_blank">LAUNCH SITE</a></span>
+							<span class="caption"><a href="http://allstardirectories.com" target="_blank">LAUNCH SITE</a></span>
 						</section>
 						<section class="details">
 							<div class="floatBox">
@@ -176,5 +241,67 @@
 	})();
 </script>
 <script type="text/javascript" src="js/slideshow-ng.js"></script>
+<script>
+jQuery(document).ready(function($){
+//function to check if the .cd-image-container is in the viewport here
+// ...
+
+//make the .cd-handle element draggable and modify .cd-resize-img width according to its position
+$('.browser').each(function(){
+  var actual = $(this);
+  drags(actual.find('.slider'), actual.find('.variation'), actual);
+});
+
+//function to upadate images label visibility here
+// ...
+});
+ 
+//draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+function drags(dragElement, resizeElement, container) {
+  dragElement.on("mousedown vmousedown", function(e) {
+    dragElement.addClass('draggable');
+    resizeElement.addClass('resizable');
+
+    var dragWidth = dragElement.outerWidth(),
+      xPosition = dragElement.offset().left + dragWidth - e.pageX,
+      containerOffset = container.offset().left,
+      containerWidth = container.outerWidth(),
+      minLeft = containerOffset - dragWidth/2 + 2,
+      maxLeft = containerOffset + containerWidth - dragWidth/2 - 2;
+    
+    dragElement.parents().on("mousemove vmousemove", function(e) {
+      leftValue = e.pageX + xPosition - dragWidth;
+      
+      //constrain the draggable element to move inside its container
+      if(leftValue < minLeft ) {
+          leftValue = minLeft;
+      } else if ( leftValue > maxLeft) {
+          leftValue = maxLeft;
+      }
+
+      widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
+      
+      $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
+          $(this).removeClass('draggable');
+          resizeElement.removeClass('resizable');
+      });
+
+      $('.resizable').css('width', widthValue); 
+
+      //function to upadate images label visibility here
+      // ...
+      console.log(containerWidth);
+        
+    }).on("mouseup vmouseup", function(e){
+      dragElement.removeClass('draggable');
+      resizeElement.removeClass('resizable');
+    });
+    e.preventDefault();
+  }).on("mouseup vmouseup", function(e) {
+    dragElement.removeClass('draggable');
+    resizeElement.removeClass('resizable');
+  });
+}
+</script>
 </body>
 </html>
