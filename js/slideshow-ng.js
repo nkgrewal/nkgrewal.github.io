@@ -175,7 +175,7 @@ var MySlideShow = {
     
 
     $('.jsHide').show();
-  },
+  }
 }
 
 //WINDOW RESIZE
