@@ -230,7 +230,7 @@ article.current{
 	white-space: nowrap;
 }
 .title2{
-	font: 3em 'Lily Script One', cursive;
+	font-size: 3em 'Lily Script One', cursive;
 	margin-top:-0.2em;
 	color: var(--light-green);
 	white-space: nowrap;
