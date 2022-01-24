@@ -30,6 +30,7 @@ var navHolder = $('.container');
 
 var nextControl = $('.goNext');
 var backControl = $('.goBack');
+var backBGImage = backControl.css('background-image');
 //var extraDetails = $('div.subDetails');
 //var detailsBtn = $('a.detailsBtn');
 var currSlide = 0;
@@ -39,7 +40,7 @@ var currSlide = 0;
 var MySlideShow = {
   createNav : function(){
     var navStr = '<nav class="slideNav"><ul>';
-
+    //BUILD NAV LI ELEMENTS AS STRING
     $.each(articles, function(index, thisBlock){
       var name = $(this).find('header h1').html();
       if(name!==null){
@@ -54,7 +55,7 @@ var MySlideShow = {
     navStr += '</ul></nav>';
     
     $(navStr).prependTo(navHolder);
-
+    //NAV MOUSE EVENTS
     $('nav.slideNav').on({
       'mouseover': function(e){
         $(this).children().stop(true,true).slideDown();
@@ -77,16 +78,13 @@ var MySlideShow = {
     return Math.round( Math.abs(holder.offset().left)  / articles.outerWidth(true) );
   },
   initSlideShow : function(){
-    imgPane.css({
-      position : 'relative'
-    });
-    holder.css({
-      position : 'absolute'
-    });
+    //RESET CONTAINERS TO SLIDE
+    imgPane.css({ position : 'relative' });
+    holder.css({ position : 'absolute' });
+    //BUILD NAV AND SLIDE
     this.createNav();
     this.setCss($(window).width());
     this.jumpToSlide(window.location.hash.substring(1));
-
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
     //extraDetails.hide();
     multiImgHolder.children().hide();
@@ -105,7 +103,6 @@ var MySlideShow = {
         slideNum = holder.find('.'+slideNumOrHash).index();
       }
     }
-
     this.removeControls();
     $('nav.slideNav ul').slideUp();
     holder.animate({ left: '-' + (slideNum * articles.outerWidth(true)) - imgPane.offset().left + 'px' }, anim, function() {
@@ -124,8 +121,7 @@ var MySlideShow = {
       moveBlock.animate({ left: '-='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
       });
-      $('nav.slideNav ul')
-      .slideUp();
+      $('nav.slideNav ul').slideUp();
     } else {
       moveBlock.animate({ left: 0 - imgPane.offset().left +'px'}, anim*2, function() {
         MySlideShow.slideEnd();
@@ -139,18 +135,14 @@ var MySlideShow = {
       moveBlock.animate({ left: '+='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
       });
-      if(currSlide < 1.5){ $('nav.slideNav ul').slideDown(); } else { $('nav.slideNav ul').slideUp(); }
+      //show nav for slide 1
+      //if(currSlide < 1.5){ $('nav.slideNav ul').slideDown(); } else { $('nav.slideNav ul').slideUp(); }
     } else {
       moveBlock.animate({left: (slideWidth * (articles.length-1) * -1)-imgPane.offset().left + 'px'}, anim*2, function(){
         MySlideShow.slideEnd();
       });
       $('nav.slideNav ul').slideDown();
     }
-  },
-  resetFlashSize : function(newWidth){
-    var newHeight = Math.round(newWidth * 0.67230769);
-    $('.salarymap script').html("AC_FL_RunContent( 'width','"+newWidth+"','height','"+newHeight+"','codebase','http://fpdownload.macromedia.com/ pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0','src','swfs/apsySalaryMap' );");
-    $('.salarymap embed').attr('width', newWidth).attr('height', newHeight);
   },
   setHash : function(slideNum){
     slideClass = articles.eq(slideNum).attr('class').replace('piece ','');
@@ -173,9 +165,6 @@ var MySlideShow = {
       'min-height' : $(window).height() - $('header.main').outerHeight(true) - $('footer.main').outerHeight(true) - $('nav.slideNav').outerHeight(true) + 'px',
       height : articles.eq(currSlide).outerHeight(true)- $('header.main').outerHeight(true) - $('nav.slideNav').outerHeight(true) +'px'
     });
-    if(winWidth>950){ MySlideShow.resetFlashSize(800); }
-    if(winWidth<949 && winWidth>550){ MySlideShow.resetFlashSize(500); }
-    if(winWidth<549 && winWidth>350){ MySlideShow.resetFlashSize(300); }
   },
   slideEnd : function(){
     MySlideShow.setControls();
@@ -185,6 +174,7 @@ var MySlideShow = {
     imgPane.css({
       height : articles.eq(currSlide).outerHeight(true) - $('header.main').outerHeight(true) +'px'
     });
+    if(currSlide<0.5){ backControl.css({'background-image':'none'});} else if(currSlide>0.5) {backControl.css({'background-image':backBGImage});};
   },
   setControls : function(){
     //EVENT LISTENERS
