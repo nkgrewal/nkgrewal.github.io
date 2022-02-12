@@ -8,6 +8,7 @@
   --med-gray: #9fa4a6;
 
   --light-green: #c9e98c;
+  --med-blue: #589fb4;
 }
 
 /* CROSS BROWSER FONT SUPPORT */
@@ -150,7 +151,6 @@ footer.main{
 	border-top:1px solid #374c52;
 }
 footer.main div.subContainer{ text-align:right; }
-.about a{ color: var(--light-green); }
 .about{ padding:0.8em 0; margin-right:2em;  }
 .about li{ display:inline; margin-left:1em; }
 .about .selected{ border-top:2px solid  var(--white); }
@@ -242,13 +242,13 @@ article.current{
 	float:left;
 	font: 5em 'Meow Script', cursive;
 	color: var(--light-green);
-	max-width:46%;
+	max-width:55%;
 	white-space: nowrap;
 }
 .title hgroup.left{ margin: 1.4em 0 0 4%; max-width:50%; }
 .title h2{
 	font-size: 2em;
-	color:#639bc7;
+	color:var(--med-blue);
 	margin-bottom:0.2em;
 	white-space: nowrap;
 }
@@ -311,13 +311,13 @@ a.detailsBtn{
 ul.skills {
 	width:100%;
 	margin:1.2em 0;
-	color:#589fb4;
+	color:var(--med-blue);
 }
 ul.skills li{
 	list-style-type: none;
 	display:inline;
 	padding:0 .6em 0 .9em;
-	border-left:1px solid #589fb4;
+	border-left:1px solid var(--med-blue);
 }
 ul.skills .cap{
 	border-left:none;
