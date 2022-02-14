@@ -8,6 +8,7 @@
   --med-gray: #9fa4a6;
 
   --light-green: #c9e98c;
+  --light-blue: #c0e0e9;
   --med-blue: #589fb4;
 }
 
@@ -166,7 +167,7 @@ footer.main div.subContainer{ text-align:right; }
 	text-align: left;
 	width: 550px;
 }
-.intro h2{ font-size:3.5em; color:#c0e0e9;  }
+.intro h2{ font-size:3.5em; color:var(--light-blue);  }
 .intro p {
 	font:1.8em/1.6em 'Comfortaa';
 	color: var(--med-gray);
