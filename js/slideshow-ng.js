@@ -18,7 +18,6 @@ SLIDE BY HOLDER POSITION
 */
 var imgPane = $('section.imgPane');
 var holder = $('.slideHolder');
-var titleHolder = $('header.main div.subContainer');
 var articles = $('article');
 var anim = 800;
 
@@ -27,6 +26,7 @@ var multiImgHolder = $('div.mainImg');
 var iconHolder = $('div.icons');
 
 var navHolder = $('.container');
+var slideObj = {};
 
 var nextControl = $('.goNext');
 var backControl = $('.goBack');
@@ -38,22 +38,29 @@ var currSlide = 0;
 
 //METHODS
 var MySlideShow = {
+  createSlideArray : function(){
+    $.each(articles, function(i, e){
+      var name = $(this).find('header h1').html();
+      if(name!==undefined){
+        var cleanName = name.replace(/[^a-z0-9\s]/gi, "").replace(/[_\s]/g, "-").toLowerCase();
+        $(this).addClass(cleanName);                              //add class to article
+        $.extend( slideObj, {
+          hash : cleanName,
+          name : name
+        });  
+        console.log(slideObj);
+          //create array of names
+      } else { }    //empty if no h1
+    });
+  },
   createNav : function(){
     var navStr = '<nav class="slideNav"><ul>';
     //BUILD NAV LI ELEMENTS AS STRING
-    $.each(articles, function(index, thisBlock){
-      var name = $(this).find('header h1').html();
-      if(name!==null){
-        var newClass = name.replace(/[^a-z0-9\s]/gi, "").replace(/[_\s]/g, "-").toLowerCase();
-        $(this).addClass(newClass);                              //add class to article
-        navStr += '<li class="'+ newClass +'">' + name + '</li>';     //create li for nav
-      } else {
-        navStr +='<li class="blank"></li>';
-      }
-    });
+    //$.each(slideArray, function(i) ){
+      //navStr += '<li class="'+ newClass +'">' + name + '</li>';     //create li for nav
+    //};
     navStr += '<span class="count">0</span><span class="total"> / ' + (articles.length-1) + '</span>';
     navStr += '</ul></nav>';
-    
     $(navStr).prependTo(navHolder);
     //NAV MOUSE EVENTS
     $('nav.slideNav').on({
@@ -78,12 +85,14 @@ var MySlideShow = {
     return Math.round( Math.abs(holder.offset().left)  / articles.outerWidth(true) );
   },
   initSlideShow : function(){
-    //RESET CONTAINERS TO SLIDE
+    //SET CONTAINERS TO SLIDE, STATIC
     imgPane.css({ position : 'relative' });
     holder.css({ position : 'absolute' });
+    articles.css({'margin-right' : '60px'});
     //BUILD NAV AND SLIDE
+    this.createSlideArray();
     this.createNav();
-    this.setCss($(window).width());
+    this.resetCss($(window).width());
     this.jumpToSlide(window.location.hash.substring(1));
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
     //extraDetails.hide();
@@ -92,15 +101,14 @@ var MySlideShow = {
 
     $('.jsHide').show();
   },
-  jumpToSlide : function(slideNumOrHash){
-    if(typeof slideNumOrHash==="undefined" || slideNumOrHash===''){
-      slideNum=0;
-    }
-    if(typeof slideNumOrHash==="number" || slideNumOrHash===0){
-      slideNumOrHash = slideNum;
-    } else if(typeof slideNumOrHash==="string" && slideNumOrHash!==''){
-      if(slideNumOrHash==='piece'){slideNum=0;} else {
-        slideNum = holder.find('.'+slideNumOrHash).index();
+  jumpToSlide : function(slideHash){
+    var slideNum=0;
+    if(typeof slideHash==="undefined" || slideHash===''){slideNum=0;};
+    if(typeof slideHash==="number" || slideHash===0){
+      slideHash = slideNum;
+    } else if(typeof slideHash==="string" && slideHash!==''){
+      if(slideHash==='piece'){slideNum=0;} else {
+        slideNum = holder.find('.'+slideHash).index();
       }
     }
     this.removeControls();
@@ -108,6 +116,20 @@ var MySlideShow = {
     holder.animate({ left: '-' + (slideNum * articles.outerWidth(true)) - imgPane.offset().left + 'px' }, anim, function() {
       MySlideShow.slideEnd();
     });
+  },
+  navSlide : function(dir,moveBlock,slideWidth){
+    this.removeControls();
+    if(currSlide<articles.length-1){
+      moveBlock.animate({ dir : '-='+ slideWidth + 'px' }, anim, function() {
+        MySlideShow.slideEnd();
+      });
+      $('nav.slideNav ul').slideUp();
+    } else {
+      moveBlock.animate({ dir : 0 - imgPane.offset().left +'px'}, anim*2, function() {
+        MySlideShow.slideEnd();
+      });
+      $('nav.slideNav ul').slideDown();
+    }
   },
   /*moreInfo : function(jqArticle){
     $(jqArticle).find(extraDetails).slideToggle('fast', function(){
@@ -144,27 +166,26 @@ var MySlideShow = {
       $('nav.slideNav ul').slideDown();
     }
   },
-  setHash : function(slideNum){
-    slideClass = articles.eq(slideNum).attr('class').replace('piece ','');
-    window.location.hash = slideClass;
-  },
-  setCss : function(winWidth){
+  resetCss : function(winWidth){
     // CSS CHANGES
     var paneWidth = imgPane.outerWidth(true);
     var spacing = articles.outerWidth(true) - articles.outerWidth();
     var leftSpace = imgPane.offset().left;
-    
+
+    //RESET CONTAINER WIDTHS
     articles.css({ width : paneWidth + 'px' });
     holder.css({
       left : currSlide*(paneWidth + spacing)*-1 -leftSpace +'px',
       width : (paneWidth + spacing) * articles.length + 50 + 'px'
     });
-    titleHolder.css('width',holder.outerWidth(true)+'px');
-    titleHolder.children().css({ width : paneWidth + 'px' });
     imgPane.css({
       'min-height' : $(window).height() - $('header.main').outerHeight(true) - $('footer.main').outerHeight(true) - $('nav.slideNav').outerHeight(true) + 'px',
       height : articles.eq(currSlide).outerHeight(true)- $('header.main').outerHeight(true) - $('nav.slideNav').outerHeight(true) +'px'
     });
+  },
+  setHash : function(slideNum){
+    slideClass = articles.eq(slideNum).attr('class').replace('piece ','');
+    window.location.hash = slideClass;
   },
   slideEnd : function(){
     MySlideShow.setControls();
@@ -218,14 +239,12 @@ var MySlideShow = {
     $(document).off('keydown');
   }
 }
-articles.css({'margin-right' : '60px'});
-
 //$('header.title').first().appendTo('header.main div.subContainer');
 
 //WINDOW RESIZE
 $(window).resize( function(){
   var winWidth = $(this).width();
-  MySlideShow.setCss(winWidth);
+  MySlideShow.resetCss(winWidth);
 });
 
 $(document).ready(function(){
