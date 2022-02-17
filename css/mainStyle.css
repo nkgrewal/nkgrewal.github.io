@@ -309,7 +309,7 @@ a.detailsBtn{
 	margin-left:10px;
 	font-size:1.15em;
 }
-ul.skills {
+ul.skills, p.skills {
 	width:100%;
 	margin:1.2em 0;
 	color:var(--med-blue);
