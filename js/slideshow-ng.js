@@ -1,7 +1,10 @@
 /*
 options to pass through :
-  - slideholder name, controls(back, forward, more info, keystrokes), navigation, imgpane, sections (imageCase, details)
-  - 
+  - slideholder name
+  - controls(back, forward, more info, keystrokes)
+  - navigation, 
+  - imgpane
+  - sections (imageCase, details)
 
 - resize holder
 - get direct children of holder
@@ -28,8 +31,8 @@ var iconHolder = $('div.icons');
 var navHolder = $('.container');
 var slideObj = {};
 
-var nextControl = $('.goNext');
-var backControl = $('.goBack');
+var nextControl = $('.slideNext');
+var backControl = $('.slideBack');
 var backBGImage = backControl.css('background-image');
 //var extraDetails = $('div.subDetails');
 //var detailsBtn = $('a.detailsBtn');
@@ -43,13 +46,12 @@ var MySlideShow = {
       var name = $(this).find('header h1').html();
       if(name!==undefined){
         var cleanName = name.replace(/[^a-z0-9\s]/gi, "").replace(/[_\s]/g, "-").toLowerCase();
-        $(this).addClass(cleanName);                              //add class to article
+        $(this).addClass(cleanName);  //add class to article
         $.extend( slideObj, {
           hash : cleanName,
           name : name
         });  
-        console.log(slideObj);
-          //create array of names
+        console.log(slideObj);  //create array of names
       } else { }    //empty if no h1
     });
   },
@@ -179,8 +181,8 @@ var MySlideShow = {
       width : (paneWidth + spacing) * articles.length + 50 + 'px'
     });
     imgPane.css({
-      'min-height' : $(window).height() - $('header.main').outerHeight(true) - $('footer.main').outerHeight(true) - $('nav.slideNav').outerHeight(true) + 'px',
-      height : articles.eq(currSlide).outerHeight(true)- $('header.main').outerHeight(true) - $('nav.slideNav').outerHeight(true) +'px'
+      'min-height' : $(window).height() - $('footer.main').outerHeight(true) - $('nav.slideNav').outerHeight(true) + 'px',
+      height : articles.eq(currSlide).outerHeight(true) - $('nav.slideNav').outerHeight(true) +'px'
     });
   },
   setHash : function(slideNum){
@@ -193,7 +195,7 @@ var MySlideShow = {
     this.setHash(currSlide);
     $('.slideNav .count').html(currSlide);
     imgPane.css({
-      height : articles.eq(currSlide).outerHeight(true) - $('header.main').outerHeight(true) +'px'
+      height : articles.eq(currSlide).outerHeight(true) +'px'
     });
     if(currSlide<0.5){ backControl.css({'background-image':'none'});} else if(currSlide>0.5) {backControl.css({'background-image':backBGImage});};
   },
