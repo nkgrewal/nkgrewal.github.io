@@ -11,14 +11,19 @@ options to pass through :
 - get direct children of holder
 - hide all but first child in multi img
 
-set per assumptions:
-in an article
-has a slideCase
+slideshow div structure:
 has back fwd btn
-placed in viewArea
+has a slide view area window
+has a holding container for all slides
+has a place to insert slide show nav
+
+in slide container structure:
+each "slide" is an article without a set width
+each article has a class
+all portfolio articles are class named "piece" and have an h2 title
 
 SLIDE BY HOLDER POSITION
-( Math.abs(holder.offset().left) + pieces.outerWidth(true) ) / pieces.outerWidth(true)
+( Math.abs(holder.offset().left) + allPieces.outerWidth(true) ) / allPieces.outerWidth(true)
 */
 
 //VARS FOR EXTERNALE HTML CLASS DEPENDENCIES
@@ -26,8 +31,10 @@ var nextControl = $('.jsGoNext');         //slideshow next button
 var backControl = $('.jsGoBack');         //slideshow back button
 
 var viewArea = $('.slideViewer');         //frame for viewing slide
-var holder = $('.allSlides');             //entire slideshow container
-var pieces = $('.allSlides article');     //individual slides
+var holder = $('.allSlides');             //entire slideshow container, will animate through viewArea
+var allPieces = $('.allSlides article');     //individual slides
+var portPiece = 'piece';                    //class name of portfolio articles
+var portTitle = 'header h2';                //location of portfolio title under allPieces
 
 //var slideCase = $('section.imgCase');   //slide type - main image
 var multiImgHolder = $('div.mainImg');    //slide type - multi image
@@ -42,47 +49,61 @@ var backBGImage = backControl.css('background-image');  //toggle image for back 
 //VARS FOR INTERNAL REF
 var navClass = "slideNav"                 //class name of nav element
 var slideObj = {};                        //empty object that will hold slide identifying info
-var currSlide = 0;                        //start from 0 on load
+var currPieceIndex = 0;                   //start from 0 on load
 var anim = 800;                           //slide speed
+var pieceMargin = '60';                  //margin-right per slide, must be px
 
 
 //METHODS
 var MySlideShow = {
   createSlideObject : function(){
-    $.each(pieces, function(i, e){
-      var name = $(this).find('header h1').html();    //identify slide by h1 title
+    $.each(allPieces, function(i, e){
+      var name;
+      var hashName;
+      if (this.className !=='undefined'){
+        //CAPTURE AND CLEAN EACH SLIDES NAMES FOR ID
+        if (this.className === portPiece){           //identify "piece" slide by h2 title
+          name = $(this).find( portTitle ).html();   
+          hashName = name.replace(/[^a-z0-9\s]/gi, "").replace(/[_\s]/g, "-").toLowerCase();
+        }  
+        else {                                    //identify slide by className
+          hashName = this.className; 
+          name = this.className; 
+          name = name.replace(/[_\s]/g, "-").replace(/[^a-z0-9\s]/gi, " ")
+          name = name.substr(0,1).toUpperCase()+name.substr(1);
+        };
+      } else {};
+      //CREATE OBJECT OF UNIQUE SLIDE NAME AND HASH FOR NAV
       if(name!==undefined){
-        var cleanName = name.replace(/[^a-z0-9\s]/gi, "").replace(/[_\s]/g, "-").toLowerCase();
-        $(this).addClass(cleanName);      //add unique class name to each slide
+        $(this).addClass(hashName);       //add unique class name to each slide article
         var obj = {                       //create unique obj per iteration to push into slideObj
-          [cleanName] : {
-            num : i,
-            //hash : cleanName,
+          [i] : {
+            hash : hashName,
             name : name
           }
         };
         $.extend(slideObj, obj);
-      } else { }                          //empty if no h1
+      } else { };                          //empty if no h1
     });
     console.log(slideObj);                //verify object of every slide's id info (e.g. name, hash)
   },
   createNav : function(){
     //CREATE OPENING TAGS FOR NAV
     var navStr = '<nav class="' + navClass + '"><ul>';
-    navStr += '<li class="">' + '\u25C8' + '</li>';
+    navStr += '<li class="">' + '\u25C8' + '</li>';         //li for intro
     //BUILD NAV LI ELEMENTS AS STRING
     $.each(slideObj, function(i, e) {
-      var newClass = i;
+      var itemClass = e.hash;
       var name = e.name;
-      console.log(newClass, e.name);
-      navStr += '<li class="'+ newClass +'">' + name + '</li>';     //create li for slides
+      if (i > 0) {
+        navStr += '<li class="'+ itemClass +'">' + name + '</li>'; //create li everything but intro
+      };    
     });
     //CLOSING TAGS FOR NAV
-    navStr += '<li class="wildcard">About</li>';
-    navStr += '<span class="count">0</span><span class="total"> / ' + (pieces.length-1) + '</span>';
+    navStr += '<span class="count">0</span><span class="total"> / ' + (allPieces.length-1) + '</span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
-    //NAV MOUSE EVENTS
+    //NAV VISIBILITY
     $('nav.' + navClass).on({
       'mouseover': function(e){
         $(this).children().stop(true,true).slideDown();
@@ -91,25 +112,27 @@ var MySlideShow = {
         $(this).children().stop(true,true).slideUp();
       }
     });
-    //PREVENT MOUSOVER FLICKER
-    $('nav.' + navClass + ' ul').on('mouseover', function(e){
-      $(this).stop(true,true).slideDown();
-    });
+    //NAV MOUSE EVENTS
     $('nav.' + navClass + ' li').on('click', function(){
       MySlideShow.jumpToSlide($(this).attr('class'));
     });
-    $('a[href="#wildcard"]').on('click', function(){
-      MySlideShow.jumpToSlide($(this).attr('href').substring(1));
+    $('li.about-me').on('click', function(){
+      MySlideShow.jumpToSlide($(this).attr('class'));
+    });
+    //STOP MOUSOVER FLICKER
+    $('nav.' + navClass + ' ul').on('mouseover', function(e){
+      $(this).stop(true,true).slideDown();
     });
   },
-  getSlideNum : function(){
-    return Math.round( Math.abs(holder.offset().left)  / pieces.outerWidth(true) );
+  getSlideIndex : function(){
+    //return slide number from width position
+    return Math.round( Math.abs(holder.offset().left)  / allPieces.outerWidth(true) );
   },
   initSlideShow : function(){
     //SET CONTAINERS TO SLIDE, STATIC
     viewArea.css({ position : 'relative' });
     holder.css({ position : 'absolute' });
-    pieces.css({'margin-right' : '60px'});
+    allPieces.css({'margin-right' : pieceMargin + 'px' });
     //BUILD NAV AND SLIDE
     this.createSlideObject();
     this.createNav();
@@ -122,26 +145,28 @@ var MySlideShow = {
 
     $('.jsHide').show();
   },
-  jumpToSlide : function(slideHash){
+  jumpToSlide : function(slideHash){ 
     var slideNum=0;
-    if(typeof slideHash==="undefined" || slideHash===''){slideNum=0;};
-    if(typeof slideHash==="number" || slideHash===0){
-      slideHash = slideNum;
-    } else if(typeof slideHash==="string" && slideHash!==''){
-      if(slideHash==='piece'){slideNum=0;} else {
-        slideNum = holder.find('.'+slideHash).index();
+    //FIND AND SET SLIDE POSITION FROM NUMBER OR HASH
+    if(typeof slideHash==="undefined" || slideHash===''){ slideNum=0; };
+    if(typeof slideHash==="number" || slideHash===0){ slideHash = slideNum;
+    } else if (typeof slideHash==="string" && slideHash!=='') {
+      if(slideHash==='piece'){ slideNum=0; } else {
+        $.each(slideObj, function(i, e) {
+          if (slideHash===e.hash) { slideNum = i;} else {};   
+        });
       }
     }
+    //ACTION
     this.removeControls();
     $('nav.' + navClass + ' ul').slideUp();
-    if ($('nav.' + navClass).is(':visible')) {console.log(true)} else {console.log(false)};
-    holder.animate({ left: '-' + (slideNum * pieces.outerWidth(true)) - viewArea.offset().left + 'px' }, anim, function() {
+    holder.animate({ left: '-' + (slideNum * allPieces.outerWidth(true)) - viewArea.offset().left + 'px' }, anim, function() {
       MySlideShow.slideEnd();
     });
   },
   /*navSlide : function(dir,moveBlock,slideWidth){
     this.removeControls();
-    if(currSlide<pieces.length-1){
+    if(currPieceIndex<allPieces.length-1){
       moveBlock.animate({ dir : '-='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
       });
@@ -155,19 +180,21 @@ var MySlideShow = {
   },
   moreInfo : function(jqArticle){
     $(jqArticle).find(extraDetails).slideToggle('fast', function(){
-      viewArea.animate({ height : pieces.eq(currSlide).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
+      viewArea.animate({ height : allPieces.eq(currPieceIndex).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
     });
     $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
   },*/
   nextSlide : function(moveBlock,slideWidth){
     this.removeControls();
-    if(currSlide<pieces.length-1){
+    if(currPieceIndex<allPieces.length-1){
+      //MOVE SHOW FORWARD FOR ALL BUT LAST PIECE
       moveBlock.animate({ left: '-='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
       });
       $('nav.' + navClass + ' ul').slideUp();
     } else {
-      moveBlock.animate({ left: 0 - viewArea.offset().left +'px'}, anim*2, function() {
+      //RESET SHOW TO BEGINNING FROM LAST PIECE
+      moveBlock.animate({ left: 0 - viewArea.offset().left +'px'}, anim*2.5, function() {
         MySlideShow.slideEnd();
       });
       $('nav.' + navClass + ' ul').slideDown();
@@ -175,14 +202,14 @@ var MySlideShow = {
   },
   prevSlide : function(moveBlock,slideWidth){
     this.removeControls();
-    if(currSlide>0.5){
+    if(currPieceIndex>0.5){
       moveBlock.animate({ left: '+='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
       });
       //show nav for slide 1
-      //if(currSlide < 1.5){ $('nav.' + navClass + ' ul').slideDown(); } else { $('nav.' + navClass + ' ul').slideUp(); }
+      //if(currPieceIndex < 1.5){ $('nav.' + navClass + ' ul').slideDown(); } else { $('nav.' + navClass + ' ul').slideUp(); }
     } else {
-      moveBlock.animate({left: (slideWidth * (pieces.length-1) * -1)-viewArea.offset().left + 'px'}, anim*2, function(){
+      moveBlock.animate({left: (slideWidth * (allPieces.length-1) * -1)-viewArea.offset().left + 'px'}, anim*2, function(){
         MySlideShow.slideEnd();
       });
       $('nav.' + navClass + ' ul').slideDown();
@@ -191,33 +218,41 @@ var MySlideShow = {
   resetCss : function(winWidth){
     // CSS CHANGES
     var paneWidth = viewArea.outerWidth(true);
-    var spacing = pieces.outerWidth(true) - pieces.outerWidth();
+    var spacing = allPieces.outerWidth(true) - allPieces.outerWidth();
     var leftSpace = viewArea.offset().left;
+    var newHolderWidth = (paneWidth + spacing) * allPieces.length;
 
     //RESET CONTAINER WIDTHS
-    pieces.css({ width : paneWidth + 'px' });
+    allPieces.css({ width : paneWidth + 'px' });
     holder.css({
-      left : currSlide*(paneWidth + spacing)*-1 -leftSpace +'px',
-      width : (paneWidth + spacing) * pieces.length + 50 + 'px'
+      left : (currPieceIndex * (paneWidth + spacing)* -1) - leftSpace +'px',
+      width : newHolderWidth + 'px'
     });
     viewArea.css({
       'min-height' : $(window).height() - $('footer').outerHeight(true) - $('nav.' + navClass).outerHeight(true) + 'px',
-      height : pieces.eq(currSlide).outerHeight(true) - $('nav.' + navClass).outerHeight(true) +'px'
+      height : allPieces.eq(currPieceIndex).outerHeight(true) - $('nav.' + navClass).outerHeight(true) +'px'
     });
   },
   setHash : function(slideNum){
-    slideClass = pieces.eq(slideNum).attr('class').replace('piece ','');
+    var slideClass = allPieces.eq(slideNum).attr('class').replace('piece ','');
+    //console.log ('slideclass ' + slideClass);
     window.location.hash = slideClass;
   },
   slideEnd : function(){
     MySlideShow.setControls();
-    currSlide = MySlideShow.getSlideNum();
-    this.setHash(currSlide);
-    $('nav.' + navClass + ' .count').html(currSlide);
+    currPieceIndex = MySlideShow.getSlideIndex();
+    this.setHash(currPieceIndex);
+    $('nav.' + navClass + ' .count').html(currPieceIndex);
     viewArea.css({
-      height : pieces.eq(currSlide).outerHeight(true) +'px'
+      height : allPieces.eq(currPieceIndex).outerHeight(true) +'px'
     });
-    if(currSlide<0.5){ backControl.css({'background-image':'none'});} else if(currSlide>0.5) {backControl.css({'background-image':backBGImage});};
+    //$('.'+slideHash).css('opacity', '1');
+    if(currPieceIndex<0.5){ 
+      backControl.css({'background-image':'none'});
+    } else if(currPieceIndex>0.5) {
+      backControl.css({'background-image':backBGImage});
+    };
+    //if ($('nav.' + navClass).is(':visible')) {console.log(true)} else {console.log(false)};
   },
   setControls : function(){
     //EVENT LISTENERS
@@ -231,23 +266,23 @@ var MySlideShow = {
       MySlideShow.moreInfo($(this).parents('article'));
     });*/
     backControl.on('click', function(e){
-      MySlideShow.prevSlide(holder, pieces.outerWidth(true) );
+      MySlideShow.prevSlide(holder, allPieces.outerWidth(true) );
     });
     nextControl.on('click', function(e){
-      MySlideShow.nextSlide(holder, pieces.outerWidth(true) );
+      MySlideShow.nextSlide(holder, allPieces.outerWidth(true) );
     });
     $(document).on('keydown', function(e){
       switch (e.keyCode) {
          case 37:
-         MySlideShow.prevSlide(holder, pieces.outerWidth(true) );
+         MySlideShow.prevSlide(holder, allPieces.outerWidth(true) );
          return false;
          break;
          case 39:
-         MySlideShow.nextSlide(holder, pieces.outerWidth(true) );
+         MySlideShow.nextSlide(holder, allPieces.outerWidth(true) );
          return false;
          break;
          case 32:
-         MySlideShow.moreInfo(pieces.eq(currSlide));
+         MySlideShow.moreInfo(allPieces.eq(currPieceIndex));
          return false;
          break;
       }
@@ -277,5 +312,6 @@ $(window).ready(function() {
   $('.curtainLoad').fadeOut(900, function() {
     $('body').css('overflow','visible');
     $(this).remove();
+    //$('button.jsGoNext').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
   });
 });
