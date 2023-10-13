@@ -1,4 +1,9 @@
 /*
+
+to-do:
+- fix nav slidedown for first and last sides
+- mobile friendly layout + swiping
+
 options to pass through :
   - allSlides name
   - controls(back, forward, more info, keystrokes)
@@ -139,7 +144,7 @@ var MySlideShow = {
     holder.css({ position : 'absolute' });
     allPieces.css({
       'margin-right' : pieceMargin + 'px',
-      'margin-top' : pieceMargin*.65 + 'px'
+      'margin-top' : pieceMargin*.6 + 'px'
     });
     //BUILD NAV AND SLIDE
     this.createSlideObject();
