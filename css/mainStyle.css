@@ -213,7 +213,7 @@ article.intro {
 }
 .intro div:first-child {
 	float: right;
-	margin:10em 3em 2em 0;
+	margin:8em 3em 2em 0;
 	padding:2em 0;
 	text-align: left;
 	max-width: 564px;
@@ -226,6 +226,7 @@ article.intro {
 }
 .blurbCTA { margin-top:1em;}
 .blurbCTA p{ margin-top:0; }
+.blurbCTA button{text-align: left;}
 
 
 
