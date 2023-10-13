@@ -8,6 +8,9 @@
     <meta name="robots" content="index,follow,noarchive" /> 
     
   <link rel='stylesheet' href='css/mainStyle.css' type="text/css" />
+  <noscript>
+      <style>.slideViewer{float:none;}</style>
+  </noscript>
   <!-- <script type="text/javascript" src="flowplayer/flowplayer-3.2.10.min.js"></script>
 	<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script> 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCV57YLQQX"></script>
@@ -28,7 +31,7 @@
 <div class="container">
 	<main class="scaffold">
 		<div class="fascia">
-			<button class="slideBack jsGoBack"></button>
+			<button class="slideBack jsGoBack jsHide"></button>
 			<div class="slideViewer">
 				<div class="allSlides">
 					
@@ -37,7 +40,7 @@
             <div>
               <noscript>
                 <h2>Enable Javascript to see all the stops</h2>
-                <p>Get a richer experience. Use an up-to-date browser with Javascript enabled to see my work.</p>
+                <p>Get a richer experience. Use an up-to-date browser with Javascript enabled to see my work. (Or just scroll?)</p>
               </noscript>
               <div class="blurb">
                 <h1>Craft products that vibe</h1>
@@ -45,7 +48,7 @@
               </div>
               <div class="blurbCTA">
                 <p>
-                  <button class="jsGoNext">Flip through some recent examples <button><kbd>&#8592;</kbd> <kbd>&#8594;</kbd></button></button>
+                  <button class="jsGoNext jsHide">Flip through some recent examples <kbd>&#8592;</kbd> <kbd>&#8594;</kbd></button>
                 </p>
                 </div>
             </div>
@@ -334,7 +337,7 @@
           <!-- CLOSING FOR SLIDEVIEWER AND ALLSLIDES -->             
         </div>
       </div>
-      <button class="slideNext jsGoNext"></button>
+      <button class="slideNext jsGoNext jsHide"></button>
     </div>
   </main>
 	<footer class="scaffold">

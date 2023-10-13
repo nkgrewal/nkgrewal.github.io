@@ -49,7 +49,8 @@ var backBGImage = backControl.css('background-image');  //toggle image for back 
 //VARS FOR INTERNAL REF
 var navClass = "slideNav"                 //class name of nav element
 var slideObj = {};                        //empty object that will hold slide identifying info
-var currPieceIndex = 0;                   //start from 0 on load
+var currIndex = 0;                   //start from 0 on load
+var allPiecesCount = allPieces.length;     //total number of slide items
 var anim = 800;                           //slide speed
 var pieceMargin = '60';                  //margin-right per slide, must be px
 
@@ -59,15 +60,15 @@ var MySlideShow = {
   createSlideObject : function(){
     $.each(allPieces, function(i, e){
       var name;
-      var hashName;
+      var hash;
       if (this.className !=='undefined'){
         //CAPTURE AND CLEAN EACH SLIDES NAMES FOR ID
         if (this.className === portPiece){           //identify "piece" slide by h2 title
           name = $(this).find( portTitle ).html();   
-          hashName = name.replace(/[^a-z0-9\s]/gi, "").replace(/[_\s]/g, "-").toLowerCase();
+          hash = name.replace(/[^a-z0-9\s]/gi, "").replace(/[_\s]/g, "-").toLowerCase();
         }  
         else {                                    //identify slide by className
-          hashName = this.className; 
+          hash = this.className; 
           name = this.className; 
           name = name.replace(/[_\s]/g, "-").replace(/[^a-z0-9\s]/gi, " ")
           name = name.substr(0,1).toUpperCase()+name.substr(1);
@@ -75,10 +76,10 @@ var MySlideShow = {
       } else {};
       //CREATE OBJECT OF UNIQUE SLIDE NAME AND HASH FOR NAV
       if(name!==undefined){
-        $(this).addClass(hashName);       //add unique class name to each slide article
+        $(this).addClass(hash);       //add unique class name to each slide article
         var obj = {                       //create unique obj per iteration to push into slideObj
           [i] : {
-            hash : hashName,
+            hash : hash,
             name : name
           }
         };
@@ -90,17 +91,19 @@ var MySlideShow = {
   createNav : function(){
     //CREATE OPENING TAGS FOR NAV
     var navStr = '<nav class="' + navClass + '"><ul>';
-    navStr += '<li class="">' + '\u25C8' + '</li>';         //li for intro
     //BUILD NAV LI ELEMENTS AS STRING
     $.each(slideObj, function(i, e) {
       var itemClass = e.hash;
       var name = e.name;
-      if (i > 0) {
-        navStr += '<li class="'+ itemClass +'">' + name + '</li>'; //create li everything but intro
+      if (i==0){
+        navStr += '<li class="'+ itemClass +'">' + '\u25C8' + '</li>';  //li for intro
+      } 
+        else if (i > 0) {
+        navStr += '<li class="'+ itemClass +'">' + name + '</li>';    //create li everything but intro
       };    
     });
     //CLOSING TAGS FOR NAV
-    navStr += '<span class="count">0</span><span class="total"> / ' + (allPieces.length-1) + '</span>';
+    navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (allPiecesCount-2) + '</span></span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
     //NAV VISIBILITY
@@ -114,14 +117,17 @@ var MySlideShow = {
     });
     //NAV MOUSE EVENTS
     $('nav.' + navClass + ' li').on('click', function(){
-      MySlideShow.jumpToSlide($(this).attr('class'));
-    });
-    $('li.about-me').on('click', function(){
-      MySlideShow.jumpToSlide($(this).attr('class'));
+      var cleanName = $(this).attr('class').split(' ')[0];
+      MySlideShow.jumpToSlide(cleanName);
     });
     //STOP MOUSOVER FLICKER
-    $('nav.' + navClass + ' ul').on('mouseover', function(e){
-      $(this).stop(true,true).slideDown();
+    $('nav.' + navClass + ' ul').on({
+      'mouseover':function(e){  //see above
+        $(this).stop(true,true).slideDown();
+      },
+      'click':function(e){  //see above
+        $(this).stop(true,true).slideDown();
+      }
     });
   },
   getSlideIndex : function(){
@@ -137,6 +143,7 @@ var MySlideShow = {
     this.createSlideObject();
     this.createNav();
     this.resetCss($(window).width());
+    console.log(window.location.hash.substring(1));
     this.jumpToSlide(window.location.hash.substring(1));
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
     //extraDetails.hide();
@@ -146,27 +153,28 @@ var MySlideShow = {
     $('.jsHide').show();
   },
   jumpToSlide : function(slideHash){ 
-    var slideNum=0;
+    var num=0;
+    var hash;
     //FIND AND SET SLIDE POSITION FROM NUMBER OR HASH
-    if(typeof slideHash==="undefined" || slideHash===''){ slideNum=0; };
-    if(typeof slideHash==="number" || slideHash===0){ slideHash = slideNum;
+    if(typeof slideHash==="undefined" || slideHash===''){ num=0; };
+    if(typeof slideHash==="number" || slideHash===0){ slideHash = num;
     } else if (typeof slideHash==="string" && slideHash!=='') {
-      if(slideHash==='piece'){ slideNum=0; } else {
+      if(slideHash==='piece'){ num=0; } else {
         $.each(slideObj, function(i, e) {
-          if (slideHash===e.hash) { slideNum = i;} else {};   
+          if (slideHash===e.hash) { num = i; hash = e.hash} else {};   
         });
-      }
+      };
     }
     //ACTION
     this.removeControls();
     $('nav.' + navClass + ' ul').slideUp();
-    holder.animate({ left: '-' + (slideNum * allPieces.outerWidth(true)) - viewArea.offset().left + 'px' }, anim, function() {
-      MySlideShow.slideEnd();
+    holder.animate({ left: '-' + (num * allPieces.outerWidth(true)) + 'px' }, anim, function() {
+      MySlideShow.slideEnd(hash);
     });
   },
   /*navSlide : function(dir,moveBlock,slideWidth){
     this.removeControls();
-    if(currPieceIndex<allPieces.length-1){
+    if(currIndex<allPiecesCount-1){
       moveBlock.animate({ dir : '-='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
       });
@@ -180,13 +188,13 @@ var MySlideShow = {
   },
   moreInfo : function(jqArticle){
     $(jqArticle).find(extraDetails).slideToggle('fast', function(){
-      viewArea.animate({ height : allPieces.eq(currPieceIndex).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
+      viewArea.animate({ height : allPieces.eq(currIndex).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
     });
     $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
   },*/
   nextSlide : function(moveBlock,slideWidth){
     this.removeControls();
-    if(currPieceIndex<allPieces.length-1){
+    if(currIndex<allPiecesCount-1){
       //MOVE SHOW FORWARD FOR ALL BUT LAST PIECE
       moveBlock.animate({ left: '-='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
@@ -194,7 +202,7 @@ var MySlideShow = {
       $('nav.' + navClass + ' ul').slideUp();
     } else {
       //RESET SHOW TO BEGINNING FROM LAST PIECE
-      moveBlock.animate({ left: 0 - viewArea.offset().left +'px'}, anim*2.5, function() {
+      moveBlock.animate({ left: 0 + 'px'}, anim*2.5, function() {
         MySlideShow.slideEnd();
       });
       $('nav.' + navClass + ' ul').slideDown();
@@ -202,14 +210,14 @@ var MySlideShow = {
   },
   prevSlide : function(moveBlock,slideWidth){
     this.removeControls();
-    if(currPieceIndex>0.5){
+    if(currIndex>0.5){
       moveBlock.animate({ left: '+='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd();
       });
       //show nav for slide 1
-      //if(currPieceIndex < 1.5){ $('nav.' + navClass + ' ul').slideDown(); } else { $('nav.' + navClass + ' ul').slideUp(); }
+      //if(currIndex < 1.5){ $('nav.' + navClass + ' ul').slideDown(); } else { $('nav.' + navClass + ' ul').slideUp(); }
     } else {
-      moveBlock.animate({left: (slideWidth * (allPieces.length-1) * -1)-viewArea.offset().left + 'px'}, anim*2, function(){
+      moveBlock.animate({left: (slideWidth * (allPiecesCount-1) * -1) + 'px'}, anim*2, function(){
         MySlideShow.slideEnd();
       });
       $('nav.' + navClass + ' ul').slideDown();
@@ -219,38 +227,51 @@ var MySlideShow = {
     // CSS CHANGES
     var paneWidth = viewArea.outerWidth(true);
     var spacing = allPieces.outerWidth(true) - allPieces.outerWidth();
-    var leftSpace = viewArea.offset().left;
-    var newHolderWidth = (paneWidth + spacing) * allPieces.length;
+    var newHolderWidth = (paneWidth + spacing) * allPiecesCount;
 
     //RESET CONTAINER WIDTHS
-    allPieces.css({ width : paneWidth + 'px' });
+    allPieces.css({ 
+      float: 'left',
+      width : paneWidth + 'px' 
+    });
     holder.css({
-      left : (currPieceIndex * (paneWidth + spacing)* -1) - leftSpace +'px',
+      left : (currIndex * (paneWidth + spacing)* -1) +'px',
       width : newHolderWidth + 'px'
     });
     viewArea.css({
       'min-height' : $(window).height() - $('footer').outerHeight(true) - $('nav.' + navClass).outerHeight(true) + 'px',
-      height : allPieces.eq(currPieceIndex).outerHeight(true) - $('nav.' + navClass).outerHeight(true) +'px'
+      height : allPieces.eq(currIndex).outerHeight(true) - $('nav.' + navClass).outerHeight(true) +'px'
     });
   },
   setHash : function(slideNum){
     var slideClass = allPieces.eq(slideNum).attr('class').replace('piece ','');
-    //console.log ('slideclass ' + slideClass);
     window.location.hash = slideClass;
+    $('nav.' + navClass + ' .selected').removeClass('selected');
+    $('nav.' + navClass + ' .' + slideClass).addClass('selected');
   },
-  slideEnd : function(){
-    MySlideShow.setControls();
-    currPieceIndex = MySlideShow.getSlideIndex();
-    this.setHash(currPieceIndex);
-    $('nav.' + navClass + ' .count').html(currPieceIndex);
+  slideEnd : function(slideHash){
+    this.setControls();
+    currIndex = this.getSlideIndex();
+    this.setHash(currIndex);
+    /*var num;
+    $.each(slideObj, function(i, e) {
+      if (slideHash===e.hash) { num = i;} else {};   
+    });*/
     viewArea.css({
-      height : allPieces.eq(currPieceIndex).outerHeight(true) +'px'
+      height : allPieces.eq(currIndex).outerHeight(true) +'px'
     });
     //$('.'+slideHash).css('opacity', '1');
-    if(currPieceIndex<0.5){ 
+    if(currIndex<0.5){ 
       backControl.css({'background-image':'none'});
-    } else if(currPieceIndex>0.5) {
+    } else if(currIndex>0.5) {
       backControl.css({'background-image':backBGImage});
+    };
+    //$('nav.' + navClass)
+    //NAV COUNTER
+    $('nav.' + navClass + ' .count').html(currIndex);
+    if (currIndex===0 || currIndex > (allPiecesCount-2) ){ 
+      $('nav.' + navClass + ' span').hide(); } else { 
+      $('nav.' + navClass + ' span').show();
     };
     //if ($('nav.' + navClass).is(':visible')) {console.log(true)} else {console.log(false)};
   },
@@ -282,7 +303,7 @@ var MySlideShow = {
          return false;
          break;
          case 32:
-         MySlideShow.moreInfo(allPieces.eq(currPieceIndex));
+         MySlideShow.moreInfo(allPieces.eq(currIndex));
          return false;
          break;
       }
