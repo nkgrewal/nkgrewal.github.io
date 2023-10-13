@@ -69,10 +69,23 @@ kbd {
 }
 
 @media print {
-  h1            { page-break-before: always }
   h1, h2, h3,
   h4, h5, h6    { page-break-after: avoid }
   ul, ol, dl    { page-break-before: avoid }
+	.slideViewer, .allSlides, .allSlides article, footer.scaffold, .title { 
+		margin: 0 auto !important;
+		padding: 0 !important;
+		float:none !important; 
+		position: relative !important; 
+		left:auto !important; 
+		width:auto !important;
+		height:auto !important; 
+	}
+	.intro div:first-child{margin: 0 auto !important; padding: 0 !important; }
+	article.intro{font-size:1.2em !important;}
+	article .title {font-size:0.8em !important;}
+
+	.jsHide, nav.slideNav {display: none !important}
 }
 
 /* BIRDS EYE */
@@ -565,7 +578,7 @@ ul#slideRef li.slideCount{display:none;}
 
 /* #### Mobile Phones Landscape #### */
 @media handheld, screen and (max-device-width: 995px) and (orientation: landscape){
-	.fascia{max-width:995px;}
+
 }
 
 /* high resolution screens */  
@@ -575,5 +588,5 @@ ul#slideRef li.slideCount{display:none;}
 
 /* low resolution screens */  
 @media (-webkit-max-device-pixel-ratio: 1.5), (max--moz-device-pixel-ratio: 1.5),  (max-resolution: 299dpi) {  
-	.m-hide {display: none;}
+
 } 
