@@ -151,9 +151,9 @@ footer.scaffold{
 	background-color:rgba(35,35,35,0.8);
 	}
 footer.scaffold .fascia { padding:0.8em; }
-.about { text-align:right; margin: 0 2em; }
-.about li{ display:inline-block; margin-left:1em; }
-.about li:first-child{ margin-left:0; cursor: pointer; }
+footer .about { text-align:right; margin: 0 2em; }
+footer .about li{ display:inline-block; margin-left:1em; }
+footer .about li:first-child{ margin-left:0; cursor: pointer; }
 
 
 /* SLIDESHOW NAV */
@@ -192,25 +192,25 @@ nav.slideNav span.counter{
 
 /* SLIDESHOW FRAMING */
 .slideBack, .slideNext{
-	float:left;
 	width:10%;
 	margin:5vh 0;
+	padding:0;
 	height:90vh;
 	min-height:300px;
-	position:relative;
+	position:fixed;
+	top:0;
 	z-index:50;
 }
-.slideBack{ background:url(../img/btnBack.png) no-repeat center right; }
-.slideNext{ background:url(../img/btnNext.png) no-repeat center left; }
+.slideBack{ left:0; background:url(../img/btnBack.png) no-repeat center right; }
+.slideNext{ right:0; background:url(../img/btnNext.png) no-repeat center left; }
 .slideBack:hover, .slideNext:hover{filter: brightness(1) sepia(100%) drop-shadow(1em 1em 3em var(--light-green)); }
 
 .slideViewer {
-	float:left; 
-	background:none;
+	margin:0 10%;
 	width:80%;
+	background:none;
 	min-height:1px;
 	overflow:visible;
-	margin:0 auto;
 }
 .slideBack, .slideNext, .slideViewer a, nav.slideNav li {
 	cursor: pointer; 
@@ -218,7 +218,7 @@ nav.slideNav span.counter{
 
 
 /* INTRO SLIDE */
-article.intro {
+main .intro {
 	font:1.8em/1.8em 'Comfortaa';
 	color: var(--med-gray);
 	width: 100%;
@@ -226,7 +226,7 @@ article.intro {
 }
 .intro div:first-child {
 	float: right;
-	margin:8em 3em 2em 0;
+	margin:20% 3em 20% 0;
 	padding:2em 0;
 	text-align: left;
 	max-width: 564px;
@@ -416,7 +416,6 @@ section.details div.info2:after,
 .title:after,
 .imgCase:after,
 div.slideViewer article:after,
-div.slideNext:after,
 .fascia:after
 {
     content: ".";

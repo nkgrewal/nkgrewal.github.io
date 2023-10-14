@@ -121,7 +121,7 @@ var MySlideShow = {
       }
     });
     //NAV MOUSE EVENTS
-    $('nav.' + navClass + ' li').on('click', function(){
+    $('nav.' + navClass + ' li, footer .about li:first-child').on('click', function(){
       var cleanName = $(this).attr('class').split(' ')[0];
       MySlideShow.jumpToSlide(cleanName);
     });
@@ -233,7 +233,7 @@ var MySlideShow = {
   },
   resetCss : function(winWidth){
     // CSS CHANGES
-    var paneWidth = viewArea.outerWidth(true);
+    var paneWidth = viewArea.outerWidth();
     var spacing = allPieces.outerWidth(true) - allPieces.outerWidth();
     var newHolderWidth = (paneWidth + spacing) * allPiecesCount;
 
