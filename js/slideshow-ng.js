@@ -46,7 +46,7 @@ var portTitle = 'header h2';                //location of portfolio title under 
 var multiImgHolder = $('div.mainImg');    //slide type - multi image
 var iconHolder = $('div.icons');          //slide type - multi image icons
 
-var navHolder = $('.container');          //where to place slide nav
+var navHolder = $('footer.scaffold .fascia');          //where to place slide nav
 
 //var extraDetails = $('div.subDetails');
 //var detailsBtn = $('a.detailsBtn');
@@ -103,35 +103,62 @@ var MySlideShow = {
       if (i==0){
         navStr += '<li class="'+ itemClass +'">' + '\u25C8' + '</li>';  //li for intro
       } 
-        else if (i > 0) {
+        else if (i > 0 && i < (allPiecesCount-1)) {
         navStr += '<li class="'+ itemClass +'">' + name + '</li>';    //create li everything but intro
       };    
     });
     //CLOSING TAGS FOR NAV
-    navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (allPiecesCount-2) + '</span></span>';
+    //navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (allPiecesCount-2) + '</span></span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
+    $('nav.' + navClass + ' li:first-child').siblings().slideToggle('fast');
     //NAV VISIBILITY
-    $('nav.' + navClass).on({
-      'mouseover': function(e){
-        $(this).children().stop(true,true).slideDown();
+    $(navHolder).on({
+      'mouseenter': function(e){
+        $('nav.' + navClass + ' li:first-child').siblings().stop().slideToggle(250, 'linear');
+        e.stopPropagation();
+        //$(this).children().stop(true,true).slideDown();
       },
-      'mouseout' : function(e){
-        $(this).children().stop(true,true).slideUp();
+      'mouseleave' : function(e){
+        $('nav.' + navClass + ' li:first-child').siblings().stop().slideToggle(600, 'linear');
+        e.stopPropagation();
+        //$(this).show("slide", { direction: "left" }, 1000)
+        //$(this).children().stop(true,true).slideUp();
       }
     });
+    /*$('nav.' + navClass).on({
+      'mouseover': function(e){
+        //$(this).children().stop(true,true).slideDown();
+      },
+      'mouseout' : function(e){
+        //$(this).children().stop(true,true).slideUp();
+      }
+    });*/
     //NAV MOUSE EVENTS
     $('nav.' + navClass + ' li, footer .about li:first-child').on('click', function(){
       var cleanName = $(this).attr('class').split(' ')[0];
       MySlideShow.jumpToSlide(cleanName);
     });
     //STOP MOUSOVER FLICKER
-    $('nav.' + navClass + ' ul').on({
-      'mouseover':function(e){  //see above
-        $(this).stop(true,true).slideDown();
+    $(navHolder).on({
+      'mouseenter':function(e){  //see above
+        //$('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
+        //e.stopPropagation;
+      },
+      'mouseleave':function(e){  //see above
+        //$('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
+        //$(this).stop(true,true).show();
       },
       'click':function(e){  //see above
-        $(this).stop(true,true).slideDown();
+        //$(this).stop(true,true).slideDown();
+      }
+    });
+    $('nav.' + navClass + ' ul').on({
+      'mouseover':function(e){  //see above
+        //$(this).stop(true,true).slideDown();
+      },
+      'click':function(e){  //see above
+        //$(this).stop(true,true).slideDown();
       }
     });
   },
@@ -145,7 +172,7 @@ var MySlideShow = {
     holder.css({ position : 'absolute' });
     allPieces.css({
       'margin-right' : pieceMargin + 'px',
-      'margin-top' : pieceMargin*.6 + 'px'
+      'margin-top' : pieceMargin*.55 + 'px'
     });
     //BUILD NAV AND SLIDE
     this.createSlideObject();
@@ -175,7 +202,7 @@ var MySlideShow = {
     }
     //ACTION
     this.removeControls();
-    $('nav.' + navClass + ' ul').slideUp();
+    //$('nav.' + navClass + ' ul').slideUp();
     holder.animate({ left: '-' + (num * allPieces.outerWidth(true)) + 'px' }, anim, function() {
       MySlideShow.slideEnd(hash);
     });
@@ -207,13 +234,13 @@ var MySlideShow = {
       moveBlock.animate({ left: '-='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd(currIndex);
       });
-      $('nav.' + navClass + ' ul').slideUp();
+      //$('nav.' + navClass + ' ul').slideUp();
     } else {
       //RESET SHOW TO BEGINNING FROM LAST PIECE
       moveBlock.animate({ left: 0 + 'px'}, anim*2.5, function() {
         MySlideShow.slideEnd(currIndex);
       });
-      $('nav.' + navClass + ' ul').slideDown();
+      //$('nav.' + navClass + ' ul').slideDown();
     }
   },
   prevSlide : function(moveBlock,slideWidth,slideHash){
@@ -228,7 +255,7 @@ var MySlideShow = {
       moveBlock.animate({left: (slideWidth * (allPiecesCount-1) * -1) + 'px'}, anim*2, function(){
         MySlideShow.slideEnd(currIndex);
       });
-      $('nav.' + navClass + ' ul').slideDown();
+      //$('nav.' + navClass + ' ul').slideDown();
     }
   },
   resetCss : function(winWidth){
@@ -254,8 +281,8 @@ var MySlideShow = {
   setHash : function(slideNum){
     var slideClass = allPieces.eq(slideNum).attr('class').replace('piece ','');
     window.location.hash = slideClass;
-    $('nav.' + navClass + ' .selected').removeClass('selected');
-    $('nav.' + navClass + ' .' + slideClass).addClass('selected');
+    $('nav.' + navClass + ' .selected, footer .about .selected').removeClass('selected');
+    $('nav.' + navClass + ' .' + slideClass +', footer .about .' + slideClass).addClass('selected');
   },
   slideEnd : function(slideHash){
     this.setControls(slideHash);
