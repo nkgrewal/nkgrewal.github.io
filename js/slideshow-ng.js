@@ -46,7 +46,8 @@ var portTitle = 'header h2';                //location of portfolio title under 
 var multiImgHolder = $('div.mainImg');    //slide type - multi image
 var iconHolder = $('div.icons');          //slide type - multi image icons
 
-var navHolder = $('footer.scaffold .fascia');          //where to place slide nav
+var navHolder = $('footer.scaffold .fascia');    //where to place slide nav
+var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
 
 //var extraDetails = $('div.subDetails');
 //var detailsBtn = $('a.detailsBtn');
@@ -96,71 +97,63 @@ var MySlideShow = {
   createNav : function(){
     //CREATE OPENING TAGS FOR NAV
     var navStr = '<nav class="' + navClass + '"><ul>';
+    var stringA = '<ul>';
+    var stringB;
     //BUILD NAV LI ELEMENTS AS STRING
     $.each(slideObj, function(i, e) {
-      var itemClass = e.hash;
-      var name = e.name;
-      if (i==0){
-        navStr += '<li class="'+ itemClass +'">' + '\u25C8' + '</li>';  //li for intro
-      } 
-        else if (i > 0 && i < (allPiecesCount-1)) {
-        navStr += '<li class="'+ itemClass +'">' + name + '</li>';    //create li everything but intro
-      };    
+      switch(true){
+        case (i==0):
+          stringB = '<li class="'+ e.hash +'">' + '\u25C8' + '</li>';  //li for intro
+          console.log(stringB);
+          break;
+        case (i > 0 && i < (allPiecesCount-1)):
+          stringA += '<li class="'+ e.hash +'">' + e.name + '</li>';    //li for rest except about
+          console.log(stringA);
+          break;
+        case (i == (allPiecesCount-1)):
+          stringA += '</ul>'
+          $(aboutLi).addClass(e.hash);
+          break;
+        default:
+          console.log(i);
+      }
     });
     //CLOSING TAGS FOR NAV
+    navStr += stringA + stringB;
     //navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (allPiecesCount-2) + '</span></span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
-    $('nav.' + navClass + ' li:first-child').siblings().slideToggle('fast');
     //NAV VISIBILITY
-    $(navHolder).on({
+    /*$('nav.' + navClass + ' ul:first-child li').siblings().slideToggle('fast');
+      $(navHolder).on({
       'mouseenter': function(e){
-        $('nav.' + navClass + ' li:first-child').siblings().stop().slideToggle(250, 'linear');
+        $('nav.' + navClass + ' ul:first-child li').siblings().slideToggle(250, 'linear').stop(true,true);
         e.stopPropagation();
-        //$(this).children().stop(true,true).slideDown();
       },
       'mouseleave' : function(e){
-        $('nav.' + navClass + ' li:first-child').siblings().stop().slideToggle(600, 'linear');
+        $('nav.' + navClass + ' ul:first-child li').siblings().slideToggle(600, 'linear').stop(true,true);
+        //$('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
         e.stopPropagation();
-        //$(this).show("slide", { direction: "left" }, 1000)
-        //$(this).children().stop(true,true).slideUp();
-      }
-    });
-    /*$('nav.' + navClass).on({
-      'mouseover': function(e){
-        //$(this).children().stop(true,true).slideDown();
-      },
-      'mouseout' : function(e){
-        //$(this).children().stop(true,true).slideUp();
       }
     });*/
     //NAV MOUSE EVENTS
-    $('nav.' + navClass + ' li, footer .about li:first-child').on('click', function(){
+    $('nav.' + navClass + ' li, ' + aboutLi).on('click', function(){
       var cleanName = $(this).attr('class').split(' ')[0];
       MySlideShow.jumpToSlide(cleanName);
     });
     //STOP MOUSOVER FLICKER
-    $(navHolder).on({
+    /*$(navHolder).on({
       'mouseenter':function(e){  //see above
-        //$('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
-        //e.stopPropagation;
+        $('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
       },
       'mouseleave':function(e){  //see above
-        //$('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
-        //$(this).stop(true,true).show();
+        $('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
+        $(this).stop(true,true).show();
       },
       'click':function(e){  //see above
-        //$(this).stop(true,true).slideDown();
+        $(this).stop(true,true).slideDown();
       }
-    });
-    $('nav.' + navClass + ' ul').on({
-      'mouseover':function(e){  //see above
-        //$(this).stop(true,true).slideDown();
-      },
-      'click':function(e){  //see above
-        //$(this).stop(true,true).slideDown();
-      }
-    });
+    });*/
   },
   getSlideIndex : function(){
     //return slide number from width position
@@ -274,15 +267,15 @@ var MySlideShow = {
       width : newHolderWidth + 'px'
     });
     viewArea.css({
-      'min-height' : $(window).height() - $('footer').outerHeight(true) - $('nav.' + navClass).outerHeight(true) + 'px',
-      height : allPieces.eq(currIndex).outerHeight(true) - $('nav.' + navClass).outerHeight(true) +'px'
+      'min-height' : $(window).height() - $('footer').outerHeight(true) + 'px',
+      height : allPieces.eq(currIndex).outerHeight(true)
     });
   },
   setHash : function(slideNum){
     var slideClass = allPieces.eq(slideNum).attr('class').replace('piece ','');
     window.location.hash = slideClass;
-    $('nav.' + navClass + ' .selected, footer .about .selected').removeClass('selected');
-    $('nav.' + navClass + ' .' + slideClass +', footer .about .' + slideClass).addClass('selected');
+    navHolder.find('.selected').removeClass('selected');
+    navHolder.find('.' + slideClass).addClass('selected');
   },
   slideEnd : function(slideHash){
     this.setControls(slideHash);
