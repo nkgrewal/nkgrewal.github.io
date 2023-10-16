@@ -280,9 +280,9 @@ var MySlideShow = {
         $('article.'+e.hash).animate({opacity: 1}, 400);
         console.log('jj'+hash); 
       } else if (hash==e.hash){
-        $('article.'+hash).animate({opacity: 1}, 400);
+        //$('article.'+hash).animate({opacity: 1}, 400);
         console.log('kk'+currIndex); 
-      } else { console.log('fail');  }   
+      } else { }   
     });
     viewArea.css({
       height : allPieces.eq(currIndex).outerHeight(true) +'px'

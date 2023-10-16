@@ -277,15 +277,15 @@ main .intro {
 	max-width:55%;
 	white-space: nowrap;
 }
-.title hgroup.left{ margin: 1.8em 0 0 4%; max-width:50%; }
+.title hgroup.left{ margin: 1.5em 0 0 3%; max-width:50%; }
 .title h3{
-	font-size: 1.4em;
+	font-size: 1.5em;
 	color:var(--med-blue);
 	margin-bottom:0.2em;
 	white-space: nowrap;
 }
 .title h4{
-	font-size: 1em;
+	font-size: 1.2em;
 	color:#838d92;
 	white-space: nowrap;
 }
@@ -461,7 +461,8 @@ div.slideViewer article:after,
 
 /* Wide screen */
 @media only screen and (min-width: 1200px) {
-	/*.title {margin-left:-3em; max-width:1000px; }
+	/*.title {margin-left:-3em; max-width:1000px; }*/
+	.splash{ max-width:1000px; margin:0 auto; };
 }
 
 /* Tall screen */
