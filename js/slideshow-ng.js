@@ -53,7 +53,8 @@ var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
 //var detailsBtn = $('a.detailsBtn');
 
 //VARS FOR INTERNAL REF
-var navClass = "slideNav"                 //class name of nav element
+var navClass = 'slideNav';                 //class name of nav element
+var navToggleElement = '';                //empty var set in nav creation
 var slideObj = {};                        //empty object that will hold slide identifying info
 var currIndex = 0;                   //start from 0 on load
 var allPiecesCount = allPieces.length;     //total number of slide items
@@ -97,63 +98,49 @@ var MySlideShow = {
   createNav : function(){
     //CREATE OPENING TAGS FOR NAV
     var navStr = '<nav class="' + navClass + '"><ul>';
-    var stringA = '<ul>';
-    var stringB;
     //BUILD NAV LI ELEMENTS AS STRING
     $.each(slideObj, function(i, e) {
       switch(true){
         case (i==0):
-          stringB = '<li class="'+ e.hash +'">' + '\u25C8' + '</li>';  //li for intro
-          console.log(stringB);
+          navStr += '<li class="'+ e.hash +'">' + '\u25C8' + '</li></ul>';  //li for intro
+          navStr += '<ul class="navHide">';
           break;
         case (i > 0 && i < (allPiecesCount-1)):
-          stringA += '<li class="'+ e.hash +'">' + e.name + '</li>';    //li for rest except about
-          console.log(stringA);
+          navStr += '<li class="'+ e.hash +'">' + e.name + '</li>';    //li for rest except about
           break;
         case (i == (allPiecesCount-1)):
-          stringA += '</ul>'
           $(aboutLi).addClass(e.hash);
           break;
         default:
           console.log(i);
       }
     });
-    //CLOSING TAGS FOR NAV
-    navStr += stringA + stringB;
-    //navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (allPiecesCount-2) + '</span></span>';
+    //CLOSING TAGS FOR NAV AND ADD TO HOLDER
+    navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (allPiecesCount-2) + '</span></span>';
     navStr += '</ul></nav>';
+    navToggleElement = 'nav.' + navClass + ' .navHide';
     $(navStr).prependTo(navHolder);
-    //NAV VISIBILITY
-    /*$('nav.' + navClass + ' ul:first-child li').siblings().slideToggle('fast');
-      $(navHolder).on({
-      'mouseenter': function(e){
-        $('nav.' + navClass + ' ul:first-child li').siblings().slideToggle(250, 'linear').stop(true,true);
-        e.stopPropagation();
-      },
-      'mouseleave' : function(e){
-        $('nav.' + navClass + ' ul:first-child li').siblings().slideToggle(600, 'linear').stop(true,true);
-        //$('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
-        e.stopPropagation();
-      }
-    });*/
-    //NAV MOUSE EVENTS
+    //NAVIGATION LINKS
     $('nav.' + navClass + ' li, ' + aboutLi).on('click', function(){
       var cleanName = $(this).attr('class').split(' ')[0];
       MySlideShow.jumpToSlide(cleanName);
     });
-    //STOP MOUSOVER FLICKER
-    /*$(navHolder).on({
-      'mouseenter':function(e){  //see above
-        $('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
+    //NAV MOUSE EVENTS
+    //NAV VISIBILITY
+    $(navHolder).on({
+      'mouseenter': function(e){
+        MySlideShow.navToggle('show');
+        e.stopPropagation();
       },
-      'mouseleave':function(e){  //see above
-        $('nav.' + navClass + ' li:first-child').siblings().stop(true,true);
-        $(this).stop(true,true).show();
+      'mouseleave' : function(e){
+        MySlideShow.navToggle('hide');
+        e.stopPropagation();
       },
-      'click':function(e){  //see above
-        $(this).stop(true,true).slideDown();
+      'click': function(e){
+        MySlideShow.navToggle('toggle');
+        e.stopPropagation();
       }
-    });*/
+    });
   },
   getSlideIndex : function(){
     //return slide number from width position
@@ -170,8 +157,9 @@ var MySlideShow = {
     //BUILD NAV AND SLIDE
     this.createSlideObject();
     this.createNav();
-    this.resetCss($(window).width());
-    this.jumpToSlide(window.location.hash.substring(1));
+    this.navToggle('hide');
+    this.resetCss( $(window).width() );
+    this.jumpToSlide( window.location.hash.substring(1) );
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
     //extraDetails.hide();
     multiImgHolder.children().hide();
@@ -200,26 +188,28 @@ var MySlideShow = {
       MySlideShow.slideEnd(hash);
     });
   },
-  /*navSlide : function(dir,moveBlock,slideWidth){
-    this.removeControls();
-    if(currIndex<allPiecesCount-1){
-      moveBlock.animate({ dir : '-='+ slideWidth + 'px' }, anim, function() {
-        MySlideShow.slideEnd();
-      });
-      $('nav.' + navClass + ' ul').slideUp();
-    } else {
-      moveBlock.animate({ dir : 0 - viewArea.offset().left +'px'}, anim*2, function() {
-        MySlideShow.slideEnd();
-      });
-      $('nav.' + navClass + ' ul').slideDown();
-    }
-  },
-  moreInfo : function(jqArticle){
+  /*moreInfo : function(jqArticle){
     $(jqArticle).find(extraDetails).slideToggle('fast', function(){
       viewArea.animate({ height : allPieces.eq(currIndex).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
     });
     $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
   },*/
+  navToggle : function(toggleState, speed){
+    var s1;
+    var s2;
+    if (speed === null || speed === undefined ){
+      s1 = 200; s2 = s1*2; 
+    } else { s1 = speed; s2 = speed; };
+    if (toggleState==='show' || toggleState==='hide'){
+      if (toggleState==='show') {
+        $(navToggleElement).fadeIn(s1);
+      } else {
+        $(navToggleElement).fadeOut(s2);
+      }
+    } else if(toggleState==='toggle'){
+      $(navToggleElement).slideToggle(s2);
+    } else { console.log('use only "show", "hide", or "toggle" for navToggle functions first property');}
+  },
   nextSlide : function(moveBlock,slideWidth,slideHash){
     this.removeControls();
     if(currIndex<allPiecesCount-1){
@@ -233,8 +223,8 @@ var MySlideShow = {
       moveBlock.animate({ left: 0 + 'px'}, anim*2.5, function() {
         MySlideShow.slideEnd(currIndex);
       });
-      //$('nav.' + navClass + ' ul').slideDown();
     }
+    //this.navToggle('show');
   },
   prevSlide : function(moveBlock,slideWidth,slideHash){
     this.removeControls();
@@ -242,14 +232,13 @@ var MySlideShow = {
       moveBlock.animate({ left: '+='+ slideWidth + 'px' }, anim, function() {
         MySlideShow.slideEnd(currIndex);
       });
-      //show nav for slide 1
-      //if(currIndex < 1.5){ $('nav.' + navClass + ' ul').slideDown(); } else { $('nav.' + navClass + ' ul').slideUp(); }
+      if(currIndex < 1.5){ this.navToggle('hide'); } else { this.navToggle('show'); }
     } else {
       moveBlock.animate({left: (slideWidth * (allPiecesCount-1) * -1) + 'px'}, anim*2, function(){
         MySlideShow.slideEnd(currIndex);
       });
-      //$('nav.' + navClass + ' ul').slideDown();
     }
+    //this.navToggle('show');
   },
   resetCss : function(winWidth){
     // CSS CHANGES
@@ -282,19 +271,22 @@ var MySlideShow = {
     currIndex = this.getSlideIndex();
     hash = slideHash;
     this.setHash(currIndex);
-    /*allPieces.css('opacity', '0');
+
+    this.navToggle('hide', 900);
+    allPieces.css('opacity', '.6');
     $.each(slideObj, function(i, e) {
-      if (hash===e.hash) {
-        $('article.'+hash).css('opacity', '1');
-        console.log('jj'+hash); } 
-      else if (currIndex===i){
-        $('article.'+currIndex).css('opacity', '1');
-        console.log('kk'+currIndex); };   
-    });*/
+      console.log(i, currIndex);
+      if (i==currIndex) {
+        $('article.'+e.hash).animate({opacity: 1}, 400);
+        console.log('jj'+hash); 
+      } else if (hash==e.hash){
+        $('article.'+hash).animate({opacity: 1}, 400);
+        console.log('kk'+currIndex); 
+      } else { console.log('fail');  }   
+    });
     viewArea.css({
       height : allPieces.eq(currIndex).outerHeight(true) +'px'
     });
-    //$('nav.' + navClass)
     //BACKBUTTON REFINEMENT
     if(currIndex == 0){ $(backControl).css("opacity", "0"); }
       else { $(backControl).fadeTo( "slow" , 1, function() {});
@@ -305,7 +297,6 @@ var MySlideShow = {
       $('nav.' + navClass + ' span').hide(); } else { 
       $('nav.' + navClass + ' span').show();
     };
-    //if ($('nav.' + navClass).is(':visible')) {console.log(true)} else {console.log(false)};
   },
   setControls : function(slideHash){
     //EVENT LISTENERS
@@ -350,16 +341,22 @@ var MySlideShow = {
   }
 }
 
-//WINDOW RESIZE
-$(window).resize( function(){
-  var winWidth = $(this).width();
-  MySlideShow.resetCss(winWidth);
+//BACK BUTTON AND RESIZE
+$(window).on({
+  'hashchange': function(e){
+    MySlideShow.jumpToSlide( window.location.hash.substring(1) );
+  },
+  'resize': function(){
+    MySlideShow.resetCss( $(this).width() );
+  }
 });
 
+//KICK IT
 $(document).ready(function(){
   MySlideShow.initSlideShow();
 });
 
+//PRELOADER
 $(window).ready(function() {
   $('.curtainLoad').fadeOut(900, function() {
     $('body').css('overflow','visible');
