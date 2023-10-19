@@ -205,7 +205,7 @@ var MySlideShow = {
     var num=0;
     var hash;
     //DEFINE NUM AND HASH FROM SLIDEID
-    if(typeof slideID==="number" || slideID===0){ 
+    if(typeof slideID==="number"){ 
       num = slideID;
     } else if (typeof slideID==="string" && slideID!=='') {
       $.each(slideObj, function(i, e) {
