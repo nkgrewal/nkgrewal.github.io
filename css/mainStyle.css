@@ -118,7 +118,7 @@ li:first-child{ border-left:none; margin-left:0; }
 .container{
 	width:100%;
 	min-height:100%;
-	font-size:13px;
+	font-size:18px;
 	text-align:center;
 	overflow:hidden;
 	background:url(../img/cornerDec-top.png) top left no-repeat;
@@ -145,7 +145,6 @@ footer.scaffold{
 	left:0;
 	padding:1px;
 	z-index:50;
-	font-size:1.2em;
 	color:var(--med-gray);
 	border-top:1px solid #374c52;
 	background:url(../img/topbg.png) repeat;
@@ -165,7 +164,6 @@ footer.scaffold ul {
 footer.scaffold li {
 	padding:0.85em 0;
 	margin:0 0.85em;
-	font-size:1em;
 	color:#869196;
 	border-bottom:2px solid transparent;
 }
@@ -245,7 +243,7 @@ article.current{
 
 /* INTRO SLIDE */
 main .intro {
-	font:1.8em/1.8em 'Comfortaa';
+	font: 1.4em/1.4em 'Comfortaa';
 	color: var(--med-gray);
 	width: 100%;
 	margin: 0 auto;
@@ -258,7 +256,7 @@ main .intro {
 	max-width: 564px;
 }
 .intro p{ margin:1em 0 0 0; line-height:1.6em; }
-.intro h1{ font-size: 2em; color:var(--light-blue); }
+.intro h1{ font-size:1.8em;color:var(--light-blue); }
 .intro kbd{
 	position: relative;
 	top:-1px;
@@ -273,42 +271,35 @@ main .intro {
 .title h2, .title h3, .title h4 { font-weight:normal; }
 .title h2 {
 	float:left;
-	font: 5em 'Meow Script', cursive;
+	font: 4em 'Meow Script', cursive;
 	color: var(--light-green);
 	max-width:55%;
 	white-space: nowrap;
 }
 .title hgroup.left{ margin: 1.5em 0 0 3%; max-width:50%; }
 .title h3{
-	font-size: 1.5em;
 	color:var(--med-blue);
 	margin-bottom:0.2em;
 	white-space: nowrap;
 }
 .title h4{
-	font-size: 1.2em;
 	color:#838d92;
 	white-space: nowrap;
 }
 
 .imgCase{
 	width:100%; 
-	text-align:center; 
-	position:relative;
-	margin-top:0.5em;
-	line-height: 1em;
+	display: flex;
 }
 .imgCase img{ margin: 0 auto; width:100%; }
-.mainImg, div.icons{ float:left; }
+.mainImg, div.icons{  }
 .mainImg{
-	width:82%;
-	border:0.5% solid #374c52;
-	position:relative;
+	border:1px solid #374c52;
 }
 
-.icons{ width:18%; }
-.icons div{ position:relative; margin-top:2%; margin-left:2%; }
-.icons div:first-child{ margin-top:0; }
+.icons{ display:flex; flex-direction:column; }
+.icons div{ position:relative; }
+.icons div:first-child{ }
 .icons img{ margin:0; }
 .imgCase p{
 	padding:0.5em 0.8em;
@@ -328,7 +319,6 @@ main .intro {
 /*CONTENT SECTION*/
 section.details{
 	padding:0.5em 7% 5em 7%;
-	font-size:1.25em;
 }
 .summary{ color:#838d92; margin-bottom:2.5em;}
 a.detailsBtn{
@@ -338,7 +328,6 @@ a.detailsBtn{
 	position:relative;
 	top:10px;
 	margin-left:10px;
-	font-size:1.15em;
 }
 ul.skills, p.skills {
 	width:100%;
@@ -354,7 +343,6 @@ ul.skills li{
 ul.skills .cap{
 	border-left:none;
 	padding:0;
-	font-size:1.4em;
 	position:relative; 
 	top:2px;
 }
