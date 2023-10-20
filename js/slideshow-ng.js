@@ -13,10 +13,6 @@ options to pass through :
   - slideshow content holder - section
   - slide content animations (imageCase, details)
 
-- resize holder
-- get direct children of holder
-- hide all but first child in multi img
-
 slideshow div structure:
 has back fwd btn
 has a slide view area window
@@ -28,8 +24,6 @@ each "slide" is an article without a set width
 each article has a class
 all portfolio articles are class named "piece" and have an h2 title
 
-SLIDE BY HOLDER POSITION
-( Math.abs(holder.offset().left) + eachSlide.outerWidth(true) ) / eachSlide.outerWidth(true)
 */
 
 //VARS FOR EXTERNALE HTML CLASS DEPENDENCIES
@@ -42,29 +36,28 @@ var eachSlide = $('.allSlides article');     //individual slides
 var portPiece = 'piece';                    //class name of portfolio articles
 var portTitle = 'header h2';                //location of portfolio title under eachSlide
 
-//var slideCase = $('section.imgCase');   //slide type - main image
 var multiImgHolder = $('div.mainImg');    //slide type - multi image
 var iconHolder = $('div.icons');          //slide type - multi image icons
 
 var navHolder = $('footer.scaffold .fascia');    //where to place slide nav
 var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
 
+//var slideCase = $('section.imgCase');   //slide type - main image
 //var extraDetails = $('div.subDetails');
 //var detailsBtn = $('a.detailsBtn');
 
 //VARS FOR INTERNAL REF
-var navClass = 'slideNav';                 //class name of nav element
-var navToggleElement = '';                //empty var set in nav creation
-var slideObj = {};                        //empty object that will hold slide identifying info
-var currIndex = 0;                   //start from 0 on load
-var slideCount = eachSlide.length;     //total number of slide items
-var anim = 800;                           //slide speed
-var pieceMargin = '60';                  //margin-right per slide, must be px
+var navClass = 'slideNav';                      //class name of nav element
+var navToggleElement = '';                      //empty var set in nav creation
+const slideMap = new Map();                     //empty object that will hold slide identifying info
+var currIndex = 0;                              //start from 0 on load, only changes under moveSlideBlock
+var anim = 800;                                 //slide speed
+var pieceMargin = '60';                         //margin-right per slide, must be px
 
 
 //METHODS
 var MySlideShow = {
-  createSlideObject : function(){
+  createSlideMap : function(){
     $.each(eachSlide, function(i, e){
       var name;
       var hash;
@@ -82,45 +75,40 @@ var MySlideShow = {
         hash = 'slide-'+i;
         name = 'Slide '+i;
       };
-      //CREATE OBJECT OF UNIQUE SLIDE NAME AND HASH FOR NAV
+      //CREATE MAP OF UNIQUE SLIDE NAME AND HASH FOR NAV
       if(name!==undefined){
         $(this).addClass(hash);           //add unique class name to each slide article
-        var obj = {                       //create unique obj per iteration to push into slideObj
-          [i] : {
-            hash : hash,
-            name : name
-          }
-        };
-        $.extend(slideObj, obj);
+        slideMap.set(i, {hash, name});         //key, value = name, hash
       } else { };
     });
     //verify object of every slide's id info (e.g. name, hash)
-    //slideObj[0].hash, Object.values(slideObj)[0].name
-    console.log(slideObj);
+    console.log( slideMap, slideMap.get(0).hash, slideMap.keys().next().value );
+    //console.log( 'slideMap Obj check i=2 ' + Array.from(slideMap.keys())[2], Array.from(slideMap.values())[2] );
   },
   createNav : function(){
     //CREATE OPENING TAGS FOR NAV
     var navStr = '<nav class="' + navClass + '"><ul>';
     //BUILD NAV LI ELEMENTS AS ADDITIVE STRING FROM SLIDE OBJECT
-    $.each(slideObj, function(i, e) {
+    slideMap.forEach((info, i) => {
       switch(true){
         case (i==0):
-          navStr += '<li class="'+ e.hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
+          navStr += '<li class="'+ slideMap.get(i).hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
           navStr += '<ul class="navHide">';
           navToggleElement = 'nav.' + navClass + ' .navHide';               //create and define hideable menu section
           break;
-        case (i > 0 && i < (slideCount-1)):
-          navStr += '<li class="'+ e.hash +'">' + e.name + '</li>';         //li for rest except about (last slide)
+        case (i > 0 && i < (slideMap.size-1)):
+          navStr += '<li class="'+ slideMap.get(i).hash +'">' + slideMap.get(i).name + '</li>';         //li for rest except about (last slide)
           break;
-        case (i == (slideCount-1)):
-          $(aboutLi).addClass(e.hash);
+        case (i == (slideMap.size-1)):
+          $(aboutLi).addClass(slideMap.get(i).hash);
           break;
         default:
-          console.log('createNav issue, slideObj #' + i);
+          console.log('createNav issue, slideMap #' + i);
       }
-    });
+      i++;
+    })
     //CLOSING TAGS FOR NAV AND ADD TO HOLDER
-    navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (slideCount-2) + '</span></span>';
+    navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (slideMap.size-2) + '</span></span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
     //NAV MOUSE EVENTS
@@ -144,9 +132,20 @@ var MySlideShow = {
       }
     });
   },
-  getSlideIndexFromPos : function(){
-    //return slide number from width position
-    return Math.round( Math.abs(holder.offset().left)  / eachSlide.outerWidth(true) );
+  getSlideIndex : function(keyword){
+    if (keyword==='position'){
+      //return slide number from width position
+      return Math.round( Math.abs(holder.offset().left)  / eachSlide.outerWidth(true) );
+    } else {
+      //return slide number from hash
+      var slideNum = 0;
+      slideMap.forEach((info, i) => {
+        if ( keyword===slideMap.get(i).hash ) { 
+          slideNum = i;
+        } else { };
+      });
+      return Number(slideNum);
+    }
   },
   initSlideShow : function(){
     //SET CONTAINERS TO SLIDE, STATIC
@@ -157,11 +156,11 @@ var MySlideShow = {
       'margin-top' : pieceMargin*.55 + 'px'
     });
     //BUILD NAV AND SLIDE
-    this.createSlideObject();
+    this.createSlideMap();
     this.createNav();
     this.navToggle('hide');
     this.resetCss( $(window).width() );
-    this.moveSlideBlock('jump', window.location.hash.substring(1) )
+    this.moveSlideBlock('jump', window.location.hash.substring(1) );
     //this.jumpToSlide( window.location.hash.substring(1) );
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
     //extraDetails.hide();
@@ -171,27 +170,7 @@ var MySlideShow = {
     $('.jsHide').show();
     $('.jsGoBack.jsHide').css('opacity','0');
   },
-  /*jumpToSlide : function(slideID){ 
-    var num=0;
-    var hash;
-    //FIND AND SET SLIDE POSITION FROM NUMBER OR HASH
-    if(typeof slideID==="undefined" || slideID===''){ num=0; };
-    if(typeof slideID==="number" || slideID===0){ slideID = num;
-    } else if (typeof slideID==="string" && slideID!=='') {
-      if(slideID==='piece'){ num=0; } else {
-        $.each(slideObj, function(i, e) {
-          if (slideID===e.hash) { num = i; hash = e.hash} else {};   
-        });
-      };
-    }
-    //ACTION
-    this.removeControls();
-    //$('nav.' + navClass + ' ul').slideUp();
-    holder.animate({ left: '-' + (num * eachSlide.outerWidth(true)) + 'px' }, anim, function() {
-      MySlideShow.slideEnd(hash);
-    });
-  },
-  moreInfo : function(jqArticle){
+  /*moreInfo : function(jqArticle){
     $(jqArticle).find(extraDetails).slideToggle('fast', function(){
       viewArea.animate({ height : eachSlide.eq(currIndex).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
     });
@@ -201,56 +180,48 @@ var MySlideShow = {
     //direction options: next, back, jump
     //slideID can be index num or hash
     this.removeControls();
-    var moveLength = eachSlide.outerWidth(true);
-    var num=0;
-    var hash;
-    //DEFINE NUM AND HASH FROM SLIDEID
-    if(typeof slideID==="number"){ 
-      num = slideID;
-    } else if (typeof slideID==="string" && slideID!=='') {
-      $.each(slideObj, function(i, e) {
-        if (slideID===e.hash) { num = i; hash = e.hash} else {};   
-      });
-    } else {console.log('issue with slideID input ' + slideID)};
-    console.log('defined var ' + num, hash);
+    var moveLength = eachSlide.outerWidth(true)
+    //CHANGE SLIDEID FROM HASH TO INDEX
+    if (typeof slideID === 'string'){ currIndex = this.getSlideIndex(slideID); };
 
+    //MOVE SLIDES AND UPDATE CURRRENT INDEX
     switch(direction){
       case 'next':
-        if(currIndex < slideCount-1){
-          //MOVE SHOW FORWARD FOR ALL BUT LAST SLIDE
-          holder.animate({ left: '-='+ moveLength + 'px' }, anim, function() {
-            currIndex++;
-            MySlideShow.slideEnd(currIndex);
-          });
-        } else {
-          //LOOP SHOW TO BEGINNING FROM LAST SLIDE
-          holder.animate({ left: 0 + 'px'}, anim*2.5, function() {
-            currIndex = 0;
-            MySlideShow.slideEnd(currIndex);
-          });
-        }
+          if(currIndex < slideMap.size-1){
+            //MOVE SHOW FORWARD FOR ALL BUT LAST SLIDE
+            holder.animate({ left: '-='+ moveLength + 'px' }, anim, function() {
+              currIndex++;
+              MySlideShow.slideEnd(currIndex);
+            });
+          } else {
+            //LOOP SHOW TO BEGINNING FROM LAST SLIDE
+            holder.animate({ left: 0 + 'px'}, anim*2.5, function() {
+              currIndex = 0;
+              MySlideShow.slideEnd(currIndex);
+            });
+          }
         break;
       case 'back':
-        if(currIndex>0.5){
-          //MOVE BACK FOR ALL BUT FIRST SLIDE
-          holder.animate({ left: '+='+ moveLength + 'px' }, anim, function() {
-            currIndex--;
-            MySlideShow.slideEnd(currIndex);
-          });
-          if(currIndex < 1.5){ this.navToggle('show'); } else { this.navToggle('hide'); }
-        } else {
-          //LOOP SHOW TO END FROM FIRST SLIDE
-          holder.animate({left: (moveLength * (slideCount-1) * -1) + 'px'}, anim*2, function(){
-            currIndex = slideCount-1;
-            MySlideShow.slideEnd(currIndex);
-          });
-        }
+          if(currIndex > 0.5){
+            //MOVE BACK FOR ALL BUT FIRST SLIDE
+            holder.animate({ left: '+='+ moveLength + 'px' }, anim, function() {
+              currIndex--;
+              MySlideShow.slideEnd(currIndex);
+            });
+            if(currIndex < 1){ this.navToggle('show'); } else { this.navToggle('hide'); }
+          } else {
+            //LOOP SHOW TO END FROM FIRST SLIDE
+            currIndex = slideMap.size-1;
+            holder.animate({left: (-1 * moveLength * currIndex) + 'px'}, anim*2, function(){
+              MySlideShow.slideEnd(currIndex);
+            });
+          }
         break;
       case 'jump':
-        currIndex = num;
-        holder.animate({ left: '-' + (currIndex * eachSlide.outerWidth(true)) + 'px' }, anim, function() {
-          MySlideShow.slideEnd(currIndex);
-        });
+          //MOVE TO SLIDE ACCORDING TO WINDOW HASH
+          holder.animate({ left: '-' + (currIndex * eachSlide.outerWidth(true)) + 'px' }, anim, function() {
+            MySlideShow.slideEnd(currIndex);
+          });
         break
       default:
         console.log('issue with direction input ' + direction);
@@ -272,39 +243,11 @@ var MySlideShow = {
       $(navToggleElement).slideToggle(s2);
     } else { console.log('use only "show", "hide", or "toggle" for navToggle functions first property');}
   },
-  /*nextSlide : function(moveBlock,slideWidth,slideHash){
-    this.removeControls();
-    if(currIndex<slideCount-1){
-      //MOVE SHOW FORWARD FOR ALL BUT LAST PIECE
-      moveBlock.animate({ left: '-='+ slideWidth + 'px' }, anim, function() {
-        MySlideShow.slideEnd(currIndex);
-      });
-      //$('nav.' + navClass + ' ul').slideUp();
-    } else {
-      //RESET SHOW TO BEGINNING FROM LAST PIECE
-      moveBlock.animate({ left: 0 + 'px'}, anim*2.5, function() {
-        MySlideShow.slideEnd(currIndex);
-      });
-    }
-  },
-  prevSlide : function(moveBlock,slideWidth,slideHash){
-    this.removeControls();
-    if(currIndex>0.5){
-      moveBlock.animate({ left: '+='+ slideWidth + 'px' }, anim, function() {
-        MySlideShow.slideEnd(currIndex);
-      });
-      if(currIndex < 1.5){ this.navToggle('hide'); } else { this.navToggle('show'); }
-    } else {
-      moveBlock.animate({left: (slideWidth * (slideCount-1) * -1) + 'px'}, anim*2, function(){
-        MySlideShow.slideEnd(currIndex);
-      });
-    }
-  },*/
   resetCss : function(winWidth){
     // CSS CHANGES
     var paneWidth = viewArea.outerWidth();
     var spacing = eachSlide.outerWidth(true) - eachSlide.outerWidth();
-    var newHolderWidth = (paneWidth + spacing) * slideCount;
+    var newHolderWidth = (paneWidth + spacing) * slideMap.size;
 
     //RESET CONTAINER WIDTHS
     eachSlide.css({ 
@@ -321,64 +264,54 @@ var MySlideShow = {
     });
   },
   setWindowHash : function(slideNum){
-    var slideClass = eachSlide.eq(slideNum).attr('class').replace('piece ','');
+    var slideClass = slideMap.get(slideNum).hash;
+    //SET WINDOW HASH
     window.location.hash = slideClass;
+    //SET ACTIVE NAV
     navHolder.find('.selected').removeClass('selected');
     navHolder.find('.' + slideClass).addClass('selected');
+    //SET ACTIVE SLIDE
+    holder.find('.selected').removeClass('selected');
+    eachSlide.eq(slideNum).addClass('selected');
   },
   slideEnd : function(slideNum){
-    this.setControls();
-    this.setWindowHash(currIndex);
-    //currIndex = this.getSlideIndexFromPos();
-    //console.log(currIndex);
-    //hash = slideHash;
+    this.setControls(slideNum);
+    this.setWindowHash(slideNum);
 
-    /*//eachSlide.css('opacity', '.6');
-    $.each(slideObj, function(i, e) {
-      if (i==currIndex) {
-        //$('article.'+e.hash).animate({opacity: 1}, 400);
-        console.log('jj'+hash); 
-      } else if (hash==e.hash){
-        //$('article.'+hash).animate({opacity: 1}, 400);
-        console.log('kk'+currIndex); 
-      } else { }   
-    });*/
-    viewArea.css({
-      height : eachSlide.eq(currIndex).outerHeight(true) +'px'
-    });
+    eachSlide.css('opacity', '.6');
+    eachSlide.eq(slideNum).animate({opacity: 1}, anim/2 );
+    viewArea.animate({ height : eachSlide.eq(slideNum).outerHeight(true) +'px' }, anim/4 );
     //BACKBUTTON REFINEMENT
-    if(currIndex == 0){ $(backControl).css("opacity", "0"); }
+    if(slideNum == 0){ $(backControl).css("opacity", "0"); }
       else { $(backControl).fadeTo( "slow" , 1, function() {});
     };
     //NAV COUNTER
     /*$('nav.' + navClass + ' .count').html(currIndex);
-    if (currIndex===0 || currIndex > (slideCount-2) ){ 
+    if (currIndex===0 || currIndex > (slideMap.size-2) ){ 
       $('nav.' + navClass + ' span').hide(); } else { 
       $('nav.' + navClass + ' span').show();
     };*/
   },
-  setControls : function(){
+  setControls : function(slideNum){
     //EVENT LISTENERS
     backControl.on('click', function(e){
-      MySlideShow.moveSlideBlock('back', currIndex);
+      MySlideShow.moveSlideBlock('back', slideNum);
     });
     nextControl.on('click', function(e){
-      MySlideShow.moveSlideBlock('next', currIndex);
+      MySlideShow.moveSlideBlock('next', slideNum);
     });
     $(document).on('keydown', function(e){
       switch (e.keyCode) {
         case 37:
-          MySlideShow.moveSlideBlock('back', currIndex);
-          //MySlideShow.prevSlide(holder, eachSlide.outerWidth(true), slideHash );
+          MySlideShow.moveSlideBlock('back', slideNum);
           return false;
           break;
         case 39:
-          MySlideShow.moveSlideBlock('next', currIndex);
-          //MySlideShow.nextSlide(holder, eachSlide.outerWidth(true), slideHash );
+          MySlideShow.moveSlideBlock('next', slideNum);
           return false;
           break;
         case 32:
-          MySlideShow.moreInfo(eachSlide.eq(currIndex));
+          MySlideShow.moreInfo(eachSlide.eq(slideNum));
           return false;
           break;
       }
@@ -404,9 +337,9 @@ var MySlideShow = {
 
 //BACK BUTTON AND RESIZE
 $(window).on({
-  'hashchange': function(e){
-    MySlideShow.moveSlideBlock('jump', window.location.hash.substring(1) );
-  },
+  /*'hashchange': function(e){
+    MySlideShow.slideJump( window.location.hash.substring(1) );
+  },*/
   'resize': function(){
     MySlideShow.resetCss( $(this).width() );
   }
@@ -419,7 +352,7 @@ $(document).ready(function(){
 
 //PRELOADER
 $(window).ready(function() {
-  $('.curtainLoad').fadeOut(900, function() {
+  $('.curtainLoad').fadeOut(anim*1.2, function() {
     $('body').css('overflow','visible');
     $(this).remove();
     //$('button.jsGoNext').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);

@@ -163,7 +163,8 @@ footer.scaffold ul {
 	list-style: none;
 }
 footer.scaffold li {
-	padding:0.85em;
+	padding:0.85em 0;
+	margin:0 0.85em;
 	font-size:1em;
 	color:#869196;
 	border-bottom:2px solid transparent;
@@ -439,26 +440,6 @@ div.slideViewer article:after,
 .all-star .imgCase p, .crossvertical .scaffoldImg p{bottom:3em;right:2.5em;}
 
 
-
-
-/*MOBILE VIEW*/
-@media only screen and (max-width: 481px) {
-	
-}
-@media handheld, screen and (max-device-width: 960px){
-	.m-only{display: unset;}
-	.m-hide{display:none;}
-	.intro kbd {display: none;}
-}
-
-/*TABLET VIEW*/
-@media only screen and (max-width: 1000px) {
-	.slideNav ul:first-child {flex: 1 100%;}
-	.slideNav ul:last-child{
-		background: linear-gradient(to bottom, rgba(40,40,40,1), rgba(40,40,40,0.6));
-	}
-}
-
 /* Wide screen */
 @media only screen and (min-width: 1200px) {
 	/*.title {margin-left:-3em; max-width:1000px; }*/
@@ -469,6 +450,47 @@ div.slideViewer article:after,
 @media only screen and (min-height: 900px) {
 
 }
+
+/* ----- */ 
+
+/*MOBILE VIEW*/
+@media only screen and (max-width: 481px) {
+	.m-only{display: unset;}
+	.m-hide{display:none;}
+	.intro kbd {display: none;}
+	/*h1   { font-size: 2.2em; }
+	h2   { font-size: 1.5em; }
+	h3   { font-size: 1em; }
+	h4   { font-size: 0.9em; }
+	h5   { font-size: .83em; }
+	h6   { font-size: .75em; }
+	h1, h2, h3, h4, h5, h6 {
+	}
+	p {
+		font-size:1em;
+		line-height:1.5em;
+		text-align: left;
+		margin:0 auto;
+		padding:0;
+	}
+	main .intro{font:1.4em/1.4em 'Comfortaa'}*/
+}
+
+/*TABLET VIEW*/
+@media only screen and (max-width: 1000px) {
+	.slideNav ul:first-child {flex: 1 100%;}
+	.slideNav ul:last-child{
+		background: linear-gradient(to bottom, rgba(40,40,40,1), rgba(40,40,40,0.6));
+	}
+}
+
+/*SCREEN DEVICE SPECIFIC*/
+@media handheld, screen and (max-device-width: 960px){
+	.m-only{display: unset;}
+	.m-hide{display:none;}
+	.intro kbd {display: none;}
+}
+
 
 /*
 @media only screen and (max-width: 481px) and (min-width: 200px) {
