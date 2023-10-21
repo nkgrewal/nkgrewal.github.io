@@ -10,7 +10,7 @@ options to pass through :
   - controls(back, forward, more info, keystrokes)
   - navigation
   - slide viewport - div
-  - slideshow content holder - section
+  - slideshow content slideHolder - section
   - slide content animations (imageCase, details)
 
 slideshow div structure:
@@ -31,18 +31,18 @@ var nextControl = $('.jsGoNext');         //slideshow next button
 var backControl = $('.jsGoBack');         //slideshow back button
 var viewArea = $('.slideViewer');         //frame for viewing slide
 
-var holder = $('.allSlides');             //entire slideshow container, will animate through viewArea
+var slideHolder = $('.allSlides');             //entire slideshow container, will animate through viewArea
 var eachSlide = $('.allSlides article');     //individual slides
 var portPiece = 'piece';                    //class name of portfolio articles
 var portTitle = 'header h2';                //location of portfolio title under eachSlide
 
-var slideSpacing = parseInt(holder.css('gap'));   //spacing between slides, must be hardcoded as px, updated in resetCss
+var slideSpacing = parseInt(slideHolder.css('gap'));   //spacing between slides, must be hardcoded as px, updated in resetCss
 
 var navHolder = $('footer.scaffold .fascia');    //where to place slide nav
 var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
 
-var multiImgHolder = $('div.mainImg');    //slide type - multi image
-var iconHolder = $('div.icons');          //slide type - multi image icons
+var multiImgslideHolder = $('div.mainImg');    //slide type - multi image
+var iconslideHolder = $('div.icons');          //slide type - multi image icons
 
 //var slideCase = $('section.imgCase');   //slide type - main image
 //var extraDetails = $('div.subDetails');
@@ -109,7 +109,7 @@ var MySlideShow = {
       }
       i++;
     })
-    //CLOSING TAGS FOR NAV AND ADD TO HOLDER
+    //CLOSING TAGS FOR NAV AND ADD TO slideHolder
     navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (slideMap.size-2) + '</span></span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
@@ -142,7 +142,7 @@ var MySlideShow = {
   getSlideIndex : function(keyword){
     if (keyword==='position'){
       //return slide number from width position
-      return Math.round( Math.abs(holder.offset().left)  / eachSlide.outerWidth(true) );
+      return Math.round( Math.abs(slideHolder.offset().left)  / eachSlide.outerWidth(true) );
     } else {
       //return slide number from hash
       var slideNum = 0;
@@ -158,7 +158,8 @@ var MySlideShow = {
     //SET CONTAINERS TO SLIDE, STATIC
     //viewArea.css({ position : 'relative' });
     viewArea.parent().addClass('jsSlideShow');
-    holder.css({ position : 'relative' });
+    navHolder.addClass('jsNav');
+    slideHolder.css({ position : 'relative' });
     //BUILD NAV AND SLIDE
     this.createSlideMap();
     this.createNav();
@@ -167,8 +168,8 @@ var MySlideShow = {
     //this.jumpToSlide( window.location.hash.substring(1) );
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
     //extraDetails.hide();
-    multiImgHolder.children().hide();
-    multiImgHolder.children(':first-child').show();
+    multiImgslideHolder.children().hide();
+    multiImgslideHolder.children(':first-child').show();
 
     $('.jsShow').show();
     $('.jsHide').hide();
@@ -193,13 +194,13 @@ var MySlideShow = {
       case 'next':
           if(currIndex < slideMap.size-1){
             //MOVE SHOW FORWARD FOR ALL BUT LAST SLIDE
-            holder.animate({ left: '-='+ moveLength + 'px' }, anim, function() {
+            slideHolder.animate({ left: '-='+ moveLength + 'px' }, anim, function() {
               currIndex++;
               MySlideShow.slideEnd(currIndex);
             });
           } else {
             //LOOP SHOW TO BEGINNING FROM LAST SLIDE
-            holder.animate({ left: 0 + 'px'}, anim*2.5, function() {
+            slideHolder.animate({ left: 0 + 'px'}, anim*2.5, function() {
               currIndex = 0;
               MySlideShow.slideEnd(currIndex);
             });
@@ -208,7 +209,7 @@ var MySlideShow = {
       case 'back':
           if(currIndex > 0.5){
             //MOVE BACK FOR ALL BUT FIRST SLIDE
-            holder.animate({ left: '+='+ moveLength + 'px' }, anim, function() {
+            slideHolder.animate({ left: '+='+ moveLength + 'px' }, anim, function() {
               currIndex--;
               MySlideShow.slideEnd(currIndex);
             });
@@ -216,14 +217,14 @@ var MySlideShow = {
           } else {
             //LOOP SHOW TO END FROM FIRST SLIDE
             currIndex = slideMap.size-1;
-            holder.animate({left: (-1 * moveLength * currIndex) + 'px'}, anim*2, function(){
+            slideHolder.animate({left: (-1 * moveLength * currIndex) + 'px'}, anim*2, function(){
               MySlideShow.slideEnd(currIndex);
             });
           }
         break;
       case 'jump':
           //MOVE TO SLIDE ACCORDING TO WINDOW HASH
-          holder.animate({ left: '-' + (currIndex * moveLength) + 'px' }, anim, function() {
+          slideHolder.animate({ left: '-' + (currIndex * moveLength) + 'px' }, anim, function() {
             MySlideShow.slideEnd(currIndex);
           });
         break
@@ -250,21 +251,26 @@ var MySlideShow = {
   resetCss : function(winWidth){
     // CSS CHANGES
     var paneWidth = viewArea.outerWidth();
-    var newHolderWidth = (paneWidth * slideMap.size) + ( slideSpacing * (slideMap.size -1) );
+    var newslideHolderWidth = (paneWidth * slideMap.size) + ( slideSpacing * (slideMap.size -1) );
     var heightAdjustor = $('.' + navClass + ' ul:first-child').outerHeight(true);
-    slideSpacing = parseInt(holder.css('gap'));
+    slideSpacing = parseInt(slideHolder.css('gap'));
 
     //RESET CONTAINER WIDTHS
     eachSlide.css({ 
       width : paneWidth + 'px' 
     });
-    holder.css({
+    slideHolder.css({
       left : ( currIndex * (paneWidth + slideSpacing) *-1 ) +'px',
-      width : newHolderWidth + 'px'
+      width : newslideHolderWidth + 'px'
     });
     viewArea.css({
-      'min-height' : $(window).height() - heightAdjustor + 'px', //prevents height from being too short on little content
+      'min-height' : $(window).height() - heightAdjustor -3 + 'px', //prevents height from being too short on little content
+      height : eachSlide.eq(currIndex).outerHeight(true) +'px'
     });
+    if (eachSlide.eq(currIndex).outerHeight(true) < ($(window).height() - heightAdjustor)) {
+      viewArea.css({ height : ($(window).height() - heightAdjustor -3) +'px' });
+      eachSlide.eq(currIndex).css({ 'min-height' : ($(window).height() - heightAdjustor -3) +'px' });
+    };
   },
   setWindowHash : function(slideNum){
     var slideClass = slideMap.get(slideNum).hash;
@@ -274,7 +280,7 @@ var MySlideShow = {
     navHolder.find('.selected').removeClass('selected');
     navHolder.find('.' + slideClass).addClass('selected');
     //SET ACTIVE SLIDE
-    holder.find('.selected').removeClass('selected');
+    slideHolder.find('.selected').removeClass('selected');
     eachSlide.eq(slideNum).addClass('selected');
   },
   slideEnd : function(slideNum){
@@ -284,7 +290,8 @@ var MySlideShow = {
 
     eachSlide.css('opacity', '.6');
     eachSlide.eq(slideNum).animate({opacity: 1}, anim/2 );
-    viewArea.css({ height : eachSlide.eq(slideNum).outerHeight(true) - heightAdjustor +'px' });
+    viewArea.css({ height : eachSlide.eq(slideNum).outerHeight(true) +'px' });
+    console.log(currIndex,eachSlide.eq(slideNum).outerHeight(true) );
     //BACKBUTTON REFINEMENT
     if(slideNum == 0){ $(backControl).css("opacity", "0"); }
       else { $(backControl).fadeTo( "slow" , 1, function() {});
@@ -321,10 +328,10 @@ var MySlideShow = {
       }
     });
     //show subimg for each section in piece
-    iconHolder.children().on('mouseover', function(){
+    iconslideHolder.children().on('mouseover', function(){
       var linkNum = $(this).index();
-      $(this).parents('article').find(multiImgHolder).children().hide();
-      $(this).parents('article').find(multiImgHolder).children().eq(linkNum).show();
+      $(this).parents('article').find(multiImgslideHolder).children().hide();
+      $(this).parents('article').find(multiImgslideHolder).children().eq(linkNum).show();
     });
     /*detailsBtn.on('click', function(e){
       MySlideShow.moreInfo($(this).parents('article'));
@@ -334,7 +341,7 @@ var MySlideShow = {
     nextControl.off('click');
     backControl.off('click');
     $(document).off('keydown');
-    iconHolder.children().off('mouseover');
+    iconslideHolder.children().off('mouseover');
     //detailsBtn.off('click');
   }
 }
