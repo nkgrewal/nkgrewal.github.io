@@ -9,7 +9,7 @@
     
   <link rel='stylesheet' href='css/mainStyle.css' type="text/css" />
   <noscript>
-      <style>.slideViewer{float:none;}</style>
+    <style>main .intro{ flex-direction: row-reverse; gap:0;}</style>
   </noscript>
   <!-- <script type="text/javascript" src="flowplayer/flowplayer-3.2.10.min.js"></script>
 	<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script> 
@@ -24,32 +24,33 @@
 </head>
 
 <body>
-<div class="curtainLoad jsHide">
+<div class="curtainLoad jsShow">
 	<img src="img/spinner.gif" alt="" />
 </div>
 
 <div class="container">
 	<main class="scaffold">
 		<div class="fascia">
-			<button class="slideBack jsGoBack jsHide"></button>
+			<button class="slideBack jsGoBack jsShow"></button>
 			<div class="slideViewer">
 				<div class="allSlides">
 					
           <!-- INTRO -->
           <article class="intro">
+            <noscript>
+              <h2>Enable Javascript to see all the stops</h2>
+              <p>Get a richer experience. Use an up-to-date browser with Javascript enabled to see my work. (Or just scroll?)</p>
+            </noscript>
             <div>
-              <noscript>
-                <h2>Enable Javascript to see all the stops</h2>
-                <p>Get a richer experience. Use an up-to-date browser with Javascript enabled to see my work. (Or just scroll?)</p>
-              </noscript>
               <div class="blurb">
                 <h1>Craft products that vibe</h1>
                 <p>Tech is about making life better for people. Unlock lovable apps that solve real human problems with research, collaboration, and thoughtful UX.</p>
               </div>
               <div class="blurbCTA">
                 <p>
-                  <button class="jsGoNext jsHide">Flip through some recent examples <kbd>&#8592;</kbd> <kbd>&#8594;</kbd><span class="m-only">&#8594;</span></button>
+                  <button class="jsGoNext jsShow">Flip through some recent examples <kbd>&#8592;</kbd> <kbd>&#8594;</kbd><span class="m-only">&#8594;</span></button>
                 </p>
+                <p class="jsHide">&#8595; Scroll through some examples below</p>
                 </div>
             </div>
 					</article>           
@@ -59,7 +60,7 @@
             <section class="splash">
             	<header class="title">
               	<h2>Chime 5</h2>
-              	<hgroup class="left">
+              	<hgroup>
                   <h3>Meetings that move with you</h3>
                   <h4>Web, desktop, mobile</h4>
                 </hgroup>
@@ -90,7 +91,7 @@
             <section class="splash">
               <header class="title">
                 <h2>Study Shift</h2>
-                <hgroup class="left">
+                <hgroup>
                   <h3>Your studying personal trainer</h3>
                   <h4>iOS</h4>
                 </hgroup>
@@ -135,7 +136,7 @@
             <section class="splash">
             	<header class="title">
               	<h2>Amazon PayCode</h2>
-              	<hgroup class="left">
+              	<hgroup>
                 	<h3>Cash is still king</h3>
                 	<h4>Web, desktop, mobile</h4>
               	</hgroup>
@@ -188,7 +189,7 @@
             <section class="splash">
               <header class="title">
                 <h2>Reading Comprehension</h2>
-                <hgroup class="left">
+                <hgroup>
                   <h3>iOS</h3>
                   <h4>Education trainer and tracker</h4>
                 </hgroup>
@@ -269,7 +270,7 @@
             <section class="splash">
               <header class="title">
                 <h2>On the Table</h2>
-                <hgroup class="left">
+                <hgroup>
                   <h3>Kinetic Typography</h3>
                   <h4>Amuse people.</h4>
                 </hgroup>
@@ -347,7 +348,7 @@
           <!-- CLOSING FOR SLIDEVIEWER AND ALLSLIDES -->             
         </div>
       </div>
-      <button class="slideNext jsGoNext jsHide"></button>
+      <button class="slideNext jsGoNext jsShow"></button>
     </div>
   </main>
 	<footer class="scaffold">

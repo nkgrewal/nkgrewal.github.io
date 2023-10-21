@@ -29,18 +29,21 @@ all portfolio articles are class named "piece" and have an h2 title
 //VARS FOR EXTERNALE HTML CLASS DEPENDENCIES
 var nextControl = $('.jsGoNext');         //slideshow next button
 var backControl = $('.jsGoBack');         //slideshow back button
-
 var viewArea = $('.slideViewer');         //frame for viewing slide
+
 var holder = $('.allSlides');             //entire slideshow container, will animate through viewArea
 var eachSlide = $('.allSlides article');     //individual slides
 var portPiece = 'piece';                    //class name of portfolio articles
 var portTitle = 'header h2';                //location of portfolio title under eachSlide
 
-var multiImgHolder = $('div.mainImg');    //slide type - multi image
-var iconHolder = $('div.icons');          //slide type - multi image icons
+var slideSpacing = parseInt(holder.css('gap'));  //spacing between slides, must be hardcoded as px
+var heightAdjustor = $('footer').outerHeight(true)  //subtract from height calculations 
 
 var navHolder = $('footer.scaffold .fascia');    //where to place slide nav
 var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
+
+var multiImgHolder = $('div.mainImg');    //slide type - multi image
+var iconHolder = $('div.icons');          //slide type - multi image icons
 
 //var slideCase = $('section.imgCase');   //slide type - main image
 //var extraDetails = $('div.subDetails');
@@ -111,6 +114,7 @@ var MySlideShow = {
     navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (slideMap.size-2) + '</span></span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
+    this.navToggle('hide');
     //NAV MOUSE EVENTS
     //LI CLICK EVENT BASED ON FIRST ASSIGNED CLASS NAME (HASH)
     $('nav.' + navClass + ' li, ' + aboutLi).on('click', function(){
@@ -149,16 +153,12 @@ var MySlideShow = {
   },
   initSlideShow : function(){
     //SET CONTAINERS TO SLIDE, STATIC
-    viewArea.css({ position : 'relative' });
-    holder.css({ position : 'absolute' });
-    eachSlide.css({
-      'margin-right' : pieceMargin + 'px',
-      'margin-top' : pieceMargin*.55 + 'px'
-    });
+    //viewArea.css({ position : 'relative' });
+    viewArea.parent().addClass('jsSlideShow');
+    holder.css({ position : 'relative' });
     //BUILD NAV AND SLIDE
     this.createSlideMap();
     this.createNav();
-    this.navToggle('hide');
     this.resetCss( $(window).width() );
     this.moveSlideBlock('jump', window.location.hash.substring(1) );
     //this.jumpToSlide( window.location.hash.substring(1) );
@@ -167,8 +167,9 @@ var MySlideShow = {
     multiImgHolder.children().hide();
     multiImgHolder.children(':first-child').show();
 
-    $('.jsHide').show();
-    $('.jsGoBack.jsHide').css('opacity','0');
+    $('.jsShow').show();
+    $('.jsHide').hide();
+    $('.jsGoBack.jsShow').css('opacity','0');
   },
   /*moreInfo : function(jqArticle){
     $(jqArticle).find(extraDetails).slideToggle('fast', function(){
@@ -180,7 +181,7 @@ var MySlideShow = {
     //direction options: next, back, jump
     //slideID can be index num or hash
     this.removeControls();
-    var moveLength = eachSlide.outerWidth(true)
+    var moveLength = eachSlide.outerWidth(true) + slideSpacing;
     //CHANGE SLIDEID FROM HASH TO INDEX
     if (typeof slideID === 'string'){ currIndex = this.getSlideIndex(slideID); };
 
@@ -219,7 +220,7 @@ var MySlideShow = {
         break;
       case 'jump':
           //MOVE TO SLIDE ACCORDING TO WINDOW HASH
-          holder.animate({ left: '-' + (currIndex * eachSlide.outerWidth(true)) + 'px' }, anim, function() {
+          holder.animate({ left: '-' + (currIndex * moveLength) + 'px' }, anim, function() {
             MySlideShow.slideEnd(currIndex);
           });
         break
@@ -246,21 +247,19 @@ var MySlideShow = {
   resetCss : function(winWidth){
     // CSS CHANGES
     var paneWidth = viewArea.outerWidth();
-    var spacing = eachSlide.outerWidth(true) - eachSlide.outerWidth();
-    var newHolderWidth = (paneWidth + spacing) * slideMap.size;
+    var newHolderWidth = (paneWidth * slideMap.size) + ( slideSpacing * (slideMap.size -1) );
+    slideSpacing = parseInt(holder.css('gap'));
 
     //RESET CONTAINER WIDTHS
     eachSlide.css({ 
-      float: 'left',
       width : paneWidth + 'px' 
     });
     holder.css({
-      left : (currIndex * (paneWidth + spacing)* -1) +'px',
+      left : ( currIndex * (paneWidth + slideSpacing) *-1 ) +'px',
       width : newHolderWidth + 'px'
     });
     viewArea.css({
-      'min-height' : $(window).height() - $('footer').outerHeight(true) + 'px',
-      height : eachSlide.eq(currIndex).outerHeight(true)
+      'min-height' : $(window).height() - heightAdjustor + 'px', //prevents height from being too short on little content
     });
   },
   setWindowHash : function(slideNum){
@@ -280,7 +279,7 @@ var MySlideShow = {
 
     eachSlide.css('opacity', '.6');
     eachSlide.eq(slideNum).animate({opacity: 1}, anim/2 );
-    viewArea.animate({ height : eachSlide.eq(slideNum).outerHeight(true) +'px' }, anim/4 );
+    viewArea.animate({ height : eachSlide.eq(slideNum).outerHeight(true) - heightAdjustor +'px' }, anim/4 );
     //BACKBUTTON REFINEMENT
     if(slideNum == 0){ $(backControl).css("opacity", "0"); }
       else { $(backControl).fadeTo( "slow" , 1, function() {});
