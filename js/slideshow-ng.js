@@ -163,7 +163,7 @@ var MySlideShow = {
     //BUILD NAV AND SLIDE
     this.createSlideMap();
     this.createNav();
-    this.resetCss( $(window).width() );
+    this.resetCss( $(window).width(), $(window).height() );
     this.moveSlideBlock('jump', window.location.hash.substring(1) );
     //this.jumpToSlide( window.location.hash.substring(1) );
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
@@ -248,7 +248,7 @@ var MySlideShow = {
       $(navToggleElement).slideToggle(s2);
     } else { console.log('use only "show", "hide", or "toggle" for navToggle functions first property');}
   },
-  resetCss : function(winWidth){
+  resetCss : function(winWidth, winHeight){
     // CSS CHANGES
     var paneWidth = viewArea.outerWidth();
     var newslideHolderWidth = (paneWidth * slideMap.size) + ( slideSpacing * (slideMap.size -1) );
@@ -264,13 +264,12 @@ var MySlideShow = {
       width : newslideHolderWidth + 'px'
     });
     viewArea.css({
-      'min-height' : $(window).height() - heightAdjustor -3 + 'px', //prevents height from being too short on little content
+      'min-height' : winHeight - heightAdjustor -3 + 'px', //prevents height from being too short on little content
       height : eachSlide.eq(currIndex).outerHeight(true) +'px'
     });
-    if (eachSlide.eq(currIndex).outerHeight(true) < ($(window).height() - heightAdjustor)) {
-      viewArea.css({ height : ($(window).height() - heightAdjustor -3) +'px' });
-      eachSlide.eq(currIndex).css({ 'min-height' : ($(window).height() - heightAdjustor -3) +'px' });
-    };
+    if ( (winHeight - heightAdjustor) > eachSlide.eq(currIndex).outerHeight(true) ) {
+      eachSlide.eq(currIndex).css({ 'min-height' : (winHeight - heightAdjustor -3) +'px' });
+    } else { eachSlide.eq(currIndex).css({ 'min-height' : '90vh' }); };
   },
   setWindowHash : function(slideNum){
     var slideClass = slideMap.get(slideNum).hash;
@@ -355,7 +354,7 @@ $(window).on({
     MySlideShow.navToggle('hide');
   },
   'resize': function(){
-    MySlideShow.resetCss( $(this).width() );
+    MySlideShow.resetCss( $(this).width(), $(this).height() );
   },
   'scroll': function(){
     //show menu on desktop if scrolled down

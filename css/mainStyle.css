@@ -167,7 +167,7 @@ footer.scaffold{
 footer.scaffold .fascia{ display: flex; justify-content: flex-end;}
 footer.scaffold .about, .slideNav{ padding:0 0.5em 0.15em 0.5em; }
 footer.scaffold ul, .slideNav { display: flex; flex-wrap:wrap-reverse; }
-footer.scaffold ul { margin:0; list-style: none; }
+footer.scaffold ul { margin:0; padding:0; list-style: none; }
 footer.scaffold li {
 	font-size: 0.9em;
 	padding:0.85em 0;
@@ -245,7 +245,7 @@ nav.slideNav span.counter{
 }
 .jsSlideShow .allSlides { flex-direction: row; }
 .jsSlideShow article { padding-top:3em; padding-bottom:2em; }
-.jsSlideShow .intro { gap:unset; min-height:90vh; }
+.jsSlideShow .intro { gap:unset; min-height:90vh; padding:0; }
 
 
 /* INTRO SLIDE */
@@ -262,8 +262,7 @@ main .intro {
 	gap:2em;
 }
 .intro > div {
-	padding:3em 0;
-	margin-right:1em;
+	padding:3em 0 1em 0;
 	max-width: 530px;
 }
 .intro p{ margin-top:1em; line-height:1.6em; }
@@ -337,7 +336,19 @@ main .intro {
 
 /*CONTENT SECTION*/
 .allSlides .details{ padding:1em; }
-.summary{ color:#838d92; margin-bottom:2.5em;}
+.details blockquote{
+	font-style:italic;
+	color:var(--med-blue);
+}
+.details blockquote span::before,.details blockquote span::after{
+	font-size:2em;
+	color:rgba(var(--light-blue-rgb),.8);
+	line-height:0;
+	position: relative;
+	top:0.4em; 
+}
+.details blockquote span::before{ content:'\201C'; left:-0.2em; }
+.details blockquote span::after{ content:'\201D'; left:-2px; }
 
 /*a.detailsBtn{
 	padding:0.5em 0.6em 0.4em 0.6em; 
@@ -365,6 +376,7 @@ ul.skills .cap{
 	top:2px;
 }
 */
+.summary{ color:#838d92; margin-bottom:2.5em;}
 .details .info1{
 	padding: 2em;
 	margin:0;
@@ -447,7 +459,8 @@ noscript {
 @media only screen and (min-width: 1200px) {
 	/*.title {margin-left:-3em; max-width:1000px; }*/
 	.splash{ max-width:1000px; margin:0 auto; };
-	.allSlides{ gap:15px; }
+	.jsSlideShow .allSlides{ gap:20px; }
+	.jsSlideShow article { padding-top:5em; padding-bottom:4em; }
 }
 
 /* Tall screen */
@@ -500,7 +513,6 @@ noscript {
 		background-color: rgba(0,0,0,.1);
 	}
 	.title h3, .title h4{
-		color:var(--med-gray);
 		margin:0;
 		font-size:0.9em;
 		display: inline-block;	
