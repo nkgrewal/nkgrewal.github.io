@@ -243,7 +243,7 @@ nav.slideNav span.counter{
 	gap:50px; /* MUST BE PX */
 }
 .jsSlideShow .allSlides { flex-direction: row; }
-.jsSlideShow .allSlides article { padding-top:3em; }
+.jsSlideShow article { padding-top:3em; }
 .jsSlideShow .intro { height:80vh; gap:unset; }
 
 
@@ -257,6 +257,7 @@ main .intro {
 	align-items: flex-end;
 	justify-content: center;
 	flex-wrap: wrap;
+	padding-top:0;
 	gap:2em;
 }
 .intro > div {
@@ -470,8 +471,11 @@ noscript {
 		padding:0;
 	}
 	main .intro{font:1.4em/1.4em 'Comfortaa'}*/
+	.jsSlideShow article { padding-top:1em; }
+
+
 	.title{display: unset;}
-	.title hgroup{margin-top:0; display: flex;}
+	.title hgroup{margin-top:0; display: flex; flex-wrap: wrap;}
 }
 
 /*TABLET VIEW*/

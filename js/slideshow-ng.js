@@ -36,8 +36,7 @@ var eachSlide = $('.allSlides article');     //individual slides
 var portPiece = 'piece';                    //class name of portfolio articles
 var portTitle = 'header h2';                //location of portfolio title under eachSlide
 
-var slideSpacing = parseInt(holder.css('gap'));  //spacing between slides, must be hardcoded as px
-var heightAdjustor = $('footer').outerHeight(true)  //subtract from height calculations 
+var slideSpacing = parseInt(holder.css('gap'));   //spacing between slides, must be hardcoded as px, updated in resetCss
 
 var navHolder = $('footer.scaffold .fascia');    //where to place slide nav
 var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
@@ -132,6 +131,10 @@ var MySlideShow = {
       },
       'click': function(e){
         MySlideShow.navToggle('show');
+        e.stopPropagation();
+      },
+      'tap': function(e){
+        MySlideShow.navToggle('toggle');
         e.stopPropagation();
       }
     });
@@ -248,6 +251,7 @@ var MySlideShow = {
     // CSS CHANGES
     var paneWidth = viewArea.outerWidth();
     var newHolderWidth = (paneWidth * slideMap.size) + ( slideSpacing * (slideMap.size -1) );
+    var heightAdjustor = $('.' + navClass + ' ul:first-child').outerHeight(true);
     slideSpacing = parseInt(holder.css('gap'));
 
     //RESET CONTAINER WIDTHS
@@ -274,12 +278,13 @@ var MySlideShow = {
     eachSlide.eq(slideNum).addClass('selected');
   },
   slideEnd : function(slideNum){
+    var heightAdjustor = $('.' + navClass + ' ul:first-child').outerHeight(true);
     this.setControls(slideNum);
     this.setWindowHash(slideNum);
 
     eachSlide.css('opacity', '.6');
     eachSlide.eq(slideNum).animate({opacity: 1}, anim/2 );
-    viewArea.animate({ height : eachSlide.eq(slideNum).outerHeight(true) - heightAdjustor +'px' }, anim/4 );
+    viewArea.css({ height : eachSlide.eq(slideNum).outerHeight(true) - heightAdjustor +'px' });
     //BACKBUTTON REFINEMENT
     if(slideNum == 0){ $(backControl).css("opacity", "0"); }
       else { $(backControl).fadeTo( "slow" , 1, function() {});
@@ -339,10 +344,14 @@ $(window).on({
   /*'hashchange': function(e){
     MySlideShow.slideJump( window.location.hash.substring(1) );
   },*/
+  'click': function(){
+    MySlideShow.navToggle('hide');
+  },
   'resize': function(){
     MySlideShow.resetCss( $(this).width() );
   },
   'scroll': function(){
+    //show menu on desktop if scrolled down
     if( this.innerWidth > 900 && this.pageYOffset > 500 ){
       MySlideShow.navToggle('show');
     } else { MySlideShow.navToggle('hide'); }
