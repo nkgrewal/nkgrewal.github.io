@@ -341,6 +341,11 @@ $(window).on({
   },*/
   'resize': function(){
     MySlideShow.resetCss( $(this).width() );
+  },
+  'scroll': function(){
+    if( this.innerWidth > 900 && this.pageYOffset > 500 ){
+      MySlideShow.navToggle('show');
+    } else { MySlideShow.navToggle('hide'); }
   }
 });
 

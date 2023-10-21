@@ -152,11 +152,12 @@ footer.scaffold{
 	background:url(../img/topbg.png) repeat;
 	background-color:rgba(35,35,35,0.8);
 }
+footer.scaffold .fascia{ display: flex; justify-content:space-between; }
 footer.scaffold .about, .slideNav{
 	padding:0 0.5em 0.15em 0.5em;
 }
 footer.scaffold ul, .slideNav {
-	display: inline-flex;
+	display: flex;
 	flex-wrap:wrap-reverse;
 }
 footer.scaffold ul {
@@ -169,6 +170,7 @@ footer.scaffold li {
 	margin:0 0.85em;
 	color:#869196;
 	border-bottom:2px solid transparent;
+	white-space: nowrap;
 }
 footer.scaffold li:hover{ 
 	color: var(--light-green); 
@@ -183,10 +185,10 @@ footer.scaffold li.selected{
 footer.scaffold li.selected:hover{ border-color:var(--med-gray); }
 
 footer.scaffold .about { 
-	text-align:right; 
-	position:relative;
-	z-index: 51;
-	padding-right:1em;
+	align-self: flex-end;
+	flex-wrap: nowrap;
+	position: absolute;
+	right:0;
 }
 
 
@@ -194,8 +196,6 @@ footer.scaffold .about {
 .slideNav{
 	background: linear-gradient(to right, rgba(40,40,40,0.8), rgba(40,40,40,0.3));
 	border-bottom:1px solid rgba(25,25,25,0.7);
-	position: fixed;
-	bottom:0;
 }
 .slideNav li{ text-transform: capitalize; }
 .slideNav > ul:first-child > li.selected, 
@@ -212,7 +212,7 @@ nav.slideNav span.counter{
 
 /* SLIDESHOW FRAMING */
 .slideBack, .slideNext{
-	width:10%;
+	width:10vw;
 	margin:5vh 0;
 	padding:0;
 	height:90vh;
@@ -227,7 +227,7 @@ nav.slideNav span.counter{
 
 .slideViewer {
 	margin:0 10%;
-	width:80%;
+	width:80vw;
 	background:none;
 	min-height:1px;
 	overflow:visible;
@@ -274,21 +274,25 @@ main .intro {
 
 
 /* PORTFOLIO PIECES */
-.title {margin-left: -1em; display: flex; gap:2em;}
+.title {
+	margin-left: -1em; 
+	display: flex; 
+	gap:2em;
+}
 .title h2, .title h3, .title h4 { font-weight:normal; margin:0; }
 .title h2 {
 	font: 3.8em 'Meow Script', cursive;
 	color: var(--light-green);
 	white-space: nowrap;
 }
-.title hgroup{ margin-top: 1.2em; }
+.title hgroup{ margin-top: 1.1em; }
 .title h3{
 	color:var(--med-blue);
 	margin-bottom:0.2em;
 	white-space: nowrap;
 }
 .title h4{
-	color:#838d92;
+	color:var(--med-gray); /*#838d9*/
 	white-space: nowrap;
 }
 
@@ -359,16 +363,10 @@ ul.skills .cap{
 }
 
 section.details .info1{
-	padding: 2em 2em 1em;
+	padding: 2em;
 	margin:0 2em 1em 0;
-	color:#999999;
-	background: -moz-linear-gradient(top,  rgba(117,193,216,0.15) 0%, rgba(117,193,216,0.15) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(117,193,216,0.2)), color-stop(100%,rgba(117,193,216,0.2))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(117,193,216,0.15) 0%,rgba(117,193,216,0.15) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(117,193,216,0.15) 0%,rgba(117,193,216,0.15) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(117,193,216,0.15) 0%,rgba(117,193,216,0.15) 100%); /* IE10+ */
-	background: linear-gradient(top,  rgba(117,193,216,0.15) 0%,rgba(117,193,216,0.15) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3375c1d8', endColorstr='#3375c1d8',GradientType=0 ); /* IE6-9 */
+	color: var(--med-gray);
+	background: rgba(117,193,216,0.15);
 }
 section.details h4{ padding:0.15em 0; }
 section.details p{ margin-bottom:2em; }
@@ -421,9 +419,7 @@ noscript {
 
 
 /* THE REST */
-section.details div.info2:after,
-div.slideViewer article:after,
-.fascia:after
+.float-fix
 {
   content: ".";
   display: block;
@@ -432,8 +428,8 @@ div.slideViewer article:after,
   visibility: hidden;
 }
 
-.jsShow{ display:none;}
-.m-only{display:none;}
+.jsShow { display:none; } /* only show if javascript enabled */
+.m-only { display:none; } /* only show on mobile */
 
 /* PIECE SPECIFIC */
 .all-star .imgCase p, .crossvertical .scaffoldImg p{bottom:3em;right:2.5em;}
