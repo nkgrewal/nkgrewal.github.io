@@ -156,7 +156,6 @@ var MySlideShow = {
   },
   initSlideShow : function(){
     //SET CONTAINERS TO SLIDE, STATIC
-    //viewArea.css({ position : 'relative' });
     viewArea.parent().addClass('jsSlideShow');
     navHolder.addClass('jsNav');
     slideHolder.css({ position : 'relative' });
@@ -165,7 +164,6 @@ var MySlideShow = {
     this.createNav();
     this.resetCss( $(window).width(), $(window).height() );
     this.moveSlideBlock('jump', window.location.hash.substring(1) );
-    //this.jumpToSlide( window.location.hash.substring(1) );
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
     //extraDetails.hide();
     multiImgslideHolder.children().hide();

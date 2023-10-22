@@ -121,10 +121,6 @@ video {
   max-width:640px;
   height: auto;
 }
-
-.left{ float:left;}
-.right{ float:right; }
-.center{ text-align: center; }
 li:first-child{ border-left:none; margin-left:0; }
 
 
@@ -249,8 +245,6 @@ nav.slideNav span.counter{
 .jsSlideShow .intro { gap:unset; min-height:90vh; padding:0; }
 
 
-
-
 .allSlides article{
 	display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -342,15 +336,8 @@ main .intro {
 	gap:3px;
 }
 .imgCase img{ width:100%; display: block; }
-.imgCase .mainImg, .imgCase .icons{ 
-	display: inline-flex;
-}
-.imgCase .mainImg div, .imgCase .icons div{ 
-	position: relative;
-}
-.mainImg{
-	/*border:1px solid #374c52;*/
-}
+.imgCase .mainImg, .imgCase .icons{ display: inline-flex; }
+.imgCase .mainImg div, .imgCase .icons div{ position: relative; }
 
 .imgCase .icons{ flex-direction:column; gap:3px; }
 .icons div:first-child{ }
@@ -448,6 +435,10 @@ ul.skills .cap{
 .info3 { width:70%; }
 
 
+
+/* PIECE SPECIFIC */
+
+
 /*PRELOADER & NOSCRIPT*/
 noscript {
 	margin-top:2em;
@@ -486,8 +477,6 @@ noscript {
 .jsShow { display:none; } /* only show if javascript enabled */
 .m-only { display:none; } /* only show on mobile */
 
-/* PIECE SPECIFIC */
-
 
 
 
@@ -508,21 +497,6 @@ noscript {
 
 /*MOBILE VIEW*/
 @media only screen and (max-width: 500px) {
-	/*h1   { font-size: 2.2em; }
-	h2   { font-size: 1.5em; }
-	h3   { font-size: 1em; }
-	h4   { font-size: 0.9em; }
-	h5   { font-size: .83em; }
-	h6   { font-size: .75em; }
-	h1, h2, h3, h4, h5, h6 {
-	}
-	p {
-		font-size:1em;
-		line-height:1.5em;
-		text-align: left;
-		margin:0 auto;
-		padding:0;
-	}*/
 	.container{font-size: 16px; background-size:60%;}
 	main.scaffold{ background-size:80%; }
 	.slideViewer { margin:0; width:100vw; }
@@ -625,52 +599,9 @@ noscript {
 
 
 
-/*
-@media only screen and (max-width: 481px) and (min-width: 200px) {
-div.fascia, section.slideViewer, section.piece{max-width:320px; margin:0;padding-top:0;}
-section.slideViewer{ margin-left:10px; }
-section.piece{ margin-right:20px; }
-div.moreInfo { margin:0; }
-article div.fascia{min-width:320px;}
-ul.tools, .moreInfo .info1, .moreInfo .info2 { float:none; width:85%; }
-div.header .subCont{ text-align:left; }
-div.footer{ font-size:1.1em; }
-ul.slideRef li, .hov, .hov2 { display:none; }
-div.slideBack{ position:fixed; left:0; top:0; width:50px; height:50px; background:url(../img/topslideBack.png) no-repeat center; cursor: pointer; cursor: hand; }
-div.slideNext{ position:fixed; right:0; top:0; width:50px; height:50px; background:url(../img/topslideNext.png) no-repeat center ; cursor: pointer; cursor: hand }
-ul.slideRef{ margin-left:0;padding:1em 0;text-align:center; wdith:100%; }
-ul.slideRef li.selected {display:inline; font-size:3em; line-height:1em;float:none; white-space:nowrap;margin:0;}
-ul.slideRef li.slideCount {display:inline;}
-
-articleLink, section.pieceIcons{ width:100%; }
-div.subLinks{ width:32%; }
-p.blurb{ font-size:1.4em; }
-
-#ktype, #checkpts{ width:320px;height:213px; }
-}
-
-@media only screen and (max-width: 1200px) and (min-width: 482px) {
-div.fascia {max-width:1000px;}
-section.slideViewer, section.piece{width:850px;}
-article div.fascia{min-width:975px;}
-section.pieceIcons{ float:left; width:157px;}
-articleLink{ width:690px;}
-	
-#ktype{ display:block;width:570px;height:380px; }
-#checkpts{ display:block;width:675px;height:450px; }
-ul#slideRef li.slideCount{display:none;}
-
-}*/
 
 /*
 @media only screen and (max-width: 681px) and (min-width: 200px) {
-	.m-hide{ display: none; }
-	.scaffold{ min-height:0px; }
-	header.scaffold, footer.scaffold{ height:4em;}
-	nav.slideNav{padding:0.5em 0;}
-	nav.slideNav ul{width:90%;}
-	nav.slideNav li{ font-size:0.8em; line-height:0.8em; padding:0 0.6em; }
-	.allSlides{top:-4.5em;padding:0;}
 	.slideBack, .slideNext{
 		position:fixed;
 		top:10px;
@@ -682,82 +613,6 @@ ul#slideRef li.slideCount{display:none;}
 	section.slideViewer{width:100%;}
 	.slideBack{ left:0; background:url(../img/topslideBack.png) no-repeat center; }
 	.slideNext{ right:0; background:url(../img/topslideNext.png) no-repeat center; }
-	.title{margin-left:50px;}
-	.title h1{font-size:2.5em;}
-	.title hgroup.left{margin-top:1.3em;}
-	.title h2{font-size:1.2em;}
-	.title h3{display:none;}
-	.imgCase{margin:0;}
-	.slideViewer p{font-size:0.85em;}
-	.scaffoldImg, .icons{float:none; width:100%;}
-	.icons p { display:none; }
-	.icons div{width:18%;float:right; margin:1px 0 0 3px;}
-	.icons div:first-child{margin-top:1px;}
-	.icons:after {
-	    content: ".";
-	    display: block;
-	    height: 0;
-	    clear: both;
-	    visibility: hidden;
-	}
-	.intro div{ padding:4em 0 0; width: 80%}
-	.intro p {	font-size:1.5em; }
-	div.scaffold, div.scaffold .fascia{ background:none; }
 }
 */
-
-
-
-
-/* #### Mobile Phones Portrait #### */
-/*
-@media handheld, screen and (max-device-width: 960px) and (orientation: portrait){
-	.fascia{max-width:960px;}
-		.scaffold{ min-height:0px; }
-	header.scaffold, footer.scaffold{ height:4em;}
-	nav.slideNav{padding:0.5em 0;}
-	nav.slideNav ul{width:90%;}
-	nav.slideNav li{ font-size:0.8em; line-height:0.8em; padding:0 0.6em; }
-	.allSlides{top:-4.5em;padding:0;}
-	.slideBack, .slideNext{
-		position:fixed;
-		top:10px;
-		width:50px;
-		height:50px;
-		margin:0;
-		min-height: 0;
-	}
-	section.slideViewer{width:100%;}
-	.slideBack{ left:0; background:url(../img/topslideBack.png) no-repeat center; }
-	.slideNext{ right:0; background:url(../img/topslideNext.png) no-repeat center; }
-	.title{margin-left:50px;}
-	.title h1{font-size:2.5em;}
-	.title hgroup.left{margin-top:1.3em;}
-	.title h2{font-size:1.2em;}
-	.title h3{display:none;}
-	.imgCase{margin:0;}
-	.slideViewer p{font-size:0.85em;}
-	.scaffoldImg, .icons{float:none; width:100%;}
-	.icons p { display:none; }
-	.icons div{width:18%;float:right; margin:1px 0 0 3px;}
-	.icons div:first-child{margin-top:1px;}
-	.icons:after {
-	    content: ".";
-	    display: block;
-	    height: 0;
-	    clear: both;
-	    visibility: hidden;
-	}
-	section.details{
-		width:84%;
-		margin:auto 8%;
-	}
-	section.details .info1, section.details .info2{
-		float:none;
-		width:86%;
-		padding:2em 7% 0.5em 7%;
-	}
-	.intro p {	font-size:1.5em; }
-	div.scaffold, div.scaffold .fascia{ background:none; }
-}*/
 
