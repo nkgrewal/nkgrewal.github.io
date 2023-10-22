@@ -533,6 +533,8 @@ noscript {
 	.jsNav {flex-flow: wrap;}
 	.jsNav .about { position: unset; }
 	footer.scaffold .jsNav { justify-content: center; }
+	footer.scaffold ul, .slideNav {display: inline-flex;}
+
 	/* MOBILE ARROW */
 	.jsSlideShow .slideBack, .jsSlideShow .slideNext{ display:none !important; }
 	.mobileArrow { display:none; position:fixed; bottom:48px; z-index: 55; }
@@ -590,24 +592,19 @@ noscript {
 	main .intro { font-size: 1.2em; }
 	.intro > div { padding:0 1.5em; margin:0; }
 
-	.title{ left:unset; display: unset; gap:0; }
-	.title h2{
-		width:94%;
-		margin:0 auto;
-		color: rgba(var(--light-green-rgb), .75);
+	.title{ left:unset; gap:.3em; flex-wrap:wrap; }
+	.title hgroup { 
+		margin-left:1em; 
+		display:inline-flex; 
+		align-self:baseline; 
+		align-items: 
+		baseline; 
+		gap:.5em; 
+		background-color: rgba(var(--dark-gray-rgb), .75);
+		padding:0.2em 0.2em 0 0.2em;
+		border-radius: 8px;
 	}
-	.title hgroup{ 
-		width:100%;
-		margin:0;
-		padding:0.15em 0.5em 0.3em 8%;
-		border-radius: 4px;
-		background-color: rgba(0,0,0,.1);
-	}
-	.title h3, .title h4{
-		margin:0;
-		font-size:1em;
-		display: inline-block;	
-	}
+	.title h2{ color: rgba(var(--light-green-rgb), .75); }
 	.title h4::before { content: "( " }
 	.title h4::after { content: " )" }
 }
@@ -617,10 +614,13 @@ noscript {
 	.m-only{display: unset;}
 	.m-hide{display:none;}
 
-	.slideNav ul:first-child {flex: 1 100%;}
-
+	.title hgroup{font-size: .85em;}
 	.intro kbd {display: none;}
-	.title{font-size: 0.8em;}
+}
+
+/*TABLET ONLY*/
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+	.slideNav ul:first-child {flex: 1 100%;}
 }
 
 
