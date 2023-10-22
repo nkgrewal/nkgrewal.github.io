@@ -507,7 +507,7 @@ noscript {
 /* ----- */ 
 
 /*MOBILE VIEW*/
-@media only screen and (max-width: 481px) {
+@media only screen and (max-width: 500px) {
 	/*h1   { font-size: 2.2em; }
 	h2   { font-size: 1.5em; }
 	h3   { font-size: 1em; }
