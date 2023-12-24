@@ -255,19 +255,13 @@ nav.slideNav span.counter{
 	grid-column: 1 / 3;
 }
 .allSlides .details{
-	grid-row: 2;
+	grid-row: 3;
 	grid-column: 1 / 3;
 }
 .details{
 	display: grid;
 	grid-template-columns: 40% 1fr;
 	gap:1em;
-}
-.details blockquote{
-	grid-row: 1;
-	grid-column: 1 / 3;
-	place-self: center stretch;
-	text-align: center;
 }
 .details .info1{
 	grid-row: 2;
@@ -280,7 +274,7 @@ nav.slideNav span.counter{
 
 /* INTRO SLIDE */
 main .intro {
-	font: 1.3em/1.4em 'Comfortaa';
+	font: 1.25em/1.4em 'Comfortaa';
 	color: var(--med-gray);
 	width: 100%;
 	display: flex;
@@ -292,16 +286,16 @@ main .intro {
 	gap:2em;
 }
 .intro > div {
-	padding:3em 0 1em 0;
-	max-width: 530px;
+	padding:3em 2em 1em 0;
+	max-width: 480px;
 }
 .intro p{ margin-top:1em; line-height:1.6em; }
-.intro h1{ font-size:1.7em; color:var(--light-blue); }
+.intro h1{ font-size:1.55em; color:var(--light-blue); }
 .intro kbd{
 	position: relative;
 	top:-2px;
 }
-.blurbCTA button{font-size:0.9em; text-align: left;}
+.blurbCTA button{text-align: left;}
 
 
 /* PORTFOLIO PIECES */
@@ -358,19 +352,30 @@ main .intro {
 
 
 /*CONTENT SECTION*/
-.details blockquote{
+.catch blockquote{
+	margin:0;
+	padding:1em;
 	font-style:italic;
 	color:var(--med-blue);
+	max-width: 550px;
+	text-align: right;
 }
-.details blockquote span::before,.details blockquote span::after{
+.catch blockquote span::before,.details blockquote span::after{
 	font-size:2em;
 	color:rgba(var(--light-blue-rgb),.8);
 	line-height:0;
 	position: relative;
 	top:0.4em; 
 }
-.details blockquote span::before{ content:'\201C'; left:-0.2em; }
-.details blockquote span::after{ content:'\201D'; left:-2px; }
+.catch blockquote span::before{ content:'\201C'; left:-0.2em; }
+.catch blockquote span::after{ content:'\201D'; left:-2px; }
+
+.details .info1{
+	padding: 2em;
+	margin:0;
+	color: var(--med-gray);
+	background: rgba(117,193,216,0.15);
+}
 
 /*a.detailsBtn{
 	padding:0.5em 0.6em 0.4em 0.6em; 
@@ -399,26 +404,13 @@ ul.skills .cap{
 }
 */
 .summary{ color:#838d92; margin-bottom:2.5em;}
-.details .info1{
-	padding: 2em;
-	margin:0;
-	color: var(--med-gray);
-	background: rgba(117,193,216,0.15);
-}
+
 .details h4{ padding:0.15em 0; }
 .details p{ margin-bottom:2em; }
 .details .info2 ul {
 	margin:0; 
 	position:relative; 
 	left:1em;
-}
-.details .info2{ margin-top:-1.5em; }
-.details .info2 h4{ padding-top:2em; }
-.details em{ margin-right:0.2em; }
-.details .skills {
-	width:100%;
-	margin:0; padding:0;
-	color:var(--med-blue);
 }
 
 
