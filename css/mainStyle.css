@@ -248,7 +248,7 @@ nav.slideNav span.counter{
 .allSlides article{
 	display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: .5em;
+  gap: .3em;
 }
 .allSlides .splash{
 	grid-row: 1;
@@ -261,7 +261,7 @@ nav.slideNav span.counter{
 .details{
 	display: grid;
 	grid-template-columns: 40% 1fr;
-	gap:1em;
+	column-gap: 2em;
 }
 .details .info1{
 	grid-row: 2;
@@ -352,23 +352,28 @@ main .intro {
 
 
 /*CONTENT SECTION*/
-.catch blockquote{
-	margin:0;
+.splash blockquote{
+	margin:0 auto;
 	padding:1em;
 	font-style:italic;
-	color:var(--med-blue);
 	max-width: 550px;
-	text-align: right;
+	text-align: center;
+	background-color: rgba(var(--dark-gray-rgb),1);
+	border-radius: 1em;
 }
-.catch blockquote span::before,.details blockquote span::after{
-	font-size:2em;
+.splash blockquote span{
+	font-size:1.2em;
+	color:var(--med-blue);
+}
+.splash blockquote span::before,.splash blockquote span::after{
+	font-size:1.8em;
 	color:rgba(var(--light-blue-rgb),.8);
 	line-height:0;
 	position: relative;
 	top:0.4em; 
 }
-.catch blockquote span::before{ content:'\201C'; left:-0.2em; }
-.catch blockquote span::after{ content:'\201D'; left:-2px; }
+.splash blockquote span::before{ content:'\201C'; left:-0.2em; }
+.splash blockquote span::after{ content:'\201D'; left:-2px; }
 
 .details .info1{
 	padding: 2em;
