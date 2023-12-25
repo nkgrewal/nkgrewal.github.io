@@ -355,19 +355,35 @@ main .intro {
 .splash blockquote{
 	margin:0 auto;
 	padding:1em;
-	font-style:italic;
-	max-width: 550px;
-	text-align: center;
-	background-color: rgba(var(--dark-gray-rgb),1);
-	border-radius: 1em;
+	font-size: 0.85em;
+	display: flex;
+	align-items: stretch;
 }
 .splash blockquote span{
 	font-size:1.2em;
+	line-height: 1.6em;
 	color:var(--med-blue);
+	padding: 1em 0.7em;
+	font-style:italic;
+	text-align: center;
+	box-shadow: rgba(var(--black-rgb),.1) 0px 5px 10px 0px inset;
+	background-color: rgba(var(--black-rgb),.05);
+	border-radius: 6px 0 0 6px;
+}
+.splash cite{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-style: normal; 
+	white-space: nowrap;
+	line-height: 1.4em;
+	padding: 0 1em;
+	border:1px dashed rgba(var(--black-rgb),.3);
+	border-radius: 0 6px 6px 0;
 }
 .splash blockquote span::before,.splash blockquote span::after{
 	font-size:1.8em;
-	color:rgba(var(--light-blue-rgb),.8);
+	color:rgba(var(--light-blue-rgb),.3);
 	line-height:0;
 	position: relative;
 	top:0.4em; 
