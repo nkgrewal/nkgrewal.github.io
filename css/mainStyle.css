@@ -242,12 +242,13 @@ nav.slideNav span.counter{
 .jsSlideShow .slideBack, .jsSlideShow .slideNext{ display: block; }
 .jsSlideShow .allSlides { flex-direction: row; }
 .jsSlideShow article { padding-top:3em; padding-bottom:2em; }
-.jsSlideShow .intro { gap:unset; min-height:90vh; padding:0; }
+.jsSlideShow .intro { gap:unset; min-height:90vh; padding:0; align-content:flex-end; }
 
 
 .allSlides article{
 	display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-content: flex-start;
   gap: .3em;
 }
 .allSlides .splash{
@@ -260,8 +261,9 @@ nav.slideNav span.counter{
 }
 .details{
 	display: grid;
-	grid-template-columns: 40% 1fr;
-	column-gap: 2em;
+	grid-template-columns: 34% 1fr;
+	align-items: flex-start;
+	column-gap: 3em;
 }
 .details .info1{
 	grid-row: 2;
@@ -350,52 +352,68 @@ main .intro {
 	left:0;
 }
 
-
-/*CONTENT SECTION*/
-.splash blockquote{
-	margin:0 auto;
-	padding:1em;
-	font-size: 0.85em;
+.quote{
 	display: flex;
-	align-items: stretch;
+	align-items: center;
 }
-.splash blockquote span{
-	font-size:1.2em;
-	line-height: 1.6em;
+.quote blockquote{
+	margin:0 auto;
+	padding:1.4em 0;
+	font-size: 0.7em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.quote blockquote span{
+	font-size:1.6em;
+	line-height: 1.8em;
 	color:var(--med-blue);
-	padding: 1em 0.7em;
+	padding: .8em;
 	font-style:italic;
 	text-align: center;
 	box-shadow: rgba(var(--black-rgb),.1) 0px 5px 10px 0px inset;
 	background-color: rgba(var(--black-rgb),.05);
 	border-radius: 6px 0 0 6px;
+	position: relative;
 }
-.splash cite{
+.quote cite{
 	display: flex;
-	flex-direction: column;
+	flex-flow: column wrap;
+	align-self: stretch;
 	justify-content: center;
-	font-style: normal; 
-	white-space: nowrap;
+	font-style: normal;
 	line-height: 1.4em;
-	padding: 0 1em;
+	padding: 0 1.5em;
 	border:1px dashed rgba(var(--black-rgb),.3);
 	border-radius: 0 6px 6px 0;
 }
-.splash blockquote span::before,.splash blockquote span::after{
-	font-size:1.8em;
+.quote blockquote span::before,.quote blockquote span::after{
+	font:4em/0 Georgia, Times New Roman, sans-serif;
+	letter-spacing: -2px;
 	color:rgba(var(--light-blue-rgb),.3);
-	line-height:0;
-	position: relative;
-	top:0.4em; 
+	position: absolute;
 }
-.splash blockquote span::before{ content:'\201C'; left:-0.2em; }
-.splash blockquote span::after{ content:'\201D'; left:-2px; }
+.quote blockquote span::before{ content:'\201C'; left: -.2em; top:0.3em; }
+.quote blockquote span::after{ content:'\201D'; right: -.15em; bottom:-.25em; }
 
+.imgCase blockquote{ flex-direction: column; }
+.imgCase cite { 
+	flex-direction:row; 
+	align-self: flex-end;
+	justify-content:flex-start; 
+	gap:.5em; 
+	padding:1em 1.5em;
+}
+
+/*CONTENT SECTION*/
+.details{margin-top:2em;}
 .details .info1{
-	padding: 2em;
+	padding: 1.8em;
 	margin:0;
+	font-size: 0.9em;
 	color: var(--med-gray);
-	background: rgba(117,193,216,0.15);
+	background: rgba(117,193,216,0.05);
+	border-radius: 6px;
 }
 
 /*a.detailsBtn{
@@ -496,7 +514,7 @@ noscript {
 /* Wide screen */
 @media only screen and (min-width: 1200px) {
 	/*.title {margin-left:-3em; max-width:1000px; }*/
-	.splash{ max-width:1000px; margin:0 auto; };
+	.splash, .details{ max-width:1000px; margin-left: auto; margin-right:auto; };
 	.jsSlideShow .allSlides{ gap:20px; }
 	.jsSlideShow article { padding-top:5em; padding-bottom:4em; }
 }
