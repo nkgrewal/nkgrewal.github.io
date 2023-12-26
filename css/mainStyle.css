@@ -249,6 +249,7 @@ nav.slideNav span.counter{
 	display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-content: flex-start;
+  justify-items: center;
   gap: .3em;
 }
 .allSlides .splash{
@@ -406,7 +407,7 @@ main .intro {
 }
 
 /*CONTENT SECTION*/
-.details{margin-top:2em;}
+.details{margin-top:1em; padding-top:2em; max-width: 820px; }
 .details .info1{
 	padding: 1.8em;
 	margin:0;
@@ -514,7 +515,7 @@ noscript {
 /* Wide screen */
 @media only screen and (min-width: 1200px) {
 	/*.title {margin-left:-3em; max-width:1000px; }*/
-	.splash, .details{ max-width:1000px; margin-left: auto; margin-right:auto; };
+	.splash { max-width:1000px; };
 	.jsSlideShow .allSlides{ gap:20px; }
 	.jsSlideShow article { padding-top:5em; padding-bottom:4em; }
 }
