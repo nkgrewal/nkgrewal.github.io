@@ -166,7 +166,7 @@ footer.scaffold ul, .slideNav { display: flex; flex-wrap:wrap-reverse; }
 footer.scaffold ul { margin:0; padding:0; list-style: none; }
 footer.scaffold li {
 	font-size: 0.9em;
-	padding:0.85em 0;
+	padding:1em 0 0.85em 0;
 	margin:0 0.85em;
 	color:var(--med-gray); /*#869196*/
 	border-bottom:2px solid transparent;
@@ -194,6 +194,7 @@ footer.scaffold .jsNav { justify-content:space-between; }
 	background: linear-gradient(to right, rgba(40,40,40,0.8), rgba(40,40,40,0.3));
 }
 .slideNav li{ text-transform: capitalize; }
+.slideNav > ul:first-child { position:relative; top:-2px; }
 .slideNav > ul:first-child > li.selected, 
 .slideNav > ul:first-child > li.selected:hover { border-bottom-color:transparent; }
 .slideBack, .slideNext, .slideViewer a, footer.scaffold li {
@@ -306,7 +307,7 @@ main .intro {
 	position: relative;
 	left: -1em;
 	display: flex; 
-	gap: 2em;
+	gap: 1em;
 	z-index: 5;
 }
 .title h2, .title h3, .title h4 { 
@@ -333,7 +334,7 @@ main .intro {
 	justify-content: center;
 	gap:3px;
 }
-.imgCase > img { min-width:66%; max-width: 800px; }
+.imgCase > img { max-width: 800px; }
 .imgCase img{ width:100%; object-fit: contain; display: block; }
 .imgCase .mainImg, .imgCase .icons{ display: inline-flex; }
 .imgCase .mainImg div, .imgCase .icons div{ position: relative; }
@@ -366,10 +367,11 @@ main .intro {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	column-gap: .6em;
 }
 .quote blockquote span{
-	font-size:1.6em;
-	line-height: 1.7em;
+	font-size:1.4em;
+	line-height: 1.5em;
 	color:var(--med-blue);
 	font-style:italic;
 	text-align: center;
@@ -385,24 +387,26 @@ main .intro {
 	align-self: stretch;
 	justify-content: center;
 	font-style: normal;
-	line-height: 1.4em;
+	line-height: 1.2em;
 	padding: 0 1.5em;
 	/*border:1px dashed rgba(var(--black-rgb),.3);
 	border-radius: 0 6px 6px 0;*/
 }
 .quote blockquote span::before,.quote blockquote span::after{
-	font:4em/0 Georgia, Times New Roman, sans-serif;
+	font:4.5em/0 Georgia, Times New Roman, sans-serif;
 	letter-spacing: -2px;
 	color:rgba(var(--light-blue-rgb),.3);
 	position: absolute;
 }
-.quote blockquote span::before{ content:'\201C'; left: -.2em; top:0.3em; }
-.quote blockquote span::after{ content:'\201D'; right: -.15em; bottom:-.2em; }
+.quote blockquote span::before{ content:'\201C'; left: -.22em; top:0.32em; }
+.quote blockquote span::after{ content:'\201D'; right: -.2em; bottom:-.18em; }
 
-.imgCase blockquote{ flex-direction: column; padding:1em; }
-.imgCase cite { 
+.imgCase .quote{max-width:35%;}
+.imgCase blockquote { flex-direction: column; padding:1em; }
+.imgCase cite {
+	margin-top:1em;
 	flex-direction:row; 
-	gap:.5em; 
+	column-gap:.5em;
 	/*
 	align-self: flex-end;
 	justify-content:flex-start;
@@ -422,11 +426,13 @@ main .intro {
 .sidebar{
 	padding: 1.8em;
 	margin:0;
-	font-size: 0.9em;
+	font-size: .85em;
 	color: var(--med-gray);
 	background: rgba(117,193,216,0.05);
 	border-radius: 6px;
 }
+.sidebar h4 { font-size:.9em; padding-bottom:.4em; }
+.sidebar p { line-height: 1.35em; }
 .sidebar p:last-child { margin-bottom: 0; }
 
 .summary p:first-of-type{font-size:1.2em; margin-bottom:1.5em;}
@@ -626,7 +632,7 @@ noscript {
 }
 
 /*TABLET ONLY*/
-@media only screen and (min-width: 500px) and (max-width: 1000px) {
+@media only screen and (min-width: 500px) and (max-width: 600px) {
 	.slideNav ul:first-child {flex: 1 100%;}
 }
 
