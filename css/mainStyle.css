@@ -291,7 +291,7 @@ main .intro {
 }
 .intro > div {
 	padding:3em 2em 1em 0;
-	max-width: 480px;
+	max-width: 450px;
 }
 .intro p{ margin-top:1em; line-height:1.6em; }
 .intro h1{ font-size:1.55em; color:var(--light-blue); }
