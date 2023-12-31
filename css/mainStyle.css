@@ -435,7 +435,7 @@ main .intro {
 .sidebar p { line-height: 1.35em; }
 .sidebar p:last-child { margin-bottom: 0; }
 
-.summary p:first-of-type{font-size:1.2em; margin-bottom:1.5em;}
+.summary p:first-of-type{font-size:1.25em; margin-bottom:1.5em;}
 
 /*a.detailsBtn{
 	padding:0.5em 0.6em 0.4em 0.6em; 
