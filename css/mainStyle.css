@@ -450,7 +450,7 @@ main .intro {
   justify-content: center;
 }
 .about-me section{
-	margin-bottom:3.4em;
+	margin-bottom:3.8em;
   grid-template-columns: 1fr 1.4fr;
   align-items: flex-end;
   justify-items: center;
