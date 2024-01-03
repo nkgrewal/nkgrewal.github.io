@@ -172,13 +172,14 @@ footer.scaffold{
 	background-color:rgba(35,35,35,0.8);
 }
 footer.scaffold .fascia{ display: flex; justify-content: flex-end;}
-footer.scaffold .about, .slideNav{ padding:0 0.8em 0.25em 0.8em; }
-footer.scaffold ul, .slideNav { display: flex; flex-wrap:wrap-reverse; }
+footer.scaffold .about, .slideNav{ margin:0; padding:0; }
+footer.scaffold ul, .slideNav { display: flex; flex-wrap:wrap-reverse; column-gap: 2em; }
 footer.scaffold ul { margin:0; padding:0; list-style: none; }
 footer.scaffold li {
 	font-size: 1em;
-	padding:1em 0 0.85em 0;
-	margin:0 0.85em; /*#869196*/
+	text-indent: 0;
+	padding:1em 0;
+	margin:0; /*#869196*/
 	border-bottom:2px solid transparent;
 	white-space: nowrap;
 }
@@ -191,7 +192,7 @@ footer.scaffold li.selected{
 	border-bottom-color:var(--med-gray);
 }
 footer.scaffold li.selected:hover{ border-color:var(--med-gray); }
-footer.scaffold .about { align-self: flex-end; flex-wrap: nowrap; }
+footer.scaffold .about { padding-right:1.8em; align-self: flex-end; flex-wrap: nowrap; }
 
 
 /* SLIDESHOW NAV */
@@ -199,10 +200,11 @@ footer.scaffold .jsNav { justify-content:space-between; }
 .jsNav .about{ position: absolute; right:0; }
 
 .slideNav{
+	padding:0 1.8em;
 	background: linear-gradient(to right, rgba(40,40,40,0.8), rgba(40,40,40,0.3));
 }
 .slideNav li{ text-transform: capitalize; }
-.slideNav > ul:first-child li { position:relative; top:-2px; letter-spacing:.35em; }
+.slideNav > ul:first-child li { position:relative; top:-2px; }
 .slideNav > ul:first-child > li.selected, 
 .slideNav > ul:first-child > li.selected:hover { border-bottom-color:transparent; }
 .slideBack, .slideNext, .slideViewer a, footer.scaffold li {
@@ -473,8 +475,8 @@ main .intro {
 .experience .resume-items{
 	margin:1.2em 0 0 0;
 	padding:1.8em 0 2em 0;
-	border-top:1px solid rgba(0,0,0,.25);
-	border-bottom:1px solid rgba(0,0,0,.25);
+	border-top:1px solid rgba(0,0,0,.2);
+	border-bottom:1px solid rgba(0,0,0,.2);
 }
 .experience h2 { margin-bottom: .3em; }
 .resume-items .job { margin-bottom: 2em; }
