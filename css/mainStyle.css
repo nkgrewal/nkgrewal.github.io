@@ -4,6 +4,7 @@
 :root {
   --white: #fff;
   --black: #000;
+  --darker-gray: #29292b;
   --dark-gray: #333;
   --med-gray: #9fa4a6;
   --light-gray: #b7bbbd;
@@ -17,6 +18,7 @@
 
   --white-rgb: 255,255,255;
   --black-rgb: 0,0,0;
+  --darker-gray-rgb: 41,41,43;
   --dark-gray-rgb: 51,51,51;
   --med-gray-rgb: 159,164,166;
   --light-gray-rgb: 183, 187, 189;
@@ -446,7 +448,7 @@ main .intro {
   justify-content: center;
 }
 .about-me section{
-	margin-bottom:6em;
+	margin-bottom:3.4em;
   grid-template-columns: 1fr 1.4fr;
   align-items: flex-end;
   justify-items: center;
@@ -455,6 +457,7 @@ main .intro {
 }
 .about-me p:last-of-type{ margin-bottom:0; }
 .about-me .profile {
+	margin-bottom:2.8em;
 	padding:0 2em;
 	display: flex;
 	flex-flow: column nowrap;
@@ -468,13 +471,13 @@ main .intro {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px 8px; 
 }
 .experience .resume-items{
-	margin:1em 0;
-	padding:1em 0;
-	border-top:1px solid rgba(0,0,0,.2);
-	border-bottom:1px solid rgba(0,0,0,.2);
+	margin:1.2em 0 0 0;
+	padding:1.8em 0 2em 0;
+	border-top:1px solid rgba(0,0,0,.25);
+	border-bottom:1px solid rgba(0,0,0,.25);
 }
-.experience h2 { margin-bottom: 1.2em;}
-.resume-items .job { margin-bottom:2em; }
+.experience h2 { margin-bottom: .3em; }
+.resume-items .job { margin-bottom: 2em; }
 .resume-items .job:last-of-type { margin-bottom:0; }
 .resume-items .job hgroup { 
 	display:flex;
@@ -484,9 +487,11 @@ main .intro {
 	margin-bottom:.6em;
 }
 .resume-items .job hgroup > * { margin:0; padding:0; }
+.resume-items .job h3 { color:var(--med-blue); }
 .resume-items .job h3 span{ padding-left:.6em; font-size:0.7em; font-weight:normal; }
 .resume-items .job h5 { justify-self: right; margin-left: auto;}
 .resume-items .job p { line-height: 1.4em; }
+a.resume-link { float:right; padding:.6em 1.2em .7em 1.2em; background-color: rgba(var(--darker-gray-rgb),.5); }
 
 
 
