@@ -587,6 +587,7 @@ ul.skills .cap{
 	/*.title {margin-left:-3em; max-width:1000px; }*/
 	.jsSlideShow .allSlides{ gap:20px; }
 	.jsSlideShow article { padding-top:5em; padding-bottom:4em; }
+	.quote blockquote span {font-size: 1.8em;}
 }
 
 /* Tall screen */
@@ -649,6 +650,7 @@ ul.skills .cap{
 
 	.breakdown .sidebar { grid-column: 1 / 3; border-radius:0; }
 	.breakdown .abstract { grid-row: 3; grid-column: 1 / 3; padding: 1.6em 2em; }
+
 
 	/* PIECE SPECIFIC */
 	.jsSlideShow .intro{ height:90vh; }
