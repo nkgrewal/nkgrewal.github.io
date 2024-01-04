@@ -119,25 +119,36 @@ var MySlideShow = {
     $('nav.' + navClass + ' li, ' + aboutLi).on('click', function(){
       MySlideShow.moveSlideBlock('jump', $(this).attr('class').split(' ')[0] );
     });
-    //NAV VISIBILITY
-    $(navHolder).on({
-      'mouseenter': function(e){
-        MySlideShow.navToggle('show');
-        e.stopPropagation();
-      },
-      'mouseleave' : function(e){
-        MySlideShow.navToggle('hide');
-        e.stopPropagation();
-      },
-      'click': function(e){
-        MySlideShow.navToggle('show');
-        e.stopPropagation();
-      },
-      'tap': function(e){
-        MySlideShow.navToggle('toggle');
-        e.stopPropagation();
-      }
-    });
+    //NAV VISIBILITY MOBILE THEN DESKTOP
+    if( window.innerWidth < 800 ){  
+      //MOBILE    
+      $(navHolder).on({
+        'click': function(e){
+          MySlideShow.navToggle('toggle');
+          e.stopPropagation();
+        },
+        'tap': function(e){
+          MySlideShow.navToggle('toggle');
+          e.stopPropagation();
+        }
+      });
+    } else {
+      //DESKTOP
+      $(navHolder).on({
+        'mouseenter': function(e){
+          MySlideShow.navToggle('show');
+          e.stopPropagation();
+        },
+        'mouseleave' : function(e){
+          MySlideShow.navToggle('hide');
+          e.stopPropagation();
+        },
+        'click': function(e){
+          MySlideShow.navToggle('show');
+          e.stopPropagation();
+        }
+      });
+    }
   },
   getSlideIndex : function(keyword){
     if (keyword==='position'){
@@ -356,7 +367,7 @@ $(window).on({
   },
   'scroll': function(){
     //show menu on desktop if scrolled down
-    if( this.innerWidth > 900 && this.pageYOffset > 500 ){
+    if( this.innerWidth > 900 && this.pageYOffset > 150 ){
       MySlideShow.navToggle('show');
     } else { MySlideShow.navToggle('hide'); }
   }
