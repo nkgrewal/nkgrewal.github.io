@@ -604,7 +604,7 @@ ul.skills .cap{
 	footer.scaffold{ background-color:rgba(35,35,35,0.9); z-index:0;}
 	footer.scaffold .fascia { position: relative; }
 	.slideViewer { margin:0; width:100vw; }
-	.jsSlideShow article { padding-top:2em; }
+	.jsSlideShow article { padding-top:3em; }
 
 	footer.scaffold ul { column-gap:1.4em; }
 	.slideNav{ padding:0; background: none; column-gap: 0.5em; }
@@ -650,6 +650,7 @@ ul.skills .cap{
 
 	.breakdown .sidebar { grid-column: 1 / 3; border-radius:0; }
 	.breakdown .abstract { grid-row: 3; grid-column: 1 / 3; padding: 1.6em 2em; }
+	.abstract p:first-of-type {font-size: 1.25em; }
 
 
 	/* PIECE SPECIFIC */
