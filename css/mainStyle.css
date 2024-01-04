@@ -604,7 +604,7 @@ ul.skills .cap{
 	footer.scaffold{ background-color:rgba(35,35,35,0.9); z-index:0;}
 	footer.scaffold .fascia { position: relative; }
 	.slideViewer { margin:0; width:100vw; }
-	.jsSlideShow article { padding-top:3em; }
+	.jsSlideShow article { padding-top:2.5em; }
 
 	footer.scaffold ul { column-gap:1.4em; }
 	.slideNav{ padding:0; background: none; column-gap: 0.5em; }
@@ -644,13 +644,17 @@ ul.skills .cap{
 
 	/* PORTFOLIO PIECES */
 	.piece { row-gap: .3em; }
-	.title{ left:unset; gap:.3em; flex-wrap:wrap; }
+	.title{ left:1em; gap:.3em; flex-wrap:wrap; flex-direction: column; }
+	.title h2 { font-size:3.8em; letter-spacing: -2px; order:2 }
+	.title hgroup { margin-left:1em; }
 	.imgCase{ flex-direction: column; }
-	.imgCase .quote { max-width: unset; }
+	.imgCase .quote { max-width: unset; padding:0 1em;}
+	.quote { position:relative; left:.5em; padding:0 .5em; }
 
 	.breakdown .sidebar { grid-column: 1 / 3; border-radius:0; }
 	.breakdown .abstract { grid-row: 3; grid-column: 1 / 3; padding: 1.6em 2em; }
 	.abstract p:first-of-type {font-size: 1.25em; }
+	.abstract p:last-of-type {margin-bottom: 0}
 
 
 	/* PIECE SPECIFIC */
