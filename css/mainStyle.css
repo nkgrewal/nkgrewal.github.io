@@ -301,7 +301,7 @@ main .intro {
 }
 .breakdown{
 	display: grid;
-	grid-template-columns: 36% 1fr;
+	grid-template-columns: 38% 1fr;
 	align-items: flex-start;
 	column-gap: 2em;
 }
@@ -598,7 +598,7 @@ ul.skills .cap{
 /* ----- */ 
 
 /*MOBILE VIEW*/
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 620px) {
 	.container{font-size: 16px; background-size:60%;}
 	main.scaffold{ background-size:80%; }
 	footer.scaffold{ background-color:rgba(35,35,35,0.9); z-index:0;}
