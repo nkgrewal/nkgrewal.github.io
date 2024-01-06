@@ -133,21 +133,30 @@ var MySlideShow = {
         }
       });
     } else {
-      //DESKTOP
-      $(navHolder).on({
-        'mouseenter': function(e){
-          MySlideShow.navToggle('show');
-          e.stopPropagation();
-        },
-        'mouseleave' : function(e){
-          MySlideShow.navToggle('hide');
-          e.stopPropagation();
-        },
-        'click': function(e){
-          MySlideShow.navToggle('show');
-          e.stopPropagation();
-        }
-      });
+      //DESKTOP above fold
+      if( window.pageYOffset < 150 ){
+        $(navHolder).on({
+          'mouseenter': function(e){
+            MySlideShow.navToggle('show');
+            e.stopPropagation();
+          },
+          'mouseleave' : function(e){
+            MySlideShow.navToggle('hide');
+            e.stopPropagation();
+          },
+          'click': function(e){
+            MySlideShow.navToggle('show');
+            e.stopPropagation();
+          }
+        });
+      } else { 
+        $(navHolder).on({
+          'mouseleave' : function(e){
+            MySlideShow.navToggle('show');
+            e.stopPropagation();
+          }
+        });
+      }
     }
   },
   getSlideIndex : function(keyword){
@@ -297,9 +306,10 @@ var MySlideShow = {
     this.setWindowHash(slideNum);
 
     eachSlide.css('opacity', '.6');
+    $("html, body").animate({ scrollTop: "0" }, 300);
     eachSlide.eq(slideNum).animate({opacity: 1}, anim/2 );
     viewArea.css({ height : eachSlide.eq(slideNum).outerHeight(true) +'px' });
-    console.log(currIndex,eachSlide.eq(slideNum).outerHeight(true) );
+
     //BACKBUTTON REFINEMENT
     if(slideNum == 0){ $(backControl).css("opacity", "0"); }
       else { $(backControl).fadeTo( "slow" , 1, function() {});
@@ -360,7 +370,15 @@ $(window).on({
     MySlideShow.slideJump( window.location.hash.substring(1) );
   },*/
   'click': function(){
-    MySlideShow.navToggle('hide');
+    //hide menu desktop above fold
+    if( this.innerWidth > 900 && window.pageYOffset < 150 ) { 
+      MySlideShow.navToggle('hide');
+      e.stopPropagation;
+    }
+    else if( this.innerWidth > 900) { 
+      MySlideShow.navToggle('show');
+      e.stopPropagation;
+    };
   },
   'resize': function(){
     MySlideShow.resetCss( $(this).width(), $(this).height() );
@@ -369,7 +387,8 @@ $(window).on({
     //show menu on desktop if scrolled down
     if( this.innerWidth > 900 && this.pageYOffset > 150 ){
       MySlideShow.navToggle('show');
-    } else { MySlideShow.navToggle('hide'); }
+      e.stopPropagation;
+    } else { MySlideShow.navToggle('hide'); e.stopPropagation; }
   }
 });
 
