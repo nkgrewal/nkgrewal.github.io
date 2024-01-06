@@ -202,6 +202,9 @@ var MySlideShow = {
   moveSlideBlock : function(direction, slideID){
     //direction options: next, back, jump
     //slideID can be index num or hash
+    //reset height and show menu
+    $("html, body").animate({ scrollTop: "0" }, 300);
+
     this.removeControls();
     var moveLength = eachSlide.outerWidth(true) + slideSpacing;
     //CHANGE SLIDEID FROM HASH TO INDEX
@@ -306,7 +309,6 @@ var MySlideShow = {
     this.setWindowHash(slideNum);
 
     eachSlide.css('opacity', '.6');
-    $("html, body").animate({ scrollTop: "0" }, 300);
     eachSlide.eq(slideNum).animate({opacity: 1}, anim/2 );
     viewArea.css({ height : eachSlide.eq(slideNum).outerHeight(true) +'px' });
 

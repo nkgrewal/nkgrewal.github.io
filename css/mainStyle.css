@@ -189,7 +189,7 @@ footer.scaffold li:hover{
 	border-color:var(--light-green);
 }
 footer.scaffold li.selected{ 
-	border-color:var(--med-gray);
+	border-color:rgba(var(--med-gray-rgb),.4);
 	background:
 		radial-gradient(ellipse at center top, rgba(35, 35, 35, 1) 0%, rgba(40, 40, 40, .25) 25%, rgba(35, 35, 35, 0.2) 45%, rgba(35, 35, 35, 0) 65% ),
 		linear-gradient(180deg, rgba(30,30,30,.6) 0%, rgba(30,30,30,0.4) 20%, rgba(35,35,35,0) 30%);
