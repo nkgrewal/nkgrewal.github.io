@@ -188,8 +188,9 @@ footer.scaffold li:hover{
 	background-color:transparent;
 	border-color:var(--light-green);
 }
-footer.scaffold li.selected{ 
-	border-color:rgba(var(--med-gray-rgb),.4);
+footer.scaffold li.selected{
+	color:var(--lighter-gray);
+	border-color:rgba(var(--med-gray-rgb),.8);
 	background:
 		radial-gradient(ellipse at center top, rgba(35, 35, 35, 1) 0%, rgba(40, 40, 40, .25) 25%, rgba(35, 35, 35, 0.2) 45%, rgba(35, 35, 35, 0) 65% ),
 		linear-gradient(180deg, rgba(30,30,30,.6) 0%, rgba(30,30,30,0.4) 20%, rgba(35,35,35,0) 30%);
@@ -255,6 +256,9 @@ nav.slideNav span.counter{
 .jsSlideShow .allSlides { flex-direction: row; }
 .jsSlideShow article { padding-top:3.5em; padding-bottom:2.5em; }
 .jsSlideShow .intro { gap:unset; min-height:90vh; padding:0; align-content:flex-end; }
+
+.allSlides a { background-color: rgba(var(--darker-gray-rgb),.5); padding: 1px 0 2px 3px; }
+.allSlides a:hover { background-color: rgba(var(--darker-gray-rgb), 0); padding: 1px 0 2px 3px; text-decoration: underline; }
 
 
 /* INTRO SLIDE */
@@ -435,7 +439,7 @@ main .intro {
 	background: rgba(117,193,216,0.05);
 	border-radius: 6px;
 }
-.sidebar h5 { padding-bottom: .3em; }
+.sidebar h5 { color:var(--med-gray); padding-bottom: .3em; }
 .sidebar p { line-height: 1.4em; }
 .sidebar p:last-child { margin-bottom: 0; }
 
@@ -474,12 +478,15 @@ main .intro {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px 8px; 
 }
 .experience .resume-items{
-	margin:1.2em 0 0 0;
-	padding:1.8em 0 2em 0;
+	margin:1.6em 0 0 0;
+	padding:1.8em 0 2.4em 0;
 	border-top:1px solid rgba(0,0,0,.2);
 	border-bottom:1px solid rgba(0,0,0,.2);
 }
-.experience h2 { margin-bottom: .3em; }
+.resume-summary h2 { margin-bottom: .3em; }
+.resume-summary p { font-size: 0.9em; line-height: 1.4em; }
+.resume-items h5 { margin-bottom:2em; }
+
 .resume-items .job { margin-bottom: 2em; }
 .resume-items .job:last-of-type { margin-bottom:0; }
 .resume-items .job hgroup { 
@@ -487,14 +494,19 @@ main .intro {
 	flex-flow: row wrap;
 	align-items: first baseline;
 	justify-content: flex-start;
-	margin-bottom:.6em;
+	margin-bottom:.2em;
 }
 .resume-items .job hgroup > * { margin:0; padding:0; }
-.resume-items .job h3 { color:var(--med-blue); }
+.resume-items .job h3 { color:var(--hot-pink); }
 .resume-items .job h3 span{ padding-left:.6em; font-size:0.7em; font-weight:normal; }
 .resume-items .job h5 { justify-self: right; margin-left: auto;}
 .resume-items .job p { line-height: 1.4em; }
-a.resume-link { float:right; padding:.6em 1.2em .7em 1.2em; background-color: rgba(var(--darker-gray-rgb),.5); }
+a.resume-link, a.resume-link:hover { 
+	float:right; 
+	padding:.6em 1.2em .7em 1.2em; 
+	/*background-color: rgba(var(--darker-gray-rgb),.2);*/
+	box-shadow: inset 0 .4em 1.6em rgba(var(--darker-gray-rgb),1);
+}
 
 
 
