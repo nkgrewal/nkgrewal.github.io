@@ -58,7 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
 	font-size:1em;
 	line-height:1.8em;
-	text-align: left;
 	margin:0 auto;
 	margin-bottom:2em;
 	padding:0;
@@ -455,25 +454,28 @@ main .intro {
   justify-content: center;
 }
 .about-me section {
-	margin-bottom: 3.8em;
+	padding: 3em 0 1em 0;
   grid-template-columns: 1fr 1.4fr;
   align-items: flex-end;
   justify-items: center;
-  column-gap: 2.6em;
+  align-self: center;
+  column-gap: 2.2em;
   max-width:760px;
 }
 .about-me p:last-of-type { margin-bottom:0; }
 .about-me .profile {
-	margin-bottom:2.8em;
+	margin-bottom: 5.75em;
 	padding:0 2em;
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: row wrap;
 	font-size: .9em;
+	justify-content: right;
+	text-align: right;
 }
 .about-me .profile img {
-	margin-bottom:1em;
+	margin:0 0 1em 0;
 	width:100%; 
-	max-width:240px;
+	max-width:200px;
 	border-radius: .5em; 
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px 8px; 
 }
@@ -483,7 +485,7 @@ main .intro {
 	border-top:1px solid rgba(0,0,0,.2);
 	border-bottom:1px solid rgba(0,0,0,.2);
 }
-.resume-summary h2 { margin-bottom: .3em; }
+.resume-summary h2 { margin-bottom: .1em; }
 .resume-summary p { font-size: 0.9em; line-height: 1.4em; }
 .resume-items h5 { margin-bottom:2em; }
 
@@ -497,7 +499,7 @@ main .intro {
 	margin-bottom:.2em;
 }
 .resume-items .job hgroup > * { margin:0; padding:0; }
-.resume-items .job h3 { color:var(--hot-pink); }
+.resume-items .job h3 { color:var(--light-blue); }
 .resume-items .job h3 span{ padding-left:.6em; font-size:0.7em; font-weight:normal; }
 .resume-items .job h5 { justify-self: right; margin-left: auto;}
 .resume-items .job p { line-height: 1.4em; }
