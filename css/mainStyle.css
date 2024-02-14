@@ -460,15 +460,15 @@ main .intro {
   justify-items: center;
   align-self: center;
   column-gap: 2.2em;
-  max-width:760px;
+  max-width:740px;
 }
 .about-me p:last-of-type { margin-bottom:0; }
 .about-me .profile {
 	margin-bottom: 5.75em;
-	padding:0 2em;
+	padding:0 2.2em;
 	display: flex;
 	flex-flow: row wrap;
-	font-size: .9em;
+	font-size: .85em;
 	justify-content: right;
 	text-align: right;
 }
@@ -485,7 +485,7 @@ main .intro {
 	border-top:1px solid rgba(0,0,0,.2);
 	border-bottom:1px solid rgba(0,0,0,.2);
 }
-.resume-summary h2 { margin-bottom: .1em; }
+.resume-summary h2 { font-size:1.4em; margin-bottom: .1em; }
 .resume-summary p { font-size: 0.9em; line-height: 1.4em; }
 .resume-items h5 { margin-bottom:2em; }
 
@@ -676,8 +676,8 @@ ul.skills .cap{
 	main .intro { font-size: 1.15em; }
 	.intro > div { padding:0 1.5em; margin:0; }
 	.about-me section{ grid-template-columns:auto; justify-items: flex-start; padding-top:4em; }
-	.about-me .profile { margin: 0; padding-bottom:0; max-width: 300px; }
-	.about-me .profile img { margin:2.6em 0 0 0; max-width: 140px; order:2; }
+	.about-me .profile { margin: 0; padding-bottom:0; justify-content: left; text-align: left; order:2; }
+	.about-me .profile img { margin:2.6em 0 0 0; max-width: 140px; }
 	.about-me .experience { padding: 1em 2em; }
 }
 
