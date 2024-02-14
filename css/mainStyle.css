@@ -501,8 +501,8 @@ main .intro {
 .resume-items .job hgroup > * { margin:0; padding:0; }
 .resume-items .job h3 { color:var(--light-blue); }
 .resume-items .job h3 span{ padding-left:.6em; font-size:0.7em; font-weight:normal; }
-.resume-items .job h5 { justify-self: right; margin-left: auto;}
-.resume-items .job p { line-height: 1.4em; }
+.resume-items .job h5 { justify-self: right; margin-left: auto; padding-right:1em; }
+.resume-items .job p { line-height: 1.4em; color: var(--lighter-gray); }
 a.resume-link, a.resume-link:hover { 
 	float:right; 
 	padding:.6em 1.2em .7em 1.2em; 
