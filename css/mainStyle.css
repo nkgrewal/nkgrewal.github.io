@@ -348,8 +348,8 @@ main .intro {
 	justify-content: center;
 	gap:3px;
 }
-.imgCase > img { max-width: 800px; }
-.imgCase img{ width: 100%; object-fit: contain; display: block; }
+.imgCase > img { max-width: 860px; max-height:80vh;}
+.imgCase img{ width: 100%; object-fit: contain; display: block; margin:0; }
 .imgCase .mainImg, .imgCase .icons{ display: inline-flex; }
 .imgCase .mainImg div, .imgCase .icons div{ position: relative; }
 
@@ -373,22 +373,22 @@ main .intro {
 .quote{
 	display: flex;
 	align-items: center;
+	text-align: center;
 }
 .quote blockquote{
 	margin: 0 auto;
 	padding: 1.5em 0;
-	font-size: 0.7em;
+	font-size: 0.8em;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	column-gap: .6em;
 }
 .quote blockquote span{
-	font-size: 1.4em;
-	line-height: 1.5em;
+	font-size: 1.5em;
+	line-height: 1.6em;
 	color:var(--med-blue);
 	font-style:italic;
-	text-align: center;
 	position: relative;
 	padding: 0 .8em;
 	/*box-shadow: rgba(var(--black-rgb),.1) 0px 5px 10px 0px inset;
@@ -415,10 +415,11 @@ main .intro {
 .quote blockquote span::before{ content:'\201C'; left: -.22em; top:0.32em; }
 .quote blockquote span::after{ content:'\201D'; right: -.2em; bottom:-.18em; }
 
-.imgCase .quote{max-width:35%;}
+.imgCase .quote{ max-width:35%; text-align: left; }
+.imgCase .quote cite { justify-content: left; }
 .imgCase blockquote { flex-direction: column; padding: 1em; }
 .imgCase cite {
-	margin-top: 1em;
+	margin-top: 0.8em;
 	flex-direction: row; 
 	column-gap:.5em;
 	/*
@@ -513,6 +514,7 @@ a.resume-link, a.resume-link:hover {
 
 
 /* PIECE SPECIFIC */
+.chime-5 .quote {max-width: 26%;}
 
 
 /*PRELOADER & NOSCRIPT*/
@@ -601,7 +603,7 @@ ul.skills .cap{
 	/*.title {margin-left:-3em; max-width:1000px; }*/
 	.jsSlideShow .allSlides{ gap:20px; }
 	.jsSlideShow article { padding-top:5em; padding-bottom:4em; }
-	.quote blockquote span {font-size: 1.8em;}
+	/*.quote blockquote span {font-size: 1.5em;}*/
 }
 
 /* Tall screen */
