@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
+<!-- This site is custom-coded by me, Navreen, in an attempt to stay knowledgable and current. I dabble in HTML, CSS, & JavaScript. Please forgive the inconvenience of any learning bug(s). -->
+
 <head>
 	<title>navreen G, swiss army designer</title>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Navreen G. UX Designer and occassional smart ass. A collection of portfolio work, updated 2021." /> 
+    <meta name="description" content="Navreen G. Sr. UX Designer with generalist skill set. Portfolio of recent UX work, updated 2023." /> 
     <meta name="robots" content="index,follow,noarchive" /> 
     
   <link rel='stylesheet' href='css/mainStyle.css' type="text/css" />
   <noscript>
-    <style>main .intro{ flex-direction: row-reverse; gap:0;}</style>
+    <style>
+      main .intro{ flex-direction: row-reverse; gap:0;}
+      .allSlides{ align-items: center; row-gap:4em; }
+    </style>
   </noscript>
   <!-- <script type="text/javascript" src="flowplayer/flowplayer-3.2.10.min.js"></script>
 	<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script> 
@@ -31,31 +36,135 @@
 <div class="container">
 	<main class="scaffold">
 		<div class="fascia">
-			<button class="slideBack jsGoBack"></button>
+			<button class="slideBack jsGoBack" aria-label="Back button, or use keyboard back arrow"></button>
 			<div class="slideViewer">
 				<div class="allSlides">
 					
           <!-- INTRO -->
           <article class="intro">
             <noscript>
-              <h2>Enable Javascript to see all the stops</h2>
-              <p>Get a richer experience. Use an up-to-date browser with Javascript enabled to see my work. (Or just scroll?)</p>
+              <h2>Enable JavaScript to see all the stops</h2>
+              <p>Get a richer experience. Use an up-to-date browser with <a href="https://www.enable-javascript.com/">JavaScript enabled</a> to see my work. (Or just scroll if you're into that?)</p>
             </noscript>
             <div>
               <div class="blurb">
-                <h1>Craft products that vibe</h1>
-                <p>Tech is about making life better for people. Research, collaboration, and thoughtful UX unlock lovable apps that solve real human problems.</p>
+                <h1>Elementally human tech</h1>
+                <p>Unlock lovable UX that solves real problems with research &amp; collaboration.</p>
               </div>
               <div class="blurbCTA">
                 <p>
-                  <button class="jsGoNext jsShow">Flip through some recent examples <kbd>&#8592;</kbd> <kbd>&#8594;</kbd><span class="m-only">&#8594;</span></button>
+                  <button class="jsGoNext jsShow" aria-label="Next button, or use keyboard next arrow">Flip through recent examples <kbd>&#8592;</kbd> <kbd>&#8594;</kbd><span class="m-only">&#8594;</span></button>
                 </p>
-                <p class="jsHide">&#8595; Scroll through some examples below</p>
+                <p class="jsHide">&#8595; Scroll through examples below</p>
                 </div>
             </div>
 					</article>           
             
+					<!-- CHIME 5.0 -->
+          <article class="piece">
+            <section class="splash">
+            	<header class="title">
+              	<h2>Chime 5</h2>
+              	<hgroup>
+                  <h3>Meet where you are</h3>
+                  <h5>Mobile, web</h5>
+                </hgroup>
+              </header>
+              <div class="imgCase">
+                <img src="img/chime5-1a-dark.png" border="0" alt="Chime 5 Key Mobile Screens" />
+              </div>
+              <div class="quote">
+                <blockquote>
+                  <span>I could easily see who's on a call and who's speaking. The best chime user UI experience so far.</span>
+                  <cite><strong>Beta tester,</strong> Dec. 2021</cite>
+                </blockquote>
+              </div>
+            </section>
+            <section class="breakdown">
+              <div class="sidebar">
+                <h5>Product</h5>
+                <p>Amazon Chime&mdash;AWS’s video conferencing and chat service</p>
+                <h5>Goal</h5>
+                <p>Support surge in remote meetings &amp; upgrade overall UX</p>
+                <h5>Role</h5>
+                <p>Define &amp; deliver mobile/tablet scope of redesign</p>
+                <h5>Audience</h5>
+                <p>Knowledge workers that thrive on schedule flexibility for casual calls (e.g. join stand-up while taking kids to school) or periods requiring high availability (e.g. on-call)</p>
+                <!--<h5>Advantages</h5>
+                <p>Demand for user research &amp; UX ownership, already defined UI design system</p>
+                <h5>Challenges</h5>
+                <p>[Adrift with big goals] Considerable ambiguity, changes in leadership, no dedicated PM, and lack of project processes</p>
+                <a href="">Read the case study &#8594;</a>-->
+              </div>
+               <div class="abstract">
+                <p>Consequent to COVID-19 lockdowns, the Amazon Chime team tackled sweeping upgrades to accomodate the significant surge of remote meetings.</p>
+                <p>The product was not optimized for the sudden shift in meeting dynamics (being largely unchanged since its acquisition as "Biba" in 2016). We started to understand the new normal, and the team quested to overhaul services from back-end to front-end under a "5.0" release. The modernizations would accelerate future productivity add-ons, support additional use cases, and get the product up to accessibility standards.</p>
+                <p>I focused on meeting these goals for our mobile/tablet users. I also saw an opportunity to build a more customer-centric process and improve known issues with cross-team communication and efficiency.</p>
+                <!--<p>We quested to simultanesouly deliver a massive overhaul of front-end and back-end/API services across web, desktop, and mobile under the umbrella of a hefty "5.0" release. These modernizations would accelerate future productivity add-ons and support additional use cases.</p>
+                <h5>Direct contributions</h5>
+                <ul>
+                  <li>Conduct exploratory research</li>
+                  <li>Define UX opportunities and priorities from research</li>
+                  <li>Establish a project plan with milestones &amp; timelines</li>
+                  <li>Create wireframes and prototype solutions</li>
+                  <li>Build alignment &amp; collaborate with stakeholders</li>
+                  <li>Usability test structural changes</li>
+                  <li>Iterate towards final solutions and UI</li>
+                  <li>Continue feedback cycles with users</li>
+                  <li>Work with team on gradual release plan</li>
+                  <li>Document decisions and research</li>
+                </ul>-->
+               </div>
+            </section>
+          </article>
 
+          <!--AMAZON PAYCODE -->
+          <article class="piece">
+            <section class="splash">
+              <header class="title">
+                <h2>Amazon PayCode</h2>
+                <hgroup>
+                  <h3>Cash is still king</h3>
+                  <h5>Desktop, mobile, web</h5>
+                </hgroup>
+              </header>
+              <div class="imgCase">
+                <img src="img/paycode-1a-dark.png" border="0" alt="PayCode Key Desktop and Mobile Screens" />
+                <!--<a href="http://allstardirectories.com" target="_blank">
+                  <img src="img/asdCorp1.png" alt="All Star's Corporate Site" onmouseover="this.src='img/asdCorp2.png'" onmouseout="this.src='img/asdCorp1.png'" />
+                </a>
+                <p><a href="http://allstardirectories.com" target="_blank">LAUNCH SITE</a></p>-->
+              </div>
+              <div class="quote">
+                  <blockquote>
+                    <span>It looks a little better for Amazon for my future that I can pay with cash...</span>
+                    <cite><strong>Interviewee, Brazil,</strong> 2018</cite>
+                  </blockquote>
+                </div>
+            </section>
+            <section class="breakdown">
+              <div class="sidebar">
+                <h5>Product</h5>
+                <p>Amazon Payments&mdash;Global transaction processing</p>
+                <h5>Goal</h5>
+                <p>Accept cash for purchases</p>
+                <h5>Role</h5>
+                <p>Lead designer across desktop, mobile, web</p>
+                <h5>Audience</h5>
+                <p>Under- &amp; un-banked international shoppers that want access to Amazon.com goods, despite lack of access to credit cards</p>
+                <!--<h5>(Later) Advantages</h5>
+                <p>Funded external research agency and travel to test prototypes in person</p>
+                <h5>Challenges</h5>
+                <p>[Too little too late on inclusion of customer research]Poor UX integration in early stages, lack of exploratory research to inform final product direction</p>
+                <a href="">Read the case study &#8594;</a>-->
+              </div>
+               <div class="abstract">
+                <p>During 2017's rapid company expansion, the Amazon Payments org endeavored to serve a greater swathe of shoppers and accept more payment methods&mdash;like cash.</p>
+                <p>While it may seem surprising for e-commerce, physical currency still has a strong influence on purchasing behaviors across the world, and it's considerably cheaper to process than credit cards. Many countries like Brazil, Mexico, and Indonesia already have voucher-like payments enmeshed in their economy.</p>
+                <p>I was tasked with integrating this complex method into the byzantine workings of Amazon's checkout process. The project was the first of its kind in the now larger, freshly restructured org; it served as a guinea pig for UX integration, as well as more broadly figuring out how to work together and across other teams at Amazon.</p>
+               </div>
+            </section>
+          </article>
 
           <!-- STUDY SHIFT -->
           <article class="piece">
@@ -63,8 +172,8 @@
               <header class="title">
                 <h2>Study Shift</h2>
                 <hgroup>
-                  <h3>Your studying personal trainer</h3>
-                  <h4>iOS</h4>
+                  <h3>Academic personal trainer</h3>
+                  <h5>iOS</h5>
                 </hgroup>
               </header>
               <div class="imgCase">
@@ -86,83 +195,45 @@
                   </div>
                 </div>-->
               </div>
+              <div class="quote">
+                  <blockquote>
+                    <span>Thanks for creating this! It's kept me a lot more accountable so far.</span>
+                    <cite><strong>Survey response,</strong> Mar. 2017</cite>
+                  </blockquote>
+                </div>
             </section>
-            <section class="details">
-              <div class="subDetails">
-                <p class="skills">
-                  Top user quote: "I love this, can we get more puppies in this app?"
-                </p>
-                <div class="info1">
-                  <h4>Goal</h4>
-                  <p>All Star Directories sought consultants to build a suite of speculative mobile apps. For adults returning to school, rediscovering and developing fundamentals of being a student is often challenging. Drop-out rate for the first semester alone is highest. The TASL project had the ambition to build a suite of apps that improve outcomes of new students through their first quarter, first year, and even hopefully to graduation.</p>
-                  <h4>Role</h4>
-                  <p>From the ground up, I got the chance to design Study Shift, a study tracking app, and Reading Comprehension, an app that teaches and reinforces reading skills. Our team ran like hackathon with 3 people&mdash; a PM, an engineer, and myself.</p>
-                </div> 
+            <section class="breakdown">
+              <div class="sidebar">
+                <h5>Product</h5>
+                <p>TASL suite&mdash;Education support for non-traditional undergrads</p>
+                <h5>Goal</h5>
+                <p>Boost academic success of new students via free mobile apps</p>
+                <h5>Role</h5>
+                <p>Design iOS apps from scratch &amp; monitor analytics</p>
+                <h5>Audience</h5>
+                <p>American students (mostly over 24) that&mdash;in some combo&mdash;work full time, have dependents, and/or attend school part-time</p>
+                <!--<h5>Advantages</h5>
+                <p>Team was incresibly collaborative and supportive, PM was receptive to UX recommendations, engineer was incredibly flexible and open-minded</p>
+                <h5>Challenges</h5>
+                <p>[We needed design yesterday] Lack of early usability testing, under resourced for continued development</p>
+                <a href="">Read the case study &#8594;</a>-->
               </div>
+              <div class="abstract">
+                <p>All Star Directories sought consultants in building a series of mobile apps to support new students and improve institutional retention rates.</p>
+                <p>For adults returning to school, relearning how to be a student is a daunting obstacle on top of life's other demands. Drop-out rates for the first semester alone is the highest. The ambition of TASL was to improve outcomes for new students through their first quarter, first year, and hopefully to graduation.</p>
+                <p>From the ground up, I got a chance to design Study Shift&mdash;a study tracking app&mdash;and Reading Comprehension&mdash;an app that teaches and reinforces critical reading skills. With just 3 people, our team ran like a hackathon and made incredible progress within 6 months.</p>
+              </div> 
             </section>
           </article>
 
-      		<!--AMAZON PAYCODE -->
-          <article class="piece">
-            <section class="splash">
-            	<header class="title">
-              	<h2>Amazon PayCode</h2>
-              	<hgroup>
-                	<h3>Cash is still king</h3>
-                	<h4>Desktop, mobile, web</h4>
-              	</hgroup>
-              </header>
-              <div class="imgCase">
-                <a href="http://allstardirectories.com" target="_blank">
-                	<img src="img/asdCorp1.png" alt="All Star's Corporate Site" onmouseover="this.src='img/asdCorp2.png'" onmouseout="this.src='img/asdCorp1.png'" />
-                </a>
-                <p><a href="http://allstardirectories.com" target="_blank">LAUNCH SITE</a></p>
-              </div>
-            </section>
-            <section class="details">
-              <div class="subDetails">
-                <!--<ul class="skills">
-                  <li class="cap">Skills</li>
-                  <li class="cap">(</li>
-                  <li class="first">Wireframing</li>
-                  <li>Web design &amp; iconography</li>
-                  <li>Front-end development</li>
-                  <li>Executive wrangling for photo shoots</li>
-                  <li class="cap">)</li>
-                </ul>-->
-                <p class="skills">
-                  Top onboarding quote: ""
-                </p>
-                <div class="info1">
-                  <h4>DESIGN</h4>
-                  <p>All Star had a new logo, but the website still reflected their old branding. We needed to update the design to align to our new direction with strong messaging on the following three attributes: Quality, Compliance, and Consistency. I worked with the creative director to make an experience that felt more genuine and authentic while utilizing white space and vivid colors in a unique way.</p>
-                  <h4>THE EVOLUTION</h4>
-                  <p>The creative director and I collaborated with content and business development to work out a style that would represent the company's changes and build an identity. All Star had undergone many changes to position itself as an industry leader, and they wanted this image to be loud and clear throughout the site's design and content. The rebrand was an effort to revitalize All Star's B-to-B image with customers and partners without alienating them with excessive change. Success of this endeavor would then influence rebranding for revenue-generating properties on the B-to-C side.</p>
-                </div>
-                <div class="info2">
-                  <h4>PROCESS</h4>
-                  <ul>
-                    <li class="first">Work with business development, content team, and creative director to filter core copy</li>
-                    <li>Collaborate with creative director to ideate designs and style</li>
-                    <li>Select and finalize a design style</li>
-                    <li>Build out mockups of each page</li>
-                    <li>Coordinate photo shoots of executives, employees, and office space for assets</li>
-                    <li>Build pages in HTML/CSS/Javascript</li>
-                    <li>Debug and cross-browser test</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-          </article>
-  
-          <!-- STUDY SHIFT -->
+          <!-- READING COMPREHENSION
           <article class="piece">
             <section class="splash">
               <header class="title">
                 <h2>Reading Comprehension</h2>
                 <hgroup>
-                  <h3>iOS</h3>
-                  <h4>Education trainer and tracker</h4>
+                  <h3>Education trainer and tracker</h3>
+                  <h5>iOS</h5>
                 </hgroup>
               </header>
               <div class="imgCase">
@@ -196,10 +267,10 @@
                 </div>
               </div>
             </section>
-            <section class="details">
-              <div class="summary">The creator wanted to create a fun online experience around his new product, a small pair of decorated magnets that were kind of like trendy cufflinks for pants and shirts. I planned and executed a multimedia experience to launch online.
+            <section class="breakdown">
+              <div class="abstract">The creator wanted to create a fun online experience around his new product, a small pair of decorated magnets that were kind of like trendy cufflinks for pants and shirts. I planned and executed a multimedia experience to launch online.
               </div>
-              <div class="subDetails">
+              <div class="subbreakdown">
                 <ul class="skills">
                   <li class="cap">Skills</li>
                   <li class="cap">(</li>
@@ -210,14 +281,14 @@
                   <li>Baking</li>
                   <li class="cap">)</li>
                 </ul>
-                <div class="info1">
-                  <h4>THE PRODUCT</h4>
+                <div class="sidebar">
+                  <h5>THE PRODUCT</h5>
                   <p>The creator wanted to sell Cakes beyond the appeal of a "green" recycled product and to target a younger audience that gravitates towards buying Sketchers and Marc Ecko. CAKES needed to be portrayed as a <strong>trendy fashion accessory</strong>that could be personalized and worn decoratively as well as practically.</p>
-                  <h4>THE PRESENCE</h4>
+                  <h5>THE PRESENCE</h5>
                   <p>By creating a promotional video and an interactive app, I tried to create a fun, individual, and active image to associate with the brand. The idea was not just to get kids to wear them, but to also be creative about how they wore them.</p>
                 </div>
-                <div class="info2">
-                  <h4>PROCESS</h4>
+                <div class="abstract">
+                  <h5>PROCESS</h5>
                   <ul>
                     <li class="first">Brainstorm key concepts and messaging</li>
                     <li>Sketch and construct wireframes and sitemap</li>
@@ -233,17 +304,17 @@
                 </div>
               </div>
             </section>
-          </article>
+          </article>-->
           
 
-          <!-- ON THE TABLE -->
+          <!-- ON THE TABLE
           <article class="piece">
             <section class="splash">
               <header class="title">
                 <h2>On the Table</h2>
                 <hgroup>
                   <h3>Kinetic Typography</h3>
-                  <h4>Amuse people.</h4>
+                  <h5>Amuse people.</h5>
                 </hgroup>
               </header>
               <div class="imgCase">
@@ -256,10 +327,10 @@
                 </div>
               </div>
             </section>
-            <section class="details">
-              <div class="summary">Using kinetic type, this 30 second video explores the visuals of a book quote through motion graphics (quote from <u>Good Omens</u> by Neil Gaimen &amp; Terry Pratchett).
+            <section class="breakdown">
+              <div class="abstract">Using kinetic type, this 30 second video explores the visuals of a book quote through motion graphics (quote from <u>Good Omens</u> by Neil Gaimen &amp; Terry Pratchett).
               </div>
-              <div class="subDetails">
+              <div class="subbreakdown">
                 <ul class="skills">
                   <li class="cap">Skills</li>
                   <li class="cap">(</li>
@@ -267,12 +338,12 @@
                   <li>British accent</li>
                   <li class="cap">)</li>
                 </ul>
-                <div class="info1">
-                  <h4></h4>
+                <div class="sidebar">
+                  <h5></h5>
                   <p></p>
                 </div>
-                <div class="info2">
-                  <h4>PROCESS</h4>
+                <div class="abstract">
+                  <h5>PROCESS</h5>
                   <ul>
                     <li class="first">Aggregate previous learning</li>
                     <li>Clarify concepts and ideas for testing</li>
@@ -284,42 +355,71 @@
                 </div>
               </div>
             </section>
-          </article>
+          </article>-->
           
 
           <!-- ME -->
           <article class="about-me">
-            <section class="fauxArticle">
+            <section>
+              <div class="profile">
+                <img src="img/navreeng.jpg" />
+                <div>
+                  <p>Tech, <a href="https://www.scientificamerican.com/article/humans-brain-power-origins/" target="_blank">by definition</a>, is elementally human. Whether it's Paleolithic flint for a warming fire or a modern phone search for a new career, it's about making life better for people.</p>
+                  <p>My philosophy is that research, intentional design, and collaborative teams are they keys to unlocking happy, long-term users. If you feel similarly, <a href="https://www.linkedin.com/in/navreeng/" target="_blank">let's connect on LinkedIn. </a></p>
+                </div>
+              </div>
+              <div class="experience">
+                <div class="resume-summary">
+                  <h2>Navreen Grewal</h2>
+                  <p>15+ years as a designer in Seattle, <a href="https://hbr.org/2023/02/research-the-transformative-power-of-sabbaticals" target="_blank">currently on sabbatical</a></p>
+                </div>
+                <div class="resume-items">
+                  <h5>Most recent experience</h5>
+                  <div class="job">
+                    <hgroup>
+                      <h3>Senior UX Designer</h3>
+                      <h5>AWS</h5>
+                    </hgroup>
+                    <p>Lead product enhancements across desktop, web, and mobile for Amazon Chime—AWS’s video conferencing and chat service.</p>
+                  </div>
+                  <div class="job">
+                    <hgroup>
+                      <h3>UX Designer II</h3>
+                      <h5>Amazon</h5>
+                    </hgroup>
+                    <p>Primary designer for international cash payments (Amazon PayCode), bank transfers, & installments.</p>
+                  </div>
+                  <div class="job">
+                    <hgroup>
+                      <h3>Freelancer, owner</h3>
+                      <h5>Pretty Meta, LLC</h5>
+                    </hgroup>
+                    <p>Array of design services for small to medium clients—end-to-end mobile UX & UI design, user research, UX analytics reports, &amp; more.</p>
+                  </div>
+                </div>
+                <a class="resume-link" href="navreengrewal.pdf" target="_blank">download complete resume &#8595; </a>
+              </div>
+            </section>
+            <!--<section class="fauxArticle">
               <header>
                 <h1>Local Woman Bites Bacon Man</h1>
               </header>
-              <div class="photo">
+              <figure>
                 <img src="img/moi.jpg" alt="Romancing the Bacon Man" />
-                <p class="caption">Accused pictured seconds before the offense occured.</p>
-              </div>
-              <p class="large">SEATTLE (AP) &mdash; The web designer based in Seattle is faced with prosecution for allegedly biting a man in a bacon costume at the Fremont Food Truck Rodeo.</p>
+                <figcaption>Accused pictured seconds before the offense occured</figcaption>
+              </figure>
+              <p>SEATTLE (AP) &mdash; The web designer based in Seattle is faced with prosecution for allegedly biting a man in a bacon costume at the Fremont Food Truck Rodeo.</p>
               <p>The perpetrator claims to have mistaken him for a real piece of bacon the size of a human adult. "It did seem like it was too good to be true when I gave it some more thought later," she admitted to authorities.</p>
               <p>Upon further questioning, the accused attempted the plead the fifth. When she realized she wasn't quite sure what that was, she pleaded <em>"Really Hungry At the Time."</em></p>
               <p>The media frenzy surrounding this event, and inflamed by a slow news day, led journalists to delve into the accused's past. She has a well-recorded history of bacon-infatuation, as well a propensity for creative cries for attention, including, but not limited to, fabricating news stories.</p>
               <p>Bacon Man has declined to comment.</p>
-            </section>
-            <section class="details">
-              <div class="subDetails">
-                <div class="info1">
-                  <p>
-                    <a href="navreengrewal.pdf">resume</a>
-                    My philosophy is that attentive research, thoughtful process, and collaborative teams are the keys to success.
-                  I'm a swiss army designer. Crafting experiences that resonate with an audience is one of the most rewarding things to me. Breathing life into it just takes it a level further, which is why I also dabble in HTML, CSS, &amp; Javascript.</p>
-                  <p>I've designed across a range of different mediums in my career, from interactive to print to motion. My ability to come up with solid solutions across mediums comes from strong design fundamentals and a desire to understand these processes, as well as how they influence each other.</p>
-                </div>
-              </div>
-            </section>
+            </section>-->
           </article>
 
           <!-- CLOSING FOR SLIDEVIEWER AND ALLSLIDES -->             
         </div>
       </div>
-      <button class="slideNext jsGoNext"></button>
+      <button class="slideNext jsGoNext" aria-label="Next button, or use keyboard next arrow"></button>
     </div>
   </main>
 	<footer class="scaffold">
