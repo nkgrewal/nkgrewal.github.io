@@ -2,7 +2,6 @@
 
 to-do:
 - fix nav slidedown for first and last sides
-- mobile? scroll down and show nav
 - mobile friendly layout + swiping
 
 options to pass through :
