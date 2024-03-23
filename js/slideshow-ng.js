@@ -3,6 +3,7 @@
 to-do:
 - fix nav slidedown for first and last sides
 - mobile friendly layout + swiping
+-fix curtain load (shows in thumbnail)
 
 options to pass through :
   - allSlides name
@@ -183,21 +184,12 @@ var MySlideShow = {
     this.createNav();
     this.resetCss( $(window).width(), $(window).height() );
     this.moveSlideBlock('jump', window.location.hash.substring(1) );
-    //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
-    //extraDetails.hide();
-    multiImgslideHolder.children().hide();
-    multiImgslideHolder.children(':first-child').show();
+    this.showSubImgs(currIndex);
 
     $('.jsShow').show();
     $('.jsHide').hide();
     $('.jsGoBack.jsShow').css('opacity','0');
   },
-  /*moreInfo : function(jqArticle){
-    $(jqArticle).find(extraDetails).slideToggle('fast', function(){
-      viewArea.animate({ height : eachSlide.eq(currIndex).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
-    });
-    $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
-  },*/
   moveSlideBlock : function(direction, slideID){
     //direction options: next, back, jump
     //slideID can be index num or hash
@@ -299,7 +291,7 @@ var MySlideShow = {
     navHolder.find('.selected').removeClass('selected');
     navHolder.find('.' + slideClass).addClass('selected');
     //SET ACTIVE SLIDE
-    slideHolder.find('.selected').removeClass('selected');
+    slideHolder.find('.piece').removeClass('selected');
     eachSlide.eq(slideNum).addClass('selected');
   },
   slideEnd : function(slideNum){
@@ -346,22 +338,25 @@ var MySlideShow = {
           break;
       }
     });
-    //show subimg for each section in piece
-    iconslideHolder.children().on('mouseover', function(){
-      var linkNum = $(this).index();
-      $(this).parents('article').find(multiImgslideHolder).children().hide();
-      $(this).parents('article').find(multiImgslideHolder).children().eq(linkNum).show();
-    });
-    /*detailsBtn.on('click', function(e){
-      MySlideShow.moreInfo($(this).parents('article'));
-    });*/
   },
   removeControls : function(){
     nextControl.off('click');
     backControl.off('click');
     $(document).off('keydown');
     iconslideHolder.children().off('mouseover');
-    //detailsBtn.off('click');
+  },
+  //IMG CLICK
+  showSubImgs: function(slideNum) {
+    //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
+    $('.imgCase').children().hide();
+    $('.imgCase').children(':first-child').show();
+    $('.imgButtons button').on('click', function() {
+        var btnIndex = $(this).index();
+        $(this).addClass('selected');
+        $(this).siblings().removeClass('selected');
+        $(this).parents('.piece').children('.imgCase').children().hide();
+        $(this).parents('.piece').children('.imgCase').children().eq(btnIndex).show();
+    });
   }
 }
 
@@ -397,6 +392,7 @@ $(window).on({
 $(document).ready(function(){
   MySlideShow.initSlideShow();
 });
+
 
 //PRELOADER
 $(window).ready(function() {
