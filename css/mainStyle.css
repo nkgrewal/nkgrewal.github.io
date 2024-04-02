@@ -652,6 +652,27 @@ noscript {
 
 /* ----- */ 
 
+/*TABLET VIEW*/
+@media only screen and (max-width: 1000px) {
+	.container{ font-size: 16px; }
+
+	/* PORTFOLIO PIECES GRID LAYOUT */
+	.piece { grid-template-columns: repeat(2, 1fr); row-gap: .3em; }
+	.piece > *:nth-child(odd) { grid-column: 1 / 2; }
+	.piece > *:nth-child(even) { grid-column: 2 / 3; }
+	.piece .title, .piece .imgCase, .piece > .quote, .piece .sidebar, .piece .abstract, .piece .mainVideo { grid-column: 1 / 3; }
+	.piece > .quote, .piece .sidebar, .piece .abstract, .piece .mainVideo { grid-column: unset; }
+	.piece .sidebar { justify-self: unset; }
+
+	.sidebar, .quote, .abstract, .mainVideo { margin-left: auto; margin-right: auto; }
+	.abstract {padding-left:2em;}
+
+	.vidCase { display: flex; align-content:center; justify-content:center; }
+	.vidCase video { max-height: 500px; max-width: 100%; }
+	.oldPhone { padding: 2.8em 2.4em 4.2em 2.4em; }
+}
+
+
 /*MOBILE VIEW*/
 @media only screen and (max-width: 600px) {
 	.container{ font-size: 16px; background-size:60%; }
@@ -719,9 +740,9 @@ noscript {
 	.piece .title, .piece .sidebar { justify-self: unset; }
 
 	/* PORTFOLIO SECTIONS */
-	.title{ margin-left:0; gap:.3em; flex-wrap:wrap; flex-direction: column; }
-	.title h2 { font-size:3.8em; letter-spacing: -2px; order:2 }
-	.title hgroup { margin-left:1em; }
+	.title{ margin-left:0; gap:.3em; flex-wrap:wrap; flex-direction: column; font-size:.9em; text-align:center; }
+	.title h2 { letter-spacing: -2px; order:2 }
+	.title hgroup { justify-content: center; margin-left:1em; }
 	.imgCase{ flex-direction: column; }
 
 	.sidebar, .quote, .abstract, .mainVideo { width: 80%; margin-left: auto; margin-right: auto; }
@@ -739,8 +760,8 @@ noscript {
 
 	.mainVideo { margin-top:1.5em; }
 	.mainVideo h4 { position:unset; }
-	.newPhone, .oldPhone { padding:0; background: none; }
-	.newPhone video, .oldPhone video { max-height:84vh; max-width: 90%; border-radius: 8px; }
+	.vidCase { padding:0; background: none; }
+	.vidCase video { max-height:84vh; max-width: 90%; border-radius: 8px; }
 	.mainVideo .note {margin-top:0;}
 
 
@@ -763,11 +784,6 @@ noscript {
 /*TABLET ONLY*/
 @media only screen and (min-width: 600px) and (max-width: 900px) {
 
-}
-
-/*TABLET VIEW*/
-@media only screen and (max-width: 1000px) {
-	.title hgroup{ font-size: .85em; }
 }
 
 
