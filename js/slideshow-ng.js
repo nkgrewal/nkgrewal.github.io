@@ -26,7 +26,9 @@ all portfolio articles are class named "piece" and have an h2 title
 
 */
 
-//VARS FOR EXTERNALE HTML CLASS DEPENDENCIES
+//VARS FOR EXTERNAL, HTML CLASS DEPENDENCIES
+var mobileMQ = '(max-width: 600px)';      //mobile breakpoint
+
 var nextControl = $('.jsGoNext');         //slideshow next button
 var backControl = $('.jsGoBack');         //slideshow back button
 var viewArea = $('.slideViewer');         //frame for viewing slide
@@ -49,8 +51,10 @@ var iconslideHolder = $('div.icons');          //slide type - multi image icons
 //var detailsBtn = $('a.detailsBtn');
 
 //VARS FOR INTERNAL REF
+const mobileDevice = window.matchMedia(mobileMQ);
+
 var navClass = 'slideNav';                      //class name of nav element
-var navToggleElement = '';                      //empty var set in nav creation
+var navToggleElement = 'nav .navHide';              //classname of hideable nav
 const slideMap = new Map();                     //empty object that will hold slide identifying info
 var currIndex = 0;                              //start from 0 on load, only changes under moveSlideBlock
 var anim = 800;                                 //slide speed
@@ -89,14 +93,13 @@ var MySlideShow = {
   },
   createNav : function(){
     //CREATE OPENING TAGS FOR NAV
-    var navStr = '<nav class="' + navClass + '"><ul>';
+    var navStr = '<ul class="m-only"><li>Designs</li></ul><nav class="' + navClass + '">';
     //BUILD NAV LI ELEMENTS AS ADDITIVE STRING FROM SLIDE OBJECT
     slideMap.forEach((info, i) => {
       switch(true){
-        case (i==0):
-          navStr += '<li class="'+ slideMap.get(i).hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
+        case (i==0): 
+          navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
           navStr += '<ul class="navHide">';
-          navToggleElement = 'nav.' + navClass + ' .navHide';               //create and define hideable menu section
           break;
         case (i > 0 && i < (slideMap.size-1)):
           navStr += '<li class="'+ slideMap.get(i).hash +'">' + slideMap.get(i).name + '</li>';         //li for rest except about (last slide)
@@ -113,14 +116,65 @@ var MySlideShow = {
     navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (slideMap.size-2) + '</span></span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
-    this.navToggle('hide');
     //NAV MOUSE EVENTS
     //LI CLICK EVENT BASED ON FIRST ASSIGNED CLASS NAME (HASH)
     $('nav.' + navClass + ' li, ' + aboutLi).on('click', function(){
       MySlideShow.moveSlideBlock('jump', $(this).attr('class').split(' ')[0] );
     });
     //NAV VISIBILITY MOBILE THEN DESKTOP
-    if( window.innerWidth < 800 ){  
+    this.navToggle('hide');
+    mobileDevice.addListener(handleDeviceChange);
+    function handleDeviceChange(e) {
+      if (e.matches) {
+        console.log(e[1] + " Mobile");
+        navHolder.off('mouseenter mouseleave click');
+        $('nav .firstSlide').addClass('navHide');
+        MySlideShow.navToggle('hide');
+        $(navHolder).find('ul.m-only').on({
+          'click': function(e){
+            MySlideShow.navToggle('toggle');
+            e.stopPropagation();
+          },
+          'tap': function(e){
+            MySlideShow.navToggle('toggle');
+            e.stopPropagation();
+          }
+        });
+      }
+      else {
+        console.log(e + " Desktop");
+        navHolder.find('ul.m-only').off('click tap');
+        $('nav .firstSlide').removeClass('navHide');
+        $('nav .firstSlide').show();
+        //DESKTOP above fold
+        if( window.pageYOffset < 150 ){
+          $(navHolder).on({
+            'mouseenter': function(e){
+              MySlideShow.navToggle('show');
+              e.stopPropagation();
+            },
+            'mouseleave' : function(e){
+              MySlideShow.navToggle('hide');
+              e.stopPropagation();
+            },
+            'click': function(e){
+              MySlideShow.navToggle('show');
+              e.stopPropagation();
+            }
+          });
+        } else { 
+          $(navHolder).on({
+            'mouseleave' : function(e){
+              MySlideShow.navToggle('show');
+              e.stopPropagation();
+            }
+          });
+        }
+      };
+    }
+    handleDeviceChange(mobileDevice);
+
+    /*if( window.innerWidth < 800 ){  
       //MOBILE    
       $(navHolder).on({
         'click': function(e){
@@ -157,7 +211,7 @@ var MySlideShow = {
           }
         });
       }
-    }
+    }*/
   },
   getSlideIndex : function(keyword){
     if (keyword==='position'){
@@ -257,8 +311,15 @@ var MySlideShow = {
         $(navToggleElement).fadeOut(s2);
       }
     } else if(toggleState==='toggle'){
-      $(navToggleElement).slideToggle(s2);
-    } else { console.log('use only "show", "hide", or "toggle" for navToggle functions first property');}
+      $(navToggleElement).slideToggle(s2, function() {
+        if( $(this).is(":visible")==true ) {
+          $(navHolder).find('ul.m-only').addClass('selected');
+        } else{
+          $(navHolder).find('ul.m-only').removeClass('selected');
+        }
+      });
+    }
+    else { console.log('use only "show", "hide", or "toggle" for navToggle functions first property');}
   },
   resetCss : function(winWidth, winHeight){
     // CSS CHANGES
@@ -296,6 +357,7 @@ var MySlideShow = {
   },
   slideEnd : function(slideNum){
     var heightAdjustor = $('.' + navClass + ' ul:first-child').outerHeight(true);
+    this.navToggle("hide");
     this.setControls(slideNum);
     this.setWindowHash(slideNum);
 
