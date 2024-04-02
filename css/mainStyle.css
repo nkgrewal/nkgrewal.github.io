@@ -625,8 +625,10 @@ noscript {
   visibility: hidden;
 }
 
-.jsShow { display:none; } /* only show if javascript enabled */
-.m-only { display:none; } /* only show on mobile */
+/*.jsShow { display:none !important; } *//* only show if javascript enabled */
+
+/* MOBILE OVERRIDES */
+.m-only { display:none !important; } /* only show on mobile */
 
 
 
@@ -648,7 +650,7 @@ noscript {
 /* ----- */ 
 
 /*MOBILE VIEW*/
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 600px) {
 	.container{font-size: 16px; background-size:60%;}
 	main.scaffold{ background-size:80%; }
 	footer.scaffold{ background-color:rgba(35,35,35,0.9); z-index:0;}
@@ -657,15 +659,18 @@ noscript {
 	.jsSlideShow article { padding-top:2.5em; }
 
 	footer.scaffold ul { column-gap:1.4em; }
-	footer.scaffold ul:first-child { margin-left:-1em;  }
-	.slideNav{ padding:0; background: none; column-gap: 0.5em; }
+	footer.scaffold ul:first-child { margin-left:-1em; }
 	.jsNav {flex-flow: wrap; align-items: center; background: linear-gradient(to bottom, rgba(35,35,35,0.4) 0%, rgba(40,40,40,0.3) 40%, rgba(40,40,40,0) 80%); }
 	.jsNav .about { position: unset; }
-	footer.scaffold .jsNav { justify-content: center; align-items:center; }
+	footer.scaffold .jsNav { padding:0 2.2em; justify-content: center; align-items:center; }
+	/*footer.scaffold ul, .slideNav { flex-flow: nowrap; }*/
+	.slideNav{ padding:0; background: none; column-gap: 0.5em; }
+	.slideNav ul:first-child li { position:unset; margin-bottom: -1px; }
 	footer.scaffold .about { padding:0 0 0 1em; column-gap: 1.6em; }
-	footer.scaffold .about li {padding:.6em 0; border-top:none; border-bottom:4px solid transparent;}
-	footer.scaffold .about li {padding:.8em 0 1em 0;}
-	footer.scaffold .about li:hover, footer.scaffold .about li.selected { 
+	footer.scaffold .about li, footer.scaffold ul:first-child li { border:none; border-bottom: 3px solid transparent; }
+	footer.scaffold .about li { padding:.6em 0; }
+	footer.scaffold .about li { padding:.8em 0 1em 0;}
+	footer.scaffold .about li:hover, footer.scaffold ul:first-child li:hover, footer.scaffold .about li.selected { 
 		border-bottom:3px solid; 
 		background: none;
 	}
@@ -734,26 +739,23 @@ noscript {
 	.about-me section{ grid-template-columns:auto; justify-items: flex-start; padding-top:3em; }
 	.about-me .profile { margin: 2em 0; padding-bottom:0; justify-content: left; text-align: left; order:2; }
 	.about-me .myPic { margin-bottom:1em; max-width: 140px; }
-	.profile .myPic { display: none; }
 	.about-me .experience { padding: 1em 2em; font-size: .9em; }
 	.resume-items { row-gap: 1.8em; }
+
+	/* MOBILE OVERRIDES  */
+	.m-only{ display: unset !important; }
+	.m-hide{ display: none !important; }
+}
+
+/*TABLET ONLY*/
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+	/*.slideNav ul:first-child {flex: 1 100%;}*/
 }
 
 /*TABLET VIEW*/
 @media only screen and (max-width: 1000px) {
-	.m-only{display: unset;}
-	.m-hide{display:none;}
-
-	.title hgroup{font-size: .85em;}
-	.intro kbd {display: none;}
+	.title hgroup{ font-size: .85em; }
 }
-
-/*TABLET ONLY*/
-@media only screen and (min-width: 580px) and (max-width: 800px) {
-	.slideNav ul:first-child {flex: 1 100%;}
-}
-
-
 
 
 /*
