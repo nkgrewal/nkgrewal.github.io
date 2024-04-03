@@ -27,7 +27,7 @@ all portfolio articles are class named "piece" and have an h2 title
 */
 
 //VARS FOR EXTERNAL, HTML CLASS DEPENDENCIES
-var mobileMQ = '(max-width: 600px)';      //mobile breakpoint
+var mobileMQ = '(max-width: 620px)';      //mobile breakpoint
 
 var nextControl = $('.jsGoNext');         //slideshow next button
 var backControl = $('.jsGoBack');         //slideshow back button
