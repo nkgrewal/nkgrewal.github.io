@@ -256,7 +256,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	display:flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap:50px; /* MUST BE PX */
+	gap:80px; /* MUST BE PX */
 }
 .jsSlideShow .slideBack, .jsSlideShow .slideNext{ display: block; }
 .jsSlideShow .allSlides { flex-direction: row; }
@@ -511,7 +511,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
   align-content: center;
 }
 .about-me section {
-	padding: 8em 0 0 0;
+	padding: 6em 0 0 0;
   grid-template-columns: 1fr 1.4fr;
   align-items: flex-end;
   justify-items: center;
@@ -521,7 +521,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 }
 .about-me p:last-of-type { margin-bottom:0; }
 .about-me .profile {
-	margin-bottom: 5.75em;
+	margin-bottom: 12em;
 	padding:0 2.2em;
 	display: flex;
 	flex-flow: row wrap;
@@ -573,7 +573,7 @@ a.resume-link, a.resume-link:hover {
 
 
 /* PIECE SPECIFIC */
-
+.amazon-paycode .imgCase img {position:relative; left:-3em;}
 
 
 /*PRELOADER & NOSCRIPT*/
@@ -621,9 +621,9 @@ noscript {
 
 
 /* Wide screen */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1600px) {
 	/*.title {margin-left:-3em; max-width:1000px; }*/
-	.allSlides{ gap:20px; }
+	.allSlides{ gap:120px; }
 	.jsSlideShow article { padding-top:5em; padding-bottom:4em; }
 	/*.quote blockquote span {font-size: 1.5em;}*/
 }
@@ -638,7 +638,7 @@ noscript {
 /*TABLET VIEW*/
 @media only screen and (max-width: 1200px) {
 	.container{ font-size: 16px; }
-	.allSlides { gap: 100px; /* MUST BE PX */ }
+	.allSlides { gap: 80px; /* MUST BE PX */ }
 
 	/* PORTFOLIO PIECES GRID LAYOUT */
 	.piece { grid-template-columns: repeat(2, 1fr); row-gap: 3em; column-gap: 2em; }
@@ -779,6 +779,8 @@ noscript {
 	.allSlides .intro { font-size: 1.15em; }
 	.intro > div { padding:0 1.5em; margin:0; }
 
+	.amazon-paycode .imgCase img {left:-1em;}
+
 	.about-me section{ grid-template-columns:auto; justify-items: flex-start; padding-top:3em; }
 	.resume-summary { display: flex; align-items: last baseline; column-gap: 2em; flex-wrap: wrap;  }
 	.resume-summary div { flex: min-content; }
@@ -786,6 +788,7 @@ noscript {
 	.about-me .myPic { margin-bottom:1em; max-width: 140px; }
 	.about-me .experience { padding: 1em 2em; font-size: .9em; }
 	.resume-items { row-gap: 1.8em; }
+
 
 
 	/* MOBILE OVERRIDES  */
