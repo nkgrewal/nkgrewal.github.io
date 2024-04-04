@@ -1,9 +1,8 @@
 /*
 
 to-do:
-- fix nav slidedown for first and last sides
-- mobile friendly layout + swiping
--fix curtain load (shows in thumbnail)
+-edit and compress video
+-add case studies
 
 options to pass through :
   - allSlides name

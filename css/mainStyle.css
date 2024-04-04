@@ -586,18 +586,57 @@ noscript {
 	color:var(--dark-gray);
 }
 .curtainLoad {
+	display: flex;
+	align-items: center;
+	justify-content: center;
   position:fixed;
   top:0;
   left:0;
   width:100%;
   height:100%;
-  background: var(--white);
+  background: rgba(var(--white-rgb),.5);
   z-index: 100;
   text-align: center;
+  color: white;
 }
-.curtainLoad img {
-  width:193px;
-  margin:300px auto;
+.lds-ring::after{
+	padding-left:.5em;
+	font-size: 1em;
+	text-transform: uppercase;
+	text-align: center;
+	content: "Loading...";
+}
+.lds-ring, .lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 164px;
+  height: 164px;
+  margin: 8px;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  box-shadow: rgba(var(--dark-gray-rgb),.4) 0 4px 20px;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: currentColor transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) { animation-delay: -0.45s; }
+.lds-ring div:nth-child(2) { animation-delay: -0.3s; }
+.lds-ring div:nth-child(3) { animation-delay: -0.15s; }
+
+@keyframes lds-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 
@@ -611,9 +650,8 @@ noscript {
   visibility: hidden;
 }
 
-/*.jsShow { display:none !important; } *//* only show if javascript enabled */
-
-/* MOBILE OVERRIDES */
+/* MOBILE & JS OVERRIDES */
+.jsShow { display:none !important; } /* only show if javascript enabled */
 .m-only { display:none !important; } /* only show on mobile */
 
 
