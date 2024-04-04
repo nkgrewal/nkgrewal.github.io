@@ -433,7 +433,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .quote blockquote span::before{ content:'\201C'; left: -.3em; top:0.36em; }
 .quote blockquote span::after{ content:'\201D'; right: -.3em; bottom:-.16em; }
 
-.abstract { color:var(--lighter-gray); max-width:460px; }
+.abstract { color:var(--lighter-gray); max-width:460px; margin-top:-4em; padding-left:2em; }
 .abstract p:first-of-type { font-size: 1.4em; line-height: 1.5em; margin-bottom: 1.5em; }
 .contributions{font-size: .85em; border:1px dotted rgba(var(--med-gray-rgb),.6); padding:3em;}
 
@@ -663,7 +663,6 @@ noscript {
 	.quote{ margin:0 auto; }
 	.quote blockquote { padding: 3em; }
 
-	.abstract { padding-left: 2em; }
 	.abstract p:first-of-type { font-size: 1.25em; }
 
 	.mainVideo { margin-top:-.8em; }
@@ -680,6 +679,7 @@ noscript {
 @media only screen and (min-width: 620px) and (max-width: 880px) {
 	.piece .abstract, .piece .mainVideo { grid-column: 1 / 3; }
 	.description .role { flex-basis:100%; top:0; margin-left:0; }
+	.abstract { margin-top:0; padding-left:unset; }
 
 	.about-me section{ display: unset; justify-items: flex-start; padding-top:4em; }
 	.about-me .profile { flex-flow: unset; column-gap:4em; margin-top: 2em; margin-bottom:4em; padding: 0; text-align: left; }
@@ -766,7 +766,7 @@ noscript {
 
 	.quote blockquote { row-gap: .8em; }
 
-	.abstract { padding-left:unset; }
+	.abstract { padding-left:unset; margin-top:0; }
 
 	.mainVideo { margin-top:1.5em; }
 	.mainVideo h4 { position:unset; }
