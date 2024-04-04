@@ -651,7 +651,7 @@ noscript {
 }
 
 /* MOBILE & JS OVERRIDES */
-.jsShow { display:none !important; } /* only show if javascript enabled */
+.jsShow { display:none; } /* only show if javascript enabled */
 .m-only { display:none !important; } /* only show on mobile */
 
 
