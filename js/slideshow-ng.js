@@ -1,6 +1,8 @@
 /*
 
 to-do:
+-re-export back and next buttons
+-edit imgcase grid for large screen
 -edit and compress video
 -add case studies
 

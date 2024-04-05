@@ -676,7 +676,7 @@ noscript {
 	.jsSlideShow article { padding-top:6em; padding-bottom:5em; }
 
 	/* SLIDESHOW FRAMING */
-	.slideBack, .slideNext{ width:10vw; background-position: center center; }
+	.slideBack, .slideNext{ width:10vw; background-position: center center; background-size: auto 360px }
 	.slideViewer { width: 80vw; margin: 0 10vw }
 
 	/* PORTFOLIO PIECES */
