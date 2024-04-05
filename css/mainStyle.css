@@ -207,7 +207,8 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .jsNav { justify-content:space-between; }
 .jsNav .about{ 
 	padding-right:1.8em; 
-	align-self: flex-end; 
+	align-self: flex-end;
+	align-items: center;
 	flex-wrap: nowrap; 
 	position: absolute; 
 	right:0; 
@@ -574,6 +575,7 @@ a.resume-link, a.resume-link:hover {
 
 /* PIECE SPECIFIC */
 .amazon-paycode .imgCase img {position:relative; left:-3em;}
+.study-shift .abstract {margin-top:2em;}
 
 
 /*PRELOADER & NOSCRIPT*/
@@ -659,16 +661,59 @@ noscript {
 
 
 /* Wide screen */
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 2200px) {
+	.container{ font-size: 21px; }
+	/*.piece { grid-template-columns: repeat(6, 1fr); row-gap: 3em; column-gap: 2em; }
+	.piece > *:nth-child(odd) { grid-column: 1 / 4; }
+	.piece > *:nth-child(even) { grid-column: 4 / 7; }
+	.piece .title, .piece .imgCase, .piece > .quote, .piece .sidebar, .piece .abstract, .piece .mainVideo { grid-column: inherit; } */
+
+}
+@media only screen and (min-width: 1800px) {
+	.container{ font-size: 18px; }
 	/*.title {margin-left:-3em; max-width:1000px; }*/
 	.allSlides{ gap:120px; }
-	.jsSlideShow article { padding-top:5em; padding-bottom:4em; }
-	/*.quote blockquote span {font-size: 1.5em;}*/
+	.jsSlideShow article { padding-top:6em; padding-bottom:5em; }
+
+	/* SLIDESHOW FRAMING */
+	.slideBack, .slideNext{ width:10vw; background-position: center center; }
+	.slideViewer { width: 80vw; margin: 0 10vw }
+
+	/* PORTFOLIO PIECES */
+	.imgCase img { max-height: 70vh; min-width: 1000px; min-height:800px; }
+	.sidebar { margin: 0 3em 0 -1em; }
+	.sidebar, .imgButtons { font-size: 1em; }
+	.sidebar .description { max-width: unset; }
+
+	.quote blockquote span {font-size: 1.8em;}
+	.abstract { font-size: 1.2em; max-width: 600px; }
+	.abstract p:first-of-type { line-height: 1.8em; }
+	.abstract p { line-height: 2em; }
+
+	.mainVideo { margin-left:6em; }
+	.mainVideo h4 { font-size: 1em; }
+	.vidCase video { max-width: 400px; max-height: 800px; }
+	.newPhone { padding: 25px 44px 16px 45px; }
+	.oldPhone { padding: 76px 62px 102px 63px; }
+	.newPhone video { border-radius: 40px; }
+	.mainVideo .note { max-width: 420px; font-size: 0.95em; }
+
+	/* PIECE SPECIFIC */
+	.allSlides .intro { font-size: 1.8em }
+	.intro > div { max-width: 660px; padding-right:6em; }
+	.intro p { margin-top: .6em; line-height: 1.85em; }
+
+	.about-me section { grid-template-columns: 1fr 3fr; column-gap: 3em; max-width: 1050px; margin:0 auto; font-size: 1.1em; }
+	.about-me .profile { padding:0; margin-bottom: 15em; }
+	.resume-summary h2 { margin-bottom: .4em; }
+	.resume-items { row-gap: 3em; padding:3em 0 4em 0; max-width: 640px; }
+	.resume-items > h5{ flex-basis: 100%; margin-bottom:-2.6em; }
+	.resume-items .job hgroup { margin-bottom: .4em; }
+	.resume-items .job p { line-height: 1.6em; }
 }
 
 /* Tall screen */
 @media only screen and (min-height: 900px) {
-
 }
 
 /* ----- */ 
