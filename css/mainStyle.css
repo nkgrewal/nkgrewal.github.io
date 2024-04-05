@@ -198,7 +198,7 @@ footer li.selected{
 
 }
 footer li.selected:hover{ border-color:var(--med-gray); }
-#linkedin { padding:.65em 0; opacity:.65; }
+#linkedin { padding:.65em 0 .8em 0; opacity:.65; }
 #linkedin img { max-width:24px; }
 #linkedin:hover {opacity:.85; }
 
