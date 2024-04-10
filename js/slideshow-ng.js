@@ -1,9 +1,10 @@
 /*
 
 to-do:
-- fix nav slidedown for first and last sides
-- mobile? scroll down and show nav
-- mobile friendly layout + swiping
+-re-export back and next buttons
+-edit imgcase grid for large screen
+-edit and compress video
+-add case studies
 
 options to pass through :
   - allSlides name
@@ -26,7 +27,9 @@ all portfolio articles are class named "piece" and have an h2 title
 
 */
 
-//VARS FOR EXTERNALE HTML CLASS DEPENDENCIES
+//VARS FOR EXTERNAL, HTML CLASS DEPENDENCIES
+var mobileMQ = '(max-width: 620px)';      //mobile breakpoint
+
 var nextControl = $('.jsGoNext');         //slideshow next button
 var backControl = $('.jsGoBack');         //slideshow back button
 var viewArea = $('.slideViewer');         //frame for viewing slide
@@ -49,8 +52,10 @@ var iconslideHolder = $('div.icons');          //slide type - multi image icons
 //var detailsBtn = $('a.detailsBtn');
 
 //VARS FOR INTERNAL REF
+const mobileDevice = window.matchMedia(mobileMQ);
+
 var navClass = 'slideNav';                      //class name of nav element
-var navToggleElement = '';                      //empty var set in nav creation
+var navToggleElement = 'nav .navHide';              //classname of hideable nav
 const slideMap = new Map();                     //empty object that will hold slide identifying info
 var currIndex = 0;                              //start from 0 on load, only changes under moveSlideBlock
 var anim = 800;                                 //slide speed
@@ -89,14 +94,13 @@ var MySlideShow = {
   },
   createNav : function(){
     //CREATE OPENING TAGS FOR NAV
-    var navStr = '<nav class="' + navClass + '"><ul>';
+    var navStr = '<ul class="m-only"><li>Designs</li></ul><nav class="' + navClass + '">';
     //BUILD NAV LI ELEMENTS AS ADDITIVE STRING FROM SLIDE OBJECT
     slideMap.forEach((info, i) => {
       switch(true){
-        case (i==0):
-          navStr += '<li class="'+ slideMap.get(i).hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
+        case (i==0): 
+          navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
           navStr += '<ul class="navHide">';
-          navToggleElement = 'nav.' + navClass + ' .navHide';               //create and define hideable menu section
           break;
         case (i > 0 && i < (slideMap.size-1)):
           navStr += '<li class="'+ slideMap.get(i).hash +'">' + slideMap.get(i).name + '</li>';         //li for rest except about (last slide)
@@ -113,14 +117,65 @@ var MySlideShow = {
     navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (slideMap.size-2) + '</span></span>';
     navStr += '</ul></nav>';
     $(navStr).prependTo(navHolder);
-    this.navToggle('hide');
     //NAV MOUSE EVENTS
     //LI CLICK EVENT BASED ON FIRST ASSIGNED CLASS NAME (HASH)
     $('nav.' + navClass + ' li, ' + aboutLi).on('click', function(){
       MySlideShow.moveSlideBlock('jump', $(this).attr('class').split(' ')[0] );
     });
     //NAV VISIBILITY MOBILE THEN DESKTOP
-    if( window.innerWidth < 800 ){  
+    this.navToggle('hide');
+    mobileDevice.addListener(handleDeviceChange);
+    function handleDeviceChange(e) {
+      if (e.matches) {
+        console.log(e[1] + " Mobile");
+        navHolder.off('mouseenter mouseleave click');
+        $('nav .firstSlide').addClass('navHide');
+        MySlideShow.navToggle('hide');
+        $(navHolder).find('ul.m-only').on({
+          'click': function(e){
+            MySlideShow.navToggle('toggle');
+            e.stopPropagation();
+          },
+          'tap': function(e){
+            MySlideShow.navToggle('toggle');
+            e.stopPropagation();
+          }
+        });
+      }
+      else {
+        console.log(e + " Desktop");
+        navHolder.find('ul.m-only').off('click tap');
+        $('nav .firstSlide').removeClass('navHide');
+        $('nav .firstSlide').show();
+        //DESKTOP above fold
+        if( window.pageYOffset < 150 ){
+          $(navHolder).on({
+            'mouseenter': function(e){
+              MySlideShow.navToggle('show');
+              e.stopPropagation();
+            },
+            'mouseleave' : function(e){
+              MySlideShow.navToggle('hide');
+              e.stopPropagation();
+            },
+            'click': function(e){
+              MySlideShow.navToggle('show');
+              e.stopPropagation();
+            }
+          });
+        } else { 
+          $(navHolder).on({
+            'mouseleave' : function(e){
+              MySlideShow.navToggle('show');
+              e.stopPropagation();
+            }
+          });
+        }
+      };
+    }
+    handleDeviceChange(mobileDevice);
+
+    /*if( window.innerWidth < 800 ){  
       //MOBILE    
       $(navHolder).on({
         'click': function(e){
@@ -157,7 +212,7 @@ var MySlideShow = {
           }
         });
       }
-    }
+    }*/
   },
   getSlideIndex : function(keyword){
     if (keyword==='position'){
@@ -184,21 +239,12 @@ var MySlideShow = {
     this.createNav();
     this.resetCss( $(window).width(), $(window).height() );
     this.moveSlideBlock('jump', window.location.hash.substring(1) );
-    //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
-    //extraDetails.hide();
-    multiImgslideHolder.children().hide();
-    multiImgslideHolder.children(':first-child').show();
+    this.showSubImgs(currIndex);
 
     $('.jsShow').show();
     $('.jsHide').hide();
     $('.jsGoBack.jsShow').css('opacity','0');
   },
-  /*moreInfo : function(jqArticle){
-    $(jqArticle).find(extraDetails).slideToggle('fast', function(){
-      viewArea.animate({ height : eachSlide.eq(currIndex).outerHeight(true) - $('header.main').outerHeight(true) +'px' }, 'fast', function(){});
-    });
-    $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
-  },*/
   moveSlideBlock : function(direction, slideID){
     //direction options: next, back, jump
     //slideID can be index num or hash
@@ -266,8 +312,15 @@ var MySlideShow = {
         $(navToggleElement).fadeOut(s2);
       }
     } else if(toggleState==='toggle'){
-      $(navToggleElement).slideToggle(s2);
-    } else { console.log('use only "show", "hide", or "toggle" for navToggle functions first property');}
+      $(navToggleElement).slideToggle(s2, function() {
+        if( $(this).is(":visible")==true ) {
+          $(navHolder).find('ul.m-only').addClass('selected');
+        } else{
+          $(navHolder).find('ul.m-only').removeClass('selected');
+        }
+      });
+    }
+    else { console.log('use only "show", "hide", or "toggle" for navToggle functions first property');}
   },
   resetCss : function(winWidth, winHeight){
     // CSS CHANGES
@@ -300,11 +353,12 @@ var MySlideShow = {
     navHolder.find('.selected').removeClass('selected');
     navHolder.find('.' + slideClass).addClass('selected');
     //SET ACTIVE SLIDE
-    slideHolder.find('.selected').removeClass('selected');
+    slideHolder.find('.piece').removeClass('selected');
     eachSlide.eq(slideNum).addClass('selected');
   },
   slideEnd : function(slideNum){
     var heightAdjustor = $('.' + navClass + ' ul:first-child').outerHeight(true);
+    this.navToggle("hide");
     this.setControls(slideNum);
     this.setWindowHash(slideNum);
 
@@ -347,22 +401,25 @@ var MySlideShow = {
           break;
       }
     });
-    //show subimg for each section in piece
-    iconslideHolder.children().on('mouseover', function(){
-      var linkNum = $(this).index();
-      $(this).parents('article').find(multiImgslideHolder).children().hide();
-      $(this).parents('article').find(multiImgslideHolder).children().eq(linkNum).show();
-    });
-    /*detailsBtn.on('click', function(e){
-      MySlideShow.moreInfo($(this).parents('article'));
-    });*/
   },
   removeControls : function(){
     nextControl.off('click');
     backControl.off('click');
     $(document).off('keydown');
     iconslideHolder.children().off('mouseover');
-    //detailsBtn.off('click');
+  },
+  //IMG CLICK
+  showSubImgs: function(slideNum) {
+    //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
+    $('.imgCase').children().hide();
+    $('.imgCase').children(':first-child').show();
+    $('.imgButtons button').on('click', function() {
+        var btnIndex = $(this).index();
+        $(this).addClass('selected');
+        $(this).siblings().removeClass('selected');
+        $(this).parents('.piece').children('.imgCase').children().hide();
+        $(this).parents('.piece').children('.imgCase').children().eq(btnIndex).show();
+    });
   }
 }
 
@@ -398,6 +455,7 @@ $(window).on({
 $(document).ready(function(){
   MySlideShow.initSlideShow();
 });
+
 
 //PRELOADER
 $(window).ready(function() {
