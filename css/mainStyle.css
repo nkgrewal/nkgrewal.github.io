@@ -236,10 +236,11 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	top:0;
 	z-index:50;
 	display: none;
+	opacity: .4;
 }
-.slideBack{ left:0; background:url(../img/btnBack.png) no-repeat center right; }
-.slideNext{ right:0; background:url(../img/btnNext.png) no-repeat center left; }
-.slideBack:hover, .slideNext:hover{filter: brightness(1) sepia(100%) drop-shadow(1em 1em 3em var(--light-green)); }
+.slideBack{ left:0; background:url(../img/btnBack.svg) no-repeat center right;  }
+.slideNext{ right:0; background:url(../img/btnNext.svg) no-repeat center left; }
+.slideBack:hover, .slideNext:hover{opacity:.6 !important; filter: brightness(1) sepia(20%) drop-shadow(1em 1em 3em var(--light-blue)); }
 
 .slideViewer {
 	margin:0 10vw;

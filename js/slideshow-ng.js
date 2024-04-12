@@ -327,8 +327,8 @@ var MySlideShow = {
     viewArea.css({ height : eachSlide.eq(slideNum).outerHeight(true) +'px' });
 
     //BACKBUTTON REFINEMENT
-    if(slideNum == 0){ $(backControl).css("opacity", "0"); }
-      else { $(backControl).fadeTo( "slow" , 1, function() {});
+    if(slideNum == 0){ $(backControl).animate({opacity: 0}, anim/2 ); }
+      else { $(backControl).animate({opacity: .4}, anim/2 );
     };
     //NAV COUNTER
     /*$('nav.' + navClass + ' .count').html(currIndex);
