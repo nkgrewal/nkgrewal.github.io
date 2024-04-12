@@ -92,11 +92,11 @@ var MySlideShow = {
     console.log( slideMap, slideMap.get(0).hash, slideMap.keys().next().value );
     //console.log( 'slideMap Obj check i=2 ' + Array.from(slideMap.keys())[2], Array.from(slideMap.values())[2] );
   },
-  createNav : function(){
+  createNav : function() {
     //CREATE OPENING TAGS FOR NAV
     var navStr = '<ul class="m-only"><li>Designs</li></ul><nav class="' + navClass + '">';
     //BUILD NAV LI ELEMENTS AS ADDITIVE STRING FROM SLIDE OBJECT
-    slideMap.forEach((info, i) => {
+    slideMap.forEach( (info, i) => {
       switch(true){
         case (i==0): 
           navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
@@ -112,7 +112,7 @@ var MySlideShow = {
           console.log('createNav issue, slideMap #' + i);
       }
       i++;
-    })
+    });
     //CLOSING TAGS FOR NAV AND ADD TO slideHolder
     navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (slideMap.size-2) + '</span></span>';
     navStr += '</ul></nav>';
@@ -141,8 +141,7 @@ var MySlideShow = {
             e.stopPropagation();
           }
         });
-      }
-      else {
+      } else {
         console.log(e + " Desktop");
         navHolder.find('ul.m-only').off('click tap');
         $('nav .firstSlide').removeClass('navHide');
@@ -163,7 +162,7 @@ var MySlideShow = {
               e.stopPropagation();
             }
           });
-        } else { 
+        } else {
           $(navHolder).on({
             'mouseleave' : function(e){
               MySlideShow.navToggle('show');
@@ -172,47 +171,8 @@ var MySlideShow = {
           });
         }
       };
-    }
+    };
     handleDeviceChange(mobileDevice);
-
-    /*if( window.innerWidth < 800 ){  
-      //MOBILE    
-      $(navHolder).on({
-        'click': function(e){
-          MySlideShow.navToggle('toggle');
-          e.stopPropagation();
-        },
-        'tap': function(e){
-          MySlideShow.navToggle('toggle');
-          e.stopPropagation();
-        }
-      });
-    } else {
-      //DESKTOP above fold
-      if( window.pageYOffset < 150 ){
-        $(navHolder).on({
-          'mouseenter': function(e){
-            MySlideShow.navToggle('show');
-            e.stopPropagation();
-          },
-          'mouseleave' : function(e){
-            MySlideShow.navToggle('hide');
-            e.stopPropagation();
-          },
-          'click': function(e){
-            MySlideShow.navToggle('show');
-            e.stopPropagation();
-          }
-        });
-      } else { 
-        $(navHolder).on({
-          'mouseleave' : function(e){
-            MySlideShow.navToggle('show');
-            e.stopPropagation();
-          }
-        });
-      }
-    }*/
   },
   getSlideIndex : function(keyword){
     if (keyword==='position'){
@@ -339,7 +299,7 @@ var MySlideShow = {
     });
     viewArea.css({
       'min-height' : winHeight - heightAdjustor -3 + 'px', //prevents height from being too short on little content
-      height : eachSlide.eq(currIndex).outerHeight(true) +'px'
+      height : eachSlide.eq(currIndex).outerHeight(true) + 'px'
     });
     if ( (winHeight - heightAdjustor) > eachSlide.eq(currIndex).outerHeight(true) ) {
       eachSlide.eq(currIndex).css({ 'min-height' : (winHeight - heightAdjustor -3) +'px' });

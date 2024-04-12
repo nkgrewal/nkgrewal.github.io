@@ -663,6 +663,7 @@ noscript {
 /* Wide screen */
 @media only screen and (min-width: 2200px) {
 	.container{ font-size: 21px; }
+	.sidebar { margin-left: -1em; }
 	/*.piece { grid-template-columns: repeat(6, 1fr); row-gap: 3em; column-gap: 2em; }
 	.piece > *:nth-child(odd) { grid-column: 1 / 4; }
 	.piece > *:nth-child(even) { grid-column: 4 / 7; }
@@ -681,7 +682,7 @@ noscript {
 
 	/* PORTFOLIO PIECES */
 	.imgCase img { max-height: 70vh; min-width: 1000px; min-height:800px; }
-	.sidebar { margin: 0 3em 0 -1em; }
+	.sidebar { margin: 0 3em 0 2em; }
 	.sidebar, .imgButtons { font-size: 1em; }
 	.sidebar .description { max-width: unset; }
 
