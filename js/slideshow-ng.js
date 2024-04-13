@@ -46,8 +46,8 @@ var slideSpacing = parseInt(slideHolder.css('gap'));   //spacing between slides,
 var navHolder = $('footer.scaffold .fascia');    //where to place slide nav
 var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
 
-var multiImgslideHolder = $('div.mainImg');    //slide type - multi image
-var iconslideHolder = $('div.icons');          //slide type - multi image icons
+var imgHolder = $('.imgCase');                //slide type - multi image
+var imgHolderButtons = $('.imgButtons');       //slide type - multi image icons
 
 
 
@@ -55,7 +55,7 @@ var iconslideHolder = $('div.icons');          //slide type - multi image icons
 const mobileDevice = window.matchMedia(mobileMQ);
 
 var navClass = 'slideNav';                      //class name of nav element
-var navToggleElement = 'nav .navHide';              //classname of hideable nav
+var navToggleElement = 'nav .navHide';          //classname of hideable nav
 const slideMap = new Map();                     //empty object that will hold slide identifying info
 var currIndex = 0;                              //start from 0 on load, only changes under moveSlideBlock
 var anim = 800;                                 //slide speed
@@ -96,12 +96,12 @@ var MySlideShow = {
     $(backControl).animate({opacity: 0}, anim/2 );
 
     //CREATE OPENING TAGS FOR NAV
-    var navStr = '<ul class="m-only"><li>' + mobileNavTitle + '</li></ul><nav class="' + navClass + '">';
+    var navStr = '<ul class="m-only"><li>' + mobileNavTitle + '</li></ul><nav class="' + navClass + '" role="menu">';
     //BUILD NAV LI ELEMENTS AS ADDITIVE STRING FROM SLIDE OBJECT
     slideMap.forEach( (info, i) => {
       switch(true){
         case (i==0): 
-          navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
+          navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'" role="menuitem">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
           navStr += '<ul class="navHide">';
           break;
         case (i > 0 && i < (slideMap.size-1)):
@@ -368,19 +368,18 @@ var MySlideShow = {
     nextControl.off('click');
     backControl.off('click');
     $(document).off('keydown');
-    iconslideHolder.children().off('mouseover');
   },
   //IMG CLICK
   showSubImgs: function(slideNum) {
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
-    $('.imgCase').children().hide();
-    $('.imgCase').children(':first-child').show();
-    $('.imgButtons button').on('click', function() {
+    imgHolder.children().hide();
+    imgHolder.children(':first-child').show();
+    imgHolderButtons.find('button').on('click', function() {
         var btnIndex = $(this).index();
         $(this).addClass('selected');
         $(this).siblings().removeClass('selected');
-        $(this).parents('.piece').children('.imgCase').children().hide();
-        $(this).parents('.piece').children('.imgCase').children().eq(btnIndex).show();
+        eachSlide.eq(currIndex).children('.imgCase').children().hide();
+        eachSlide.eq(currIndex).children('.imgCase').children().eq(btnIndex).show();
     });
   }
 }
