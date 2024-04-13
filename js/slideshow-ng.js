@@ -1,10 +1,9 @@
 /*
 
 to-do:
--re-export back and next buttons
--edit imgcase grid for large screen
 -edit and compress video
 -add case studies
+-finesse mobile breakpoint js
 
 options to pass through :
   - allSlides name
@@ -27,6 +26,9 @@ all portfolio articles are class named "piece" and have an h2 title
 
 */
 
+//VARS FOR EXTERNAL NAMES
+var mobileNavTitle = 'Projects';
+
 //VARS FOR EXTERNAL, HTML CLASS DEPENDENCIES
 var mobileMQ = '(max-width: 620px)';      //mobile breakpoint
 
@@ -47,9 +49,7 @@ var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
 var multiImgslideHolder = $('div.mainImg');    //slide type - multi image
 var iconslideHolder = $('div.icons');          //slide type - multi image icons
 
-//var slideCase = $('section.imgCase');   //slide type - main image
-//var extraDetails = $('div.subDetails');
-//var detailsBtn = $('a.detailsBtn');
+
 
 //VARS FOR INTERNAL REF
 const mobileDevice = window.matchMedia(mobileMQ);
@@ -92,11 +92,13 @@ var MySlideShow = {
     console.log( slideMap, slideMap.get(0).hash, slideMap.keys().next().value );
     //console.log( 'slideMap Obj check i=2 ' + Array.from(slideMap.keys())[2], Array.from(slideMap.values())[2] );
   },
-  createNav : function(){
+  createNav : function() {
+    $(backControl).animate({opacity: 0}, anim/2 );
+
     //CREATE OPENING TAGS FOR NAV
-    var navStr = '<ul class="m-only"><li>Designs</li></ul><nav class="' + navClass + '">';
+    var navStr = '<ul class="m-only"><li>' + mobileNavTitle + '</li></ul><nav class="' + navClass + '">';
     //BUILD NAV LI ELEMENTS AS ADDITIVE STRING FROM SLIDE OBJECT
-    slideMap.forEach((info, i) => {
+    slideMap.forEach( (info, i) => {
       switch(true){
         case (i==0): 
           navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
@@ -112,7 +114,7 @@ var MySlideShow = {
           console.log('createNav issue, slideMap #' + i);
       }
       i++;
-    })
+    });
     //CLOSING TAGS FOR NAV AND ADD TO slideHolder
     navStr += '<span class="counter"><span class="count">0</span><span class="total"> / ' + (slideMap.size-2) + '</span></span>';
     navStr += '</ul></nav>';
@@ -141,8 +143,7 @@ var MySlideShow = {
             e.stopPropagation();
           }
         });
-      }
-      else {
+      } else {
         console.log(e + " Desktop");
         navHolder.find('ul.m-only').off('click tap');
         $('nav .firstSlide').removeClass('navHide');
@@ -163,7 +164,7 @@ var MySlideShow = {
               e.stopPropagation();
             }
           });
-        } else { 
+        } else {
           $(navHolder).on({
             'mouseleave' : function(e){
               MySlideShow.navToggle('show');
@@ -172,47 +173,8 @@ var MySlideShow = {
           });
         }
       };
-    }
+    };
     handleDeviceChange(mobileDevice);
-
-    /*if( window.innerWidth < 800 ){  
-      //MOBILE    
-      $(navHolder).on({
-        'click': function(e){
-          MySlideShow.navToggle('toggle');
-          e.stopPropagation();
-        },
-        'tap': function(e){
-          MySlideShow.navToggle('toggle');
-          e.stopPropagation();
-        }
-      });
-    } else {
-      //DESKTOP above fold
-      if( window.pageYOffset < 150 ){
-        $(navHolder).on({
-          'mouseenter': function(e){
-            MySlideShow.navToggle('show');
-            e.stopPropagation();
-          },
-          'mouseleave' : function(e){
-            MySlideShow.navToggle('hide');
-            e.stopPropagation();
-          },
-          'click': function(e){
-            MySlideShow.navToggle('show');
-            e.stopPropagation();
-          }
-        });
-      } else { 
-        $(navHolder).on({
-          'mouseleave' : function(e){
-            MySlideShow.navToggle('show');
-            e.stopPropagation();
-          }
-        });
-      }
-    }*/
   },
   getSlideIndex : function(keyword){
     if (keyword==='position'){
@@ -339,7 +301,7 @@ var MySlideShow = {
     });
     viewArea.css({
       'min-height' : winHeight - heightAdjustor -3 + 'px', //prevents height from being too short on little content
-      height : eachSlide.eq(currIndex).outerHeight(true) +'px'
+      height : eachSlide.eq(currIndex).outerHeight(true) + 'px'
     });
     if ( (winHeight - heightAdjustor) > eachSlide.eq(currIndex).outerHeight(true) ) {
       eachSlide.eq(currIndex).css({ 'min-height' : (winHeight - heightAdjustor -3) +'px' });
@@ -357,6 +319,10 @@ var MySlideShow = {
     eachSlide.eq(slideNum).addClass('selected');
   },
   slideEnd : function(slideNum){
+    //BACKBUTTON REFINEMENT
+    if(slideNum == 0){ $(backControl).animate({opacity: 0}, anim/2 ); }
+      else { $(backControl).removeAttr("style");
+    };
     var heightAdjustor = $('.' + navClass + ' ul:first-child').outerHeight(true);
     this.navToggle("hide");
     this.setControls(slideNum);
@@ -366,10 +332,6 @@ var MySlideShow = {
     eachSlide.eq(slideNum).animate({opacity: 1}, anim/2 );
     viewArea.css({ height : eachSlide.eq(slideNum).outerHeight(true) +'px' });
 
-    //BACKBUTTON REFINEMENT
-    if(slideNum == 0){ $(backControl).css("opacity", "0"); }
-      else { $(backControl).fadeTo( "slow" , 1, function() {});
-    };
     //NAV COUNTER
     /*$('nav.' + navClass + ' .count').html(currIndex);
     if (currIndex===0 || currIndex > (slideMap.size-2) ){ 
@@ -462,6 +424,6 @@ $(window).ready(function() {
   $('.curtainLoad').fadeOut(anim*1.2, function() {
     $('body').css('overflow','visible');
     $(this).remove();
-    //$('button.jsGoNext').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
+    $('.jsNav .jsGoNext, button.slideNext.jsGoNext').delay(1200).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
   });
 });
