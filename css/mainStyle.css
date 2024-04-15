@@ -341,9 +341,10 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 /*CONTENT SECTION*/
 .sidebar {font-size: .92em; margin-left:1em; }
 .imgButtons { 
+	font-size:.9em;
 	display:flex; 
 	flex-direction: column; 
-	flex-flow: wrap; 
+	flex-flow: column nowrap; 
 	column-gap: 1.2em; 
 	row-gap:.8em; 
 	align-items:flex-start;
@@ -660,7 +661,8 @@ noscript {
 
 	/* PORTFOLIO PIECES */
 	.imgCase img { max-height: 70vh; min-width: 1000px; min-height:800px; }
-	.sidebar, .imgButtons { font-size: 1em; }
+	.sidebar { font-size: 1em; }
+	.imgButtons {flex-flow: wrap;}
 	.description { max-width: unset; }
 
 	.quote blockquote span {font-size: 1.8em;}
@@ -716,7 +718,7 @@ noscript {
 	.imgCase{ flex-direction: column; margin-top:-3em; }
 
 	.sidebar { margin-top:-1em; padding: 0 2em; }
-	.imgButtons { margin-bottom: 3em; text-align: center; flex-flow: row nowrap; justify-content:center; }
+	.imgButtons { font-size: 1em; margin-bottom: 3em; text-align: center; flex-flow: row nowrap; justify-content:center; }
 	.description { flex-flow: row wrap; column-gap:2em; margin: 0 auto; max-width: unset; }
 	.description div { flex: min-content; }
 	.description .role { margin-left:.2em; top:-1em; }
