@@ -846,7 +846,7 @@ noscript {
 	.imgButtons span { padding-bottom: 0; }
 	.imgButtons button:first-child { padding: .7em; }
 	.sidebar { padding: 0; }
-	.description { flex-direction: row; max-width: 18em; }
+	.description { flex-direction: row; max-width: 24em; }
 	.description div { flex:auto; }
 	.description .role { margin-left:-1.2em; top:0; }
 
