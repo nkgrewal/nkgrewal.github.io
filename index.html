@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <!-- This site is custom-coded by Navreen in an attempt to stay knowledgable and current. I work in HTML, CSS, & dabble in JavaScript. Please excuse any learning bugs. -->
 
 <head>
@@ -25,6 +25,7 @@
       footer .fascia { justify-content: center; }
       main .intro{ flex-direction: row-reverse; gap:0;}
       .allSlides{ align-items: center; row-gap:4em; }
+      .scrollHint{ display: none; }
     </style>
   </noscript>
 </head>
@@ -111,7 +112,7 @@
             </div>
             <div class="abstract">
               <p>With COVID-19 lockdowns, Amazon Chime tackled sweeping upgrades to support the surge in remote meetings.</p>
-              <p>The product was largely unchanged since its 2016 acquisition and wasn't optimized for the shift in meeting dynamics. The team quested to overhaul services from back-end to front-end under a mega "5.0" release. These modernizations would accelerate future productivity add-ons, support additional use cases, and get the product up to accessibility standards.</p>
+              <p>The product was largely unchanged since its 2016 acquisition and wasn't optimized for the shift in meeting dynamics. The team quested to overhaul services from back-end to front-end under a mega "5.0" release. These modernizations would accelerate future productivity add-ons (whiteboarding, break-out rooms, kanban), support additional use cases (streaming, media sharing), and get the product up to accessibility standards.</p>
               <p>I focused on meeting these goals for our mobile/tablet users. I also saw an opportunity to build a more customer-centric process and improve known issues with cross-team communication and efficiency.</p>
               <!--<div class="contributions">
                 <h4>Direct contributions</h4>
@@ -351,15 +352,16 @@
     </div>
   </main>
 	<footer class="scaffold">
+    <div class="m-hide scrollHint"><div>Scroll for details <span>&#8595;</span></div></div>
     <div class="fascia">
-      <button class="m-only mobileArrow jsGoBack">
+      <button class="m-only mobileArrow jsGoBack" aria-label="Back button, or use keyboard back arrow">
         <div class="circle"><div class="arrowhold"><span class="arrow primera icon-raquo"></span><span class="arrow segunda icon-raquo"></span></div></div>
       </button>
      	<ul class="about">
-       	<li>navreen G.</li>
+       	<li aria-label="About Navreen Grewal">navreen G.</li>
        	<li id="linkedin"><a href="https://www.linkedin.com/in/navreeng/" target="_blank"><img src="img/linkedin.png" alt="linkedin profile"/></a></li>
       </ul>
-      <button class="m-only mobileArrow jsGoNext">
+      <button class="m-only mobileArrow jsGoNext" aria-label="Next button, or use keyboard next arrow">
         <div class="circle"><div class="arrowhold"><span class="arrow primera icon-raquo"></span><span class="arrow segunda icon-raquo"></span></div></div>
       </button>
     </div>
