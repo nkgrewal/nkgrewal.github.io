@@ -49,6 +49,8 @@ var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
 var imgHolder = $('.imgCase');                //slide type - multi image
 var imgHolderButtons = $('.imgButtons');       //slide type - multi image icons
 
+var scrollHint = $('.scrollHint');            //hint to scroll from splash
+
 
 
 //VARS FOR INTERNAL REF
@@ -101,7 +103,7 @@ var MySlideShow = {
     slideMap.forEach( (info, i) => {
       switch(true){
         case (i==0): 
-          navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'" role="menuitem">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
+          navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'" role="menuitem" aria-label="Back to first slide">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
           navStr += '<ul class="navHide">';
           break;
         case (i > 0 && i < (slideMap.size-1)):
@@ -126,6 +128,7 @@ var MySlideShow = {
     });
     //NAV VISIBILITY MOBILE THEN DESKTOP
     this.navToggle('hide');
+    scrollHint.animate({opacity:0});
     mobileDevice.addListener(handleDeviceChange);
     function handleDeviceChange(e) {
       if (e.matches) {
@@ -321,8 +324,19 @@ var MySlideShow = {
   slideEnd : function(slideNum){
     //BACKBUTTON REFINEMENT
     if(slideNum == 0){ $(backControl).animate({opacity: 0}, anim/2 ); }
-      else { $(backControl).removeAttr("style");
+      else { $(backControl).removeAttr("style"); }; 
+    //SCROLL HINT REFINEMENT
+    if( slideNum == 1) { 
+      scrollHint.animate({opacity:1}).delay(800).animate({ top : '-=1em'}, 400).animate({ top : '+=1em'}, 400).animate({ top : '-=1em'}, 400).animate({ top : '+=1em'}, 400);
+      scrollHint.on('click', function(e){ $('html, body').animate({ scrollTop: 650 }); });
+    } else if ( slideNum == 0 || slideNum == (slideMap.size-1) ) { 
+      scrollHint.animate({opacity:0});
+      scrollHint.off('click');
+    } else { 
+      scrollHint.animate({opacity:1}); 
+      scrollHint.on('click', function(e){ $('html, body').animate({ scrollTop: 650 }); });
     };
+
     var heightAdjustor = $('.' + navClass + ' ul:first-child').outerHeight(true);
     this.navToggle("hide");
     this.setControls(slideNum);
@@ -404,6 +418,11 @@ $(window).on({
     MySlideShow.resetCss( $(this).width(), $(this).height() );
   },
   'scroll': function(){
+    //hide scroll hint
+    if( this.pageYOffset > 20 ){
+      scrollHint.animate({opacity:0});
+      scrollHint.off('click');
+    }
     //show menu on desktop if scrolled down
     if( this.innerWidth > 900 && this.pageYOffset > 150 ){
       MySlideShow.navToggle('show');
