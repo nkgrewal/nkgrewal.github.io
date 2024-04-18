@@ -64,10 +64,11 @@ p {
 }
 p:last-child { margin-bottom:0; }
 a, button {
-	text-decoration:none;
+	text-decoration:none; 
 	font-family: 'Comfortaa';
 	color: var(--light-green);
 }
+a:hover { text-decoration: underline; }
 button{ background: none; border:none; cursor: pointer; }
 kbd {
   background-color:rgba(255,255,255,0.5);
@@ -134,6 +135,35 @@ video {
   width: 100%;
   max-width:640px;
   height: auto;
+}
+a {	background-color: rgba(var(--darker-gray-rgb),.5); }
+a:hover { background-color: rgba(var(--darker-gray-rgb), 0); }
+a, a:hover { padding: 1px 0 2px 3px; }
+a.actionBtn {
+	display: inline-block;
+	padding:.5em 1em .6em 1em;
+	font-weight: bold;
+	background: none;
+	border:1px solid rgba(var(--light-green-rgb),.8);
+	border-radius: 6px;
+	white-space: nowrap;
+}
+a.actionBtn:hover { 
+	color:var(--darker-gray); 
+	background-color: rgba(var(--light-green-rgb),.7);
+	text-decoration:none;
+}
+a.actionBtn, a.actionBtn:hover { text-decoration:none; }
+
+a.actionBtn.symbol::before{
+	display: inline-block;
+	content:'\21E5';
+	transform: rotate(90deg);
+	font-weight:bold; 
+	font-size:1.1em;  
+	position:relative; 
+	top:1px;
+	left:-3px; 
 }
 
 
@@ -264,9 +294,6 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .jsSlideShow .allSlides { flex-direction: row; }
 .jsSlideShow article { padding-top:3.5em; padding-bottom:2.5em; }
 .jsSlideShow .intro { gap:unset; min-height:90vh; padding:0; align-content:flex-end; }
-
-.allSlides a { background-color: rgba(var(--darker-gray-rgb),.5); padding: 1px 0 2px 3px; }
-.allSlides a:hover { background-color: rgba(var(--darker-gray-rgb), 0); padding: 1px 0 2px 3px; text-decoration: underline; }
 
 .scrollHint {
 	display: none;
@@ -433,6 +460,8 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .abstract { color:var(--lighter-gray); max-width:28em; margin-top:-4em; padding-left:2em; }
 .abstract p:first-of-type { font-size: 1.4em; line-height: 1.5em; margin-bottom: 1.5em; }
 .contributions{font-size: .85em; border:1px dotted rgba(var(--med-gray-rgb),.6); padding:3em;}
+.assets { display:flex; flex-direction: column; flex-flow:wrap; column-gap: .6em; row-gap:.6em; font-size:.9em; }
+.abstract .footnote { text-align: left; margin:1em 0; }
 
 .mainVideo { text-align: center; margin-left:3em; }
 .mainVideo h4 { 
@@ -559,14 +588,6 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .resume-items .job h3 span{ padding-left:.6em; font-size:0.7em; font-weight:normal; }
 .resume-items .job h5 { justify-self: right; margin-left: auto; padding-right:1em; }
 .resume-items .job p { line-height: 1.4em; color: var(--lighter-gray); }
-a.resume-link { background-color: rgba(var(--darker-gray-rgb),.25); border-radius: 0 0 8px 8px; }
-a.resume-link, a.resume-link:hover { 
-	display:block;
-	text-align: center;
-	padding:.6em 1.2em .7em 1.2em; 
-	box-shadow: inset 0 .4em 1.6em rgba(var(--darker-gray-rgb),.8);
-}
-.resume-link span{ font-weight:bold; display:inline-block; font-size:1.1em; transform: rotate(90deg); position:relative; top:1px; left:-3px;  }
 .footnote{ margin: 3em auto; max-width:30em; font-size:.8em; line-height:1.25em; color: var(--lighter-gray); text-align:center; }
 
 
@@ -895,7 +916,7 @@ noscript {
 	.resume-summary div { flex: min-content; }
 	.about-me .profile { margin: 2em 0; padding-bottom:0; justify-content: left; text-align: left; order:2; }
 	.about-me .myPic { margin-bottom:1em; max-width: 140px; }
-	.about-me .experience { padding: 1em 2em; font-size: .9em; }
+	.about-me .experience { padding: 1em 0; font-size: .9em; }
 	.resume-items { row-gap: 1.8em; }
 
 
