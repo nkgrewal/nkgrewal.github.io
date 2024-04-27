@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>All Star &mdash; Better Leads, Brighter Futures</title>
+<!-- TemplateEndEditable -->
+<link rel="canonical" href="http://www.allstardirectories.com/">
+<link href="../css/asd.css" type="text/css" rel="stylesheet" />
+<link rel="shortcut icon" href="/images/favicon.ico">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(
+  ['_setAccount', 'UA-16737181-1'],
+  ['_setDomainName', 'allstardirectories.com'],
+  ['_setAllowLinker', true],
+  ['_setSiteSpeedSampleRate', 100],
+  ['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+<body>
+<div id="container">
+  <div id="header">
+    <div class="inner">
+      <a href="/index.html"><img id="logo" src="../images/allstar-logo.jpg" alt="All Star &mdash; Better Leads, Brighter Futures" border="0" /></a>
+      <div id="navigation">
+        <ul>
+          <!-- TemplateBeginEditable name="Navigation" -->
+            <li><a href="/what-we-do.html">What We Do</a></li>
+            <li><a href="/who-we-are.html">Who We Are</a></li>
+            <li><a href="/contact-us.html">Contact Us</a></li>
+          <!-- TemplateEndEditable -->
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="content">
+    <div class="inner">
+<!-- TemplateBeginEditable name="Content" -->
+
+<!-- TemplateEndEditable -->
+    </div>
+  </div>
+  <div id="footer">
+    <div class="inner">
+        <div class="footerInfo"><span class="footerLinks"><a href="/careers.html">Careers</a>|<a href="/contact-us.html">Contact</a></span>
+        &copy; 2012 All Star Directories. All rights reserved. Read our <a href="">Privacy Policy</a> and <a href="">Terms of Use</a>.
+          <ul>
+            <li><a href="http://www.linkedin.com/company/all-star-directories"><img src="../images/allstar-linkedin.jpg" alt="Our LinkedIn" /></a></li>
+            <li><a href="http://twitter.com/#/AllStarSchools"><img src="../images/allstar-twitter.jpg" alt="Our Twitter" /></a></li>
+            <li><a href="http://www.facebook.com/ASDirectories"><img src="../images/allstar-facebook.jpg" alt="Our Facebook" /></a></li>
+            <li><a href=""><img src="../images/allstar-google.jpg" alt="Our Google+" /></a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

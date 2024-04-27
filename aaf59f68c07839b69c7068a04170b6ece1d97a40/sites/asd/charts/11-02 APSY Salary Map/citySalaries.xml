@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<salary>
+	<cityinfo name="new york">
+		<psych>96, 430</psych>
+		<couns>44, 410</couns>
+	</cityinfo>
+	<cityinfo name="los angeles">
+		<psych>101, 380</psych>
+		<couns>43, 510</couns>
+	</cityinfo>
+	<cityinfo name="chicago">
+		<psych>79, 280</psych>
+		<couns>35, 660</couns>
+	</cityinfo>
+	<cityinfo name="dallas">
+		<psych>88, 030</psych>
+		<couns>61, 780</couns>
+	</cityinfo>
+	<cityinfo name="philadelphia">
+		<psych>88, 460</psych>
+		<couns>43, 350</couns>
+	</cityinfo>
+	<cityinfo name="houston">
+		<psych>74, 690</psych>
+		<couns>58, 040</couns>
+	</cityinfo>
+	<cityinfo name="miami">
+		<psych>142, 240</psych>
+		<couns>32, 470</couns>
+	</cityinfo>
+	<cityinfo name="d.c.">
+		<psych>100, 480</psych>
+		<couns>44, 560</couns>
+	</cityinfo>
+	<cityinfo name="atlanta">
+		<psych>70, 410</psych>
+		<couns>53, 500</couns>
+	</cityinfo>
+	<cityinfo name="boston">
+		<psych>83, 100</psych>
+		<couns>37, 330</couns>
+	</cityinfo>
+	<cityinfo name="detroit">
+		<psych>94, 040</psych>
+		<couns>34, 400</couns>
+	</cityinfo>
+	<cityinfo name="phoenix">
+		<psych>106, 570</psych>
+		<couns>43, 600</couns>
+	</cityinfo>
+	<cityinfo name="san francisco">
+		<psych>97, 610</psych>
+		<couns>49, 140</couns>
+	</cityinfo>
+	<cityinfo name="riverside">
+		<psych>89, 320</psych>
+		<couns>49, 580</couns>
+	</cityinfo>
+	<cityinfo name="seattle">
+		<psych>70, 890</psych>
+		<couns>51, 860</couns>
+	</cityinfo>
+	<cityinfo name="minneapolis">
+		<psych>80, 670</psych>
+		<couns>39, 940</couns>
+	</cityinfo>
+	<cityinfo name="san diego">
+		<psych>95, 870</psych>
+		<couns>49, 680</couns>
+	</cityinfo>
+	<cityinfo name="st. louis">
+		<psych>83, 090</psych>
+		<couns>33, 420</couns>
+	</cityinfo>
+	<cityinfo name="tampa">
+		<psych>85, 770</psych>
+		<couns>34, 490</couns>
+	</cityinfo>
+	<cityinfo name="baltimore">
+		<psych>72, 720</psych>
+		<couns>35, 590</couns>
+	</cityinfo>
+	<cityinfo name="denver">
+		<psych>91, 920</psych>
+		<couns>20, 050</couns>
+	</cityinfo>
+	<cityinfo name="pittsburgh">
+		<psych>89, 980</psych>
+		<couns>43, 450</couns>
+	</cityinfo>
+	<cityinfo name="portland">
+		<psych>90, 180</psych>
+		<couns>50, 290</couns>
+	</cityinfo>
+	<cityinfo name="cincinnati">
+		<psych>83, 520</psych>
+		<couns>41, 260</couns>
+	</cityinfo>
+	<cityinfo name="sacramento">
+		<psych>160, 850</psych>
+		<couns>49, 580</couns>
+	</cityinfo>
+	<cityinfo name="cleveland">
+		<psych>87, 570</psych>
+		<couns>57, 330</couns>
+	</cityinfo>
+	<cityinfo name="orlando">
+		<psych>82, 810</psych>
+		<couns>35, 090</couns>
+	</cityinfo>
+	<cityinfo name="san antonio">
+		<psych>88, 450</psych>
+		<couns>56, 510</couns>
+	</cityinfo>
+	<cityinfo name="kansas city">
+		<psych>80, 400</psych>
+		<couns>36, 170</couns>
+	</cityinfo>
+	<cityinfo name="las vegas">
+		<psych>80, 390</psych>
+		<couns>42, 190</couns>
+	</cityinfo>
+	<cityinfo name="san jose">
+		<psych>98, 050</psych>
+		<couns>36, 420</couns>
+	</cityinfo>
+	<cityinfo name="columbus">
+		<psych>85, 100</psych>
+		<couns>41, 260</couns>
+	</cityinfo>
+	<cityinfo name="charlotte">
+		<psych>95, 730</psych>
+		<couns>38, 360</couns>
+	</cityinfo>
+	<cityinfo name="indianapolis">
+		<psych>84, 700</psych>
+		<couns>46, 690</couns>
+	</cityinfo>
+	<cityinfo name="austin">
+		<psych>84, 700</psych>
+		<couns>52, 060</couns>
+	</cityinfo>
+	<cityinfo name="virginia beach">
+		<psych>96, 470</psych>
+		<couns>36, 430</couns>
+	</cityinfo>
+	<cityinfo name="providence">
+		<psych>48, 430</psych>
+		<couns>30, 080</couns>
+	</cityinfo>
+	<cityinfo name="nashville">
+		<psych>84, 720</psych>
+		<couns>31, 850</couns>
+	</cityinfo>
+	<cityinfo name="milwaukee">
+		<psych>85, 850</psych>
+		<couns>35, 060</couns>
+	</cityinfo>
+	<cityinfo name="jacksonville">
+		<psych>80, 030</psych>
+		<couns>33, 110</couns>
+	</cityinfo>
+	<cityinfo name="memphis">
+		<psych>85, 570</psych>
+		<couns>31, 940</couns>
+	</cityinfo>
+	<cityinfo name="louisville">
+		<psych>88, 450</psych>
+		<couns>17, 540</couns>
+	</cityinfo>
+	<cityinfo name="richmond">
+		<psych>90, 190</psych>
+		<couns>33, 600</couns>
+	</cityinfo>
+	<cityinfo name="oklahoma city">
+		<psych>74, 140</psych>
+		<couns>25, 300</couns>
+	</cityinfo>
+	<cityinfo name="hartford">
+		<psych>90, 360</psych>
+		<couns>30, 190</couns>
+	</cityinfo>
+	<cityinfo name="new orleans">
+		<psych>79, 080</psych>
+		<couns>36, 770</couns>
+	</cityinfo>
+	<cityinfo name="birmingham">
+		<psych>91, 120</psych>
+		<couns>36, 140</couns>
+	</cityinfo>
+	<cityinfo name="salt lake city">
+		<psych>80, 390</psych>
+		<couns>45, 760</couns>
+	</cityinfo>
+	<cityinfo name="raleigh">
+		<psych>91, 120</psych>
+		<couns>38, 990</couns>
+	</cityinfo>
+	<cityinfo name="buffalo">
+		<psych>69, 110</psych>
+		<couns>39, 920</couns>
+	</cityinfo>
+	<cityinfo name="honolulu">
+		<psych>80, 040</psych>
+		<couns>34, 010</couns>
+	</cityinfo>
+	<cityinfo name="anchorage">
+		<psych>81, 290</psych>
+		<couns>52, 150</couns>
+	</cityinfo>
+</salary>

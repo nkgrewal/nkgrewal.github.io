@@ -1,0 +1,229 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* DEFAULT STYLING */
+html, address,
+blockquote,
+body, dd, div,
+dl, dt, fieldset, form,
+frame, frameset,
+h1, h2, h3, h4,
+h5, h6, noframes,
+ol, p, ul, center,
+dir, hr, menu, pre   { display: block; unicode-bidi: embed }
+
+div, img { margin:0;padding:0;display:block; position:relative; }
+a {text-decoration:none; color:#e08745; }
+a:hover{text-decoration:underline;}
+address{ font-style:normal; }
+
+li              { display: list-item }
+head            { display: none }
+
+h1              { font: 2.6em/1em 'Clarendon-Bold'; margin:0; }
+h2              { font-size: 2.2em; line-height:1em; margin: 0 }
+h3              { font-size: 1.8em;  line-height:1em; margin: 0 }
+h4, p,
+blockquote, ul,
+fieldset, form,
+ol, dl, dir,
+menu            { margin: 1.12em 0 }
+h5              { font-size: .83em; margin: 1.5em 0 }
+h6              { font-size: .75em; margin: 1.67em 0 }
+
+pre, tt, code,
+kbd, samp       { font-family: monospace }
+pre             { white-space: pre }
+
+button, textarea,
+input, select   { display: inline-block }
+big             { font-size: 1.17em }
+small, sub, sup { font-size: .83em }
+sub             { vertical-align: sub }
+sup             { vertical-align: super }
+
+hr              { border: 1px inset }
+ol              { list-style-type: decimal }
+ol ul, ul ol,
+ul ul, ol ol    { margin-top: 0; margin-bottom: 0 }
+br:before       { content: "\A"; white-space: pre-line }
+
+/* Begin bidirectionality settings (do not change) */
+BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override }
+BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
+
+*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed }
+*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed }
+
+@media print {
+  h1            { page-break-before: always }
+  h1, h2, h3,
+  h4, h5, h6    { page-break-after: avoid }
+  ul, ol, dl    { page-break-before: avoid }
+}
+
+/*FONTS*/
+@font-face {
+    font-family: 'Clarendon-Regular';
+    src: url('../fonts/Clarendon-Regular.eot');
+    src: url('../fonts/Clarendon-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Clarendon-Regular.woff') format('woff'),
+         url('../fonts/Clarendon-Regular.ttf') format('truetype'),
+         url('../fonts/Clarendon-Regular.svg#Clarendon-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'Clarendon-Bold';
+    src: url('../fonts/Clarendon-Bold.eot');
+    src: url('../fonts/Clarendon-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Clarendon-Bold.woff') format('woff'),
+         url('../fonts/Clarendon-Bold.ttf') format('truetype'),
+         url('../fonts/Clarendon-Bold.svg#Clarendon-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+body{
+margin:0;
+padding:0;
+font: 100% Trebuchet, Trebuchet MS, Tahoma, Geneva, sans-serif;
+background-color:white;
+color:#818285;
+}
+
+/* TEMPLATE STRUCTURE */
+#container{ width:100%; text-align:center; font-size:12px; line-height:1.2em; }
+.inner{ margin:0 auto; width:960px; text-align:left; }
+.clear{ clear:both; }
+.left{ float:left; }
+
+  #header{ width:inherit; border-bottom:1px solid #acacac; padding-top:20px; }
+    #logo{ float:left; }
+	#navigation{ float:left; width:620px;}
+      #navigation ul{ float:right; margin:35px 0 5px 0; padding:0; }
+      #navigation ul li{ font:1.34em 'Clarendon-Bold'; color:#e08745; display:inline; list-style:none; margin:0 0 0 3em; padding:0; }
+      #navigation a{ color:#e08745; }
+	  #navigation .selected{ color:#58595b; }
+	  #navigation a:hover, #subNav a:hover { text-decoration:none; }
+	  
+  #content{ width:inherit; }
+    #content .inner{ border-left:1px solid #acacac; border-right:1px solid #acacac; }
+  
+  #footer{ width:inherit; border-top:1px solid #acacac; padding-bottom:20px; font-size:0.92em; }
+  #footer a{ font-weight:bold; }
+    .footerInfo{ margin:10px 0 0 0; text-align:center; }
+	.footerLinks a{ margin:0 8px; }
+    #footer ul{ margin:0 0 0 8px; padding:0; display:inline-block; }
+    #footer ul li{display:inline-block; list-style:none; margin:0 0 0 3px; padding:0; vertical-align:bottom; }
+	
+	
+/* HOME */
+#slideHolder{ width:100%; height:410px; overflow:hidden; }
+  #slideHolder h1{ margin:0; padding:0.6em 0 0 100px; font:10em 'Clarendon-Bold'; }
+  #slideHolder p{ margin:0; padding:0; font:1.78em 'Clarendon-Regular'; }
+  p.slideCopy1, p.slideCopy2{ position:relative; top:-0.4em; }
+  p.slideCopy1{width:60%; left:120px;}
+  p.slideCopy2{width:65%; left:120px;}
+  #slideHolder .highlight{ font-size:1.2em; color:#534741; }
+  #linkies { width:200px; height:90px; background:url(../images/slide-boxedge.png) no-repeat top left; color:#534741; position:absolute; top:230px; right:0; }
+    #linkies div{ width:168px; height:88px; background-color:#fff; color:#534741; float:right;}
+  	#linkies p{ margin:0.8em 0.3em; font-size:1.4em; line-height:1.2em; text-align:center; }
+	#linkies a{ font:'Clarendon-Regular'; }
+  #slideControls{ position:absolute; bottom:20px; right:20px; }
+    #slideControls div { float:left;margin:0 0.3em; }
+	.slideDot{ width:15px; height:15px; background:url(../images/slideControl-this.png) no-repeat center; }
+  
+  #carousel{ position:absolute; width:3000px; }
+    .slide1, .slide2, .slide3 { width:960px; height:410px; background-color:#e08745; color:#fff; font-family:'Clarendon-Regular'; position:absolute; }
+	.slide1{ background-color:#e08745; left:0; }
+    .slide2{ background-color:#b4cb66; left:960px; }
+    .slide3{ background-color:#79aac3; left:1920px; }
+
+#homeBody{ padding:2em 1.5em; }
+#homeBody h3{ margin:0; padding:15px 0 0 0; font-size:1.2em; }
+#homeBody ul { margin:5px 18px 0 2px;padding:0;float:left; }
+#homeBody ul li { margin:0 0 3px 0;padding:0; list-style:none; }
+#homeBody ul li a { color:#818285; }
+#homeBody .award{ float:right; margin-left:18px; }
+
+/* SECONDARY */
+.headline{ width:inherit; height:178px; }
+.headline h1{ margin:0; padding:72px 0 0 99px; font:3.4em/1em 'Clarendon-Bold'; color:#58595b; }
+.headline h1 span{ color:#fff; }
+
+/* WHAT WE DO */
+#what{ background: url(../images/p2-headerPic.jpg) right center no-repeat #79aac3; }
+#leftCol{width:520px; margin:2em 0 3em 100px;float:left;}
+.ulh2{ font-size:1.2em; font-weight:bold; margin:0.5em 0; }
+#leftCol ul{margin:0 0 2.4em 0; padding:0 0 0 2em;}
+#leftCol ul li{margin:0 0 0.5em 0; }
+#p2Ul2{ margin-left:120px; }
+
+#rightCol{width:330px;float:left;}
+  #quoteOpen{ color:#79aac3; margin:2em 1em 0 0; padding:.4em 0 0 4em; background:url(../images/p2-quoteOpen.jpg) no-repeat top left; }
+  #quoteClose{ padding:0 0.4em 0.4em 0; margin:0 0 1em 0; font-size: 1.5em; line-height:1.8em; letter-spacing:-1px; font-weight: bold; font-style:italic; background:url(../images/p2-quoteClose.jpg) no-repeat bottom right; }
+  
+/* WHO WE ARE */
+#who{ background: url(../images/p3a-headerPic.jpg) right center no-repeat #b4cb66; }
+#who h1{ margin:0; padding:52px 0 0 99px; }
+
+#subNav{ }
+  #subNav ul{ margin:3px 0 0 0; padding:0; }
+  #subNav ul li{ font:1em 'Clarendon-Bold'; color:#e08745; list-style:none; margin:0; padding:9px 1.8em 9px 1em; background:url(../images/subNav-between.jpg) no-repeat right #e08745; float:left; }
+  #subNav a{ color:#fff; }
+  #subNav .selected{ color:#58595b; background:url(../images/subNav-left.jpg) no-repeat center right #fff; padding:9px 1.5em 9px 1em; }
+  #subNav .tail{ background:url(../images/subNav-left.jpg) no-repeat center right #fff; padding:9px 4px; }
+  #subNav .last{ background:url(../images/subNav-right.jpg) no-repeat center right #e08745; }
+
+.main{ margin:0 100px;padding:3em 0 2em 0; }
+.main h1{ font-size:2.1em; margin:0; }
+.main h2{ font-size:1.65em; margin:0.1em 0; }
+.main h3{ font-size:1.35em; margin:0.2em 0; }
+.main h4{ font-size:1em; margin:0;}
+.main p{ margin:0; padding:0; font-size:1em; line-height:1.8em; text-align:left;}
+.main .highlight{ font-size:1.35em; font-weight:bold; }
+.threeRow{ width:100%; margin:0 auto; padding-top:2.5em; text-align:center;}
+.twoRow{ width:66.7%; margin:0 auto; padding:1em; text-align:center; }
+.thisTeam{ width:233px; margin-left:30px; float:left; }
+.thisTeam h3{ text-align:left }
+.thisTeam .icon{ margin:0.6em 0; width:100%; height:57px; text-align:center; }
+.thisTeam img {margin:0 auto;padding-right:0.8em; }
+
+p.moreInfo{ font-size:1.1em; font-weight:bold; margin:1em 0 0 0;}
+
+  /* LEADERSHIP */
+  #leadership{ background-color: #b4cb66; }
+  #leadership h1{ margin:0; padding:45px 0 3px 99px; }
+  #leadership h2{ margin:0 0 0 99px; padding:0; width:70%; color:#fff; font:2em/1.1em 'Clarendon-Bold'; }
+  
+  .leaderBlock{ width: 325px; float:left; margin:0 0 2em 110px; }
+  .leaderBlock img{ border:1px solid #999; margin:0.5em 0}
+  
+  /* CAREERS */
+  #careers{ background-color: #b4cb66; }
+  
+  #rightCol2{ width:240px; margin:1em 0 1.5em 1.5em; padding:1em; float:right; border:1px solid #999; right:-1px; }
+  #rightCol2 h2{ font:1.35em 'Clarendon-Bold'; margin:0.2em 0; }
+  #rightCol2 h3{ font-size:1em; margin:0.2em 0; }
+  #jobCat{ margin:1.5em 0 0 0; padding:0; font-size:1em; }
+  #jobCat li{ margin:0.8em 0; list-style-type:none; font-weight:bold; }
+  #jobCat li:hover{ text-decoration: underline; cursor:pointer; cursor: hand; }
+  #jobCat .jobs{ font-size:1.2em; list-style-image:url(../images/p3c-jobArrow.jpg); color:#e28844;  }
+  #jobCat a:visited{ color:#999; }
+  #jobCat .nada{ font-size:0.95em; color:#999;margin:0;padding:0; position:relative; top:-6px; }
+  
+  ul.jobSkill li, ul.jobDesc li{ list-style-type:none; margin:0.8em 0; width:65%; }
+  ul.jobDesc{  }
+  .careerDesc p{ margin:0 100px 2em 0; }
+  .careerDesc h3{ margin:2em 0 0 0; }
+  .careerDesc .indent{ margin-left:330px; }
+
+/* CONTACT US */
+#contact{ background-color:#e08745; position:absolute; }
+#gmap{ border: 4px solid #fff; background:url(../images/p4-gmap.png) no-repeat top; float:left; margin:0 2em 0 0; width:450px; position:relative;left:-4px; }
+#addr{ float:left; color:#fff; font-size:1.2em; line-height:1.3em; font-weight:normal; margin:1em 0 0 0; }
+
+.emailBlock{ float:left; width:355px; margin:2em 0 1em 50px; }
+.main .emailBlock h2{ font-size:1.5em; }
+.emailBlock p{ padding:0;margin:0;line-height:1.8em; }

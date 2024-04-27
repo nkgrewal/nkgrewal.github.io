@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/PRO.css" type="text/css" />
+    <title>PRO Address</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- HEADER-->
+      <div class="row">
+        <nav class="main"> 
+          <img class="logo" src="img/logo.png" />
+          <ul>
+            <li class="person">
+              <div class="icon">
+                <img src="img/person.png">
+                <p>Person</p>
+              </div>
+              <form class="input-group searches" action="person-multiple.html">
+                <input class="halfbox" placeholder="First &amp; last name" type="text" />
+                <input class="halfbox" placeholder="City, State, or ZIP" type="text" />
+                <input class="kickit" type="submit" value="" />
+              </form>
+            </li>
+            <li class="address">
+              <div class="icon">
+                <img src="img/address.png">
+                <p>Address</p>
+              </div>
+              <form class="input-group searches" action="address-multiple.html">
+                <input class="halfbox" placeholder="Street address or name" type="text" value="500 wall st" />
+                <input class="halfbox" placeholder="City, State, or ZIP" type="text" value="seattle,wa" />
+                <input class="kickit" type="submit" value="" />
+              </form>
+            </li>
+            <li class="phone">
+              <div class="icon">
+                <img src="img/phone.png">
+                <p>Phone</p>
+              </div>
+              <form class="input-group searches" action="phone-multiple.html">
+                <input placeholder="10-digit phone number" type="text" />
+                <input class="kickit" type="submit" value="" />
+              </form>
+            </li>
+            <li class="business">
+              <div class="icon">
+                <img src="img/business.png">
+                <p>Business</p>
+              </div>
+              <form class="input-group searches" action="business-multiple.html">
+                <input class="halfbox" placeholder="Business or keywords" type="text" />
+                <input class="halfbox" placeholder="City, State, or ZIP" type="text" />
+                <input class="kickit" type="submit" value="" />
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- endHEADER -->
+
+      <!-- SEARCH BODY -->
+      <div class="row results">
+        <div class="searchSummary">
+          1 result found for 500 wall st, seattle, wa
+        </div>
+
+        <div class="col-12 unit single">
+          <div class="row header">
+            <div class="col-6 entity">
+              <h3 class="name">500 Wall St.,</h3>
+              <h4>Seattle, WA, 98121-1579</h4>
+              <ul class="attr">
+                <li>Recieving Mail</li>
+                <li>Residential</li>
+                <li>Multi Unit</li>
+                <li>Other forms of this address</li>
+              </ul>
+            </div>
+            <div class="col-6 map">
+              <img src="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 subResults">
+          <div class="col-12 searchSummary">
+            53 people associated with this address <button class="expToggle" data-toggle="collapse" data-target=".subResults .attr">Expand all</button>
+          </div>
+
+          <div class="col-12 unit one" data-toggle="collapse" data-target=".one .attr">
+            <div class="row header">
+              <div class="col-8 entity">
+                <h3>Jaihoon Jahesh</h3>
+              </div>
+            </div>
+            <div class="row address">
+              <div class="col-6 attr">
+                <address><a href="address-multiple.html">4500 Wall St., Apt 1007<br />
+                Seattle, WA 98121-1579</a></address>
+                <ul>
+                  <li>Recieving Mail</li>
+                  <li>Residential</li>
+                  <li>Single Unit</li>
+                  <li><button>See nearby</button></li>
+                </ul>
+              </div>
+              <div class="col-6 map attr">
+                <img src="" />
+              </div>
+            </div>
+            <div class="row pastLoc">
+              <div class="col-12 prevLabel">
+                <p class="attr in">Previous Addresses (2)</p>
+              </div>
+              <div class="col-6">
+                <ul class="attr">
+                  <li><h5>Previous addresses</h5></li>
+                  <li>
+                    <address><a href="address-multiple.html">16318 E 85th St N,<br />
+                    Owasso, OK 74055</a></address>
+                    <p>Jan. 1989 &mdash; present</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">4704 Chenwood Ln,<br />
+                      Louisville, KY 40299</a></address>
+                    <p>Sept. 2000 &mdash; Oct. 2004</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6 map attr">
+                <img src="" />
+              </div>
+            </div>
+            <div class="arrow-down"><div></div></div>
+          </div>
+
+          <div class="col-12 unit two" data-toggle="collapse" data-target=".two .attr">
+            <div class="row header">
+              <div class="col-8 entity">
+                <h3 class="name">Dean Winchester</h3>
+              </div>
+            </div>
+            <div class="row address">
+              <div class="col-6 attr">
+                <address><a href="address-multiple.html">911 Old Liberty Rd<br />
+                Asheboro, NC 27203-3415</a></address>
+                <ul>
+                  <li>Recieving Mail</li>
+                  <li>Residential</li>
+                  <li>Single Unit</li>
+                  <li><button>See nearby</button></li>
+                </ul>
+              </div>
+              <div class="col-6 map attr">
+                <img src="" />
+              </div>
+            </div>
+            <div class="row assoc">
+              <div class="col-12">
+                <ul>
+                  <li><a href="person-single.html">Darrell Winchester</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="arrow-down"><div></div></div>
+          </div>
+
+          <div class="col-12 unit three" data-toggle="collapse" data-target=".three .attr">
+            <div class="row header">
+              <div class="col-8 entity">
+                <h3 class="name">Dean Winchester</h3>
+              </div>
+              <div class="col-4 phone attr">
+                <a href="phone-multiple.html">+1-405-867-1672</a>
+                <ul>
+                  <li>Do not call</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row address">
+              <div class="col-6 attr">
+                <address><a href="address-multiple.html">16292 Highway 74 <br />
+                Maysville, OK 73057-9648</a></address>
+                <ul>
+                  <li>Recieving Mail</li>
+                  <li>Residential</li>
+                  <li>Single Unit</li>
+                  <li><button>See nearby</button></li>
+                </ul>
+              </div>
+              <div class="col-6 map attr">
+                <img src="" />
+              </div>
+            </div>
+            <div class="row pastLoc">
+              <div class="col-12 prevLabel">
+                <p class="attr in">Previous Addresses (7)</p>
+              </div>
+              <div class="col-6">
+                <ul class="attr">
+                  <li><h5>Previous addresses</h5></li>
+                  <li>
+                    <address><a href="address-multiple.html">14 Shannon Dr, <br />
+                    Bancroft, IA 50517</a></address>
+                    <p>May 2012 &mdash; present</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">433 4th Ave SW, Apt 6, <br />
+                    Cedar Rapids, IA 52404</a></address>
+                    <p>Feb. 2000 &mdash; May 2009</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">5937 High Steed St, Unit 103, <br />
+                    Henderson, NV 89011</a></address>
+                    <p>Oct. 2006 &mdash; Oct. 2006</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">119 Olga Rd, <br />
+                    Wilmington, DE 19805</a></address>
+                    <p>Oct. 2002 &mdash; Feb. 2005</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">13320 SW Rita Dr, <br />
+                    Beaverton, OR 97005</a></address>
+                    <p>June 1990 &mdash; Jan. 2000</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">202 South St, Apt 3, <br />
+                    Waterloo, IA 50701</a></address>
+                    <p>May 1999 &mdash; Dec. 1999</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">14245 SW Walker Rd, Apt 4, <br />
+                    Beaverton, OR 97006</a></address>
+                    <p>Oct. 1992 &mdash; Oct. 1992</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6 map attr">
+                <img src="" />
+              </div>
+            </div>
+            <div class="row assoc">
+              <div class="col-12">
+                <ul>
+                  <li><a href="person-single.html">Linda Franklin</a></li>
+                  <li><a href="person-single.html">Randy Franklin</a></li>
+                  <li><a href="person-single.html">George Franklin</a></li>
+                  <li><a href="person-single.html">Andy Franklin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="arrow-down"><div></div></div>
+          </div>
+
+          <div class="col-12 unit four" data-toggle="collapse" data-target=".four .attr">
+            <div class="row header">
+              <div class="col-8 entity">
+                <h3 class="name">Dean P Winchester</h3>
+                <h4 class="age">Age Range: 30&mdash;34</h4>
+              </div>
+              <div class="col-4 phone attr">
+                <a href="phone-multiple.html">+1-281-710-4651</a>
+                <ul>
+                  <li>Do not call</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row address">
+              <div class="col-6 attr">
+                <address><a href="address-multiple.html">13315 Baron Hill Ln <br />
+                Maysville, OK 73057-9648</a></address>
+                <ul>
+                  <li>Recieving Mail</li>
+                  <li>Residential</li>
+                  <li>Single Unit</li>
+                </ul>
+              </div>
+              <div class="col-6 map attr">
+                <img src="" />
+              </div>
+            </div>
+            <div class="row pastLoc">
+              <div class="col-12 prevLabel">
+                <p class="attr in">Previous Addresses (7)</p>
+              </div>
+              <div class="col-6">
+                <ul class="attr">
+                  <li><h5>Previous addresses</h5></li>
+                  <li>
+                    <address><a href="address-multiple.html">16318 E 85th St N,<br />
+                    Owasso, OK 74055</a></address>
+                    <p>January 1989 to present</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">4704 Chenwood Ln,<br />
+                      Louisville, KY 40299</a></address>
+                    <p>from September 2000 until October 2004</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">110 S 3rd St,<br />
+                      Tecumseh, OK 74873</a></address>
+                    <p>from June 2004 until October 2004</p>
+                  </li>
+                  <li>
+                    <address><a href="address-multiple.html">10206 Bushman Dr, Apt 403,<br />
+                      Oakton, VA 22124</a></address>
+                    <p>from February 1994 until May 2000</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6 map attr">
+                <img src="" />
+              </div>
+            </div>
+            <div class="row assoc">
+              <div class="col-12">
+                <ul>
+                  <li><a href="person-single.html">Deandria Winchester</a></li>
+                  <li><a href="person-single.html">Dane Winchester</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="arrow-down"><div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row footer">
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Terms of Use</li>
+          <li>Help</li>
+          <li>Copyright 2013 WhitePages, Inc. All rights reserved.</li>
+        </ul>
+      </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+    var icons = $('.main img');
+    var searchFields = $('.searches');
+    searchFields.animate({width:'hide'}, 0);
+    $('.address .searches').animate({width:'show'}, 0);
+    icons.parent('div').on('click', function(){
+      searchFields.animate({ width:'hide'}, 500);
+      $(this).siblings('.searches').filter(':hidden').animate({ width:'toggle'}, 500);
+    });
+    icons.parent('div').hover( function(){
+      $(this).addClass('hov');
+    }, function(){
+      $(this).removeClass('hov');
+    });
+
+    $('.subResults .attr').addClass('collapse');
+    
+    $('.expToggle').click( function(){
+      $('.arrow-down').toggleClass('arrow-up');
+    }) 
+    
+    $('.unit').click( function(){
+      $(this).children('.arrow-down').toggleClass('arrow-up');
+    })
+    
+    $('.unit').hover( function(){
+      $(this).addClass('unitOn');
+    }, function(){
+      $(this).removeClass('unitOn');
+    })
+    </script>
+  </body>
+</html>
