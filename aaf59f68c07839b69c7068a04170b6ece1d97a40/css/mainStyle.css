@@ -343,6 +343,10 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	align-self: center;
 	justify-self: right;
 }
+.abstract.fullCol {
+	grid-column: 1 /6;
+	justify-self: center;
+}
 .piece .mainVideo {
 	grid-column: 3 / 6;
 	justify-self: left;
@@ -458,6 +462,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .quote blockquote span::after{ content:'\201D'; right: -.3em; bottom:-.16em; }
 
 .abstract { color:var(--lighter-gray); max-width:28em; margin-top:-4em; padding-left:2em; }
+.abstract.fullCol { margin-top:0; }
 .abstract p:first-of-type { font-size: 1.4em; line-height: 1.5em; margin-bottom: 1.5em; }
 .contributions{font-size: .85em; border:1px dotted rgba(var(--med-gray-rgb),.6); padding:3em;}
 .assets { display:flex; flex-direction: column; flex-flow:wrap; column-gap: .6em; row-gap:.6em; font-size:.9em; }
@@ -735,6 +740,7 @@ noscript {
 	.piece .sidebar, .piece .quote { grid-column: 5/7; }
 	.piece .sidebar { grid-row: 3; align-self: flex-start;  }
 	.piece .quote { grid-row: 2; align-self: flex-end; justify-self: flex-start; }
+	.abstract.fullCol { grid-column: 1/7; justify-self:center; }
 
 	/* PORTFOLIO PIECES */
 	.title { margin-left:3em; margin-bottom: -3em; }
