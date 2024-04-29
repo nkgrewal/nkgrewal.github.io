@@ -388,7 +388,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 
 /*CONTENT SECTION*/
-.sidebar {font-size: .92em; margin-left:1em; margin-bottom: 3.6em; }
+.sidebar {font-size: .92em; margin-left:2em; margin-bottom: 3.6em; }
 .imgButtons { 
 	font-size:.9em;
 	display:flex; 
@@ -597,7 +597,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 
 /* PIECE SPECIFIC */
-.chime-etc .imgCase img, .amazon-paycode .imgCase img {position:relative; left:-3em;}
+.chime-etc .imgCase img, .amazon-paycode .imgCase img {position:relative; left:-2em;}
 
 
 /*PRELOADER & NOSCRIPT*/
@@ -915,7 +915,7 @@ noscript {
 	.allSlides .intro { font-size: 1.15em; }
 	.intro > div { padding:0 1.5em; margin:0; }
 
-	.chime-etc .imgCase img, .amazon-paycode .imgCase img {left:-1em;}
+	.chime-etc .imgCase img, .amazon-paycode .imgCase img {left:-1.2em;}
 
 	.about-me section{ grid-template-columns:auto; justify-items: flex-start; padding-top:3em; }
 	.resume-summary { display: flex; align-items: last baseline; column-gap: 2em; flex-wrap: wrap;  }
