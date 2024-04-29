@@ -597,7 +597,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 
 /* PIECE SPECIFIC */
-.amazon-paycode .imgCase img {position:relative; left:-3em;}
+.chime-etc .imgCase img, .amazon-paycode .imgCase img {position:relative; left:-3em;}
 
 
 /*PRELOADER & NOSCRIPT*/
@@ -772,7 +772,7 @@ noscript {
 	.piece { grid-template-columns: repeat(2, 1fr); row-gap: 3em; column-gap: 2em; }
 	.piece > *:nth-child(odd) { grid-column: 1 / 2; }
 	.piece > *:nth-child(even) { grid-column: 2 / 3; }
-	.piece .title, .piece .imgCase, .piece .quote, .piece .sidebar, .piece .abstract, .piece .mainVideo { grid-column: 1 / 3; }
+	.piece .title, .piece .imgCase, .piece .quote, .piece .sidebar, .piece .abstract, .piece .abstract.fullCol, .piece .mainVideo { grid-column: 1 / 3; }
 	.piece .abstract, .piece .mainVideo { grid-column: unset; }
 	.piece .sidebar { justify-self: unset; }
 
@@ -915,7 +915,7 @@ noscript {
 	.allSlides .intro { font-size: 1.15em; }
 	.intro > div { padding:0 1.5em; margin:0; }
 
-	.amazon-paycode .imgCase img {left:-1em;}
+	.chime-etc .imgCase img, .amazon-paycode .imgCase img {left:-1em;}
 
 	.about-me section{ grid-template-columns:auto; justify-items: flex-start; padding-top:3em; }
 	.resume-summary { display: flex; align-items: last baseline; column-gap: 2em; flex-wrap: wrap;  }
