@@ -536,6 +536,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 /* ABOUT ME */
 .jsSlideShow .about-me { padding: 0; min-height: 90vh; }
+.resume-summary h2, .resume-items .job h3 { color:var(--light-blue); }
 .about-me, .about-me section {
 	display: grid;
   justify-content: center;
@@ -543,13 +544,13 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 }
 .about-me section {
 	padding: 12em 0 2em 0;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1.2fr;
   align-items: flex-start;
   justify-items: center;
   align-self: center;
   column-gap: 2.2em;
-  max-width:48em;
-  font-size: 1.1em;
+  max-width: 52em;
+  font-size: .95em;
 }
 .about-me p:last-of-type { margin-bottom:0; }
 .about-me .profile {
@@ -557,7 +558,6 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	padding:0 2.2em;
 	display: flex;
 	flex-flow: row wrap;
-	font-size: .85em;
 	justify-content: right;
 	text-align: right;
 }
@@ -568,6 +568,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	border-radius: .5em; 
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px 8px; 
 }
+.about-me .job { width:100%; }
 .resume-items{
 	display: flex;
 	flex-flow: row wrap;
@@ -577,8 +578,8 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	border-top:1px solid rgba(0,0,0,.2);
 	border-bottom:1px solid rgba(0,0,0,.2);
 }
-.resume-summary h2 { font-size:1.4em; margin-bottom: .1em; white-space: nowrap; }
-.resume-summary p { font-size: 0.9em; line-height: 1.4em; }
+.resume-summary h2 { font-size:1.3em; margin-bottom: .1em; white-space: nowrap; }
+.resume-summary p { line-height: 1.4em; }
 
 .resume-items h5 { margin: 0; }
 .resume-items .job hgroup { 
@@ -589,9 +590,8 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	margin-bottom:.2em;
 }
 .resume-items .job hgroup > * { margin:0; padding:0; }
-.resume-items .job h3 { color:var(--light-blue); }
-.resume-items .job h3 span{ padding-left:.6em; font-size:0.7em; font-weight:normal; }
-.resume-items .job h5 { justify-self: right; margin-left: auto; padding-right:1em; }
+.resume-items .job h3 span{ padding-left:.6em; font-weight:normal; }
+.resume-items .job h4 { justify-self: right; margin-left: auto; padding-right:1em; }
 .resume-items .job p { line-height: 1.4em; color: var(--lighter-gray); }
 .footnote{ margin: 3em auto; max-width:30em; font-size:.8em; line-height:1.25em; color: var(--lighter-gray); text-align:center; }
 
@@ -810,8 +810,9 @@ noscript {
 	.abstract { margin-top:0; padding-left:unset; }
 
 	.about-me section{ display: unset; justify-items: flex-start; padding-top:4em; }
-	.about-me .profile { flex-flow: unset; column-gap:4em; margin-top: 2em; margin-bottom:4em; padding: 0; text-align: left; }
-	.about-me .profile > * { flex: auto; align-self: last baseline; }
+	.about-me .profile { flex-flow: unset; column-gap:4em; margin-top: 2em; margin-bottom: 2em; padding: 0; text-align: left; }
+	.about-me .profile > * { flex: auto; align-self: flex-end; }
+	.about-me .profile > div:last-child { margin-bottom: 1em; }
 	.about-me .myPic { margin-bottom:0; max-width: 160px; height: content; }
 }
 
@@ -917,12 +918,13 @@ noscript {
 
 	.chime-lift .imgCase img, .amazon-paycode .imgCase img {left:-1.2em;}
 
-	.about-me section{ grid-template-columns:auto; justify-items: flex-start; padding-top:3em; }
+	.about-me section{ grid-template-columns:auto; justify-items: flex-start; padding-top:3em; font-size: 0.9em; }
 	.resume-summary { display: flex; align-items: last baseline; column-gap: 2em; flex-wrap: wrap;  }
 	.resume-summary div { flex: min-content; }
-	.about-me .profile { margin: 2em 0; padding-bottom:0; justify-content: left; text-align: left; order:2; }
-	.about-me .myPic { margin-bottom:1em; max-width: 140px; }
-	.about-me .experience { padding: 1em 0; font-size: .9em; }
+	.about-me .profile { margin: 0; padding:0; justify-content: left; text-align: left; order: 2; }
+	.about-me .myPic { margin-bottom:0; max-width: 140px; }
+	.about-me .resume-summary > div:last-child { align-self:flex-end; margin:.6em 0; }
+	.about-me .experience { padding: 1em 0; margin-bottom: 2em; }
 	.resume-items { row-gap: 1.8em; }
 
 
