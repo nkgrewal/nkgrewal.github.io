@@ -536,13 +536,13 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 /* ABOUT ME */
 .jsSlideShow .about-me { padding: 0; min-height: 90vh; }
-.resume-summary h2, .resume-items .job h3 { color:var(--light-blue); }
 .about-me, .about-me section {
 	display: grid;
   justify-content: center;
   align-content: center;
 }
 .about-me section {
+	font-size: .95em;
 	padding: 12em 0 2em 0;
   grid-template-columns: 1fr 1.2fr;
   align-items: flex-start;
@@ -550,7 +550,6 @@ footer li.selected:hover{ border-color:var(--med-gray); }
   align-self: center;
   column-gap: 2.2em;
   max-width: 52em;
-  font-size: .95em;
 }
 .about-me p:last-of-type { margin-bottom:0; }
 .about-me .profile {
@@ -579,6 +578,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	border-bottom:1px solid rgba(0,0,0,.2);
 }
 .resume-summary h2 { font-size:1.3em; margin-bottom: .1em; white-space: nowrap; }
+.resume-summary h2 , .resume-items h3{ color:var(--light-blue); }
 .resume-summary p { line-height: 1.4em; }
 
 .resume-items h5 { margin: 0; }
@@ -590,7 +590,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	margin-bottom:.2em;
 }
 .resume-items .job hgroup > * { margin:0; padding:0; }
-.resume-items .job h3 span{ padding-left:.6em; font-weight:normal; }
+.resume-items .job:not(:first-of-type) h3 { font-size:1em; }
 .resume-items .job h4 { justify-self: right; margin-left: auto; padding-right:1em; }
 .resume-items .job p { line-height: 1.4em; color: var(--lighter-gray); }
 .footnote{ margin: 3em auto; max-width:30em; font-size:.8em; line-height:1.25em; color: var(--lighter-gray); text-align:center; }
