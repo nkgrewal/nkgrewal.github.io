@@ -60,7 +60,7 @@ var navClass = 'slideNav';                      //class name of nav element
 var navToggleElement = 'nav .navHide';          //classname of hideable nav
 const slideMap = new Map();                     //empty object that will hold slide identifying info
 var currIndex = 0;                              //start from 0 on load, only changes under moveSlideBlock
-var anim = 800;                                 //slide speed
+var anim = 400;                                 //slide speed
 var pieceMargin = '60';                         //margin-right per slide, must be px
 
 
