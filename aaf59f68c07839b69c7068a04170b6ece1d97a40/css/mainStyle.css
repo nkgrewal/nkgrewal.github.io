@@ -806,7 +806,7 @@ noscript {
 /*TABLET GRID CUSTOMIZATIONS*/
 @media only screen and (min-width: 620px) and (max-width: 880px) {
 	.piece .abstract, .piece .mainVideo { grid-column: 1 / 3; }
-	.description .role { flex-basis:100%; top:0; margin-left:0; }
+	/*.description .role { flex-basis:100%; top:0; margin-left:0; }*/
 	.abstract { margin-top:0; padding-left:unset; order:2; }
 
 	.about-me section{ display: unset; justify-items: flex-start; padding-top:4em; }
@@ -851,9 +851,9 @@ noscript {
 	.slideNav li { padding:.8em 0 1em 0; }
 	.jsNav .m-only { order:2; text-transform: lowercase; }
 	.jsNav .about { position: unset; padding:0 0 0 1.4em; column-gap: 1.6em; order: 3; }
-	.jsNav .about li, .jsNav .m-only li { padding:.8em 0 1em 0; border:none; border-bottom: 2px solid transparent; }
+	.jsNav .about li, .jsNav .m-only li { padding:.8em 0 1em 0; border:none; border-top: 2px solid transparent; }
 	.jsNav .about li:hover, .jsNav .about li.selected { 
-		border-bottom: 2px solid; 
+		border-top: 2px solid; 
 		background: none;
 	}
 
