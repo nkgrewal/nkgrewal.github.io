@@ -69,7 +69,7 @@ a, button {
 	color: var(--light-green);
 }
 a:hover { text-decoration: underline; }
-button{ background: none; border:none; cursor: pointer; }
+button { background: none; border:none; cursor: pointer; }
 kbd {
   background-color:rgba(255,255,255,0.5);
   border-radius: 3px;
@@ -534,7 +534,8 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	position: relative;
 	top:-2px;
 }
-.blurbCTA button{ text-align: left; }
+.blurbCTA button { text-align: left; background-color: rgba(var(--darker-gray-rgb),.5); }
+.blurbCTA button:hover { background-color: transparent; }
 
 
 /* ABOUT ME */
@@ -596,7 +597,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .resume-items .job:not(:first-of-type) h3 { font-size:1em; }
 .resume-items .job h4 { justify-self: right; margin-left: auto; padding-right:1em; }
 .resume-items .job p { line-height: 1.4em; color: var(--lighter-gray); }
-.footnote{ margin: 3em auto; max-width:30em; font-size:.8em; line-height:1.25em; color: var(--lighter-gray); text-align:center; }
+.footnote{ margin: 3em auto; max-width:35em; font-size:.8em; line-height:1.5em; color: var(--lighter-gray); text-align:center; }
 
 
 /* PIECE SPECIFIC */
@@ -844,8 +845,9 @@ noscript {
 		flex:1 100%;
 		justify-content: flex-start; 
 		order:1; 
-		background: var(--darker-gray) ;
-		box-shadow: rgba(var(--black-rgb),.4) 0 4px 10px 4px inset;
+		/*background: var(--darker-gray) ;*/
+		box-shadow: rgba(var(--black-rgb),.4) -4px 2px 5px 0 inset,
+			rgba(var(--black-rgb),.4) -4px 2px 2px 0;
 		overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 	}
