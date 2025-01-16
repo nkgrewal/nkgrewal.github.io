@@ -310,6 +310,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	box-shadow: 0 .5em .5em .2em rgba(var(--black-rgb),.3);
 	padding:.8em 1.6em;
 	border-radius: 2em;
+	cursor: pointer;
 }
 .scrollHint span { font-weight: bold; padding:0 .2em; position: relative; top:-3px; }
 
