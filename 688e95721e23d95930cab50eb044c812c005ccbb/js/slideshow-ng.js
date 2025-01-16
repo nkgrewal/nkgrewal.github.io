@@ -103,7 +103,7 @@ var MySlideShow = {
     slideMap.forEach( (info, i) => {
       switch(true){
         case (i==0): 
-          navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'" role="menuitem" aria-label="Back to first slide">' + '\u25C8' + '</li></ul>';  //li for intro, visible anchor for hideable menu
+          navStr += '<ul class="firstSlide"><li class="'+ slideMap.get(i).hash +'" role="menuitem" aria-label="Back to first slide">' + '\u2756' + '</li></ul>';  //li for intro, visible anchor for hideable menu
           navStr += '<ul class="navHide">';
           break;
         case (i > 0 && i < (slideMap.size-1)):

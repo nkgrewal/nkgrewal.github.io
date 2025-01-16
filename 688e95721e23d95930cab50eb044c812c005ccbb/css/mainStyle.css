@@ -611,7 +611,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .resume-items .job:not(:first-of-type) h3 { font-size:1em; }
 .resume-items .job h4 { justify-self: right; margin-left: auto; padding-right:1em; }
 .resume-items .job p { line-height: 1.4em; color: var(--lighter-gray); }
-.footnote{ margin: 3em auto; max-width:35em; font-size:.8em; line-height:1.5em; color: var(--lighter-gray); text-align:center; }
+.footnote{ margin: 3em auto; padding: 0 2em; max-width:35em; font-size:.8em; line-height:1.5em; color: var(--lighter-gray); text-align:center; }
 
 
 /* PIECE SPECIFIC */
