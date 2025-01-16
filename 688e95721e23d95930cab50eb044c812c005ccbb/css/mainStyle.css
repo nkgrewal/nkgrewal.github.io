@@ -734,10 +734,10 @@ noscript {
 	.intro > div { padding-right:6em; }
 	.intro p { margin-top: .6em; line-height: 1.85em; }
 
-	.about-me section { grid-template-columns: 1.2fr 3fr; column-gap: 4em; max-width: 55em; margin-left:2em; }
+	.about-me section { grid-template-columns: 1.5fr 3fr; column-gap: 4em; max-width:45em; margin-left:2em; font-size: 1em; }
 	.about-me .profile { padding:0; margin-bottom: 15em; }
 	.resume-summary h2 { margin-bottom: .4em; }
-	.resume-items { row-gap: 3em; padding:3em 0 4em 0; max-width: 32em; }
+	.resume-items { row-gap: 3em; padding:3em 0 4em 0; }
 	.resume-items > h5{ flex-basis: 100%; margin-bottom:-2.6em; }
 	.resume-items .job hgroup { margin-bottom: .4em; }
 	.resume-items .job p { line-height: 1.6em; }
@@ -765,14 +765,12 @@ noscript {
 	.imgButtons { margin-bottom: 3em; }
 	.description { margin: 0; max-width: 20em; }
 	.quote { margin: 0 0 0 .9em; text-align: left; max-width: 33em; font-size: .8em; }
-	.quote blockquote { justify-content: flex-start; padding-top: 0; }
+	.quote blockquote { justify-content: flex-start; }
+	.quote blockquote:first-of-type { background-color:transparent; }
 	.quote blockquote:not(:first-of-type) {display: none;}
+	.quote cite { padding:0; }
 
 	.abstract, .mainVideo { margin-top: 1em; }
-
-	/* PIECE SPECIFIC */
-	.about-me section {font-size: 1em;}
-
 }
 
 /* Tall screen */
