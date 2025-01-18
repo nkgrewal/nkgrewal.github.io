@@ -245,7 +245,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 }
 .slideNav { padding: 0 1em; column-gap: 1.2em; background: linear-gradient(to right, rgba(40,40,40,0.8), rgba(48,48,48,0.5)); }
 .slideNav li{ text-transform: capitalize; }
-.slideNav .firstSlide li { padding-left: .8em; padding-right: .8em; position:relative; top:-1px; }
+.slideNav .firstSlide li { font-size:1.3em; padding:.55em .65em .75em .65em; position:relative; top:-1px; }
 .slideNav .firstSlide li.selected, 
 .slideNav .firstSlide li.selected:hover { border-color:transparent; background:none; }
 .slideBack, .slideNext, .slideViewer a, footer li { cursor: pointer; }
@@ -611,6 +611,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .resume-items .job hgroup > * { margin:0; padding:0; }
 .resume-items .job:not(:first-of-type) h3 { font-size:1em; }
 .resume-items .job h4 { justify-self: right; margin-left: auto; padding-right:1em; }
+.resume-items .job h4 span { margin-left:-1em; margin-right:.5em; color: rgba( var(--med-gray-rgb),.65); }
 .resume-items .job p { line-height: 1.4em; color: var(--lighter-gray); }
 .footnote{ margin: 3em auto; padding: 0 2em; max-width:35em; font-size:.8em; line-height:1.5em; color: var(--lighter-gray); text-align:center; }
 
@@ -866,6 +867,7 @@ noscript {
 	.slideNav, .navHide { flex-wrap: nowrap; }
 	/* { margin-right:1.2em; } */
 	.slideNav li { padding:.8em 0 1em 0; }
+	.slideNav .firstSlide li { padding: .5em .8em; }
 	.jsNav .m-only { order:2; text-transform: lowercase; }
 	.jsNav .about { position: unset; padding:0 0 0 1.4em; column-gap: 1.6em; order: 3; }
 	.jsNav .about li, .jsNav .m-only li { padding:.8em 0 1em 0; border:none; border-top: 2px solid transparent; }
