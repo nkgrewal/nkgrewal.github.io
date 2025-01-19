@@ -484,7 +484,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .abstract p:first-of-type { font-size: 1.4em; line-height: 1.5em; margin-bottom: 1.5em; }
 .contributions{font-size: .85em; border:1px dotted rgba(var(--med-gray-rgb),.6); padding:3em;}
 .assets { display:flex; flex-direction: column; flex-flow:wrap; column-gap: .6em; row-gap:.6em; font-size:.9em; }
-.abstract .footnote { text-align: left; margin:1em 0; }
+.abstract .footnote { text-align: left; margin:1em 0; padding:0; }
 
 .mainVideo { text-align: center; margin-left:3em; }
 .mainVideo h4 { 
