@@ -132,7 +132,7 @@ var MySlideShow = {
     mobileDevice.addListener(handleDeviceChange);
     function handleDeviceChange(e) {
       if (e.matches) {
-        console.log(e[1] + " Mobile");
+        console.log(e + " Mobile");
         navHolder.off('mouseenter mouseleave click');
         $('nav .firstSlide').addClass('navHide');
         MySlideShow.navToggle('hide');
@@ -353,6 +353,30 @@ var MySlideShow = {
       $('nav.' + navClass + ' span').show();
     };*/
   },
+  setMobileSwipe : function (elm, callback) {
+    let touchStartX, touchStartTime;
+    elm.on('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartTime = new Date();
+    });
+    elm.on('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndTime = new Date();
+
+      const distanceX = touchEndX - touchStartX;
+      const duration = touchEndTime - touchStartTime;
+
+      const speed = Math.abs(distanceX) / duration;
+
+      if (Math.abs(distanceX) > 50 && duration < 500) {
+        if (distanceX > 0) {
+          callback('right', speed);
+        } else {
+          callback('left', speed);
+        }
+      }
+    });
+  },
   setControls : function(slideNum){
     //EVENT LISTENERS
     backControl.on('click', function(e){
@@ -361,6 +385,24 @@ var MySlideShow = {
     nextControl.on('click', function(e){
       MySlideShow.moveSlideBlock('next', slideNum);
     });
+    //MOBILE SWIPE
+    this.setMobileSwipe (eachSlide, (direction, speed) => {
+      if ( speed > 0.5 ){
+        switch (direction) {
+        case 'right':
+          MySlideShow.moveSlideBlock('back', slideNum);
+          return false;
+          break;
+        case 'left':
+          MySlideShow.moveSlideBlock('next', slideNum);
+          return false;
+          break;
+        }
+      } else {};
+      console.log('Swipe direction:', direction);
+      console.log('Swipe speed:', speed);
+    });
+
     $(document).on('keydown', function(e){
       switch (e.keyCode) {
         case 37:
@@ -381,6 +423,7 @@ var MySlideShow = {
   removeControls : function(){
     nextControl.off('click');
     backControl.off('click');
+    eachSlide.off('touchstart');
     $(document).off('keydown');
   },
   //IMG CLICK
@@ -407,11 +450,11 @@ $(window).on({
     //hide menu desktop above fold
     if( this.innerWidth > 900 && window.pageYOffset < 150 ) { 
       MySlideShow.navToggle('hide');
-      e.stopPropagation;
+      event.stopPropagation;
     }
     else if( this.innerWidth > 900) { 
       MySlideShow.navToggle('show');
-      e.stopPropagation;
+      event.stopPropagation;
     };
   },
   'resize': function(){
@@ -426,8 +469,8 @@ $(window).on({
     //show menu on desktop if scrolled down
     if( this.innerWidth > 900 && this.pageYOffset > 150 ){
       MySlideShow.navToggle('show');
-      e.stopPropagation;
-    } else { MySlideShow.navToggle('hide'); e.stopPropagation; }
+      event.stopPropagation;
+    } else { MySlideShow.navToggle('hide'); event.stopPropagation; }
   }
 });
 
