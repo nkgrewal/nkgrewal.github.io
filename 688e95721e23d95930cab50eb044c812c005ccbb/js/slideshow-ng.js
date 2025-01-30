@@ -371,7 +371,7 @@ var MySlideShow = {
 
       const speed = Math.abs(distanceX) / duration;
 
-      if (Math.abs(distanceX) > 30 && duration < 500 && Math.abs(distanceY) < 80) {
+      if (Math.abs(distanceX) > 30 && duration < 500 && Math.abs(distanceY) < 50) {
         if (distanceX > 0) {
           callback('right', speed, distanceX, distanceY);
         } else {
@@ -390,8 +390,8 @@ var MySlideShow = {
     });
     //MOBILE SWIPE
     this.setMobileSwipe (eachSlide, (direction, speed, distanceX, distanceY) => {
-      console.log ( direction, speed, distanceX, distanceY );
-      if ( speed >= 0.6 ){
+      //console.log ( direction, speed, distanceX, distanceY );
+      if ( speed >= 0.55 ){
         switch (direction) {
         case 'right':
           MySlideShow.moveSlideBlock('back', slideNum);
