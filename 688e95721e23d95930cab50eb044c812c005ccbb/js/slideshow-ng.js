@@ -354,25 +354,28 @@ var MySlideShow = {
     };*/
   },
   setMobileSwipe : function (elm, callback) {
-    let touchStartX, touchStartTime;
+    let touchStartX, touchStartY, touchStartTime;
     elm.on('touchstart', (e) => {
       touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
       touchStartTime = new Date();
     });
     elm.on('touchend', (e) => {
       const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
       const touchEndTime = new Date();
 
       const distanceX = touchEndX - touchStartX;
+      const distanceY = Math.abs(touchEndY - touchStartY);
       const duration = touchEndTime - touchStartTime;
 
       const speed = Math.abs(distanceX) / duration;
 
-      if (Math.abs(distanceX) > 60 && duration < 500) {
+      if (Math.abs(distanceX) > 30 && duration < 500 && Math.abs(distanceY) < 80) {
         if (distanceX > 0) {
-          callback('right', speed);
+          callback('right', speed, distanceX, distanceY);
         } else {
-          callback('left', speed);
+          callback('left', speed, distanceX, distanceY);
         }
       }
     });
@@ -386,8 +389,9 @@ var MySlideShow = {
       MySlideShow.moveSlideBlock('next', slideNum);
     });
     //MOBILE SWIPE
-    this.setMobileSwipe (eachSlide, (direction, speed) => {
-      if ( speed > 0.7 ){
+    this.setMobileSwipe (eachSlide, (direction, speed, distanceX, distanceY) => {
+      console.log ( direction, speed, distanceX, distanceY );
+      if ( speed >= 0.6 ){
         switch (direction) {
         case 'right':
           MySlideShow.moveSlideBlock('back', slideNum);
@@ -398,9 +402,7 @@ var MySlideShow = {
           return false;
           break;
         }
-      } else {};
-      console.log('Swipe direction:', direction);
-      console.log('Swipe speed:', speed);
+      } else { };
     });
 
     $(document).on('keydown', function(e){
