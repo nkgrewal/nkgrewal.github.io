@@ -387,7 +387,7 @@ var MySlideShow = {
     });
     //MOBILE SWIPE
     this.setMobileSwipe (eachSlide, (direction, speed) => {
-      if ( speed > 0.8 ){
+      if ( speed > 0.7 ){
         switch (direction) {
         case 'right':
           MySlideShow.moveSlideBlock('back', slideNum);
