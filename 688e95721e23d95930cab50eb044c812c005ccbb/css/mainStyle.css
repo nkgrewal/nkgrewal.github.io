@@ -480,7 +480,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .quote blockquote span::after{ content:'\201D'; right: -.45em; bottom:-.16em; }
 
 .abstract { color:var(--lighter-gray); max-width:28em; margin-top:-4em; padding-left:2em; }
-.abstract.fullCol { margin-top:0; }
+.abstract.fullCol { margin-top:1em; }
 .abstract p:first-of-type { font-size: 1.4em; line-height: 1.5em; margin-bottom: 1.5em; }
 .contributions{font-size: .85em; border:1px dotted rgba(var(--med-gray-rgb),.6); padding:3em;}
 .assets { display:flex; flex-direction: column; flex-flow:wrap; column-gap: .6em; row-gap:.6em; font-size:.9em; }
