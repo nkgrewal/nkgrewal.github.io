@@ -618,6 +618,9 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 /* PIECE SPECIFIC */
 .chime-lift .imgCase img, .amazon-paycode .imgCase img {position:relative; left:-2em;}
+.whitepages .title h2::first-letter{
+	margin-right:-.09em;
+}
 
 
 /*PRELOADER & NOSCRIPT*/
