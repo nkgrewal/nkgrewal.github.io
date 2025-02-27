@@ -620,7 +620,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .project-f .title h2::first-letter { margin-right:-.025em; }
 .study-shift .title h2::first-letter { margin-right:-.1em; }
 .whitepages .title h2::first-letter{ margin-right:-.15em; }
-.chime-lift .imgCase img, .amazon-paycode .imgCase img, .whitepages .imgCase img { position:relative; left:-2em; }
+.chime-lift .imgCase img, .amazon-paycode .imgCase img { position:relative; left:-2em; }
 
 
 /*PRELOADER & NOSCRIPT*/
