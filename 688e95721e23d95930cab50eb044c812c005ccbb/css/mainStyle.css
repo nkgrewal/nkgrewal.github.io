@@ -6,6 +6,7 @@
   --black: #000;
   --darker-gray: #29292b;
   --dark-gray: #333;
+  --gray: #7f8385;
   --med-gray: #9fa4a6;
   --light-gray: #b7bbbd;
   --lighter-gray: #cbd3d7;
@@ -20,6 +21,7 @@
   --black-rgb: 0,0,0;
   --darker-gray-rgb: 41,41,43;
   --dark-gray-rgb: 51,51,51;
+  --gray-rgb: 127, 131, 133;
   --med-gray-rgb: 159,164,166;
   --light-gray-rgb: 183, 187, 189;
   --lighter-gray-rgb: 203,211,215;
@@ -45,7 +47,7 @@
 
 /* CROSS BROWSER FONT SUPPORT */
 h1   { font-size: 2em; }
-h2   { font-size: 1.8em; }
+h2   { font-size: 1.6em; }
 h3   { font-size: 1.2em; }
 h4   { font-size: 1em; }
 h5   { font-size: .85em; }
@@ -100,7 +102,7 @@ ul:last-child{ margin-bottom:0; }
   h4, h5, h6    { page-break-after: avoid }
   ul, ol, dl    { page-break-before: avoid }
   img           { page-break-inside: avoid; }
-  .container {font-size:14px !important}
+  .container { font-size:14px !important}
 	.slideViewer, .allSlides, .allSlides article, footer.scaffold, .title { 
 		margin: 0 auto !important;
 		padding: 0 !important;
@@ -173,7 +175,6 @@ a.actionBtn.symbol::before{
 	min-height:100%;
 	font-size:16px;
 	text-align:center;
-	overflow:hidden;
 	background:url(../img/cornerDec-top.png) top left no-repeat;
 }
 .scaffold{
@@ -185,10 +186,10 @@ a.actionBtn.symbol::before{
 	text-align:left; 
 	margin:0 auto; 
 }
-main.scaffold{
-	background:url(../img/cornerDec-bottom.png) bottom right no-repeat;
-	margin-bottom:4em;
-}
+main.scaffold { background:url(../img/cornerDec-bottom.png) bottom right no-repeat; }
+
+.portfolio-page .container { overflow: hidden; }
+.portfolio-page main.scaffold { margin-bottom:4em; }
 
 
 /* FOOTER */
