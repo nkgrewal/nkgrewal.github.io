@@ -15,17 +15,7 @@
       left:1.4em;
     }
     p { margin:2em auto; }
-    p:first-child{ margin-top:0; }
-    article {
-      display: grid;
-      margin-top: 6.4em;
-      padding-left: 4em;
-      border-left:1px solid rgba(var(--gray-rgb),.5);
-    }
-    picture {
-      margin:0 auto;
-      text-align: center;
-    }
+
 
     .pr-body{
       margin-left: 8%;
@@ -47,12 +37,24 @@
     }
     .pr-body > aside ul { padding-left: 0; }
 
-    article section { padding:2em 0; max-width:600px; }
-    article section:first-child { padding-top: 0; }
+    article {
+      display: grid;
+      margin-top: 6.4em;
+      padding: 0 4em;
+      border-left:1px solid rgba(var(--gray-rgb),.5);
+    }
+
+    article section { margin:2em auto; max-width:600px; }
+    article section:first-child { margin-top: 0; }
     article section:last-child { margin-bottom: 3em; }
+    article section p:first-of-type { margin-top: 0; } 
+    article section p:last-of-type { margin-bottom: 0; }
+    article h2 { margin-bottom: .6em; }
+    article h3, article h4, article h5{ margin-top:.5em; margin-bottom:1em; }
+    article ul{ margin-bottom: 2em; }
 
     .img-set{
-      margin-left: -4em;
+      margin: 0 -4em;
       padding:0;
       max-width: unset;
     }
@@ -72,6 +74,13 @@
       max-height: 500px; 
     }
 
+  /*MOBILE VIEW*/
+  @media only screen and (max-width: 700px) {
+    .pr-body { display: block; margin: 0 3em; }
+    article { margin-top: 4em; padding-left: unset; border-left: unset; }
+    .pr-body > aside { position: unset; }
+    .img-set{ margin: 0 -3em; }
+
   </style>
   </head>
   <body>
@@ -87,7 +96,7 @@
               <ul>
                 <li><a href="#original-settings">Original settings</a></li>
                 <li><a href="#first-attempt">First attempt</a></li>
-                <li><a href="#research">Step back - research</a></li>
+                <li><a href="#research">Step back - Research</a></li>
                 <li><a href="#exploration">Exploration</a></li>
                 <li>Refine requirements</li>
                 <li>Rough prototype</li>
@@ -143,15 +152,25 @@
               </section>
 
               <section id="research">
-                <h3>Step back - research</h3>
-                <p>Interviews with customers and internal users of Pro revealed areas that needed further analysis, which we pursued with surveys and in-person interviews. I also went along to sales and customer meetings with the lead PM to ask specific usability questions and watch users interact in real-time. Between product and engineering, we had collaborative discussions to suss out goals for redefining account structure as well as potential engineering scope. With that info, I began to map out our collective research and conclusions to see what would make sense for users.</p>
-                <p><strong>Survey:</strong> Positive for tool, desire to see better account management and search capability, helped define our knowledge of which industries use Pro and how.</p>
-                <p><strong>In-person interviews</strong>: Revealed more nuanced info. Two strong themes were we needed to help customers manage their users/teams and see their usage of Pro. We figured out that we needed a tiered system with roles and permissions, as well as make usage stats more accessible.</p>
+                <h3>Step back - Research</h3>
+                <p>Interviews with customers and internal users of Pro revealed areas that needed further analysis, which we pursued with surveys and in-person interviews. I also went along to sales and customer meetings with the lead PM to ask specific usability questions and watch users interact in real-time.</p>
+                <h5>Survey:</h5> 
+                <ul>
+                  <li>Very positive reviews for product's utility</li>
+                  <li>Desire for better account management and search capability</li>
+                  <li>Gave us clearer insight into industries and usage</li>
+                </ul>
+                <h5>In-person interviews:</h5>
+                <ul>
+                  <li>Revealed more nuanced info</li> 
+                  <li>Need to help customers manage their users/teams with roles and permissions</li>
+                  <li>Also need clear view into usage statistics for larger teams</li>
+                </ul>
               </section>
               <section id="exploration">
                 <h3>Exploration</h3>
                 <h4>Information architecture</h4>
-                <p>Uncovered basic structure that would work well for accounts (owner, more hands off; team lead, does actual acct management; agent, does actual searches in tool.</p>
+                <p>Between product and engineering, we had collaborative discussions to suss out goals for redefining account structure as well as potential engineering scope. We defined a basic structure that would work well for different businesses (owner, more hands off; team lead, does actual acct management; agent, does actual searches in tool. With that info, I began to map out our collective research and conclusions to see what would make sense for users.</p>
               </section>
               <section class="img-set">
                 <div>
