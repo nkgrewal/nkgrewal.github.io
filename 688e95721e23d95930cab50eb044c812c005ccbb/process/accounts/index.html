@@ -6,7 +6,6 @@
     body{ color: var(--lighter-gray); }
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Comfortaa';
-      margin-bottom:1em;
     }
     h1 { color:var(--light-green) }
     ul,ol {
@@ -16,11 +15,18 @@
       left:1.4em;
     }
     p { margin:2em auto; }
-    section { padding:2em 0; max-width:600px; }
-    section p:first-child{ margin-top:0; }
+    p:first-child{ margin-top:0; }
+    article {
+      display: grid;
+      margin-top: 6.4em;
+      padding-left: 4em;
+      border-left:1px solid rgba(var(--gray-rgb),.5);
+    }
+    picture {
+      margin:0 auto;
+      text-align: center;
+    }
 
-    /* GRID */
-    article{ display: grid; }
     .pr-body{
       margin-left: 8%;
       padding-top: 3em;
@@ -29,31 +35,27 @@
       column-gap: 2em;
     }
 
-    article {
-      margin-top: 6.4em;
-      padding-left: 4em;
-      border-left:1px solid rgba(var(--gray-rgb),.5);
+    .pr-body > aside { 
+      align-self: start; 
+      position: sticky; 
+      top: 3em; 
     }
+    .pr-body > aside h1 { 
+      margin-bottom:1em;
+      font: 3.6em/.6em 'Meow Script', cursive; 
+      margin: 1.2em 0 .5em 0; 
+    }
+    .pr-body > aside ul { padding-left: 0; }
 
-    picture {
-      display: contents;
-      margin:0 auto;
-      text-align: center;
-    }
-    .pr-head { margin-bottom:1em; }
-    .pr-head h1{ font: 3.6em/.6em 'Meow Script', cursive; margin: 1.2em 0 .5em 0; }
+    article section { padding:2em 0; max-width:600px; }
     article section:first-child { padding-top: 0; }
     article section:last-child { margin-bottom: 3em; }
-
-    .pr-body > aside { align-self:start; position: sticky; top: 3em; }
-    .pr-body > aside ul { padding-left: 0; }
 
     .img-set{
       margin-left: -4em;
       padding:0;
       max-width: unset;
     }
-
     .img-set > div { 
       display: flex; 
       column-gap: 1em; 
@@ -62,9 +64,13 @@
       border-top: 1px solid rgba(var(--gray-rgb),.5); 
       border-bottom: 1px solid rgba(var(--gray-rgb),.5); 
     }
-
     .img-set picture { display: contents; }
-    .img-set img { width: fit-content; max-width:80%; height:fit-content; max-height: 500px; }
+    .img-set img { 
+      width: fit-content; 
+      max-width:80%; 
+      height:fit-content; 
+      max-height: 500px; 
+    }
 
   </style>
   </head>
@@ -74,14 +80,15 @@
         <div class="fascia">
           <div class="pr-body">
             <aside>
-              <div class="pr-head">
-                <div><a class="back-home-btn" href="../../">&larr; To portfolio</a></div>
+              <header>
+                <div><a class="back-home-btn" href="../../index.html#pro-accounts">&larr; To portfolio</a></div>
                 <h1>Pro Accounts</h1>
-              </div>
+              </header>
               <ul>
-                <li>First attempt at redesign</li>
-                <li>Research</li>
-                <li>Team exploration</li>
+                <li><a href="#original-settings">Original settings</a></li>
+                <li><a href="#first-attempt">First attempt</a></li>
+                <li><a href="#research">Step back - research</a></li>
+                <li><a href="#exploration">Exploration</a></li>
                 <li>Refine requirements</li>
                 <li>Rough prototype</li>
                 <li>Wireframe prototype</li>
@@ -91,11 +98,11 @@
             <article>
               <section>
                 <h2>Design Process</h2>
-                <p>This project was one of the Pro product's bigger and process-intensive UX changes at the time. It threaded into several large-scale projects like the move to SSO (single sign-on), Developer API launch, and a viral marketing campaign moving targeted users from consumer site to Pro.</p>
+                <p>This project was one of the Pro product's more process-intensive UX changes at the time. It threaded into several large-scale projects like the move to SSO (single sign-on), Developer API launch, and a viral marketing campaign moving targeted users from consumer site to Pro.</p>
               </section>
-              <section>
-                <h3>Original</h3>
-                <p>Initially, the scope was a reskin to match our rebrand. These screens give an overview of Account Settings, Site Administration, and the plans available for purchase.</p>
+              <section id="original-settings">
+                <h3>Original settings</h3>
+                <p>The initial scope was a reskin to match our new branding. Screens below give an overview of Account Settings, Site Administration, and Subscription Plans for purchase.</p>
               </section>
               <section class="img-set">
                 <div>
@@ -108,13 +115,20 @@
                 </div>
               </section>
               <section>
-                <p>I had recently designed the new Pro API Developer portal to be clean and approachable, However, it was too disparate and enough thought wasn't given into showing how it would integrate with the rest of our services.</p>
+                <p>I also had designed the new Pro API Developer portal. While clean and approachable, we needed to find a more seamless way to integrate it with the rest of our Pro services.</p>
                 <picture><img src="img/old/old-7.png" alt=""/></picture>
               </section>
 
-              <section>
-                <p>Initial attempt to give the account settings page a facelift, before we discovered deeper usability issues. Important existential questions came up like "Who is going to be using this stuff? Who manages users? Why? What do users do in account settings? What do first time users expect to do when they go into it? What don't they use in it?"</p>
-                [link out to invision flows?]
+              <section id="first-attempt">
+                <h3>First attempt</h3>
+                <p>While giving the account settings page a refresh, we discovered deeper usability issues. Important existential questions came up like:</p>
+                <ul>
+                  <li>"Who uses all these sections?"</li>
+                  <li>"Who on the acount manages users?"</li>
+                  <li>"What do users actually do in account settings?"</li>
+                  <li>"What do first time users expect to do when they go into it?"</li>
+                  <li>"What don't they use in it?"</li>
+                </ul>
               </section>
               <section class="img-set">
                 <div>
@@ -128,11 +142,16 @@
                 </div>
               </section>
 
-              <section>
-                <p>Interviews with customers and internal users of Pro revealed areas in the accounts structure that could benefit from further analysis. I tagged along to meetings to ask specific usability questions and watch users interact with the tool overall. Between product and development, we had a few collaborative discussions to suss out goals for rethinking the account structure and what the effort might look like for that. With that info, I began to map out our collective research and conclusions to see what would make sense for users.</p>
-                <p>Survey: positive for tool, desire to see better account management and search capability, more knowledge of which industries use Pro and how.</p>
-                <p>In-person interviews revealed more nuanced info. Two major areas we needed to do better for our customers was helping them manage their users/teams and see their usage of Pro. We figured out that we needed a tiered system with roles and permissions, and make usage stats more accessible. Uncovered basic structure that would work well for accounts (owner, more hands off; team lead, does actual acct management; agent, does actual searches in tool.</p>
-                <p>Building profiles</p>
+              <section id="research">
+                <h3>Step back - research</h3>
+                <p>Interviews with customers and internal users of Pro revealed areas that needed further analysis, which we pursued with surveys and in-person interviews. I also went along to sales and customer meetings with the lead PM to ask specific usability questions and watch users interact in real-time. Between product and engineering, we had collaborative discussions to suss out goals for redefining account structure as well as potential engineering scope. With that info, I began to map out our collective research and conclusions to see what would make sense for users.</p>
+                <p><strong>Survey:</strong> Positive for tool, desire to see better account management and search capability, helped define our knowledge of which industries use Pro and how.</p>
+                <p><strong>In-person interviews</strong>: Revealed more nuanced info. Two strong themes were we needed to help customers manage their users/teams and see their usage of Pro. We figured out that we needed a tiered system with roles and permissions, as well as make usage stats more accessible.</p>
+              </section>
+              <section id="exploration">
+                <h3>Exploration</h3>
+                <h4>Information architecture</h4>
+                <p>Uncovered basic structure that would work well for accounts (owner, more hands off; team lead, does actual acct management; agent, does actual searches in tool.</p>
               </section>
               <section class="img-set">
                 <div>
@@ -153,6 +172,7 @@
               </section>
 
               <section>
+                <h4>Team exploration</h4>
                 <p>This was a large undertaking that would ultimately affect every level of the Pro team, from sales to product to marketing. To get ahead of any issues that might crop up due to lack of information or communication, we decided to try a page out of the <a href="http://www.gv.com/sprint/">Google Design Spring</a> and include the larger team in brainstorming. While mapping out flows and requirements, we also held a session with the Seattle team and later the Budapest team.</p>
               </section>
               <section class="img-set">
