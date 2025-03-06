@@ -48,7 +48,7 @@
     article section:first-child { margin-top: 0; }
     article section:last-child { margin-bottom: 3em; }
     article section p:first-of-type { margin-top: 0; } 
-    article section p:last-of-type { margin-bottom: 0; }
+    article section p:last-child{ margin-bottom: 0; }
     article h2 { margin-bottom: .6em; }
     article h3, article h4, article h5{ margin-top:.5em; margin-bottom:1em; }
     article ul{ margin-bottom: 2em; }
@@ -67,6 +67,7 @@
       border-bottom: 1px solid rgba(var(--gray-rgb),.5); 
     }
     .img-set picture { display: contents; }
+    .img-set source { position: absolute; }
     .img-set img { 
       width: fit-content; 
       max-width:80%; 
@@ -98,7 +99,7 @@
                 <li><a href="#first-attempt">First attempt</a></li>
                 <li><a href="#research">Step back - Research</a></li>
                 <li><a href="#exploration">Exploration</a></li>
-                <li>Refine requirements</li>
+                <li><a href="#iterate-wf">Iterate with wireframes</a></li>
                 <li>Rough prototype</li>
                 <li>Wireframe prototype</li>
                 <li>Wireframing key pages</li>
@@ -115,17 +116,50 @@
               </section>
               <section class="img-set">
                 <div>
-                  <picture><img src="img/old/old-0.png" alt=""/></picture>
-                  <picture><img src="img/old/old-1.png" alt=""/></picture>
-                  <picture><img src="img/old/old-2.png" alt=""/></picture>
-                  <picture><img src="img/old/old-3.png" alt=""/></picture>
-                  <picture><img src="img/old/old-4.png" alt=""/></picture>
-                  <picture><img src="img/old/old-5.png" alt=""/></picture>
+                  <picture>
+                    <source srcset="img/old/old-8.webp" type="image/webp" />
+                    <source srcset="img/old/old-8.png" type="image/png" />
+                    <img src="img/old/old-8.png" alt="Pro Sign In"/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/old/old-0.webp" type="image/webp" />
+                    <source srcset="img/old/old-0.png" type="image/png" />
+                    <img src="img/old/old-0.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/old/old-1.webp" type="image/webp" />
+                    <source srcset="img/old/old-1.png" type="image/png" />
+                    <img src="img/old/old-1.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/old/old-2.webp" type="image/webp" />
+                    <source srcset="img/old/old-2.png" type="image/png" />
+                    <img src="img/old/old-2.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/old/old-3.webp" type="image/webp" />
+                    <source srcset="img/old/old-3.png" type="image/png" />
+                    <img src="img/old/old-3.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/old/old-4.webp" type="image/webp" />
+                    <source srcset="img/old/old-5.png" type="image/png" />
+                    <img src="img/old/old-4.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/old/old-5.webp" type="image/webp" />
+                    <source srcset="img/old/old-5.png" type="image/png" />
+                    <img src="img/old/old-5.png" alt=""/>
+                  </picture>
                 </div>
               </section>
               <section>
                 <p>I also had designed the new Pro API Developer portal. While clean and approachable, we needed to find a more seamless way to integrate it with the rest of our Pro services.</p>
-                <picture><img src="img/old/old-7.png" alt=""/></picture>
+                <picture>
+                  <source srcset="img/old/old-7.webp" type="image/webp" />
+                  <source srcset="img/old/old-7.png" type="image/png" />
+                  <img src="img/old/old-7.png" alt="Pro API Developer"/>
+                </picture>
               </section>
 
               <section id="first-attempt">
@@ -141,13 +175,41 @@
               </section>
               <section class="img-set">
                 <div>
-                  <picture><img src="img/v1/1.png" alt=""/></picture>
-                  <picture><img src="img/v1/2.png" alt=""/></picture>
-                  <picture><img src="img/v1/5.png" alt=""/></picture>
-                  <picture><img src="img/v1/7.png" alt=""/></picture>
-                  <picture><img src="img/v1/12.png" alt=""/></picture>
-                  <picture><img src="img/v1/15.png" alt=""/></picture>
-                  <picture><img src="img/v1/17.png" alt=""/></picture>
+                  <picture>
+                    <source srcset="img/v1/1.webp" type="image/webp" />
+                    <source srcset="img/v1/1.png" type="image/png" />
+                    <img src="img/v1/1.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/v1/2.webp" type="image/webp" />
+                    <source srcset="img/v1/2.png" type="image/png" />
+                    <img src="img/v1/2.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/v1/5.webp" type="image/webp" />
+                    <source srcset="img/v1/5.png" type="image/png" />
+                    <img src="img/v1/5.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/v1/7.webp" type="image/webp" />
+                    <source srcset="img/v1/7.png" type="image/png" />
+                    <img src="img/v1/7.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/v1/12.webp" type="image/webp" />
+                    <source srcset="img/v1/12.png" type="image/png" />
+                    <img src="img/v1/12.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/v1/15.webp" type="image/webp" />
+                    <source srcset="img/v1/15.png" type="image/png" />
+                    <img src="img/v1/15.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/v1/17.webp" type="image/webp" />
+                    <source srcset="img/v1/17.png" type="image/png" />
+                    <img src="img/v1/17.png" alt=""/>
+                  </picture>
                 </div>
               </section>
 
@@ -170,73 +232,206 @@
               <section id="exploration">
                 <h3>Exploration</h3>
                 <h4>Information architecture</h4>
-                <p>Between product and engineering, we had collaborative discussions to suss out goals for redefining account structure as well as potential engineering scope. We defined a basic structure that would work well for different businesses (owner, more hands off; team lead, does actual acct management; agent, does actual searches in tool. With that info, I began to map out our collective research and conclusions to see what would make sense for users.</p>
+                <p>Between product and engineering, we held collaborative sessions to discuss goals for the account overhaul, as well as potential engineering scope. We defined a basic account structure that would work well for different businesses:</p> 
+                <ul>
+                  <li><strong>Agent</strong>&mdash;Performs daily searches in Pro</li>
+                  <li><strong>Team lead</strong>&mdash;Pro account management and searches</li>
+                  <li><strong>Owner</strong>&mdash;More hands off, likely handles payment</li>
+                </ul>
+                <p>With that info, I mapped out our collective research and conclusions to see what would make sense for users.</p>
               </section>
               <section class="img-set">
                 <div>
-                  <picture><img src="img/sketches1/1.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/2.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/3.png" alt=""/></picture>
-                  <picture><img src="img/sketches1/4.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/5.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/6.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/7.png" alt=""/></picture>
-                  <picture><img src="img/sketches1/8.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/9.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/10.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/11.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/12.jpg" alt=""/></picture>
-                  <picture><img src="img/sketches1/13.jpg" alt=""/></picture>
+                  <picture>
+                    <source srcset="img/sketches1/2.webp" type="image/webp" />
+                    <source srcset="img/sketches1/2.jpg" type="image/jpg" />
+                    <img src="img/sketches1/2.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/sketches1/1.webp" type="image/webp" />
+                    <source srcset="img/sketches1/1.jpg" type="image/jpg" />
+                    <img src="img/sketches1/1.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/sketches1/3.webp" type="image/webp" />
+                    <source srcset="img/sketches1/3.jpg" type="image/jpg" />
+                    <img src="img/sketches1/3.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/sketches1/4.webp" type="image/webp" />
+                    <source srcset="img/sketches1/4.jpg" type="image/jpg" />
+                    <img src="img/sketches1/4.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/sketches1/5.webp" type="image/webp" />
+                    <source srcset="img/sketches1/5.jpg" type="image/jpg" />
+                    <img src="img/sketches1/5.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/sketches1/6.webp" type="image/webp" />
+                    <source srcset="img/sketches1/6.jpg" type="image/jpg" />
+                    <img src="img/sketches1/6.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/sketches1/7.webp" type="image/webp" />
+                    <source srcset="img/sketches1/7.jpg" type="image/jpg" />
+                    <img src="img/sketches1/7.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/sketches1/11.webp" type="image/webp" />
+                    <source srcset="img/sketches1/11.jpg" type="image/jpg" />
+                    <img src="img/sketches1/11.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/sketches1/12.webp" type="image/webp" />
+                    <source srcset="img/sketches1/12.jpg" type="image/jpg" />
+                    <img src="img/sketches1/12.jpg" alt=""/>
+                  </picture>
                 </div>
               </section>
-
               <section>
                 <h4>Team exploration</h4>
-                <p>This was a large undertaking that would ultimately affect every level of the Pro team, from sales to product to marketing. To get ahead of any issues that might crop up due to lack of information or communication, we decided to try a page out of the <a href="http://www.gv.com/sprint/">Google Design Spring</a> and include the larger team in brainstorming. While mapping out flows and requirements, we also held a session with the Seattle team and later the Budapest team.</p>
+                <p>We opened up ideation to the larger Pro sales and marketing team, since this was a large undertaking that would ultimately affect them as well. We took a page out of the <a href="http://www.gv.com/sprint/">Google Design Sprint</a> to present them with the research and brainstorm as a group, holding a session in Seattle then in Budapest.</p>
               </section>
               <section class="img-set">
                 <div>
-                  <picture><img src="img/unpack/1.jpg" alt=""/></picture>
-                  <picture><img src="img/unpack/2.jpg" alt=""/></picture>
-                  <picture><img src="img/unpack/3.jpg" alt=""/></picture>
-                  <picture><img src="img/unpack/4.jpg" alt=""/></picture>
-                  <picture><img src="img/unpack/5.jpg" alt=""/></picture>
-                  <picture><img src="img/unpack/6.jpg" alt=""/></picture>
-                  <picture><img src="img/unpack/7.jpg" alt=""/></picture>
+                  <picture>
+                    <source srcset="img/teamstorm/1.webp" type="image/webp" />
+                    <source srcset="img/teamstorm/1.png" type="image/png" />
+                    <img src="img/teamstorm/1.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/teamstorm/2.webp" type="image/webp" />
+                    <source srcset="img/teamstorm/2.png" type="image/png" />
+                    <img src="img/teamstorm/2.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/teamstorm/4.webp" type="image/webp" />
+                    <source srcset="img/teamstorm/4.png" type="image/png" />
+                    <img src="img/teamstorm/4.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/teamstorm/5.webp" type="image/webp" />
+                    <source srcset="img/teamstorm/5.png" type="image/png" />
+                    <img src="img/teamstorm/5.jpg" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/teamstorm/6.webp" type="image/webp" />
+                    <source srcset="img/teamstorm/6.png" type="image/png" />
+                    <img src="img/teamstorm/6.jpg" alt=""/>
+                  </picture>
                 </div>
               </section>
-
+              <section id="iterate-wf">
+                <h3>Iterate with wireframes</h3>
+                <p>I began to build prototypes for InVision and flesh out profiles.</p>
+              </section>
               <section class="img-set">
-                <p>From the sketches, I began to build prototypes for InVision and flesh out profiles.</p>
                 <div>
                   <h5>Owner</h5>
-                  <picture><img src="img/sketches2/4.png" alt=""/></picture>
+                  <picture>
+                    <source srcset="img/sketches2/4.webp" type="image/webp" />
+                    <source srcset="img/sketches2/4.png" type="image/png" />
+                    <img src="img/sketches2/4.png" alt=""/>
+                  </picture>
                   <h5>Team Lead</h5>
-                  <picture><img src="img/sketches2/12.png" alt=""/></picture>
+                  <picture>
+                    <source srcset="img/sketches2/12.webp" type="image/webp" />
+                    <source srcset="img/sketches2/12.png" type="image/png" />
+                    <img src="img/sketches2/12.png" alt=""/>
+                  </picture>
                   <h5>Agent</h5>
-                  <picture><img src="img/sketches2/17.png" alt=""/></picture>
+                  <picture>
+                    <source srcset="img/sketches2/17.webp" type="image/webp" />
+                    <source srcset="img/sketches2/17.png" type="image/png" />
+                    <img src="img/sketches2/17.png" alt=""/>
+                  </picture>
                 </div>
               </section>
 
               <section class="img-set">
                 <p>Mapping key items</p>
                 <div>
-                  <picture><img src="img/wf/1.png" alt=""/></picture>
-                  <picture><img src="img/wf/2.png" alt=""/></picture>
-                  <picture><img src="img/wf/3.png" alt=""/></picture>
-                  <picture><img src="img/wf/4.png" alt=""/></picture>
-                  <picture><img src="img/wf/5.png" alt=""/></picture>
-                  <picture><img src="img/wf/6.png" alt=""/></picture>
-                  <picture><img src="img/wf/7.png" alt=""/></picture>
-                  <picture><img src="img/wf/8.png" alt=""/></picture>
-                  <picture><img src="img/wf/10.png" alt=""/></picture>
-                  <picture><img src="img/wf/11.png" alt=""/></picture>
-                  <picture><img src="img/wf/12.png" alt=""/></picture>
-                  <picture><img src="img/wf/15.png" alt=""/></picture>
-                  <picture><img src="img/wf/16.png" alt=""/></picture>
-                  <picture><img src="img/wf/17.png" alt=""/></picture>
-                  <picture><img src="img/wf/18.png" alt=""/></picture>
-                  <picture><img src="img/wf/19.png" alt=""/></picture>
+                  <picture>
+                    <source srcset="img/wf/1.webp" type="image/webp" />
+                    <source srcset="img/wf/1.png" type="image/png" />
+                    <img src="img/wf/1.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/wf/2.webp" type="image/webp" />
+                    <source srcset="img/wf/2.png" type="image/png" />
+                    <img src="img/wf/2.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/3.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/4.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/5.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/6.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/7.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/8.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/10.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/11.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/12.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/15.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/16.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/17.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/18.png" alt=""/>
+                  </picture>
+                  <picture>
+                    <source srcset="img/.webp" type="image/webp" />
+                    <source srcset="img/.png" type="image/png" />
+                    <img src="img/wf/19.png" alt=""/>
+                  </picture>
                 </div>
               </section>
               <section>
