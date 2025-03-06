@@ -56,23 +56,23 @@
     .img-set{
       margin: 0 -4em;
       padding:0;
-      max-width: unset;
+      max-width: max-content;
+      overflow-x: scroll;
     }
     .img-set > div { 
       display: flex; 
-      column-gap: 1em; 
-      overflow-x: scroll;
+      column-gap: 1em;
+      align-items: flex-start; 
       background-color: rgba(var(--darker-gray-rgb),.5);
       border-top: 1px solid rgba(var(--gray-rgb),.5); 
       border-bottom: 1px solid rgba(var(--gray-rgb),.5); 
     }
-    .img-set picture { display: contents; }
     .img-set source { position: absolute; }
     .img-set img { 
-      width: fit-content; 
-      max-width:80%; 
-      height:fit-content; 
-      max-height: 500px; 
+      display: block;
+      object-fit: contain;
+      max-width: 600px;
+      max-height: 500px;
     }
 
   /*MOBILE VIEW*/
@@ -324,7 +324,7 @@
               </section>
               <section id="iterate-wf">
                 <h3>Iterate with wireframes</h3>
-                <p>I began to build prototypes for InVision and flesh out profiles.</p>
+                <p>I began to build paper prototypes in InVision to flesh out journeys for each of our potential user profiles. This helped us define areas that would overlap or be unique to each experience.</p>
               </section>
               <section class="img-set">
                 <div>
