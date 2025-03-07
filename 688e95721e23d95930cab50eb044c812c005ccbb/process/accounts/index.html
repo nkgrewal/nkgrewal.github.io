@@ -18,7 +18,7 @@
 
 
     .pr-body{
-      margin-left: 8%;
+      margin-left: 6%;
       padding-top: 3em;
       display: grid;
       grid-template-columns: minmax(min-content, max-content) auto;
@@ -33,9 +33,11 @@
     .pr-body > aside h1 { 
       margin-bottom:1em;
       font: 3.6em/.6em 'Meow Script', cursive; 
-      margin: 1.2em 0 .5em 0; 
+      margin: 1.2em 0 .5em -.3em; 
     }
-    .pr-body > aside ul { padding-left: 0; }
+    .pr-body > aside ul { padding-left: 0; left:0; list-style-type: none; }
+    /*.pr-body > aside ul li.selected:before, article section h3:before { content: "⬦"; font-weight:bold; font-size: .8em; position: absolute; left:-1.4em; }*/
+    .pr-body > aside ul a { background-color: transparent; }
 
     article {
       display: grid;
@@ -44,13 +46,14 @@
       border-left:1px solid rgba(var(--gray-rgb),.5);
     }
 
-    article section { margin:2em auto; max-width:600px; }
+    article section { margin:2em; max-width:600px; }
     article section:first-child { margin-top: 0; }
     article section:last-child { margin-bottom: 3em; }
     article section p:first-of-type { margin-top: 0; } 
     article section p:last-child{ margin-bottom: 0; }
     article h2 { margin-bottom: .6em; }
-    article h3, article h4, article h5{ margin-top:.5em; margin-bottom:1em; }
+    article h3{ position:relative; }
+    article h3, article h4, article h5{ margin-top:.5em; margin-bottom:1em; color: white; }
     article ul{ margin-bottom: 2em; }
 
     .img-set{
@@ -58,14 +61,14 @@
       padding:0;
       max-width: max-content;
       overflow-x: scroll;
+      background-color: rgba(var(--darker-gray-rgb),.5);
+      border-top: 1px solid rgba(var(--gray-rgb),.5); 
+      border-bottom: 1px solid rgba(var(--gray-rgb),.5); 
     }
     .img-set > div { 
       display: flex; 
       column-gap: 1em;
       align-items: flex-start; 
-      background-color: rgba(var(--darker-gray-rgb),.5);
-      border-top: 1px solid rgba(var(--gray-rgb),.5); 
-      border-bottom: 1px solid rgba(var(--gray-rgb),.5); 
     }
     .img-set source { position: absolute; }
     .img-set img { 
@@ -74,11 +77,15 @@
       max-width: 600px;
       max-height: 500px;
     }
+    .img-set figure { margin:0; display: flex; flex-wrap: wrap; }
+    .img-set figure > div { display: flex; flex-wrap: nowrap; }
+    .img-set figure h5 { flex: 1 100%; }
 
   /*MOBILE VIEW*/
   @media only screen and (max-width: 700px) {
     .pr-body { display: block; margin: 0 3em; }
-    article { margin-top: 4em; padding-left: unset; border-left: unset; }
+    article { margin-top: 4em; padding-left: unset; padding-right:unset; border-left: unset; }
+    article section { margin-left:0; margin-right: 0; }
     .pr-body > aside { position: unset; }
     .img-set{ margin: 0 -3em; }
 
@@ -196,6 +203,11 @@
                     <img src="img/v1/7.png" alt=""/>
                   </picture>
                   <picture>
+                    <source srcset="img/v1/8.webp" type="image/webp" />
+                    <source srcset="img/v1/8.png" type="image/png" />
+                    <img src="img/v1/8.png" alt=""/>
+                  </picture>
+                  <picture>
                     <source srcset="img/v1/12.webp" type="image/webp" />
                     <source srcset="img/v1/12.png" type="image/png" />
                     <img src="img/v1/12.png" alt=""/>
@@ -278,14 +290,9 @@
                     <img src="img/sketches1/7.jpg" alt=""/>
                   </picture>
                   <picture>
-                    <source srcset="img/sketches1/11.webp" type="image/webp" />
-                    <source srcset="img/sketches1/11.jpg" type="image/jpg" />
-                    <img src="img/sketches1/11.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/sketches1/12.webp" type="image/webp" />
-                    <source srcset="img/sketches1/12.jpg" type="image/jpg" />
-                    <img src="img/sketches1/12.jpg" alt=""/>
+                    <source srcset="img/sketches1/10.webp" type="image/webp" />
+                    <source srcset="img/sketches1/10.jpg" type="image/jpg" />
+                    <img src="img/sketches1/10.jpg" alt=""/>
                   </picture>
                 </div>
               </section>
@@ -324,33 +331,42 @@
               </section>
               <section id="iterate-wf">
                 <h3>Iterate with wireframes</h3>
+                <h4>Paper prototype</h4>
                 <p>I began to build paper prototypes in InVision to flesh out journeys for each of our potential user profiles. This helped us define areas that would overlap or be unique to each experience.</p>
               </section>
               <section class="img-set">
                 <div>
-                  <h5>Owner</h5>
-                  <picture>
-                    <source srcset="img/sketches2/4.webp" type="image/webp" />
-                    <source srcset="img/sketches2/4.png" type="image/png" />
-                    <img src="img/sketches2/4.png" alt=""/>
-                  </picture>
-                  <h5>Team Lead</h5>
-                  <picture>
-                    <source srcset="img/sketches2/12.webp" type="image/webp" />
-                    <source srcset="img/sketches2/12.png" type="image/png" />
-                    <img src="img/sketches2/12.png" alt=""/>
-                  </picture>
-                  <h5>Agent</h5>
-                  <picture>
-                    <source srcset="img/sketches2/17.webp" type="image/webp" />
-                    <source srcset="img/sketches2/17.png" type="image/png" />
-                    <img src="img/sketches2/17.png" alt=""/>
-                  </picture>
+                  <figure>
+                    <h5>Owner</h5>
+                    <picture>
+                      <source srcset="img/sketches2/4.webp" type="image/webp" />
+                      <source srcset="img/sketches2/4.png" type="image/png" />
+                      <img src="img/sketches2/4.png" alt=""/>
+                    </picture>
+                  </figure>
+                  <figure>
+                    <h5>Team Lead</h5>
+                    <picture>
+                      <source srcset="img/sketches2/12.webp" type="image/webp" />
+                      <source srcset="img/sketches2/12.png" type="image/png" />
+                      <img src="img/sketches2/12.png" alt=""/>
+                    </picture>
+                  </figure>
+                  <figure>
+                    <h5>Agent</h5>
+                    <div>
+                      <picture>
+                        <source srcset="img/sketches2/17.webp" type="image/webp" />
+                        <source srcset="img/sketches2/17.png" type="image/png" />
+                        <img src="img/sketches2/17.png" alt=""/>
+                      </picture>
+                    </div>
+                  </figure>
                 </div>
               </section>
 
               <section class="img-set">
-                <p>Mapping key items</p>
+                <h4>Wireframe prototype</h4>
                 <div>
                   <picture>
                     <source srcset="img/wf/1.webp" type="image/webp" />
