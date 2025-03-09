@@ -172,7 +172,6 @@ a.actionBtn.symbol::before{
 /* LAYOUT BLOCKS */
 .container{
 	width:100%;
-	min-height:100%;
 	font-size:16px;
 	text-align:center;
 	background:url(../img/cornerDec-top.png) top left no-repeat;
@@ -188,7 +187,7 @@ a.actionBtn.symbol::before{
 }
 main.scaffold { background:url(../img/cornerDec-bottom.png) bottom right no-repeat; }
 
-.portfolio-page .container { overflow: hidden; }
+.portfolio-page .container { overflow: hidden; min-height:100%; }
 .portfolio-page main.scaffold { margin-bottom:4em; }
 
 
@@ -614,7 +613,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .resume-items .job h4 { justify-self: right; margin-left: auto; padding-right:1em; }
 .resume-items .job h4 span { margin-left:-1em; margin-right:.5em; color: rgba( var(--med-gray-rgb),.65); }
 .resume-items .job p { line-height: 1.4em; color: var(--lighter-gray); }
-.footnote{ margin: 3em auto; padding: 0 2em; max-width:35em; font-size:.8em; line-height:1.5em; color: var(--lighter-gray); text-align:center; }
+.footnote{ margin: 0 auto; padding: 2em 3em 4em 3em; max-width:36em; font-size:.8em; line-height:1.5em; color: var(--lighter-gray); text-align:center; }
 
 
 /* PIECE SPECIFIC */
