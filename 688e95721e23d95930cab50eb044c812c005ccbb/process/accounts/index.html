@@ -25,7 +25,9 @@
   <style type="text/css">
     body{ color: var(--lighter-gray); }
     h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
-    h1 { color:var(--light-green) }
+    h1 { color:var(--light-green); }
+    h3 { color:var(--white); }
+    h4, h5 { color:var(--med-blue); }
     ul,ol {
       margin:0 auto;
       position: relative;
@@ -55,7 +57,7 @@
     }
     .pr-body > aside ul { padding-left: 0; left:0; list-style-type: none; }
     /*.pr-body > aside ul li.selected:before, article section h3:before { content: "⬦"; font-weight:bold; font-size: .8em; position: absolute; left:-1.4em; }*/
-    .pr-body > aside ul a { background-color: transparent; }
+    .pr-body > aside ul a { background-color:transparent; color:var(--lighter-gray);}
 
     article {
       display: grid;
@@ -70,8 +72,13 @@
     article section p:first-of-type { margin-top: 0; } 
     article section p:last-child{ margin-bottom: 0; }
     article h2 { margin-bottom: .6em; }
-    article h3{ position:relative; }
-    article h3, article h4, article h5{ margin-top:.5em; margin-bottom:1em; color: white; }
+    article h3{ 
+      padding: .8em .5em;
+      margin-left:-.5em;
+      background-color: 
+      rgba(var(--darker-gray-rgb),.5); 
+    }
+    article h3, article h4, article h5{ margin-top:.5em; margin-bottom:1em; }
     article ul{ margin-bottom: 2em; }
 
     .img-set{
