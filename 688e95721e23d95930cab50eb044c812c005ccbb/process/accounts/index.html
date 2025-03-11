@@ -45,19 +45,39 @@
       column-gap: 2em;
     }
 
-    .pr-body > aside { 
+    .pr-body nav { 
       align-self: start; 
       position: sticky; 
       top: 3em; 
     }
-    .pr-body > aside h1 { 
+    .pr-body nav h1 { 
       margin-bottom:1em;
       font: 3.6em/.6em 'Meow Script', cursive; 
-      margin: 1.2em 0 .5em -.3em; 
+      margin: 1.2em 0 .5em -.4em; 
     }
-    .pr-body > aside ul { padding-left: 0; left:0; list-style-type: none; }
+    .pr-body nav ul { margin-right:-2em; padding-left: 0; left:0; list-style-type: none; }
+    .pr-body nav li {
+      margin: .6em 0; 
+      padding: .2em 0;
+      border-right: 4px solid transparent;
+    }
+    .pr-body nav li:hover{ 
+      color: var(--light-green); 
+      background-color:transparent;
+      border-color:var(--light-green);
+    }
+    .pr-body nav li.selected{
+      color:var(--lighter-gray);
+      border-color:rgba(var(--med-gray-rgb),.8);
+      background:
+        radial-gradient(ellipse at center top, rgba(35, 35, 35, 1) 0%, rgba(40, 40, 40, .25) 25%, rgba(35, 35, 35, 0.2) 45%, rgba(35, 35, 35, 0) 65% ),
+        linear-gradient(180deg, rgba(30,30,30,.6) 0%, rgba(30,30,30,0.4) 20%, rgba(35,35,35,0) 30%);
+
+    }
+    .pr-body nav li.selected:hover{ border-color:var(--med-gray); }
     /*.pr-body > aside ul li.selected:before, article section h3:before { content: "⬦"; font-weight:bold; font-size: .8em; position: absolute; left:-1.4em; }*/
-    .pr-body > aside ul a { background-color:transparent; color:var(--lighter-gray);}
+    .pr-body nav ul a { background-color:transparent; color:var(--lighter-gray);}
+    .pr-body nav ul a:hover {text-decoration: none;}
 
     article {
       display: grid;
@@ -111,7 +131,7 @@
     .pr-body { display: block; margin: 0 3em; }
     article { margin-top: 4em; padding-left: unset; padding-right:unset; border-left: unset; }
     article section { margin-left:0; margin-right: 0; }
-    .pr-body > aside { position: unset; }
+    .pr-body > nav { position: unset; }
     .img-set{ margin: 0 -3em; }
     .img-set img { max-width: 80vw; }
   }
@@ -122,7 +142,7 @@
       <main class="scaffold">
         <div class="fascia">
           <div class="pr-body">
-            <aside>
+            <nav>
               <header>
                 <div><a class="back-home-btn" href="../../index.html#pro-accounts">&larr; To portfolio</a></div>
                 <h1>Pro Accounts</h1>
@@ -135,7 +155,7 @@
                 <li><a href="#iterate-wf">Iterate with wireframes</a></li>
                 <li><a href="#final-design">Final design</a></li>
               </ul>
-            </aside>
+            </nav>
             <article>
               <section>
                 <h2>Design Process</h2>
