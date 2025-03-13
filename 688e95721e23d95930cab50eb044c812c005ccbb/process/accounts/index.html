@@ -57,26 +57,28 @@
     }
     .pr-body nav ul { margin-right:-2em; padding-left: 0; left:0; list-style-type: none; }
     .pr-body nav li {
-      margin: .6em 0; 
-      padding: .2em 0;
+      margin: 0; 
+      padding: .6em;
       border-right: 4px solid transparent;
     }
     .pr-body nav li:hover{ 
-      color: var(--light-green); 
+      color: var(--white); 
       background-color:transparent;
+      border-color: rgba(var(--light-green-rgb),.6);
+    }
+    .pr-body nav li.visited{
+      color: var(--med-gray);
+      border-color:rgba(var(--med-gray-rgb),.5);
+    }
+    .pr-body nav li.visited:hover{ color: var(--lighter-gray); border-color:rgba(var(--med-gray-rgb),.8); }
+    .pr-body nav li.visited:not(:has(~ .visited)) { 
+      color: var(--white);
       border-color:var(--light-green);
-    }
-    .pr-body nav li.selected{
-      color:var(--lighter-gray);
-      border-color:rgba(var(--med-gray-rgb),.8);
       background:
-        radial-gradient(ellipse at center top, rgba(35, 35, 35, 1) 0%, rgba(40, 40, 40, .25) 25%, rgba(35, 35, 35, 0.2) 45%, rgba(35, 35, 35, 0) 65% ),
-        linear-gradient(180deg, rgba(30,30,30,.6) 0%, rgba(30,30,30,0.4) 20%, rgba(35,35,35,0) 30%);
-
+        linear-gradient(-90deg, rgba(30,30,30,.6) 0%, rgba(30,30,30,0.4) 50% );
     }
-    .pr-body nav li.selected:hover{ border-color:var(--med-gray); }
     /*.pr-body > aside ul li.selected:before, article section h3:before { content: "⬦"; font-weight:bold; font-size: .8em; position: absolute; left:-1.4em; }*/
-    .pr-body nav ul a { background-color:transparent; color:var(--lighter-gray);}
+    .pr-body nav ul a { background-color:transparent; color: unset;}
     .pr-body nav ul a:hover {text-decoration: none;}
 
     article {
@@ -129,6 +131,7 @@
   /*LARGE MOBILE VIEW*/
   @media only screen and (max-width: 820px) {
     .pr-body { display: block; margin: 0 3em; }
+    .pr-body nav li { margin-left:-.5em; border-right:none; border-left:4px solid transparent; }
     article { margin-top: 4em; padding-left: unset; padding-right:unset; border-left: unset; }
     article section { margin-left:0; margin-right: 0; }
     .pr-body > nav { position: unset; }
@@ -138,342 +141,371 @@
   </style>
 </head>
 <body>
-    <div class="container">
-      <main class="scaffold">
-        <div class="fascia">
-          <div class="pr-body">
-            <nav>
-              <header>
-                <div><a class="back-home-btn" href="../../index.html#pro-accounts">&larr; To portfolio</a></div>
-                <h1>Pro Accounts</h1>
-              </header>
-              <ul>
-                <li><a href="#original-site">Original site</a></li>
-                <li><a href="#first-attempt">First attempt</a></li>
-                <li><a href="#research">Step back - Research</a></li>
-                <li><a href="#exploration">Exploration</a></li>
-                <li><a href="#iterate-wf">Iterate with wireframes</a></li>
-                <li><a href="#final-design">Final design</a></li>
-              </ul>
-            </nav>
-            <article>
-              <section>
-                <h2>Design Process</h2>
-                <p>This project was one of the Pro product's more process-intensive UX changes at the time. It threaded into several large-scale projects like the move to SSO (single sign-on), Developer API launch, and a viral marketing campaign moving targeted users from consumer site to Pro.</p>
-              </section>
-              <section id="original-site">
-                <h3>Original site</h3>
-                <p>The initial scope was a reskin to match our new branding. Screens below give an overview of Account Settings, Site Administration, and Subscription Plans for purchase.</p>
-              </section>
-              <section class="img-set">
-                <div>
-                  <picture>
-                    <source srcset="img/old/old-8.webp" type="image/webp" />
-                    <source srcset="img/old/old-8.png" type="image/png" />
-                    <img src="img/old/old-8.png" alt="Pro Sign In"/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/old/old-0.webp" type="image/webp" />
-                    <source srcset="img/old/old-0.png" type="image/png" />
-                    <img src="img/old/old-0.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/old/old-1.webp" type="image/webp" />
-                    <source srcset="img/old/old-1.png" type="image/png" />
-                    <img src="img/old/old-1.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/old/old-2.webp" type="image/webp" />
-                    <source srcset="img/old/old-2.png" type="image/png" />
-                    <img src="img/old/old-2.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/old/old-3.webp" type="image/webp" />
-                    <source srcset="img/old/old-3.png" type="image/png" />
-                    <img src="img/old/old-3.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/old/old-4.webp" type="image/webp" />
-                    <source srcset="img/old/old-5.png" type="image/png" />
-                    <img src="img/old/old-4.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/old/old-5.webp" type="image/webp" />
-                    <source srcset="img/old/old-5.png" type="image/png" />
-                    <img src="img/old/old-5.png" alt=""/>
-                  </picture>
-                </div>
-              </section>
-              <section>
-                <p>I also had designed the new Pro API Developer portal, which needed to be more seamlessly integrated with the rest of Pro.</p>
+  <div class="container">
+    <main class="scaffold">
+      <div class="fascia">
+        <div class="pr-body">
+          <nav>
+            <header>
+              <div><a class="back-home-btn" href="../../index.html#pro-accounts">&larr; To portfolio</a></div>
+              <h1>Pro Accounts</h1>
+            </header>
+            <ul>
+              <li><a href="#top">Original site</a></li>
+              <li><a href="#first-attempt">First attempt</a></li>
+              <li><a href="#research">Step back - Research</a></li>
+              <li><a href="#exploration">Exploration</a></li>
+              <li><a href="#iterate-wf">Iteration wireframes</a></li>
+              <li><a href="#scope-creep">Scope creep</a></li>
+              <li><a href="#final-design">Final design</a></li>
+            </ul>
+          </nav>
+          <article data-scroll-container>
+            <section>
+              <h2>Design Process</h2>
+              <p>This project was one of the Pro product's more process-intensive UX changes at the time. It threaded into several large-scale projects like the move to SSO (single sign-on), Developer API launch, and a viral marketing campaign moving targeted users from consumer site to Pro.</p>
+            </section>
+            <section id="top">
+              <h3>Original site</h3>
+              <p>The initial scope was a reskin to match our new branding. Screens below give an overview of Account Settings, Site Administration, and Subscription Plans for purchase.</p>
+            </section>
+            <section class="img-set">
+              <div>
                 <picture>
-                  <source srcset="img/old/old-7.webp" type="image/webp" />
-                  <source srcset="img/old/old-7.png" type="image/png" />
-                  <img src="img/old/old-7.png" alt="Pro API Developer"/>
+                  <source srcset="img/old/old-8.webp" type="image/webp" />
+                  <source srcset="img/old/old-8.png" type="image/png" />
+                  <img src="img/old/old-8.png" alt="Pro Sign In"/>
                 </picture>
-              </section>
+                <picture>
+                  <source srcset="img/old/old-0.webp" type="image/webp" />
+                  <source srcset="img/old/old-0.png" type="image/png" />
+                  <img src="img/old/old-0.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/old/old-1.webp" type="image/webp" />
+                  <source srcset="img/old/old-1.png" type="image/png" />
+                  <img src="img/old/old-1.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/old/old-2.webp" type="image/webp" />
+                  <source srcset="img/old/old-2.png" type="image/png" />
+                  <img src="img/old/old-2.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/old/old-3.webp" type="image/webp" />
+                  <source srcset="img/old/old-3.png" type="image/png" />
+                  <img src="img/old/old-3.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/old/old-4.webp" type="image/webp" />
+                  <source srcset="img/old/old-5.png" type="image/png" />
+                  <img src="img/old/old-4.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/old/old-5.webp" type="image/webp" />
+                  <source srcset="img/old/old-5.png" type="image/png" />
+                  <img src="img/old/old-5.png" alt=""/>
+                </picture>
+              </div>
+            </section>
+            <section>
+              <p>I also had designed the new Pro API Developer portal, which needed to be more seamlessly integrated with the rest of Pro.</p>
+              <picture>
+                <source srcset="img/old/old-7.webp" type="image/webp" />
+                <source srcset="img/old/old-7.png" type="image/png" />
+                <img src="img/old/old-7.png" alt="Pro API Developer"/>
+              </picture>
+            </section>
 
-              <section id="first-attempt">
-                <h3>First attempt</h3>
-                <p>While giving the account settings page a refresh, we discovered deeper usability issues. Important existential questions came up like:</p>
-                <ul>
-                  <li>"Who uses all these sections?"</li>
-                  <li>"Who on the acount manages users?"</li>
-                  <li>"What do users actually do in account settings?"</li>
-                  <li>"What do first time users expect to do when they go into it?"</li>
-                  <li>"What don't they use in it?"</li>
-                </ul>
-              </section>
-              <section class="img-set">
-                <div>
-                  <picture>
-                    <source srcset="img/v1/1.webp" type="image/webp" />
-                    <source srcset="img/v1/1.png" type="image/png" />
-                    <img src="img/v1/1.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/v1/2.webp" type="image/webp" />
-                    <source srcset="img/v1/2.png" type="image/png" />
-                    <img src="img/v1/2.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/v1/5.webp" type="image/webp" />
-                    <source srcset="img/v1/5.png" type="image/png" />
-                    <img src="img/v1/5.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/v1/7.webp" type="image/webp" />
-                    <source srcset="img/v1/7.png" type="image/png" />
-                    <img src="img/v1/7.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/v1/8.webp" type="image/webp" />
-                    <source srcset="img/v1/8.png" type="image/png" />
-                    <img src="img/v1/8.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/v1/12.webp" type="image/webp" />
-                    <source srcset="img/v1/12.png" type="image/png" />
-                    <img src="img/v1/12.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/v1/15.webp" type="image/webp" />
-                    <source srcset="img/v1/15.png" type="image/png" />
-                    <img src="img/v1/15.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/v1/17.webp" type="image/webp" />
-                    <source srcset="img/v1/17.png" type="image/png" />
-                    <img src="img/v1/17.png" alt=""/>
-                  </picture>
-                </div>
-              </section>
+            <section id="first-attempt">
+              <h3>First attempt</h3>
+              <p>While giving the account settings page a refresh, we discovered deeper usability issues. Important existential questions came up like:</p>
+              <ul>
+                <li>"Who uses all these sections?"</li>
+                <li>"Who on the acount manages users?"</li>
+                <li>"What do users actually do in account settings?"</li>
+                <li>"What do first time users expect to do when they go into it?"</li>
+                <li>"What don't they use in it?"</li>
+              </ul>
+            </section>
+            <section class="img-set">
+              <div>
+                <picture>
+                  <source srcset="img/v1/1.webp" type="image/webp" />
+                  <source srcset="img/v1/1.png" type="image/png" />
+                  <img src="img/v1/1.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/v1/2.webp" type="image/webp" />
+                  <source srcset="img/v1/2.png" type="image/png" />
+                  <img src="img/v1/2.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/v1/5.webp" type="image/webp" />
+                  <source srcset="img/v1/5.png" type="image/png" />
+                  <img src="img/v1/5.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/v1/7.webp" type="image/webp" />
+                  <source srcset="img/v1/7.png" type="image/png" />
+                  <img src="img/v1/7.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/v1/8.webp" type="image/webp" />
+                  <source srcset="img/v1/8.png" type="image/png" />
+                  <img src="img/v1/8.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/v1/12.webp" type="image/webp" />
+                  <source srcset="img/v1/12.png" type="image/png" />
+                  <img src="img/v1/12.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/v1/15.webp" type="image/webp" />
+                  <source srcset="img/v1/15.png" type="image/png" />
+                  <img src="img/v1/15.png" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/v1/17.webp" type="image/webp" />
+                  <source srcset="img/v1/17.png" type="image/png" />
+                  <img src="img/v1/17.png" alt=""/>
+                </picture>
+              </div>
+            </section>
 
-              <section id="research">
-                <h3>Step back - Research</h3>
-                <p>Interviews with customers and internal users of Pro revealed areas that needed further analysis, which we pursued with surveys and in-person interviews. I also went along to sales and customer meetings with the lead PM to ask specific usability questions and watch users interact in real-time.</p>
-                <h5>Survey:</h5> 
-                <ul>
-                  <li>Very positive reviews for product's utility</li>
-                  <li>Desire for better account management and search capability</li>
-                  <li>Gave us clearer insight into industries and usage</li>
-                </ul>
-                <h5>In-person interviews:</h5>
-                <ul>
-                  <li>Revealed more nuanced info</li> 
-                  <li>Need to help customers manage their users/teams with roles and permissions</li>
-                  <li>Also need clear view into usage statistics for larger teams</li>
-                </ul>
-              </section>
-              <section id="exploration">
-                <h3>Exploration</h3>
-                <h4>Information architecture</h4>
-                <p>Between product and engineering, we held collaborative sessions to discuss goals for the account overhaul, as well as potential engineering scope. We defined a basic account structure that would work well for different businesses:</p> 
-                <ul>
-                  <li><strong>Agent</strong>&mdash;Performs daily searches in Pro</li>
-                  <li><strong>Team lead</strong>&mdash;Pro account management and searches</li>
-                  <li><strong>Owner</strong>&mdash;More hands off, likely handles payment</li>
-                </ul>
-                <p>With that info, I mapped out our collective research and conclusions to see what would make sense for users.</p>
-              </section>
-              <section class="img-set">
-                <div>
+            <section id="research">
+              <h3>Step back - Research</h3>
+              <p>Interviews with customers and internal users of Pro revealed areas that needed further analysis, which we pursued with surveys and in-person interviews. I also went along to sales and customer meetings with the lead PM to ask specific usability questions and watch users interact in real-time.</p>
+              <h5>Survey:</h5> 
+              <ul>
+                <li>Customer desire for better account management and search capability</li>
+                <li>Gave us clearer insight into industries and usage</li>
+                <li>Positive reviews for product's utility (data quality and speed)</li>
+              </ul>
+              <h5>In-person interviews:</h5>
+              <ul>
+                <li>Revealed more nuanced info</li> 
+                <li>Need to help customers manage their users/teams with roles and permissions</li>
+                <li>Also need clear view into usage statistics for larger teams</li>
+              </ul>
+            </section>
+            <section id="exploration">
+              <h3>Exploration</h3>
+              <h4>Information architecture</h4>
+              <p>Between product and engineering, we held collaborative sessions to discuss goals for the account overhaul, as well as potential engineering scope. We defined a basic account structure that would work well for different businesses:</p> 
+              <ul>
+                <li><strong>Agent</strong>&mdash;Performs daily searches in Pro</li>
+                <li><strong>Team lead</strong>&mdash;Pro account management and searches</li>
+                <li><strong>Owner</strong>&mdash;More hands off, likely handles payment</li>
+              </ul>
+              <p>With that info, I mapped out our collective research and conclusions to see what would make sense for users.</p>
+            </section>
+            <section class="img-set">
+              <div>
+                <picture>
+                  <source srcset="img/sketches1/2.webp" type="image/webp" />
+                  <source srcset="img/sketches1/2.jpg" type="image/jpg" />
+                  <img src="img/sketches1/2.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/sketches1/1.webp" type="image/webp" />
+                  <source srcset="img/sketches1/1.jpg" type="image/jpg" />
+                  <img src="img/sketches1/1.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/sketches1/3.webp" type="image/webp" />
+                  <source srcset="img/sketches1/3.jpg" type="image/jpg" />
+                  <img src="img/sketches1/3.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/sketches1/4.webp" type="image/webp" />
+                  <source srcset="img/sketches1/4.jpg" type="image/jpg" />
+                  <img src="img/sketches1/4.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/sketches1/5.webp" type="image/webp" />
+                  <source srcset="img/sketches1/5.jpg" type="image/jpg" />
+                  <img src="img/sketches1/5.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/sketches1/6.webp" type="image/webp" />
+                  <source srcset="img/sketches1/6.jpg" type="image/jpg" />
+                  <img src="img/sketches1/6.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/sketches1/7.webp" type="image/webp" />
+                  <source srcset="img/sketches1/7.jpg" type="image/jpg" />
+                  <img src="img/sketches1/7.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/sketches1/10.webp" type="image/webp" />
+                  <source srcset="img/sketches1/10.jpg" type="image/jpg" />
+                  <img src="img/sketches1/10.jpg" alt=""/>
+                </picture>
+              </div>
+            </section>
+            <section>
+              <h4>Team exploration</h4>
+              <p>We opened up ideation to the larger Pro sales and marketing team, since this was a large undertaking that would ultimately affect them as well. We took a page out of the <a href="http://www.gv.com/sprint/">Google Design Sprint</a> to present them with the research and brainstorm as a group, holding a session in Seattle then in Budapest.</p>
+            </section>
+            <section class="img-set">
+              <div>
+                <picture>
+                  <source srcset="img/teamstorm/1.webp" type="image/webp" />
+                  <source srcset="img/teamstorm/1.png" type="image/png" />
+                  <img src="img/teamstorm/1.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/teamstorm/2.webp" type="image/webp" />
+                  <source srcset="img/teamstorm/2.png" type="image/png" />
+                  <img src="img/teamstorm/2.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/teamstorm/4.webp" type="image/webp" />
+                  <source srcset="img/teamstorm/4.png" type="image/png" />
+                  <img src="img/teamstorm/4.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/teamstorm/5.webp" type="image/webp" />
+                  <source srcset="img/teamstorm/5.png" type="image/png" />
+                  <img src="img/teamstorm/5.jpg" alt=""/>
+                </picture>
+                <picture>
+                  <source srcset="img/teamstorm/6.webp" type="image/webp" />
+                  <source srcset="img/teamstorm/6.png" type="image/png" />
+                  <img src="img/teamstorm/6.jpg" alt=""/>
+                </picture>
+              </div>
+            </section>
+            <section id="iterate-wf">
+              <h3>Iteration wireframes</h3>
+              <h4>Paper prototype</h4>
+              <p>I began to build paper prototypes in InVision to flesh out journeys for each of our potential user profiles. This helped us define areas that would overlap or be unique to each experience. We were also toying with what level of customization customers might need, and it gave us insight into how complex that might be to build.</p>
+            </section>
+            <section class="img-set">
+              <div>
+                <figure>
+                  <h5>Owner</h5>
                   <picture>
-                    <source srcset="img/sketches1/2.webp" type="image/webp" />
-                    <source srcset="img/sketches1/2.jpg" type="image/jpg" />
-                    <img src="img/sketches1/2.jpg" alt=""/>
+                    <source srcset="img/sketches2/4.webp" type="image/webp" />
+                    <source srcset="img/sketches2/4.png" type="image/png" />
+                    <img src="img/sketches2/4.png" alt=""/>
                   </picture>
+                </figure>
+                <figure>
+                  <h5>Team Lead</h5>
                   <picture>
-                    <source srcset="img/sketches1/1.webp" type="image/webp" />
-                    <source srcset="img/sketches1/1.jpg" type="image/jpg" />
-                    <img src="img/sketches1/1.jpg" alt=""/>
+                    <source srcset="img/sketches2/12.webp" type="image/webp" />
+                    <source srcset="img/sketches2/12.png" type="image/png" />
+                    <img src="img/sketches2/12.png" alt=""/>
                   </picture>
-                  <picture>
-                    <source srcset="img/sketches1/3.webp" type="image/webp" />
-                    <source srcset="img/sketches1/3.jpg" type="image/jpg" />
-                    <img src="img/sketches1/3.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/sketches1/4.webp" type="image/webp" />
-                    <source srcset="img/sketches1/4.jpg" type="image/jpg" />
-                    <img src="img/sketches1/4.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/sketches1/5.webp" type="image/webp" />
-                    <source srcset="img/sketches1/5.jpg" type="image/jpg" />
-                    <img src="img/sketches1/5.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/sketches1/6.webp" type="image/webp" />
-                    <source srcset="img/sketches1/6.jpg" type="image/jpg" />
-                    <img src="img/sketches1/6.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/sketches1/7.webp" type="image/webp" />
-                    <source srcset="img/sketches1/7.jpg" type="image/jpg" />
-                    <img src="img/sketches1/7.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/sketches1/10.webp" type="image/webp" />
-                    <source srcset="img/sketches1/10.jpg" type="image/jpg" />
-                    <img src="img/sketches1/10.jpg" alt=""/>
-                  </picture>
-                </div>
-              </section>
-              <section>
-                <h4>Team exploration</h4>
-                <p>We opened up ideation to the larger Pro sales and marketing team, since this was a large undertaking that would ultimately affect them as well. We took a page out of the <a href="http://www.gv.com/sprint/">Google Design Sprint</a> to present them with the research and brainstorm as a group, holding a session in Seattle then in Budapest.</p>
-              </section>
-              <section class="img-set">
-                <div>
-                  <picture>
-                    <source srcset="img/teamstorm/1.webp" type="image/webp" />
-                    <source srcset="img/teamstorm/1.png" type="image/png" />
-                    <img src="img/teamstorm/1.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/teamstorm/2.webp" type="image/webp" />
-                    <source srcset="img/teamstorm/2.png" type="image/png" />
-                    <img src="img/teamstorm/2.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/teamstorm/4.webp" type="image/webp" />
-                    <source srcset="img/teamstorm/4.png" type="image/png" />
-                    <img src="img/teamstorm/4.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/teamstorm/5.webp" type="image/webp" />
-                    <source srcset="img/teamstorm/5.png" type="image/png" />
-                    <img src="img/teamstorm/5.jpg" alt=""/>
-                  </picture>
-                  <picture>
-                    <source srcset="img/teamstorm/6.webp" type="image/webp" />
-                    <source srcset="img/teamstorm/6.png" type="image/png" />
-                    <img src="img/teamstorm/6.jpg" alt=""/>
-                  </picture>
-                </div>
-              </section>
-              <section id="iterate-wf">
-                <h3>Iterate with wireframes</h3>
-                <h4>Paper prototype</h4>
-                <p>I began to build paper prototypes in InVision to flesh out journeys for each of our potential user profiles. This helped us define areas that would overlap or be unique to each experience.</p>
-              </section>
-              <section class="img-set">
-                <div>
-                  <figure>
-                    <h5>Owner</h5>
+                </figure>
+                <figure>
+                  <h5>Agent</h5>
+                  <div>
                     <picture>
-                      <source srcset="img/sketches2/4.webp" type="image/webp" />
-                      <source srcset="img/sketches2/4.png" type="image/png" />
-                      <img src="img/sketches2/4.png" alt=""/>
+                      <source srcset="img/sketches2/17.webp" type="image/webp" />
+                      <source srcset="img/sketches2/17.png" type="image/png" />
+                      <img src="img/sketches2/17.png" alt=""/>
                     </picture>
-                  </figure>
-                  <figure>
-                    <h5>Team Lead</h5>
-                    <picture>
-                      <source srcset="img/sketches2/12.webp" type="image/webp" />
-                      <source srcset="img/sketches2/12.png" type="image/png" />
-                      <img src="img/sketches2/12.png" alt=""/>
-                    </picture>
-                  </figure>
-                  <figure>
-                    <h5>Agent</h5>
-                    <div>
-                      <picture>
-                        <source srcset="img/sketches2/17.webp" type="image/webp" />
-                        <source srcset="img/sketches2/17.png" type="image/png" />
-                        <img src="img/sketches2/17.png" alt=""/>
-                      </picture>
-                    </div>
-                  </figure>
-                </div>
-              </section>
-              <section>
-                <h4>Wireframe componenets and screens</h4>
-                <p>The journeys helped identify requirements for each of the profiles. I worked with the PM to map out what each would need, independent of the UI itself.</p>
-              </section>
-              <section class="img-set">
-                <div>
-                  <picture>
-                    <!--<source srcset="img/wf/1a.webp" type="image/webp" />-->
-                    <source srcset="img/wf/1a.png" type="image/png" />
-                    <img src="img/wf/1a.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <!--<source srcset="img/wf/roles-1.webp" type="image/webp" />-->
-                    <source srcset="img/wf/roles-1.png" type="image/png" />
-                    <img src="img/wf/roles-1.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <!--<source srcset="img/wf/roles-2.webp" type="image/webp" />-->
-                    <source srcset="img/wf/roles-2.png" type="image/png" />
-                    <img src="img/wf/roles-2.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <!--<source srcset="img/wf/roles-3.webp" type="image/webp" />-->
-                    <source srcset="img/wf/roles-3.png" type="image/png" />
-                    <img src="img/wf/roles-3.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <!--<source srcset="img/wf/0.webp" type="image/webp" />-->
-                    <source srcset="img/wf/0.png" type="image/png" />
-                    <img src="img/wf/0.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <!--<source srcset="img/wf/3.webp" type="image/webp" />-->
-                    <source srcset="img/wf/3.png" type="image/png" />
-                    <img src="img/wf/3.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <!--<source srcset="img/wf/4.webp" type="image/webp" />-->
-                    <source srcset="img/wf/4.png" type="image/png" />
-                    <img src="img/wf/4.png" alt=""/>
-                  </picture>
-                  <picture>
-                    <!--<source srcset="img/wf/5.webp" type="image/webp" />-->
-                    <source srcset="img/wf/5.png" type="image/png" />
-                    <img src="img/wf/5.png" alt=""/>
-                  </picture>
-                </div>
-              </section>
-              <section id="final-design">
-                <h3>Final design</h3>
-                <p>Execution on API, then other properties from there.</p>
-              </section>
-              <section class="img-set">
-                <div>
-                  <picture>
-                    <!--<source srcset="img/final/0-lookups.webp" type="image/webp" />-->
-                    <source srcset="img/final/0-lookups.png" type="image/png" />
-                    <img src="img/final/0-lookups.png" alt=""/>
-                  </picture>
-                </div>
-              </section>
-            </article>
-          </div>
-          <div class="footnote"><strong>&copy; Navreen Grewal, 2022,</strong> coded + designed this site to stay knowledgeable. All rights reserved. </div>
+                  </div>
+                </figure>
+              </div>
+            </section>
+            <section>
+              <h4>Wireframe componenets and screens</h4>
+              <p>The journeys helped identify requirements for each of the profiles. I worked with the PM to map out what each would need, independent of the UI itself. This helped the engineering team parse our UX hypotheticals into concrete manifestations.</p>
+            </section>
+            <section class="img-set">
+              <div>
+                <picture>
+                  <!--<source srcset="img/wf/1a.webp" type="image/webp" />-->
+                  <source srcset="img/wf/1a.png" type="image/png" />
+                  <img src="img/wf/1a.png" alt=""/>
+                </picture>
+                <picture>
+                  <!--<source srcset="img/wf/roles-1.webp" type="image/webp" />-->
+                  <source srcset="img/wf/roles-1.png" type="image/png" />
+                  <img src="img/wf/roles-1.png" alt=""/>
+                </picture>
+                <picture>
+                  <!--<source srcset="img/wf/roles-2.webp" type="image/webp" />-->
+                  <source srcset="img/wf/roles-2.png" type="image/png" />
+                  <img src="img/wf/roles-2.png" alt=""/>
+                </picture>
+                <picture>
+                  <!--<source srcset="img/wf/roles-3.webp" type="image/webp" />-->
+                  <source srcset="img/wf/roles-3.png" type="image/png" />
+                  <img src="img/wf/roles-3.png" alt=""/>
+                </picture>
+                <picture>
+                  <!--<source srcset="img/wf/0.webp" type="image/webp" />-->
+                  <source srcset="img/wf/0.png" type="image/png" />
+                  <img src="img/wf/0.png" alt=""/>
+                </picture>
+                <picture>
+                  <!--<source srcset="img/wf/3.webp" type="image/webp" />-->
+                  <source srcset="img/wf/3.png" type="image/png" />
+                  <img src="img/wf/3.png" alt=""/>
+                </picture>
+                <picture>
+                  <!--<source srcset="img/wf/4.webp" type="image/webp" />-->
+                  <source srcset="img/wf/4.png" type="image/png" />
+                  <img src="img/wf/4.png" alt=""/>
+                </picture>
+                <picture>
+                  <!--<source srcset="img/wf/5.webp" type="image/webp" />-->
+                  <source srcset="img/wf/5.png" type="image/png" />
+                  <img src="img/wf/5.png" alt=""/>
+                </picture>
+              </div>
+            </section>
+            <section id="scope-creep">
+              <h3>Scope creep</h3>
+              <h4>SSO, rebrand style guide, and viral campaign</h4>
+              <p>In the midst of this project, we had a couple high priority diversions.</p>
+              <h4>Rebrand and style guide</h4>
+              <p><a href="../../sites/wp/pro-rebrand">Pro's new style guide</a></p>
+            </section>
+            <section id="final-design">
+              <h3>Final design</h3>
+              <p>Execution on API, then other properties from there.</p>
+            </section>
+            <section class="img-set">
+              <div>
+                <picture>
+                  <!--<source srcset="img/final/0-lookups.webp" type="image/webp" />-->
+                  <source srcset="img/final/0-lookups.png" type="image/png" />
+                  <img src="img/final/0-lookups.png" alt=""/>
+                </picture>
+              </div>
+            </section>
+          </article>
         </div>
-      </main>
-    </div>
+        <div class="footnote"><strong>&copy; Navreen Grewal, 2022,</strong> coded + designed this site to stay knowledgeable. All rights reserved. </div>
+      </div>
+    </main>
+  </div>
+  <script>
+  const sections = document.querySelectorAll("section[id]");
+  window.addEventListener("scroll", navHighlighter);
+
+  function navHighlighter() {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach( current => {
+      const sectionTop = current.offsetTop;
+      const sectionHeight = current.offsetHeight;
+      const sectionId = current.getAttribute("id");
+      let liMatch = document.querySelector("nav ul a[href*=" + sectionId + "]").parentElement;
+
+      if ( scrollY >= sectionTop - 200 ) { 
+        liMatch.classList.add("visited");
+      } else if (scrollY <= sectionTop + sectionHeight) {
+        liMatch.classList.remove("visited");
+      }
+    });
+  }
+  </script>
 </body>
 </html>

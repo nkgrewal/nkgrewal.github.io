@@ -120,6 +120,7 @@ ul:last-child{ margin-bottom:0; }
 }
 
 /* BIRDS EYE */
+html { scroll-behavior: smooth; }
 body{
 	margin:0;
 	padding:0; 
