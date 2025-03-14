@@ -87,7 +87,8 @@
       padding: 0 4em;
       border-left:1px solid rgba(var(--gray-rgb),.5);
     }
-
+    article section:first-of-type p:first-of-type { font-size:1.25em; line-height: 1.5em; }
+    article section:first-of-type h4:first-of-type { margin-top:2em; color:var(--med-gray); }
     article section { margin:2em; max-width:600px; }
     article section:first-child { margin-top: 0; }
     article section:last-child { margin-bottom: 3em; }
@@ -153,21 +154,23 @@
             <ul>
               <li><a href="#top">Original site</a></li>
               <li><a href="#first-attempt">First attempt</a></li>
-              <li><a href="#research">Step back - Research</a></li>
+              <li><a href="#research">Step-back research</a></li>
               <li><a href="#exploration">Exploration</a></li>
               <li><a href="#iterate-wf">Iteration wireframes</a></li>
-              <li><a href="#scope-creep">Scope creep</a></li>
+              <li><a href="#scope-creep">Increased scope</a></li>
               <li><a href="#final-design">Final design</a></li>
             </ul>
           </nav>
           <article data-scroll-container>
             <section>
               <h2>Design Process</h2>
-              <p>This project was one of the Pro product's more process-intensive UX changes at the time. It threaded into several large-scale projects like the move to SSO (single sign-on), Developer API launch, and a viral marketing campaign moving targeted users from consumer site to Pro.</p>
+              <h4>Summary</h4>
+              <p>Whitepages expanded its customer base for B2B identity verification (Whitepages Pro) and needed to upgrade their account management design.</p>
+              <p>This was one of Pro's more process-intensive changes at the time. It dovetailed into several large-scale projects I was the lead designer on, like the move to SSO (single sign-on), Developer API launch, corporate rebrand, and a viral marketing campaign moving targeted relevant users to upgrade to Pro.</p>
             </section>
             <section id="top">
               <h3>Original site</h3>
-              <p>The initial scope was a reskin to match our new branding. Screens below give an overview of Account Settings, Site Administration, and Subscription Plans for purchase.</p>
+              <p>The initial scope was updating the UI across the site. Screens below give an overview of Account Settings, Site Administration, and Subscription Plans for purchase.</p>
             </section>
             <section class="img-set">
               <div>
@@ -274,7 +277,7 @@
             </section>
 
             <section id="research">
-              <h3>Step back - Research</h3>
+              <h3>Step-back research</h3>
               <p>Interviews with customers and internal users of Pro revealed areas that needed further analysis, which we pursued with surveys and in-person interviews. I also went along to sales and customer meetings with the lead PM to ask specific usability questions and watch users interact in real-time.</p>
               <h5>Survey:</h5> 
               <ul>
@@ -461,11 +464,14 @@
               </div>
             </section>
             <section id="scope-creep">
-              <h3>Scope creep</h3>
-              <h4>SSO, rebrand style guide, and viral campaign</h4>
-              <p>In the midst of this project, we had a couple high priority diversions.</p>
-              <h4>Rebrand and style guide</h4>
-              <p><a href="../../sites/wp/pro-rebrand">Pro's new style guide</a></p>
+              <h3>Increased scope</h3>
+              <p>In the midst of this project, the team had a couple high priority diversions. They would help our end goal of a better account UX for customers, making them worthwhile, but it required careful balancing to manage them all in tandem:</p>
+              <ol>
+                <li><strong>Single Sign-On (SSO)</strong>&mdash;Our engineering teams were implementing a single sign-on service to unify accounts between products</li>
+                <li><strong>Conversion campaign (Pro Viral)</strong>&mdash;Pro marketing was working on a campaign to convert relevant business users from the consumer site to our B2B services.</li>
+                <li><strong>Rebrand</strong>&mdash;We were nearing the launch of a company-wide rebrand of all products</li>
+              </ol>
+              <p>I was the lead designer working on all of these, which meant I had a high-level view into how they all threaded together. The launch of SSO would help enable the success of the viral campaign, as users could more easily upgrade accounts to a business plan (which we had also simplified). The viral campaign also relied on users having access to the upgraded, tiered account management set up, as well as seeing the benefit of usage monitoring.</p>
             </section>
             <section id="final-design">
               <h3>Final design</h3>
@@ -479,6 +485,10 @@
                   <img src="img/final/0-lookups.png" alt=""/>
                 </picture>
               </div>
+            </section>
+            <section>
+              <h4>Related projects</h4>
+              <p><a href="../../sites/wp/pro-rebrand">Rebrand front-end style guide</a></p>
             </section>
           </article>
         </div>
@@ -499,7 +509,7 @@
       const sectionId = current.getAttribute("id");
       let liMatch = document.querySelector("nav ul a[href*=" + sectionId + "]").parentElement;
 
-      if ( scrollY >= sectionTop - 200 ) { 
+      if ( scrollY >= sectionTop - 300 ) { 
         liMatch.classList.add("visited");
       } else if (scrollY <= sectionTop + sectionHeight) {
         liMatch.classList.remove("visited");
