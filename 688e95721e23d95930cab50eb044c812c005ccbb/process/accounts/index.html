@@ -69,13 +69,13 @@
     .pr-body nav li.visited{
       color: var(--med-gray);
       border-color:rgba(var(--med-gray-rgb),.5);
+      background: linear-gradient(-90deg, rgba(30,30,30,.3) 0%, rgba(30,30,30,0) 5% );
     }
     .pr-body nav li.visited:hover{ color: var(--lighter-gray); border-color:rgba(var(--med-gray-rgb),.8); }
     .pr-body nav li.visited:not(:has(~ .visited)) { 
       color: var(--white);
       border-color:var(--light-green);
-      background:
-        linear-gradient(-90deg, rgba(30,30,30,.6) 0%, rgba(30,30,30,0.4) 50% );
+      background: linear-gradient(-90deg, rgba(30,30,30,.6) 0%, rgba(30,30,30,0.4) 50% );
     }
     /*.pr-body > aside ul li.selected:before, article section h3:before { content: "⬦"; font-weight:bold; font-size: .8em; position: absolute; left:-1.4em; }*/
     .pr-body nav ul a { background-color:transparent; color: unset;}

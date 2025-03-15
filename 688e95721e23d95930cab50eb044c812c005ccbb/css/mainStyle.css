@@ -377,8 +377,8 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	margin-bottom: 0.5em;
 	font-size: 1.1em;
 	background-color: rgba(var(--dark-gray-rgb), .85);
-	box-shadow: 0 .25em .3em .1em rgba(var(--dark-gray-rgb),.3),
-		0 .25em .3em .1em rgba(var(--black-rgb),.15);
+	box-shadow: 0 .25em .3em .1em rgba(var(--dark-gray-rgb),.2),
+		0 .25em .3em .1em rgba(var(--black-rgb),.1);
 }
 .title h5{ display:none; /*#838d9*/}
 
