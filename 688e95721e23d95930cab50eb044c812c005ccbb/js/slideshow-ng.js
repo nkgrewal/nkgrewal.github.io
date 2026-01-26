@@ -1,10 +1,5 @@
 /*
 
-to-do:
--edit and compress video
--add case studies
--finesse mobile breakpoint js
-
 options to pass through :
   - allSlides name
   - controls(back, forward, more info, keystrokes)
@@ -48,6 +43,7 @@ var aboutLi = 'footer .about li:first-child';   //add slideshow link outside nav
 
 var imgHolder = $('.imgCase');                //slide type - multi image
 var imgHolderButtons = $('.imgButtons');       //slide type - multi image icons
+var quoteHolder = $('.quote');
 
 var scrollHint = $('.scrollHint');            //hint to scroll from splash
 
@@ -204,7 +200,7 @@ var MySlideShow = {
     this.createNav();
     this.resetCss( $(window).width(), $(window).height() );
     this.moveSlideBlock('jump', window.location.hash.substring(1) );
-    this.showSubImgs(currIndex);
+    this.showSubImgs();
 
     $('.jsShow').show();
     $('.jsHide').hide();
@@ -345,13 +341,6 @@ var MySlideShow = {
     eachSlide.css('opacity', '.6');
     eachSlide.eq(slideNum).animate({opacity: 1}, anim/2 );
     viewArea.css({ height : eachSlide.eq(slideNum).outerHeight(true) +'px' });
-
-    //NAV COUNTER
-    /*$('nav.' + navClass + ' .count').html(currIndex);
-    if (currIndex===0 || currIndex > (slideMap.size-2) ){ 
-      $('nav.' + navClass + ' span').hide(); } else { 
-      $('nav.' + navClass + ' span').show();
-    };*/
   },
   setMobileSwipe : function (elm, callback) {
     let touchStartX, touchStartY, touchStartTime;
@@ -381,6 +370,7 @@ var MySlideShow = {
     });
   },
   setControls : function(slideNum){
+    this.quoteSlide(slideNum, 'startQuote');
     //EVENT LISTENERS
     backControl.on('click', function(e){
       MySlideShow.moveSlideBlock('back', slideNum);
@@ -427,9 +417,10 @@ var MySlideShow = {
     backControl.off('click');
     eachSlide.off('touchstart');
     $(document).off('keydown');
+    this.quoteSlide(currIndex, 'stopQuote');
   },
   //IMG CLICK
-  showSubImgs: function(slideNum) {
+  showSubImgs: function() {
     //HIDE ALL IMAGES BUT FIRST CHILD AND EXTRA CONTENT
     imgHolder.children().hide();
     imgHolder.children(':first-child').show();
@@ -440,14 +431,52 @@ var MySlideShow = {
         eachSlide.eq(currIndex).children('.imgCase').children().hide();
         eachSlide.eq(currIndex).children('.imgCase').children().eq(btnIndex).show();
     });
+  },
+  //QUOTE SLIDE
+  quoteSlide: function(slideNum, action) {
+    let quoteIndex = 0;
+    let intervalId;
+    let quotes;
+    const intervalTime = 5000;
+
+    quoteHolder.addClass('active');
+
+    // Set interval to change quotes
+    switch (action) {
+      case 'startQuote':
+        // Set up first quote
+        quotes = eachSlide.eq(slideNum).find(quoteHolder).children();
+        quotes.hide();
+        quotes.eq(0).show();
+
+        // Advance to the next quote
+        function nextQuote() {
+            quotes.eq(quoteIndex).fadeOut(200);
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quotes.eq(quoteIndex).delay(200).fadeIn(500);
+        }
+
+        if (!intervalId) {
+          //intervalId = setInterval(nextQuote, intervalTime);
+          setTimeout(nextQuote, 10000);
+        }
+        return false;
+        break;
+      case 'stopQuote':
+        // Stop carousel 
+        function resetQuote() {
+          clearInterval(intervalId);
+          quoteIndex = 0;
+        }
+        resetQuote();
+        return false;
+        break;
+      }
   }
 }
 
 //BACK BUTTON AND RESIZE
 $(window).on({
-  /*'hashchange': function(e){
-    MySlideShow.slideJump( window.location.hash.substring(1) );
-  },*/
   'click': function(){
     //hide menu desktop above fold
     if( this.innerWidth > 900 && window.pageYOffset < 150 ) { 
