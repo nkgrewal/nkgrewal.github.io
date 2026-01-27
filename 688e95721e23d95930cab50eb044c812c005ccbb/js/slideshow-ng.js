@@ -135,11 +135,11 @@ var MySlideShow = {
         $(navHolder).find('ul.m-only').on({
           'click': function(e){
             MySlideShow.navToggle('toggle');
-            e.stopPropagation();
+            event.stopPropagation();
           },
           'tap': function(e){
             MySlideShow.navToggle('toggle');
-            e.stopPropagation();
+            event.stopPropagation();
           }
         });
       } else {
@@ -152,22 +152,22 @@ var MySlideShow = {
           $(navHolder).on({
             'mouseenter': function(e){
               MySlideShow.navToggle('show');
-              e.stopPropagation();
+              event.stopPropagation();
             },
             'mouseleave' : function(e){
               MySlideShow.navToggle('hide');
-              e.stopPropagation();
+              event.stopPropagation();
             },
             'click': function(e){
               MySlideShow.navToggle('show');
-              e.stopPropagation();
+              event.stopPropagation();
             }
           });
         } else {
           $(navHolder).on({
             'mouseleave' : function(e){
               MySlideShow.navToggle('show');
-              e.stopPropagation();
+              event.stopPropagation();
             }
           });
         }
@@ -481,11 +481,11 @@ $(window).on({
     //hide menu desktop above fold
     if( this.innerWidth > 900 && window.pageYOffset < 150 ) { 
       MySlideShow.navToggle('hide');
-      event.stopPropagation;
+      event.stopPropagation();
     }
     else if( this.innerWidth > 900) { 
       MySlideShow.navToggle('show');
-      event.stopPropagation;
+      event.stopPropagation();
     };
   },
   'resize': function(){
@@ -500,8 +500,8 @@ $(window).on({
     //show menu on desktop if scrolled down
     if( this.innerWidth > 900 && this.pageYOffset > 150 ){
       MySlideShow.navToggle('show');
-      event.stopPropagation;
-    } else { MySlideShow.navToggle('hide'); event.stopPropagation; }
+      event.stopPropagation();
+    } else { MySlideShow.navToggle('hide'); event.stopPropagation(); }
   }
 });
 
