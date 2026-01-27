@@ -456,7 +456,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
     }
 
     /* Navigation Arrows */
-    .arrow {
+    .slideshow-controls .arrow {
       background: var(--darker-gray);
       width: 1em;
       height: 1em;
@@ -468,14 +468,14 @@ footer li.selected:hover{ border-color:var(--med-gray); }
       transition: all 0.3s ease;
       position: relative;
     }
-    .arrow:hover {
+    .slideshow-controls .arrow:hover {
       background: var(--dark-gray);
       border-color: var(--dark-gray);
     }
-    .arrow:hover::before {
+    .slideshow-controls .arrow:hover::before {
       border-color: white;
     }
-    .arrow::before {
+    .slideshow-controls .arrow::before {
       content: '';
       width: .3em;
       height: .3em;
@@ -483,22 +483,22 @@ footer li.selected:hover{ border-color:var(--med-gray); }
       border-bottom: 2px solid var(--gray);
       transition: border-color 0.3s ease;
     }
-    .arrow-prev::before {
+    .slideshow-controls .arrow-prev::before {
       transform: rotate(135deg);
       margin-left: 3px;
     }
-    .arrow-next::before {
+    .slideshow-controls .arrow-next::before {
       transform: rotate(-45deg);
       margin-right: 3px;
     }
 
     /* Navigation Dots */
-    .nav-dots {
+    .slideshow-controls .nav-dots {
       display: flex;
       gap: 1em;
       align-items: center;
     }
-    .nav-dot {
+    .slideshow-controls .nav-dot {
       width: .4em;
       height: .4em;
       border-radius: 50%;
@@ -508,33 +508,33 @@ footer li.selected:hover{ border-color:var(--med-gray); }
       border: none;
       padding: 0;
     }
-    .nav-dot:hover {
+    .slideshow-controls .nav-dot:hover {
       background: var(--med-gray);
       transform: scale(1.2);
     }
-    .nav-dot.active {
+    .slideshow-controls .nav-dot.active {
       background: var(--med-gray);
       /*transform: scale(1.2);*/
     }
 
     /* Circular Timer */
-    .timer-container {
+    .slideshow-controls .timer-container {
       position: relative;
       top:-.2em;
       width: .8em;
       height: .8em;
     }
-    .timer-svg {
+    .slideshow-controls .timer-svg {
       transform: rotate(-90deg);
       width: 100%;
       height: 100%;
     }
-    .timer-circle-bg {
+    .slideshow-controls .timer-circle-bg {
       fill: none;
       stroke: var(--gray);
       stroke-width: 4;
     }
-    .timer-circle {
+    .slideshow-controls .timer-circle {
       fill: none;
       stroke: var(--darker-gray);
       stroke-width: 4;
