@@ -370,7 +370,7 @@ var MySlideShow = {
     });
   },
   setControls : function(slideNum){
-    this.quoteSlide(slideNum, 'startQuote');
+    //this.quoteSlide(slideNum, 'startQuote');
     //EVENT LISTENERS
     backControl.on('click', function(e){
       MySlideShow.moveSlideBlock('back', slideNum);
@@ -417,7 +417,7 @@ var MySlideShow = {
     backControl.off('click');
     eachSlide.off('touchstart');
     $(document).off('keydown');
-    this.quoteSlide(currIndex, 'stopQuote');
+    //this.quoteSlide(currIndex, 'stopQuote');
   },
   //IMG CLICK
   showSubImgs: function() {
