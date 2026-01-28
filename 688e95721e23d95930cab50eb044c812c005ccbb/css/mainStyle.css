@@ -542,7 +542,14 @@ footer li.selected:hover{ border-color:var(--med-gray); }
       transition: stroke-dashoffset 0.1s linear;
     }
 
-
+.quote.active {
+	display: block;
+	margin-top:2em;
+	padding: 1.5em 2.5em;
+	font-size: 1.1em;
+	background-color: rgba(var(--darker-gray-rgb),.5);
+	overflow: hidden;
+}
 .quote blockquote {
 	margin: 0 auto;
 	display: flex;
@@ -551,13 +558,6 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	justify-content: center;
 	column-gap: 1.4em;
 	row-gap: .4em;
-}
-.quote.active {
-	display: block;
-	padding: 1.5em 2.5em;
-	font-size: 1.1em;
-	background-color: rgba(var(--darker-gray-rgb),.5);
-	overflow: hidden;
 }
 .quote.active blockquote { max-width:84%; }
 .quote.active blockquote span{
