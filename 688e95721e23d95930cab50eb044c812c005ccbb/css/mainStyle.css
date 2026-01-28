@@ -322,6 +322,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
   grid-template-columns: repeat(4, 1fr);
   align-content: flex-start;
   justify-items: center;
+  row-gap: 1em;
 }
 .piece > *:nth-child(odd) { grid-column: 1 / 3; }
 .piece > *:nth-child(even) { grid-column: 3 / 6; }
@@ -359,7 +360,10 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .title {
 	margin-left: -1em;
 	display: flex; 
-	gap: 1em;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: baseline;
+	gap: .4em;
 	z-index: 5;
 }
 .title h2, .title h3, .title h4 { 
@@ -371,16 +375,30 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	color: var(--light-green);
 	z-index: inherit;
 }
-.title h2, .title hgroup {position: relative; z-index: inherit;}
-.title hgroup{ z-index: 6; display:flex; align-items:flex-end; color:var(--med-gray); }
-.title h3{
-	margin-bottom: 0.5em;
-	font-size: 1.1em;
-	background-color: rgba(var(--dark-gray-rgb), .85);
-	box-shadow: 0 .25em .3em .1em rgba(var(--dark-gray-rgb),.2),
-		0 .25em .3em .1em rgba(var(--black-rgb),.1);
+.title h2, .title hgroup { position: relative; z-index: inherit; }
+.title hgroup{ 
+	display:flex; 
+	align-items:baseline; 
+	color: var(--med-gray); 
+	column-gap: 1.4em; 
+	z-index: 6;
 }
-.title h5{ display:none; /*#838d9*/}
+.title h3{
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	background-color: rgba(var(--dark-gray-rgb), .85);
+	box-shadow: 0 .2em .2em .1em rgba(var(--dark-gray-rgb),.2),
+		0 .25em .3em .1em rgba(var(--dark-gray-rgb),.1);
+}
+.title h5 { color:var(--gray); text-transform: lowercase; }
+.title h5::before, .title h5::after{
+	font-size:1.3em;
+	color:rgba(var(--gray-rgb),.6);
+	position: relative;
+	top: 2px;
+}
+.title h5::before{ content:'('; left:-12px; }
+.title h5::after{ content:')'; right:-8px; }
 
 .imgCase{
 	width: 100%;
@@ -398,7 +416,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .imgButtons { 
 	font-size:.9em;
 	display:flex; 
-	flex-flow: column nowrap; 
+	flex-flow: row wrap; 
 	column-gap: 1.2em; 
 	row-gap:.8em; 
 	align-items:flex-start;
@@ -544,7 +562,6 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 .quote.active {
 	display: block;
-	margin-top:2em;
 	padding: 1.5em 2.5em;
 	font-size: 1.1em;
 	background-color: rgba(var(--darker-gray-rgb),.5);
@@ -1028,7 +1045,8 @@ noscript {
 
 	.title{ margin-left:0; gap:.3em; flex-wrap:wrap; flex-direction: column; text-align:center; }
 	.title h2 { letter-spacing: -2px; }
-	.title hgroup { font-size:0.9em; justify-content: center; }
+	.title hgroup { font-size:0.9em; flex-direction: column; }
+	.title h5{ margin:0; }
 
 
 	.imgButtons { margin-top:-1em; margin-bottom: 3em; font-size: .85em; }
