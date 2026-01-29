@@ -749,6 +749,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 
 /* PIECE SPECIFIC */
+.chime-5 .imgButtons { flex-flow: column nowrap; }
 .project-f .title h2::first-letter, .pro-accounts .title h2::first-letter  { margin-right:-.025em; }
 .study-shift .title h2::first-letter { margin-right:-.1em; }
 .whitepages .title h2::first-letter{ margin-right:-.15em; }
@@ -953,6 +954,7 @@ noscript {
 	/* PIECE SPECIFIC */
 	.allSlides .intro{ height: 90vh; }
 	.about-me section{ padding-left:2em; padding-right:2em; }
+	.chime-5 .imgButtons { flex-flow: row nowrap; }
 }
 
 /*TABLET GRID CUSTOMIZATIONS*/
