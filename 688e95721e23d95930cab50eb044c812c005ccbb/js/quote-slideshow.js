@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Quote Slideshow Manager
 class QuoteSlideshow {
   constructor(quoteElement, articleElement) {
@@ -562,4 +561,3 @@ if (document.readyState === 'loading') {
   });
 
 })(jQuery);
->>>>>>> new-content
