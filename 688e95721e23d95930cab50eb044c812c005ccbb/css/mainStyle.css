@@ -931,7 +931,7 @@ noscript {
 	.title { font-size:.9em; }
 	.imgCase{ flex-direction: column; }
 
-	.sidebar { margin-bottom: 0; padding: 0 2em; font-size: 1em; }
+	.sidebar { margin-bottom: 2em; padding: 0 2em; font-size: 1em; }
 	.imgButtons { margin-bottom: 2em; text-align: center; flex-flow: row nowrap; justify-content:center; }
 	.description { flex-flow: row wrap; column-gap: 2.6em; margin: 0 auto; max-width: unset; position: relative; top: 1em; }
 	.description div { flex: min-content; flex-grow: 4; }
