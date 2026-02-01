@@ -322,7 +322,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
   grid-template-columns: repeat(4, 1fr);
   align-content: flex-start;
   justify-items: center;
-  row-gap: 1.6em;
+  row-gap: 3em;
 }
 .piece > *:nth-child(odd) { grid-column: 1 / 3; }
 .piece > *:nth-child(even) { grid-column: 3 / 6; }
@@ -359,6 +359,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 /* PORTFOLIO PIECES */
 .title {
 	margin-left: -1em;
+	margin-bottom: -1em;
 	display: flex; 
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -881,7 +882,7 @@ noscript {
 	.container{ font-size: 21px; }
 
 	/* PORTFOLIO PIECES GRID LAYOUT */
-	.piece { grid-template-columns: repeat(6, 1fr); row-gap:3em; column-gap: 2em; }
+	.piece { grid-template-columns: repeat(6, 1fr); column-gap: 2em; }
 	.piece .title, .piece .imgCase, .piece .quote, .piece .sidebar, .piece .abstract, .piece .mainVideo { grid-column: unset; }
 	.piece > *:nth-child(odd) { grid-column: 1 / 4; }
 	.piece > *:nth-child(even) { grid-column: 4 / 7; }
@@ -931,8 +932,8 @@ noscript {
 	.title { font-size:.9em; }
 	.imgCase{ flex-direction: column; }
 
-	.sidebar { margin-bottom: 2em; padding: 0 2em; font-size: 1em; }
-	.imgButtons { margin-bottom: 2em; text-align: center; flex-flow: row nowrap; justify-content:center; }
+	.sidebar { margin-bottom: 0; padding: 0 2em; font-size: 1em; }
+	.imgButtons { margin-bottom: 2em; text-align: center; flex-flow: row nowrap; justify-content:center; position: relative; top: -1.4em; }
 	.description { flex-flow: row wrap; column-gap: 2.6em; margin: 0 auto; max-width: unset; position: relative; top: 1em; }
 	.description div { flex: min-content; flex-grow: 4; }
 	.description div:first-of-type { flex-grow: 1; }
@@ -969,9 +970,9 @@ noscript {
 
 /*MOBILE VIEW*/
 @media only screen and (max-width: 620px) {
-	.container{ background-size:60%; }
-	main.scaffold{ background-size:80%; }
-	footer.scaffold{ background-color:rgba(35,35,35,0.9); z-index:0; }
+	.container { background-size:60%; }
+	main.scaffold { background-size:80%; }
+	footer.scaffold { background-color:rgba(35,35,35,0.9); z-index:0; }
 	footer ul { column-gap:1.4em; }
 	footer li { border-top-width:2px; }
 
@@ -1030,11 +1031,10 @@ noscript {
 	.mobileArrow.jsGoBack .arrow{ left: 20%; transform:rotate(180deg); }
 	.mobileArrow .arrow { position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:14px;}
 	.mobileArrow .segunda{ margin-left: 8px;}
-	.mobileArrow .icon-raquo { background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);}
+	.mobileArrow .icon-raquo { background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==) ;}
 
 
 	/* PORTFOLIO PIECES GRID LAYOUT */
-	.piece { row-gap: 2.6em; }
 	.piece .abstract, .piece .mainVideo { grid-column: 1 / 3; }
 	.piece .title, .piece .abstract { justify-self: unset; }
 
@@ -1071,7 +1071,7 @@ noscript {
 	.allSlides .intro { font-size: 1.15em; justify-content: flex-end; }
 	.intro > div { padding:0 1.5em; margin:0; height: 45vh }
 
-	.chime-lift .imgCase img, .amazon-paycode .imgCase img {left:-1.2em;}
+	.chime-lift .imgCase img, .amazon-paycode .imgCase img { left:-1.2em; }
 
 	.about-me section{ grid-template-columns:auto; justify-items: flex-start; padding-top:3em; font-size: 0.9em; }
 	.resume-summary { display: flex; align-items: last baseline; column-gap: 2em; flex-wrap: wrap;  }
