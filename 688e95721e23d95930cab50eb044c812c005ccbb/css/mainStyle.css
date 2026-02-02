@@ -431,7 +431,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .sidebar h5 { color:var(--med-blue); padding-bottom: .3em; }
 .sidebar p { line-height: 1.4em; }
 .description { display: flex; flex-flow: row wrap; row-gap: 2em; align-items: flex-start; }
-.description .role { padding:1.2em; margin: -.5em -.5em -.5em -1.2em; background-color: rgba(var(--darker-gray-rgb),.5); border-radius:6px; }
+.description .role { padding:1.2em; margin: -.5em -.5em -.5em -1.2em; background-color: rgba(var(--darker-gray-rgb),.3); border-radius:6px; }
 
 .quote {
 	display: flex;
@@ -574,9 +574,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	row-gap: .4em;
 }
 .quote.active blockquote { max-width:84%; }
-.quote.active blockquote span{
-	color:var(--med-blue);
-}
+.quote.active blockquote cite{ color:var(--med-blue); font-size: 0.8em; }
 .quote blockquote span{
 	line-height: 1.6em;
 	font-style:italic;
