@@ -428,8 +428,8 @@ var MySlideShow = {
         var btnIndex = $(this).index();
         $(this).addClass('selected');
         $(this).siblings().removeClass('selected');
-        eachSlide.eq(currIndex).children('.imgCase').children().hide();
-        eachSlide.eq(currIndex).children('.imgCase').children().eq(btnIndex).show();
+        eachSlide.eq(currIndex).find('.imgCase').children().hide();
+        eachSlide.eq(currIndex).find('.imgCase').children().eq(btnIndex).show();
     });
   },
   //QUOTE SLIDE
