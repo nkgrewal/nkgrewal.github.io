@@ -343,7 +343,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 }
 .piece .abstract{
 	grid-column: 1 / 3;
-	align-self: anchor-center;
+	align-self: center;
 	justify-self: right;
 }
 .abstract.fullCol {
