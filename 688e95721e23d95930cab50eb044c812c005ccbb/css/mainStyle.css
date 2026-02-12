@@ -897,7 +897,7 @@ noscript {
 	.piece .imgWrapper { grid-column: 1/5; grid-row: 2 / 4; }
 	.piece .sidebar, .piece .quote { grid-column: 5/7; }
 	.piece .sidebar { align-self: flex-end;  }
-	.piece .quote { align-self: flex-end; justify-self: flex-start; }
+	.piece .quote { align-self: flex-start; justify-self: flex-start; }
 	.abstract.fullCol { grid-column: 1/7; justify-self:center; }
 
 	/* PORTFOLIO PIECES */
@@ -906,7 +906,6 @@ noscript {
 	.imgButtons {margin-bottom: 3em;}
 	.description { margin: 0; max-width: 20em; }
 	.quote { margin: 0 0 0 .9em; text-align: left; max-width: 33em; font-size: .8em; }
-	.quote blockquote { justify-content: flex-start; }
 	.quote blockquote:first-of-type { background-color:transparent; }
 	.quote blockquote:not(:first-of-type) { display: none; }
 	.quote cite { padding:0; }
