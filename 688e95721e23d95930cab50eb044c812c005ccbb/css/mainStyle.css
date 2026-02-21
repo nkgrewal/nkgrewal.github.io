@@ -677,7 +677,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	gap:2em;
 }
 .intro > div {
-	padding: 4em 2em 1em 0;
+	padding: 4em 4em 2em 0;
 	max-width: 20em;
 }
 .intro p{ margin-top:.4em; margin-bottom: 1.2em; line-height: 1.6em; }
@@ -1073,8 +1073,8 @@ noscript {
 
 
 	/* PIECE SPECIFIC */
-	.allSlides .intro { font-size: 1.15em; justify-content: flex-end; }
-	.intro > div { padding:0 1.5em; margin:0; height: 45vh }
+	.allSlides .intro { font-size: 1.15em; justify-content: flex-end; align-content: center; }
+	.intro > div { padding:0 1.5em; margin:0; height: 44vh }
 
 	.chime-lift .imgCase img, .amazon-paycode .imgCase img { left:-1.2em; }
 
