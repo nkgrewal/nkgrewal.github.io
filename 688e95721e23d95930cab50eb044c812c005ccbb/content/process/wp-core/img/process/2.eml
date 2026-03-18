@@ -1,0 +1,274 @@
+Received: from EX4.corp.w3data.com (172.25.0.125) by ex5.corp.w3data.com
+ (172.25.0.126) with Microsoft SMTP Server (TLS) id 14.3.174.1; Mon, 14 Apr
+ 2014 19:42:20 -0700
+Received: from EX5.corp.w3data.com ([fe80::a003:8710:39e3:b41b]) by
+ ex4.corp.w3data.com ([fe80::a8bc:8b01:e235:93e4%19]) with mapi id
+ 14.03.0181.006; Mon, 14 Apr 2014 19:42:19 -0700
+From: Alex Algard <aalgard@whitepages.com>
+To: Navreen Grewal <ngrewal@whitepages.com>
+CC: Calum Clark <cclark@whitepages.com>, Rob McCann <rmccann@whitepages.com>,
+	Kevin Flaherty <kflaherty@whitepages.com>
+Subject: Re: Homepage for new nav design
+Thread-Topic: Homepage for new nav design
+Thread-Index: AQHPVfgsJyziOxO9k0mJ0FoBAreTZZsR/J2A
+Date: Mon, 14 Apr 2014 19:42:19 -0700
+Message-ID: <CF71E3DB.161C4B%aalgard@whitepages.com>
+References: <CF6DF26E.4496%ngrewal@whitepages.com>
+In-Reply-To: <CF6DF26E.4496%ngrewal@whitepages.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-SCL: -1
+X-MS-TNEF-Correlator: <CF71E3DB.161C4B%aalgard@whitepages.com>
+user-agent: Microsoft-MacOutlook/14.3.9.131030
+MIME-Version: 1.0
+X-MS-Exchange-Organization-AuthSource: ex4.corp.w3data.com
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthMechanism: 04
+X-Originating-IP: [172.25.0.46]
+X-MS-Exchange-Organization-AVStamp-Mailbox: SYMANTEC;512622656;0;info
+Return-Path: aalgard@whitepages.com
+Content-type: multipart/alternative;
+	boundary="B_3482752090_1704886"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3482752090_1704886
+Content-type: text/plain;
+	charset="ISO-8859-1"
+Content-transfer-encoding: quoted-printable
+
+Hi Navreen,
+
+A little bit more than the comments I provided to you verbally today.
+Regarding ad revenue impacts, that=B9s something where Rob/Bret will need to
+chime in based on what info Meixner provides them.
+* Screenshot #1: I think this one has real potential. It=B9s simple and gets
+rid of all the redundancy between homepage content and nav bar that our
+current homepage has. I=B9d prefer the logo in grey. When the logo is rendere=
+d
+somewhere on the black-white  greyscale, it somehow feels like it=B9s more
+brand compliant with WhitePages than if it=B9s in green. Those are my $0.02,
+and I could be argued out of it. I also think that the ads feel a bit
+disjointed. I get that the banner  ad is centered on the page, but it still
+doesn=B9t align nicely with any of the content below, which creates an overal=
+l
+haphazard look. The simplest fix here would be to go without a banner ad on
+the homepage (especially given that there is so little content  on the
+homepage anyway), but I fear that it might cost too much in ad revenue.
+* Screenshot #2: Feels cluttered. Lots of text (users prefer to =B3scan=B2
+instead of read, unless they are visiting a page where they are in a
+=B3reading mode=B2, such as an about-us page). Also, lots of loud icons
+competing for attention. (Someone told me  once that a logo icon is proven
+to be a 10/10 as far as dialing up the volume. It=B9s the loudest form of
+graphic icon, and in this case, there are tons of them.)
+* Screenshot #3: Beautiful and functional! I just wish that we didn=B9t have
+all these issues on the ad serving side at this time, which are putting lot=
+s
+of pressure on our revenues and limits our ability to cut key ads. Would be
+curious how this page  looks with the ads added back in. One minor mod on
+this mockup is that the =B3Search=B2 button is a bit overpowering. I like the
+orange, but it might suffice to just have the magnifying glass icon in the
+orange button, and drop =B3Search=B2 from the button. (Also,  not sure what it
+means that this implementation would have =B3smooth scrolling/anchor=B2.
+* Screenshots #4 and onward: I prefer the hero treatment for the search for=
+m
+on the homepage. After all, this is what >98% of users will click, so it
+feels a little weird to relegate the search form to a less prominent
+location at the top of the page.
+
+- Alex
+
+
+From: Navreen Grewal <ngrewal@whitepages.com>
+Date: Friday, April 11, 2014 at 7:37 PM
+To: Kevin Flaherty <kflaherty@whitepages.com>, Alex Algard
+<aalgard@whitepages.com>
+Cc: Calum Clark <cclark@whitepages.com>, Rob McCann <rmccann@whitepages.com=
+>
+Subject: Homepage for new nav design
+
+Kevin and Alex,
+
+Attached* are some of the homepage ideas we had, and we=B9d love to get your
+feedback on it early on. With the new mind-blowing nav the team has been
+diligently working on, the need to rethink the homepage has been apparent i=
+n
+our design challenges  and with the feedback we=B9ve gotten. Calum and I thin=
+k
+this is a good opportunity to try some of the concepts the design team
+worked on from the =B3Conceptual Work=B2 presentation.
+
+Some notes on them:
+
+> All pages - Copy is all placeholder. We=B9ll work with marketing to flesh i=
+t out
+>=20
+> 1-2 : Focused on the search bar with products (currently just links on th=
+e
+> page) fleshed out below.
+>=20
+> 3-7 : Concept with no ads on the page and smooth scrolling/anchor. We tri=
+ed to
+> think of ways we could keep advertising revenue on it like skinning, but =
+tone
+> down the competing branding.
+
+These ideas will need more refinement, and we=B9d love to get your thoughts
+early.
+
+Thanks!
+Navreen
+
+*Box link: https://whitepages.box.com/s/mtxvj3opc37t12s6a7mr
+
+
+
+
+
+
+--B_3482752090_1704886
+Content-type: text/html;
+	charset="ISO-8859-1"
+Content-transfer-encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+</head>
+<body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-=
+break: after-white-space; color: rgb(0, 0, 0); font-size: 14px; font-family:=
+ Calibri, sans-serif;">
+<div>
+<div>Hi Navreen,</div>
+<div><br>
+</div>
+<div>A little bit more than the comments I provided to you verbally today. =
+Regarding ad revenue impacts, that=B9s something where Rob/Bret will need to c=
+hime in based on what info Meixner provides them.</div>
+<div>
+<ul>
+<li><b>Screenshot #1:</b>&nbsp;I think this one has real potential. It=B9s si=
+mple and gets rid of all the redundancy between homepage content and nav bar=
+ that our current homepage has. I=B9d prefer the logo in grey. When the logo i=
+s rendered somewhere on the black-white
+ greyscale, it somehow feels like it=B9s more brand compliant with&nbsp;<u st=
+yle=3D"font-weight: bold;">White</u>Pages than if it=B9s in green. Those are my =
+$0.02, and I could be argued out of it. I also think that the ads feel a bit=
+ disjointed. I get that the banner
+ ad is centered on the page, but it still doesn=B9t align nicely with any of =
+the content below, which creates an overall haphazard look. The simplest fix=
+ here would be to go without a banner ad on the homepage (especially given t=
+hat there is so little content
+ on the homepage anyway), but I fear that it might cost too much in ad reve=
+nue.</li><li><b>Screenshot #2:</b> Feels cluttered. Lots of text (users pref=
+er to =B3scan=B2 instead of read, unless they are visiting a page where they are=
+ in a =B3reading mode=B2, such as an about-us page). Also, lots of loud icons co=
+mpeting for attention. (Someone told me
+ once that a logo icon is proven to be a 10/10 as far as dialing up the vol=
+ume. It=B9s the loudest form of graphic icon, and in this case, there are tons=
+ of them.)</li><li><b>Screenshot #3:</b>&nbsp;Beautiful and functional! I ju=
+st wish that we didn=B9t have all these issues on the ad serving side at this =
+time, which are putting lots of pressure on our revenues and limits our abil=
+ity to cut key ads. Would be curious how this page
+ looks with the ads added back in. One minor mod on this mockup is that the=
+ =B3Search=B2 button is a bit overpowering. I like the orange, but it might suff=
+ice to just have the magnifying glass icon in the orange button, and drop =B3S=
+earch=B2 from the button. (Also,
+ not sure what it means that this implementation would have =B3smooth scrolli=
+ng/anchor=B2.</li><li><b>Screenshots #4 and onward:</b>&nbsp;I prefer the hero=
+ treatment for the search form on the homepage. After all, this is what &gt;=
+98% of users will click, so it feels a little weird to relegate the search f=
+orm to a less prominent location at the top of the page.</li></ul>
+<div><br>
+</div>
+<div>- Alex</div>
+<br>
+</div>
+</div>
+<div><br>
+</div>
+<span id=3D"OLK_SRC_BODY_SECTION">
+<div style=3D"font-family:Calibri; font-size:11pt; text-align:left; color:bla=
+ck; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 0i=
+n; PADDING-LEFT: 0in; PADDING-RIGHT: 0in; BORDER-TOP: #b5c4df 1pt solid; BOR=
+DER-RIGHT: medium none; PADDING-TOP: 3pt">
+<span style=3D"font-weight:bold">From: </span>Navreen Grewal &lt;<a href=3D"mai=
+lto:ngrewal@whitepages.com">ngrewal@whitepages.com</a>&gt;<br>
+<span style=3D"font-weight:bold">Date: </span>Friday, April 11, 2014 at 7:37 =
+PM<br>
+<span style=3D"font-weight:bold">To: </span>Kevin Flaherty &lt;<a href=3D"mailt=
+o:kflaherty@whitepages.com">kflaherty@whitepages.com</a>&gt;, Alex Algard &l=
+t;<a href=3D"mailto:aalgard@whitepages.com">aalgard@whitepages.com</a>&gt;<br>
+<span style=3D"font-weight:bold">Cc: </span>Calum Clark &lt;<a href=3D"mailto:c=
+clark@whitepages.com">cclark@whitepages.com</a>&gt;, Rob McCann &lt;<a href=3D=
+"mailto:rmccann@whitepages.com">rmccann@whitepages.com</a>&gt;<br>
+<span style=3D"font-weight:bold">Subject: </span>Homepage for new nav design<=
+br>
+</div>
+<div><br>
+</div>
+<div>
+<div style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-b=
+reak: after-white-space; color: rgb(0, 0, 0); font-size: 14px; font-family: =
+Calibri, sans-serif;">
+<div>
+<div>
+<div>Kevin and Alex,</div>
+</div>
+</div>
+<div><br>
+</div>
+<div><b>Attached* are some of the homepage ideas we had, and we=B9d love to g=
+et your feedback on it early on.&nbsp;</b>With the new mind-blowing nav the =
+team has been diligently working on, the need to rethink the homepage has be=
+en apparent in our design challenges
+ and with the feedback we=B9ve gotten. Calum and I think this is a good oppor=
+tunity to try some of the concepts the design team worked on from the =B3Conce=
+ptual Work=B2 presentation.</div>
+<div><br>
+</div>
+<div>Some notes on them:</div>
+<div><br>
+</div>
+<blockquote style=3D"margin:0 0 0 40px; border:none; padding:0px;">
+<div>All pages - Copy is all placeholder. We=B9ll work with marketing to fles=
+h it out</div>
+<div><br>
+</div>
+<div>1-2 : Focused on the search bar with products (currently just links on=
+ the page) fleshed out below.&nbsp;</div>
+<div><br>
+</div>
+<div>3-7 : Concept with no ads on the page and smooth scrolling/anchor. We =
+tried to think of ways we could keep advertising revenue on it like skinning=
+, but tone down the competing branding.</div>
+</blockquote>
+<div><br>
+</div>
+<div>These ideas will need more refinement, and we=B9d love to get your thoug=
+hts early.</div>
+<div><br>
+</div>
+<div>Thanks!</div>
+<div>Navreen</div>
+<div><br>
+</div>
+<div>*Box link: <a href=3D"https://whitepages.box.com/s/mtxvj3opc37t12s6a7mr"=
+>https://whitepages.box.com/s/mtxvj3opc37t12s6a7mr</a></div>
+<div><br>
+</div>
+<div><br>
+</div>
+<div><br>
+</div>
+</div>
+</div>
+</span>
+</body>
+</html>
+
+
+--B_3482752090_1704886--
+

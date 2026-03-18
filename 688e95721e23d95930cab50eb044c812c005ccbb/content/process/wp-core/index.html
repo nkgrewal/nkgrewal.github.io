@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+  <link rel='stylesheet' href='../../css/mainStyle.css' type="text/css" />
+  <style type="text/css">
+    body{
+      background:none;
+      font:100%/1.5em 'Open Sans', Helvetica, Arial, sans-serif;
+      font-weight:300;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Comfortaa';
+      margin-bottom:1em;
+    }
+    img{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      margin:0 auto;
+      vertical-align:text-top;
+      display:block;
+    }
+    section.details{padding-top:5em;padding-bottom:5em;}
+    section.details p{margin:1.5em 0;}
+    .details p:first-child{ margin-top:0; }
+    .hero img{ 
+      border-left:none;
+      border-right:none;
+    }
+    .mock{
+      border: 1px solid #ccc;
+      max-width:380px;
+      max-height:none;
+    }
+    figure{
+      margin:2em auto; 
+      text-align: center;
+      overflow:hidden;
+      max-height:750px;
+      border-bottom:1px solid #555;
+    }
+    figcaption{ font-size:.7em;}
+    .two{border-top:10px dotted rgba(0,0,0,.05);border-bottom:10px dotted rgba(0,0,0,.05);}
+    img.border{border:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.15);}
+    ul,ol{
+      margin:0;
+      position: relative;
+      line-height: 1.8em;
+      left:1.4em;
+    }
+    .browser{
+      display: inline-block;
+      margin:0 auto;
+      padding: 20px 1px 1px 1px;
+      border-radius: 5px;
+      border:1px solid #ddd;
+      border-bottom: 1px solid #ccc;
+      background: #ddd;
+      position: relative;
+      line-height: 0;
+      box-shadow: 0px .2em .45em rgba(0,0,0,0.65);
+    }
+    .browser .frame {
+        display: block;
+        height: 15px;
+        position: absolute;
+        top: 5px;
+        left: 1px;
+    }
+    .browser img{
+      border:1px solid rgba(0,0,0,.1);
+      margin-left:-1px;
+    }
+
+    .frame span {
+        height: 8px;
+        width: 8px;
+        border-radius: 8px;
+        background-color: #eee;
+        border: 1px solid #dadada;
+        float: left;
+        margin: 0 0 0 4px;
+    }
+    .browser img{display:inline;}
+    .hero img{margin:0;}
+    .hero, .hero2, .control{position:relative;}
+    .variation{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    }
+    .hero2 .variation{
+      opacity:1;
+      animation: hero-fade 5s;
+    }
+    .hero .variation{
+      height:100%;
+      overflow:hidden;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      box-shadow: 0 0 0 6px rgba(0,0,0, .2),
+                  0 0 10px rgba(0,0,0, .6), 
+                  inset 0 1px 0 rgba(255,255,255, .3);
+    }
+    .hero .variation img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      width: auto;
+      max-width: none;
+    }
+    
+    .hero .variation {
+      width: 50%;
+      animation: cd-bounce-in 1s;
+      /*background-color: rgba(215,215,215,.8)*/
+    }
+    .hero .label{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding:20px;
+      font-size:0.75em;
+      color:#9f9f9f;
+    }
+    .variation .label{right:auto;left:0;}
+    .hero .slider {
+      position: absolute;
+      height:40px;
+      width: 40px;
+      /* center the element */
+      left: 50%;
+      top: 50%;
+      margin-left: -20px;
+      margin-top: -20px;
+      border-radius: 50%;
+      background-color: #555;
+      cursor: move;
+      box-shadow: 0 0 0 6px rgba(#000, .2), 0 0 10px rgba(#000, .6), inset 0 1px 0 rgba(#fff, .3);
+      opacity: 1;
+      animation: slider-bounce-in 1s;
+    }
+    .hero .slider:after{
+      content:'\2194';
+      color:#aaa;
+      font-weight:100;
+      position: relative;
+      left:0;
+      top:18px;
+    }
+    .hero .variation:after {
+      content:'';
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      /* center the element */
+      right: 0;
+      top: 0;
+      background-color: #999;
+      cursor: move;
+    }
+    .is-visible & {
+      opacity: 1;
+      -webkit-transition: -webkit-transform .3s .7s, opacity 0s .7s;
+      -moz-transition: -moz-transform .3s .7s, opacity 0s .7s;
+      transition: transform .3s .7s, opacity 0s .7s;
+    }
+    .draggable {
+      /* change slider color when element is active */
+      background-color: #445b7c;
+    }
+    @keyframes hero-fade {
+      0% {
+        opacity:0;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes cd-bounce-in {
+      0% {
+        width: 0;
+      }
+      60% {
+        width: 65%;
+      }
+      100% {
+        width: 45%;
+      }
+    }
+    @keyframes slider-bounce-in {
+      0% {
+        left: 0;
+      }
+      60% {
+        left: 65%;
+      }
+      100% {
+        left: 45%;
+      }
+    }
+
+  </style>
+  </head>
+  <body>
+    <main>
+
+      <article>
+        <section class="details">
+          <h1>Core Site UX Upgrades</h1>
+          <h3>Homepage</h3>
+          <figure>
+            <div>
+              <img src="img/v2/old-home.png" alt="Whitepages Old Home"/>
+            </div>
+            <div>
+              <img src="img/v2/new-home.png" alt="Whitepages Old Home"/>
+            </div>
+          </figure>
+          <h3>Navigation</h3>
+          <figure>
+            <div>
+              <img src="img/v2/old-details.png" alt="Whitepages Old Home"/>
+            </div>
+            <div>
+              <img src="img/v2/new-nav.png" alt="Whitepages Old Home"/>
+            </div>
+          </figure>
+          <h3>Address search</h3>
+          <figure>
+            <div>
+              <img src="img/v2/old-addresssearch2.png" alt="Whitepages Old Home"/>
+            </div>
+            <div>
+              <img src="img/v2/new-address.png" alt="Whitepages Old Home"/>
+            </div>            
+          </figure>
+          <p>Working across teams on Whitepages.com, we accomplished massive changes that included an overhaul of the code base, a section-by-section upgrade to responsive and touch design standards, and a company-wide rebrand.</p>
+          
+        </section>
+
+        <section class="details two">
+          <h3>Case study: Homepage</h3>
+          <p>The need to rethink our homepage became apparent in our design challenges as we tried to incorporate the new navigation onto it. Our team played with concepts earlier that year in an exercise to modernize the site and get it in line with our brand guidelines. This felt like the perfect opportunity to test those explorations.</p>
+          <p>With our early concepts already available, we started by bringing together stakeholders to make our case and discuss goals and feasabile opportunities on the page.</p>
+          <figure><img src="img/v2/old-home.png" alt="Whitepages Old Home"/></figure>
+          <p>We asked ourselves a few questions as we began to think of what should belong on the homepage. Rather than place content for the sake of having, we discussed pros and cons of adding or removing information. We decided to focus on these areas to shape our decisions:</p>
+          <ul>
+            <li>Clear call to action for search</li>
+            <li>Download/awareness of other services like mobile apps</li>
+            <li>Incremental to rebrand that was already under way</li>
+          </ul>
+          <p>This was a rather large change that was counter to our usual end metric of revenue. With brand and UX focused changes, the metric tend to be harder to collect and more subjective. We settled for better page stats like engagement and bounce rate.</p>
+        </section>
+
+        <section class="details">
+          <p>With these points in mind, I worked with another designer to try a few iterations. Between ourselves, we wittled our ideas down to one idea each and gave feedback to each other on our direction. Once we were satisfied with the presentability, we met with key stakeholders again.</p>
+          <figure><img src="img/v2/process-1.jpg" alt=""/></figure>
+          <figure><img src="img/v2/process-2.jpg" alt=""/></figure>
+          <figure><img src="img/v2/process-3.png" alt=""/></figure>
+          <figure><img src="img/v2/process-4.png" alt=""/></figure>
+          <figure><img src="img/v2/process-5.png" alt=""/></figure>
+        </section>
+
+        <section class="details two">
+          <p>The top concern was that ever-present tradeoff between a strong and authoratative brand and ad revenue. In our iterations, we designed with that in mind. For testing, we had the option to go all-in, but to calculate revenue trade-offs, we developed designs that stepped through the company's tolerance for removing ads.</p>
+          <figure><img src="img/v2/process-6.png" alt=""/></figure>
+          <figure><img src="img/v2/process-7.png" alt=""/></figure>
+          <figure><img src="img/v2/process-8.jpg" alt=""/></figure>
+          <figure><img src="img/v2/process-9.jpg" alt=""/></figure>
+          <figure><img src="img/v2/process-11.png" alt=""/></figure>
+          <figure><img src="img/v2/process-12.png" alt=""/></figure>
+          <figure><img src="img/v2/process-13.png" alt=""/></figure>
+          <p>We worked together to refine one direction and incorporate the possibilities of ads in a more careful manner.</p>
+          <figure><img src="img/v2/process-adv1.png" alt=""/></figure>
+          <figure><img src="img/v2/process-adv3.png" alt=""/></figure>
+          <figure><img src="img/v2/process-adv4.png" alt=""/></figure>
+        </section>
+
+        <section class="details">
+          <p>As we closed in on the final design and figured out where we needed to make compromises, our front-end developer created a version to split test.</p> 
+          <figure>
+            <div class="browser">
+              <div class="frame"><span></span><span></span><span></span></div>
+              <img src="img/v2/new-home1.png" alt="Whitepages Home Design"/>
+            </div>
+          </figure>
+          <figure><img src="img/v2/new-home2.png" alt="Whitepages Home Design"/></figure>
+          <figure><img src="img/v2/new-home3.png" alt="Whitepages Home Design"/></figure>
+          <figure><img src="img/v2/new-home4.png" alt="Whitepages Home Design"/></figure>
+          <p>We started testing the variation at a lower than usual percentage since this was such a drastic change, and we collected data over the course of a month. Bounce rate dropped and time on page increased compared to our control. Longer term, subjective benefits wouldn't become apparent until much later on.</p>
+          <p><a href="http://www.whitepages.com/">Post-rebrand homepage is currently live</a></p>
+          <p>[Include decisions and logic behind them e.g. scrolling and focus on search]</p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
