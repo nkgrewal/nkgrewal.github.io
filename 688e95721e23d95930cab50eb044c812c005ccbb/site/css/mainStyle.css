@@ -616,7 +616,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .quote blockquote span::before{ content:'\201C'; align-self: flex-start; top:0.36em; left:-5px; }
 .quote blockquote span::after{ content:'\201D'; align-self: flex-end; bottom:-.16em; right:-5px; }
 
-.abstract { color:var(--lighter-gray); max-width:28em; padding-left:2em; }
+.abstract { color:var(--lighter-gray); max-width:26em; padding-left:2em; }
 .abstract.fullCol { margin-top:1em; }
 .abstract p:first-of-type { font-size: 1.4em; line-height: 1.5em; margin-bottom: 1.5em; }
 .contributions{font-size: .85em; border:1px dotted rgba(var(--med-gray-rgb),.6); padding:3em;}
@@ -713,7 +713,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .about-me p:last-of-type { margin-bottom:0; }
 .about-me .profile {
 	margin-top: -7em;
-	padding:0 2.2em;
+	padding:0 2.8em;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: right;
@@ -953,7 +953,7 @@ noscript {
 
 	.abstract p:first-of-type { font-size: 1.25em; }
 
-	.figCase { display: flex; align-content:center; justify-content:center; }
+	.figCase { display: flex; flex-flow:wrap; align-content:center; justify-content:center; }
 	.figCase video { max-width: 100%; min-width: 220px; }
 	.oldPhone video { max-width: 300px; }
 
