@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/PRO.css" type="text/css" />
+    <link rel="stylesheet" href="css/prototype2.css" type="text/css" />
+  </head>
+  <body>
+  <!-- HEADER-->
+    <nav class="main" style="margin-top:150px;"> 
+      <ul>
+        <li class="person">
+          <div class="searchName">
+            <div class="icon"></div>
+            <p>Find Person</p>
+          </div>
+          <form class="inset-wrap" action="person-multiple.html">
+            <input class="input-inset halfbox-first" placeholder="First &amp; last name" type="text" value="dean winchester" />
+            <input class="input-inset halfbox-last" placeholder="City, State, or ZIP" type="text" value="seattle,wa" />
+            <button class="btn-inset bg2" type="submit" value="">Find</button>
+          </form>
+        </li>
+        <li class="address">
+          <div class="searchName">
+            <div class="icon"></div>
+            <p>Find Address</p>
+          </div>
+          <form class="inset-wrap" action="address-multiple.html">
+            <input class="input-inset halfbox-first" placeholder="Street address or name" type="text" />
+            <input class="input-inset halfbox-last" placeholder="City, State, or ZIP" type="text" />
+            <input class="btn-inset bg2" type="submit" value="" />
+          </form>
+        </li>
+        <li class="phone">
+          <div class="searchName">
+            <div class="icon"></div>
+            <p>Find Phone</p>
+          </div>
+          <form class="inset-wrap" action="phone-multiple.html">
+            <input class="input-inset" placeholder="10-digit phone number" type="text" />
+            <input class="btn-inset bg2" type="submit" value="" />
+          </form>
+        </li>
+        <li class="business">
+          <div class="searchName">
+            <div class="icon"></div>
+            <p>Find Business</p>
+          </div>
+          <form class="inset-wrap" action="business-multiple.html">
+            <input class="input-inset halfbox-first" placeholder="Business or keywords" type="text" />
+            <input class="input-inset halfbox-last" placeholder="City, State, or ZIP" type="text" />
+            <input class="btn-inset bg2" type="submit" value="" />
+          </form>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- endHEADER -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+    var icons = $('.searchName');
+    var searchFields = $('.main .inset-wrap');
+    searchFields.animate({width:'hide'}, 0);
+    $('.person .inset-wrap').animate({width:'show'}, 0);
+    icons.on('click', function(){
+      searchFields.animate({ width:'hide'}, 500);
+      $(this).siblings('.inset-wrap').filter(':hidden').animate({ width:'toggle'}, 500);
+    });
+
+    $('.subResults .address').children('.col-6:first-child').addClass('attr');
+    $('.subResults .attr').addClass('collapse');
+    
+    $('.expToggle').click( function(){
+      $('.arrow-down').toggleClass('arrow-up');
+    }) 
+    
+    $('.unit').click( function(){
+      $(this).children('.arrow-down').toggleClass('arrow-up');
+    })
+    
+    $('.unit').hover( function(){
+      $(this).addClass('unitOn');
+    }, function(){
+      $(this).removeClass('unitOn');
+    })
+    </script>
+  </body>
+</html>
