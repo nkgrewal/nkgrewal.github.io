@@ -635,6 +635,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	background-color:rgba(var(--darker-gray-rgb),.9);
 	border-radius: 4px;
 }
+.figCase { display: flex; flex-flow: wrap; row-gap: 2em; }
 .figCase video, .figCase picture{
 	max-width: 360px;
 	max-height:640px;
@@ -645,7 +646,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	border: 1px solid rgba(var(--med-gray-rgb),.4);
 	box-shadow: 0 2px 10px rgba(var(--black-rgb),.4);
 }
-.figCase img { max-width:inherit; max-height:inherit; }
+.figCase img { max-width:inherit; max-height:inherit; border-radius: 2px; }
 .newPhone{
 	padding:21px 40px 12px 41px;
 	background: url(../img/piece-newphone-asset.png) center center no-repeat;
@@ -664,7 +665,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	border-radius: 0px;
 }
 .mainFigs .note { max-width:300px; margin-top:1em; font-size:.85em; line-height:1.4em; background-color: rgba(var(--darker-gray-rgb),.5); border-radius:6px; padding:1em; text-align: left; }
-
+.figCase picture .note { margin-top:-.2em; }
 
 /* INTRO SLIDE */
 .allSlides .intro {
