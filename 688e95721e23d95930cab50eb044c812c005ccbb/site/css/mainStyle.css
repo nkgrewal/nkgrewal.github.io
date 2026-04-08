@@ -487,7 +487,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	font-variant: all-small-caps;
 	color:var(--med-blue);
 	position: relative;
-	top:-.9em;
+	top:-1em;
 }
 .active .quoteSlide {
   width: 100%;
@@ -502,9 +502,8 @@ footer li.selected:hover{ border-color:var(--med-gray); }
       align-items: center;
       justify-content: center;
       gap: .8em;
-      position: absolute;
-      top:.2em;
-      right:0;
+      position: relative;
+      top:1em;
       background: var(--darker-gray);
       border-radius: 12px;
       padding:4px 4px 2px 4px;
@@ -600,7 +599,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 
 .quote.active {
 	display: block;
-	padding: 1.5em 2.5em;
+	padding: 1.6em 2.5em;
 	background-color: rgba(var(--darker-gray-rgb),.5);
 	overflow: hidden;
 }
@@ -654,13 +653,13 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .abstract .footnote { text-align: left; margin:1em 0; padding:0; }
 
 .mainFigs { text-align: center; margin-left:4em; }
-.mainFigs h4 { 
+.mainFigs h5 { 
 	display: inline-block;
 	position:relative;
 	top:1em;
 	padding:4px 14px 6px 14px;
 	font-variant: all-small-caps; 
-	font-size: .9em; 
+	color:var(--med-blue);
 	background-color:rgba(var(--darker-gray-rgb),.9);
 	border-radius: 4px;
 }
