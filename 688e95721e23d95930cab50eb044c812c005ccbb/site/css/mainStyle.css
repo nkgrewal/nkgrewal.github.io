@@ -102,14 +102,15 @@ kbd {
   padding: 1px 4px;
   white-space: nowrap;
 }
-ul {
-	margin-top: 0.4em; 
+ul, ol {
+	font-size:.9em;
+	margin-top: 0.4em;
 	padding-left: 1.2em;
-	text-indent: 0.4em;
 }
+ul { text-indent: 0.4em; }
 li{ line-height: 1.25em; margin-top:.85em; }
 li:first-child{ border-left:none; margin-left:0; }
-ul:last-child{ margin-bottom:0; }
+ul:last-child, ol:last-child { margin-bottom:0; }
 strong {font-weight: 500;}
 
 
@@ -223,10 +224,10 @@ footer.scaffold{
 	-webkit-backdrop-filter: blur( 4px );
 }
 footer .fascia{ display: flex; flex-flow:column; background-color:rgba(32,32,38,0.55); }
-footer ul, footer nav { display: flex; flex-wrap: wrap-reverse; column-gap: 2em; }
+footer ul { font-size: 1em }
+footer ul, footer nav { display: flex; flex-wrap: wrap-reverse; column-gap: 2.3em; }
 footer ul, nav ul { margin:0; padding:0; list-style: none; text-indent:0; }
 footer li {
-	font-size: .9em;
 	text-indent: 0;
 	padding:.9em 0 1.2em 0;
 	margin:0; /*#869196*/
@@ -247,9 +248,10 @@ footer li.selected{
 
 }
 footer li.selected:hover{ border-color:var(--med-gray); }
-#linkedin { padding:.65em 0 .8em 0; opacity:.65; }
+#linkedin { padding: .6em 0 .8em 0; opacity:.65; position:relative; top: -2px; }
+#linkedin a { display:block; padding:0; line-height:0; }
 #linkedin img { max-width:24px; }
-#linkedin:hover {opacity:.85; }
+#linkedin:hover { opacity:.85; }
 
 
 /* SLIDESHOW NAV */
@@ -262,13 +264,13 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	position: absolute; 
 	right:0; 
 }
-.slideNav { 
+.slideNav {
 	padding: 0 1em; 
 	column-gap: 1.2em; 
 	background: linear-gradient(to right, rgba(36,36,40,0.5) 0%, rgba(36,36,40,0.5) 80%, rgba(36,36,40,0.2) 94%, rgba(36,36,40,0) 98%); 
 }
 .slideNav li{ text-transform: capitalize; }
-.slideNav .firstSlide li { font-size:1.3em; padding:.45em .65em .75em .65em; position:relative; top:-1px; }
+.slideNav .firstSlide li { font-size:1.3em; padding:.55em .6em .85em .6em; position:relative; }
 .slideNav .firstSlide li.selected, 
 .slideNav .firstSlide li.selected:hover { border-color:transparent; background:none; }
 .slideBack, .slideNext, .slideViewer a, footer li { cursor: pointer; }
@@ -997,7 +999,8 @@ noscript {
 /*TABLET GRID CUSTOMIZATIONS*/
 @media only screen and (min-width: 620px) and (max-width: 840px) {
 	footer.scaffold{ font-size: .9em; }
-	.slideNav { flex:0; flex-wrap: nowrap; margin-right:10em; }
+	footer ul { column-gap: 1.6em; }
+	.slideNav { flex:0; flex-wrap: nowrap; margin-right:10em; column-gap: .5em; }
 	.slideNav ul:last-child { flex-wrap: wrap; padding-right: 1em; }
 	.jsNav .about { padding-left:2em; }
 	.piece .abstract, .piece .mainFigs { grid-column: 1 / 3; }
