@@ -646,7 +646,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .quote blockquote > span::before{ content:'\201C'; align-self: flex-start; top:0.36em; left:-5px; }
 .quote blockquote > span::after{ content:'\201D'; align-self: flex-end; bottom:-.16em; right:-5px; }
 
-.abstract { color:var(--lighter-gray); max-width:27em; padding-left:2em; }
+.abstract { color:var(--lighter-gray); max-width:25em; padding-left:2em; }
 .abstract.fullCol { margin-top: 1em; }
 .abstract p:first-of-type { font-size: 1.3em; line-height: 1.5em; margin-bottom: 1.5em; }
 .contributions{font-size: .85em; border:1px dotted rgba(var(--med-gray-rgb),.6); padding:3em;}
@@ -720,8 +720,9 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 	position: relative;
 	top:-2px;
 }
-.intro kbd:last-of-type{ margin-right:.5em; }
-.blurbCTA button { font-size:.85em; text-align: left; background-color: rgba(var(--darkest-gray-rgb),.4); }
+.intro kbd:first-of-type{ margin-left:.7em; }
+.blurbCTA {font-size:.85em;}
+.blurbCTA button { text-align: left; background-color: rgba(var(--darkest-gray-rgb),.4); }
 .blurbCTA button:hover { background-color: transparent; }
 
 
