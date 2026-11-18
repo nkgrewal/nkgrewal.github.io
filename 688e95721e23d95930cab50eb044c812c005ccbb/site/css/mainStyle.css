@@ -788,7 +788,7 @@ footer li.selected:hover{ border-color:var(--med-gray); }
 .resume-items .job h4 { font-size: .8em; justify-self: right; margin-left: auto; padding-right:1em; }
 .resume-items .job h4 span { margin-left:-1em; margin-right:.5em; color: rgba( var(--med-gray-rgb),.65); }
 .resume-items .job p { line-height: 1.6em; color: var(--lighter-gray); }
-.footnote{ margin: 0 auto; padding: 2em 3em 4em 3em; max-width:40em; font-size:.8em; line-height:1.5em; color: var(--lighter-gray); text-align:center; align-self: flex-end }
+main .footnote{ margin: 0 auto; padding: 2em 3em 4em 3em; max-width:40em; font-size:.8em; line-height:1.5em; color: var(--lighter-gray); text-align:center; align-self: flex-end }
 
 
 /* PIECE SPECIFIC */
